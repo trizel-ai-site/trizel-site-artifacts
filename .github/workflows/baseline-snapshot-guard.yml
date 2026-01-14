@@ -1,0 +1,43 @@
+---
+name: baseline-snapshot-guard
+
+on:
+  pull_request:
+    paths:
+      - "BASELINE_SNAPSHOT.md"
+      - ".github/workflows/baseline-snapshot-guard.yml"
+  push:
+    paths:
+      - "BASELINE_SNAPSHOT.md"
+      - ".github/workflows/baseline-snapshot-guard.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assert BASELINE_SNAPSHOT.md exists
+        run: test -f BASELINE_SNAPSHOT.md
+
+      - name: Speculative language ban (BASELINE_SNAPSHOT.md only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="BASELINE_SNAPSHOT.md"
+          # Banned speculative tokens (case-insensitive). Keep scope narrow to reduce false positives.
+          banned_regex='(maybe|might|probably|likely|speculat|assum|guess|we believe|it seems|appears to|could be)'
+          if grep -Ein "$banned_regex" "$file"; then
+            echo "::error::Speculative language detected in $file. Remove speculative phrasing and restate as verifiable facts."
+            exit 1
+          fi
+          echo "OK: No speculative language found in $file."
+
+      - name: Report tracked files touched by this guard (deterministic)
+        run: |
+          echo "Tracked files:"
+          git ls-files | sort
