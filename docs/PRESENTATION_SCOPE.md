@@ -82,7 +82,7 @@ All content must remain **presentation-only**, **non-scientific**, and **descrip
 
 ## Compliance
 
-This document defines the immutable boundaries for Layer-2 presentation content. Any deviation from these constraints violates the layer separation model and is prohibited.
+This document defines the mandatory boundaries for Layer-2 presentation content. Any deviation from these constraints violates the layer separation model and is prohibited.
 
 ---
 

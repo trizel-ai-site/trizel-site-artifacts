@@ -125,17 +125,17 @@ When AI is mentioned, the following terms must be consistently used:
 
 Any AI-related content or operations that violate these constraints constitute a breach of Layer-2 boundaries and are strictly prohibited.
 
-**No AI models** — Layer-2 deploys no models.
+**No AI models** — Layer-2 does not deploy models.
 
-**No agents** — Layer-2 operates no agents.
+**No agents** — Layer-2 does not operate agents.
 
 **No autonomy** — Layer-2 has no autonomous systems.
 
-**No execution** — Layer-2 runs no AI operations.
+**No execution** — Layer-2 does not run AI operations.
 
-**No inference** — Layer-2 produces no predictions or classifications.
+**No inference** — Layer-2 does not produce predictions or classifications.
 
-**No control** — Layer-2 manages no AI infrastructure.
+**No control** — Layer-2 does not manage AI infrastructure.
 
 ---
 
