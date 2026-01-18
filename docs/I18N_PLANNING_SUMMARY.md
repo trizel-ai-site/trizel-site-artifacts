@@ -13,9 +13,9 @@
 This is a **planning-only deliverable** for implementing comprehensive multilingual support across the entire trizel-site Layer-2 presentation repository.
 
 **Key Deliverable Documents:**
-1. **I18N_ARCHITECTURE_PLAN.md** — Complete technical architecture (38K words)
-2. **I18N_IMPLEMENTATION_CHECKLIST.md** — 212-task implementation guide
-3. **This document** — Executive summary for governance review
+1. **I18N_ARCHITECTURE_PLAN.md** — Complete technical architecture (1,159 lines, 5,300 words)
+2. **I18N_IMPLEMENTATION_CHECKLIST.md** — 212-task implementation guide (421 lines, 2,587 words)
+3. **This document** — Executive summary for governance review (318 lines, 1,279 words)
 
 ---
 
@@ -308,8 +308,8 @@ This i18n architecture plan is:
 
 ## DOCUMENT REFERENCES
 
-- **Full Technical Plan:** [I18N_ARCHITECTURE_PLAN.md](./I18N_ARCHITECTURE_PLAN.md) (19 sections, 38K words)
-- **Implementation Checklist:** [I18N_IMPLEMENTATION_CHECKLIST.md](./I18N_IMPLEMENTATION_CHECKLIST.md) (212 tasks)
+- **Full Technical Plan:** [I18N_ARCHITECTURE_PLAN.md](./I18N_ARCHITECTURE_PLAN.md) (19 sections, 1,159 lines, 5,300 words)
+- **Implementation Checklist:** [I18N_IMPLEMENTATION_CHECKLIST.md](./I18N_IMPLEMENTATION_CHECKLIST.md) (212 tasks, 421 lines, 2,587 words)
 - **Existing Governance:** [LAYER_BOUNDARIES.md](./LAYER_BOUNDARIES.md), [PRESENTATION_SCOPE.md](./PRESENTATION_SCOPE.md)
 
 ---
