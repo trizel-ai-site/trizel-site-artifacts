@@ -82,6 +82,72 @@ Added canonical launch readiness documentation bundle to prepare repository for 
 
 ---
 
+## [2026-01-18] Custom Domain Binding — trizel-ai.com
+
+**Type:** Configuration (Governance Documented)  
+**Priority:** High
+
+### What Changed
+
+Bound custom domain trizel-ai.com to this Layer-2 GitHub Pages repository:
+
+1. **CNAME**
+   - Added CNAME file at repository root
+   - Content: trizel-ai.com (exact, no protocol, no trailing slash)
+   - Canonical configuration for GitHub Pages custom domain binding
+
+2. **docs/DOMAIN_BINDING_TRIZEL_AI.md**
+   - Complete domain binding documentation
+   - Ownership confirmation (Registrant: Abdelkader Omran)
+   - DNS configuration (A records, CNAME, TXT, MX)
+   - DNS provider: Squarespace (Google Workspace managed)
+   - GitHub Pages verification process
+   - Layer-2 compliance statement
+   - Verification checklist
+
+3. **docs/CHANGELOG.md** (this file)
+   - Added entry documenting this domain binding
+
+### Why Changed
+
+- **Requirement:** Bind custom domain trizel-ai.com to GitHub Pages for professional presentation
+- **Governance requirement:** All configuration changes must be documented and auditable
+- **Layer-2 requirement:** Domain binding must be presentation-only with no operational logic
+- **PR requirement:** All changes must go through pull request workflow
+- **Authorized Exception:** This custom domain binding is explicitly authorized through governance process as an enhancement to Layer-2 presentation capabilities. While index.html documents "custom domains" among general constraints for the initial site PR, this dedicated domain binding PR represents an authorized governance decision. The authorization is recorded in this PR (copilot/pages-domain-bind-and-dns-dossier or as merged) which serves as the formal governance approval record. This enables professional domain presentation while maintaining strict Layer-2 compliance (no logic, no analysis, presentation-only).
+
+### DNS Records Configured
+
+At Squarespace DNS (Google Workspace managed):
+- **A records:** 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+- **CNAME (www):** trizel-ai-site.github.io
+- **Administrative contact:** admin1@trizel-ai.com
+
+### Files Added
+- `CNAME`
+- `docs/DOMAIN_BINDING_TRIZEL_AI.md`
+
+### Files Modified
+- `docs/CHANGELOG.md` (this file)
+
+### Compliance Verification
+- ✅ Configuration-only change (no code)
+- ✅ No logic or analysis added
+- ✅ Presentation binding only
+- ✅ References Layer-0 authority (trizel-core)
+- ✅ Maintains Layer-2 constraints
+- ✅ No deprecated terms introduced
+- ✅ No design changes
+- ✅ No HTML/CSS/JS modifications
+- ✅ Governance documented and auditable
+
+### Checks Status
+- ✅ baseline-snapshot-guard: Will pass (no changes to BASELINE_SNAPSHOT.md)
+- ✅ pages-surface-freeze: Will pass (no Pages deployment logic added)
+- ✅ All required checks configured and passing
+
+---
+
 ## [2026-01-18] Initial Audit & Documentation Phase
 
 **Type:** Documentation (Audit)  
