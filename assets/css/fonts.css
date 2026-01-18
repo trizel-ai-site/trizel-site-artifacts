@@ -1,0 +1,35 @@
+/* Web Font Declarations for i18n Support */
+
+/* Noto Sans Arabic - For Arabic (RTL) */
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/noto-sans-arabic/NotoSansArabic-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/noto-sans-arabic/NotoSansArabic-Bold.woff2') format('woff2');
+}
+
+/* Noto Sans SC - For Simplified Chinese */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/noto-sans-sc/NotoSansSC-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/noto-sans-sc/NotoSansSC-Bold.woff2') format('woff2');
+}

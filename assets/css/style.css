@@ -1,4 +1,4 @@
-/* Institutional, minimal CSS — no scripts, no dynamic behavior */
+/* Institutional, minimal CSS — no scripts, no dynamic behavior — RTL-aware */
 :root{
   --bg:#ffffff;
   --muted:#6b7280;
@@ -13,18 +13,30 @@
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.6;color:#0f172a;background:var(--bg);margin:0}
 .container{max-width:var(--max-width);margin:0 auto;padding:24px}
 
+/* Language-specific fonts */
+:root[lang="ar"]{font-family:'Noto Sans Arabic','Traditional Arabic','Arabic Typesetting',Arial,sans-serif}
+:root[lang="zh"]{font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',SimHei,sans-serif}
+
 /* Header Enhancements */
 .site-header{border-bottom:1px solid var(--border);background:#fff;padding:32px 24px}
 .site-header .container{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;padding:0}
 .brand h1{margin:0;padding:0;font-size:2rem;font-weight:700;letter-spacing:-0.02em}
 .memory-marker{margin:6px 0 2px;font-family:Monaco,Consolas,'Courier New',monospace;font-size:0.75rem;color:var(--accent-green);letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
 .memory-label{margin:0;font-size:0.7rem;color:var(--muted);font-style:italic}
-.header-meta{text-align:right}
+.header-meta{text-align:end}
 .layer-badge{display:inline-block;background:var(--accent-green);color:#fff;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;margin-bottom:8px}
 .tagline{margin:0;color:var(--muted);font-size:0.85rem}
 
+/* Language Switcher */
+.language-switcher{margin-top:16px}
+.language-switcher ul{list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap}
+.language-switcher li{margin:0}
+.language-switcher a{display:inline-block;padding:4px 8px;border:1px solid var(--border);border-radius:4px;font-size:0.85rem;color:var(--muted);text-decoration:none;transition:all 0.2s}
+.language-switcher a:hover{background:var(--card);border-color:var(--accent);color:var(--accent)}
+.language-switcher a[aria-current="page"]{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+
 /* Disclaimer Section */
-.disclaimer{background:var(--card-highlight);border-left:4px solid var(--accent);padding:24px;margin:24px 0}
+.disclaimer{background:var(--card-highlight);border-inline-start:4px solid var(--accent);padding:24px;margin:24px 0}
 .disclaimer h2{margin-top:0;color:var(--accent)}
 
 .card{background:var(--card);border:1px solid var(--border);padding:24px;margin:24px 0;border-radius:8px}
@@ -36,11 +48,11 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
 .governance-link{display:inline-block;font-size:1.1rem;padding:8px 0}
 .governance-primary .note{font-size:0.9rem;color:var(--muted);margin:8px 0 0}
 .references-secondary{margin-top:24px}
-.references-secondary ul{margin:12px 0;padding-left:24px}
+.references-secondary ul{margin:12px 0;padding-inline-start:24px}
 .references-secondary li{margin:8px 0}
 .live-site{margin-top:24px;padding-top:24px;border-top:1px solid var(--border);font-size:0.9rem}
 
-.explicit{font-weight:600;padding:12px;border-left:4px solid var(--accent-green);background:rgba(45,106,58,0.05);margin:12px 0}
+.explicit{font-weight:600;padding:12px;border-inline-start:4px solid var(--accent-green);background:rgba(45,106,58,0.05);margin:12px 0}
 .site-footer{border-top:1px solid var(--border);padding:24px;background:#fff;color:var(--muted);font-size:0.85rem}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
