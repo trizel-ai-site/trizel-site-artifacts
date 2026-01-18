@@ -151,9 +151,13 @@ This is a **presentation binding only**. The domain serves static HTML/CSS conte
 
 ### Authorized Exception Note
 
-This custom domain binding is an **authorized governance decision** that supersedes the general Layer-2 constraint documented in index.html which lists "custom domains" among forbidden changes. That constraint applies to the initial site creation PR and normal operational changes. This domain binding is explicitly authorized through governance process and documented in this dedicated pull request per TRIZEL standards.
+This custom domain binding is an **authorized governance decision** that supersedes the general Layer-2 constraint documented in index.html which lists "custom domains" among forbidden changes. That constraint applies to the initial site creation PR and normal operational changes. 
+
+This domain binding is explicitly authorized through governance process and documented in this dedicated pull request per TRIZEL standards. The authorization is recorded in this PR (copilot/pages-domain-bind-and-dns-dossier or as merged) which serves as the formal governance approval record.
 
 **Rationale:** Custom domain binding enhances professional presentation while maintaining Layer-2 compliance (no logic, no analysis, presentation-only). The CNAME file is a passive configuration file that instructs GitHub Pages where to serve the static content - it contains no executable code or logic.
+
+**Deployment Note:** This repository is deployed as a GitHub Pages project site (path: /trizel-site/). GitHub Pages supports apex domain binding (trizel-ai.com) for project sites - the CNAME file and DNS A records handle the apex domain resolution, and the project content is served at the apex domain without the /trizel-site/ path visible to end users.
 
 ---
 

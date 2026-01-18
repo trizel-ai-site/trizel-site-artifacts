@@ -114,7 +114,7 @@ Bound custom domain trizel-ai.com to this Layer-2 GitHub Pages repository:
 - **Governance requirement:** All configuration changes must be documented and auditable
 - **Layer-2 requirement:** Domain binding must be presentation-only with no operational logic
 - **PR requirement:** All changes must go through pull request workflow
-- **Authorized Exception:** This custom domain binding is explicitly authorized through governance process as an enhancement to Layer-2 presentation capabilities. While index.html documents "custom domains" among general constraints for the initial site PR, this dedicated domain binding PR represents an authorized governance decision to enable professional domain presentation while maintaining strict Layer-2 compliance (no logic, no analysis, presentation-only).
+- **Authorized Exception:** This custom domain binding is explicitly authorized through governance process as an enhancement to Layer-2 presentation capabilities. While index.html documents "custom domains" among general constraints for the initial site PR, this dedicated domain binding PR represents an authorized governance decision. The authorization is recorded in this PR (copilot/pages-domain-bind-and-dns-dossier or as merged) which serves as the formal governance approval record. This enables professional domain presentation while maintaining strict Layer-2 compliance (no logic, no analysis, presentation-only).
 
 ### DNS Records Configured
 
