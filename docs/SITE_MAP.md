@@ -120,16 +120,22 @@ All in README.md and docs/ files but not exposed in main UI
 ### docs/ Directory
 1. `ACCOUNT_REGISTRY.md` - Publishing account governance
 2. `AI_ROLE.md` - AI reference constraints
-3. `EXCLUSIONS.md` - Prohibited content definition
-4. `LAYER_BOUNDARIES.md` - Three-layer separation model
-5. `PRESENTATION_SCOPE.md` - Layer-2 scope definition
-
-**New Documentation (to be added):**
-- `docs/SITE_MAP.md` (this file)
-- `docs/LAYER2_COMPLIANCE_AUDIT.md`
-- `docs/LAYER2_CHANGELOG.md`
-- `docs/DESIGN_AUDIT.md`
-- `docs/DESIGN_RECOMMENDATIONS.md`
+3. `CHANGELOG.md` - Change history
+4. `CONTENT_CLASSIFICATION.md` - Content classification rules
+5. `DESIGN_AUDIT.md` - Design compliance audit
+6. `DESIGN_RECOMMENDATIONS.md` - Design guidelines
+7. `DOMAIN_BINDING_TRIZEL_AI.md` - Domain configuration
+8. `EXCLUSIONS.md` - Prohibited content definition
+9. `GO_NO_GO_LAYER2.md` - Launch readiness
+10. `I18N_ARCHITECTURE_PLAN.md` - **Multilingual architecture planning (NEW)**
+11. `I18N_IMPLEMENTATION_CHECKLIST.md` - **i18n implementation tasks (NEW)**
+12. `I18N_PLANNING_SUMMARY.md` - **Executive summary for governance (NEW)**
+13. `LAUNCH_READINESS.md` - Deployment readiness
+14. `LAYER2_CHANGELOG.md` - Layer-2 specific changes
+15. `LAYER2_COMPLIANCE_AUDIT.md` - Compliance verification
+16. `LAYER_BOUNDARIES.md` - Three-layer separation model
+17. `PRESENTATION_SCOPE.md` - Layer-2 scope definition
+18. `SITE_MAP.md` - Complete site structure (this file)
 
 ---
 
