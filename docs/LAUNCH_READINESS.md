@@ -23,7 +23,7 @@ This document provides the exact launch checklist for deploying Layer-2 (trizel-
 - [ ] **HTTPS/TLS:** Ensure certificate configuration is valid
 - [ ] **Domain Authority:** Verify domain ownership and registrar settings
 
-**Note:** DNS and domain configuration are **NOT** managed in this repository per Layer-2 constraints. These are configured through GitHub repository settings or external DNS provider.
+**Note:** DNS and domain configuration are **NOT** managed in this repository per Layer-2 constraints. These are configured through GitHub Pages settings in the repository or through an external DNS provider.
 
 ### 2. GitHub Pages Configuration
 

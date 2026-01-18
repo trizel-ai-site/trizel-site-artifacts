@@ -111,15 +111,17 @@ Layer-2 **MUST NOT** contain the following content types:
 
 When evaluating if content belongs on Layer-2, use this decision tree:
 
-```
-Is the content descriptive/structural only?
-├─ YES: Does it contain scientific claims or analysis?
-│  ├─ NO: Does it involve dynamic execution or logic?
-│  │  ├─ NO: ✅ ALLOWED on Layer-2
-│  │  └─ YES: ❌ PROHIBITED (execution)
-│  └─ YES: ❌ PROHIBITED (claims/analysis)
-└─ NO: ❌ PROHIBITED (not presentation)
-```
+**Step 1:** Is the content descriptive/structural only?
+- **If NO** → ❌ PROHIBITED (not presentation)
+- **If YES** → Continue to Step 2
+
+**Step 2:** Does it contain scientific claims or analysis?
+- **If YES** → ❌ PROHIBITED (claims/analysis)
+- **If NO** → Continue to Step 3
+
+**Step 3:** Does it involve dynamic execution or logic?
+- **If YES** → ❌ PROHIBITED (execution)
+- **If NO** → ✅ ALLOWED on Layer-2
 
 ### Quick Tests
 
@@ -140,7 +142,7 @@ Is the content descriptive/structural only?
 ### Layer-0: Governance / Authority
 - **Repository:** [trizel-core](https://github.com/trizel-ai-site/trizel-core)
 - **Role:** Establishes policies and governance
-- **Authority:** Final decision-making power
+- **Authority:** Final decision-making power over governance policies, layer classifications, and system standards
 
 ### Layer-1: Research & Analysis
 - **Repositories:** trizel-lab, trizel-AI, trizel-monitor
