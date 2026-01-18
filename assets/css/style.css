@@ -3,17 +3,46 @@
   --bg:#ffffff;
   --muted:#6b7280;
   --accent:#0b84ff;
+  --accent-green:#2d6a3a;
   --card:#f8fafc;
+  --card-highlight:#f0f7ff;
+  --border:#e6edf3;
   --max-width:1000px;
 }
 *{box-sizing:border-box}
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.6;color:#0f172a;background:var(--bg);margin:0}
 .container{max-width:var(--max-width);margin:0 auto;padding:24px}
-.site-header{border-bottom:1px solid #e6edf3;background:#fff}
-.site-header h1{margin:0;padding:18px 0;font-size:1.6rem}
-.tagline{margin:0;color:var(--muted)}
-.card{background:var(--card);border:1px solid #e6edf3;padding:18px;margin:18px 0;border-radius:6px}
-.card h2{margin-top:0}
-.site-footer{border-top:1px solid #e6edf3;padding:12px;background:#fff;color:var(--muted)}
+
+/* Header Enhancements */
+.site-header{border-bottom:1px solid var(--border);background:#fff;padding:32px 24px}
+.site-header .container{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;padding:0}
+.brand h1{margin:0;padding:0;font-size:2rem;font-weight:700;letter-spacing:-0.02em}
+.memory-marker{margin:6px 0 2px;font-family:Monaco,Consolas,'Courier New',monospace;font-size:0.75rem;color:var(--accent-green);letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
+.memory-label{margin:0;font-size:0.7rem;color:var(--muted);font-style:italic}
+.header-meta{text-align:right}
+.layer-badge{display:inline-block;background:var(--accent-green);color:#fff;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;margin-bottom:8px}
+.tagline{margin:0;color:var(--muted);font-size:0.85rem}
+
+/* Disclaimer Section */
+.disclaimer{background:var(--card-highlight);border-left:4px solid var(--accent);padding:24px;margin:24px 0}
+.disclaimer h2{margin-top:0;color:var(--accent)}
+
+.card{background:var(--card);border:1px solid var(--border);padding:24px;margin:24px 0;border-radius:8px}
+.card h2{margin-top:0;font-size:1.5rem;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.card h3{margin-top:24px;font-size:1.1rem;color:#374151}
+
+/* Governance Section */
+.governance-primary{background:rgba(13,110,253,0.05);padding:20px;border-radius:6px;margin-bottom:24px;border:1px solid rgba(13,110,253,0.2)}
+.governance-link{display:inline-block;font-size:1.1rem;padding:8px 0}
+.governance-primary .note{font-size:0.9rem;color:var(--muted);margin:8px 0 0}
+.references-secondary{margin-top:24px}
+.references-secondary ul{margin:12px 0;padding-left:24px}
+.references-secondary li{margin:8px 0}
+.live-site{margin-top:24px;padding-top:24px;border-top:1px solid var(--border);font-size:0.9rem}
+
+.explicit{font-weight:600;padding:12px;border-left:4px solid var(--accent-green);background:rgba(45,106,58,0.05);margin:12px 0}
+.site-footer{border-top:1px solid var(--border);padding:24px;background:#fff;color:var(--muted);font-size:0.85rem}
 a{color:var(--accent);text-decoration:none}
-code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:90%}
+a:hover{text-decoration:underline}
+code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:90%;font-family:Monaco,Consolas,'Courier New',monospace}
+strong{color:#0f172a;font-weight:600}
