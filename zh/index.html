@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL — 机构</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">基础认识论记忆标记</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge">层级-2</span>
+        <p class="tagline">仅展示 — 无分析 — 无执行</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">语言：</span>
+          <select id="lang-switcher" aria-label="选择语言">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>层级-2 通知</h2>
+      <p class="explicit">
+        此存储库为<strong>层级-2（仅展示/显示）</strong>。不包含科学内容，不执行任何分析，且没有执行能力。所有权限来源于<a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core（层级-0）</a>，规范治理存储库。
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>机构概述</h2>
+      <p>
+        TRIZEL按存储库治理文档中所述进行治理。本页面是静态的、仅供展示的摘要，面向人类读者和机构利益相关者。
+      </p>
+    </section>
+
+    <section id="governance-status" class="card">
+      <h2>治理状态</h2>
+      <dl>
+        <dt>层级-2（治理）</dt>
+        <dd>完成 — 已冻结。注册表和治理文档维护在<code>docs/</code>下，并由CODEOWNERS和分支保护保护。</dd>
+        <dt>层级-3（展示）</dt>
+        <dd>仅静态内容。此处不执行自动化、脚本、DNS或域配置。</dd>
+      </dl>
+    </section>
+
+    <section id="scope-constraints" class="card">
+      <h2>范围与约束</h2>
+      <ul>
+        <li>发布身份：<strong>trizel-admin</strong>（层级-2发布账户）。</li>
+        <li>此PR允许的更改：仅HTML和CSS，展示内容。</li>
+        <li>禁止的更改：docs/、.github/、分支保护、工作流、DNS、自定义域、注册表文件。</li>
+        <li>此PR中不包含JavaScript或动态代码。</li>
+      </ul>
+    </section>
+
+    <section id="references" class="card">
+      <h2>治理与参考</h2>
+      <div class="governance-primary">
+        <h3>规范治理权限（层级-0）</h3>
+        <p>
+          <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" class="governance-link">
+            <strong>trizel-core</strong> — 治理框架与政策权限
+          </a>
+        </p>
+        <p class="note">所有政策、标准和治理决策均源自层级-0。</p>
+      </div>
+      <div class="references-secondary">
+        <h3>层级-2 文档</h3>
+        <ul>
+          <li><a href="../docs/ACCOUNT_REGISTRY.md">账户注册表</a></li>
+          <li><a href="../docs/LAYER_BOUNDARIES.md">层级边界</a></li>
+          <li><a href="../docs/PRESENTATION_SCOPE.md">展示范围</a></li>
+          <li><a href="../.github/CODEOWNERS">CODEOWNERS</a></li>
+        </ul>
+        <h3>网站结构</h3>
+        <ul>
+          <li><a href="../docs/SITE_MAP.md">网站地图</a></li>
+          <li><a href="../docs/LAYER2_COMPLIANCE_AUDIT.md">合规审计</a></li>
+          <li><a href="../docs/DESIGN_AUDIT.md">设计审计</a></li>
+        </ul>
+      </div>
+      <p class="live-site">
+        <strong>实时网站：</strong> <a href="https://trizel-ai-site.github.io/trizel-site/">https://trizel-ai-site.github.io/trizel-site/</a>
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>联系与归属</h2>
+      <p>有关治理、发布或安全查询，请根据存储库CODEOWNERS联系治理团队。本页面仅作为展示文档维护。</p>
+      <p>© TRIZEL</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>静态展示 — 无动态内容。最后更新于分支<code>content/layer-3-institutional</code>。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -73,6 +73,47 @@ This repository serves as a **presentation-only** interface for public stakehold
 
 **No authority** — Layer-2 has no decision-making or interpretative power.
 
+## Multilingual Support
+
+This site is available in five languages with full semantic equivalence:
+
+- **English (EN)** — Canonical source of truth
+- **French (FR)** — Français
+- **Arabic (AR)** — العربية (RTL layout)
+- **Chinese (ZH)** — 中文
+- **Russian (RU)** — Русский
+
+All translations maintain scientific and institutional accuracy. The root page (`/`) provides language selection, and each language version includes an integrated language switcher.
+
+### Technical Implementation
+
+- **RTL Support:** Full right-to-left layout for Arabic using CSS logical properties
+- **Typography:** Language-specific font stacks for optimal readability
+- **Accessibility:** WCAG AAA-compliant with keyboard navigation and screen reader support
+- **Architecture:** Static HTML/CSS with minimal JavaScript for language switching only
+
+**JavaScript Usage**: The site includes 88 lines of JavaScript for language switching functionality. This is the governance-approved minimum necessary for multilingual presentation. See [docs/GOVERNANCE_CLARIFICATION.md](docs/GOVERNANCE_CLARIFICATION.md) for explicit justification and scope boundaries.
+
+### Documentation
+
+- **[I18N_ARCHITECTURE.md](docs/I18N_ARCHITECTURE.md)** — Multilingual infrastructure and implementation
+- **[UI_DESIGN_SYSTEM.md](docs/UI_DESIGN_SYSTEM.md)** — Institutional design system and style guide
+- **[GOVERNANCE_CLARIFICATION.md](docs/GOVERNANCE_CLARIFICATION.md)** — Layer-2 compliance and governance alignment
+
+### Directory Structure
+
+```
+/                   # Language selector
+/en/                # English version
+/fr/                # French version
+/ar/                # Arabic version (RTL)
+/zh/                # Chinese version
+/ru/                # Russian version
+/assets/css/        # Shared stylesheets (RTL-ready)
+/assets/js/         # Minimal language switcher
+/i18n/              # Translation data
+```
+
 ## References
 
 - **Governance Authority:** [trizel-core](https://github.com/trizel-ai-site/trizel-core)
