@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <style>
+      .bg { fill: #fafbfc; }
+      .layer-box { fill: #ffffff; stroke: #0969da; stroke-width: 2; }
+      .layer-0 { fill: #ddf4ff; stroke: #0969da; stroke-width: 2.5; }
+      .layer-1 { fill: #fff8e6; stroke: #f0c744; stroke-width: 2; }
+      .layer-2 { fill: #f0f9ff; stroke: #0969da; stroke-width: 2; }
+      .text-title { font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; fill: #0f1419; }
+      .text-label { font-family: system-ui, sans-serif; font-size: 12px; fill: #3c4752; }
+      .text-small { font-family: system-ui, sans-serif; font-size: 11px; fill: #64748b; }
+      .text-heading { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 700; fill: #0f1419; }
+      .text-notice { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #7a5f00; }
+      .arrow-main { stroke: #0969da; stroke-width: 3; fill: none; marker-end: url(#arrowhead-main); }
+      .arrow-gate { stroke: #f0c744; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+      .gate-box { fill: #fff8e6; stroke: #f0c744; stroke-width: 1.5; }
+      .legend-box { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead-main" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#0969da"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="1000" height="700"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="text-heading">TRIZEL Authority &amp; Pipeline Map — Layer Architecture</text>
+  <text x="500" y="50" text-anchor="middle" class="text-small">Authority flow from governance to presentation (static-only)</text>
+  
+  <!-- Layer-0: Governance/Authority -->
+  <rect class="layer-0" x="100" y="100" width="800" height="120" rx="8"/>
+  <text x="500" y="125" text-anchor="middle" class="text-heading">Layer-0: Governance / Authority</text>
+  <text x="500" y="150" text-anchor="middle" class="text-title">trizel-core</text>
+  <text x="500" y="170" text-anchor="middle" class="text-label">Establishes policies, standards, and governance framework</text>
+  <text x="500" y="188" text-anchor="middle" class="text-label">Final decision-making authority for TRIZEL system</text>
+  <text x="500" y="205" text-anchor="middle" class="text-small">Status: Authoritative and binding</text>
+  
+  <!-- Arrow and Gate 1 -->
+  <path class="arrow-main" d="M 500 220 L 500 280"/>
+  
+  <rect class="gate-box" x="350" y="260" width="300" height="40" rx="4"/>
+  <text x="500" y="280" text-anchor="middle" class="text-notice">Approved artifacts only ↓</text>
+  <text x="500" y="293" text-anchor="middle" class="text-small">Gate: Authority validation</text>
+  
+  <!-- Layer-1: Internal Execution/Analysis -->
+  <rect class="layer-1" x="100" y="320" width="800" height="140" rx="8"/>
+  <text x="500" y="345" text-anchor="middle" class="text-heading">Layer-1: Internal Execution / Analysis</text>
+  <text x="500" y="370" text-anchor="middle" class="text-title">trizel-lab (Private/Internal) + Internal Tools</text>
+  <text x="500" y="390" text-anchor="middle" class="text-label">Internal research, analysis, validation, monitoring</text>
+  <text x="500" y="408" text-anchor="middle" class="text-label">Scientific execution under Layer-0 authority</text>
+  <text x="500" y="426" text-anchor="middle" class="text-small">Tools: trizel-epistemic-engine, monitors, automated processing</text>
+  <text x="500" y="444" text-anchor="middle" class="text-small">Status: Internal operations — Private/confidential</text>
+  
+  <!-- Arrow and Gate 2 -->
+  <path class="arrow-main" d="M 500 460 L 500 520"/>
+  
+  <rect class="gate-box" x="280" y="500" width="440" height="40" rx="4"/>
+  <text x="500" y="520" text-anchor="middle" class="text-notice">No execution / No analysis / No pipelines ↓</text>
+  <text x="500" y="533" text-anchor="middle" class="text-small">Gate: Presentation boundary — Static artifacts only</text>
+  
+  <!-- Layer-2: Presentation/Display -->
+  <rect class="layer-2" x="100" y="560" width="800" height="100" rx="8"/>
+  <text x="500" y="585" text-anchor="middle" class="text-heading">Layer-2: Presentation / Display</text>
+  <text x="500" y="610" text-anchor="middle" class="text-title">trizel-ai-site/trizel-site (This Website)</text>
+  <text x="500" y="630" text-anchor="middle" class="text-label">Public-facing static presentation — HTML/CSS/SVG/PNG only</text>
+  <text x="500" y="648" text-anchor="middle" class="text-small">Zero execution, zero analysis, zero integration — Reference-only display</text>
+  
+  <!-- Side annotations -->
+  <text x="50" y="160" text-anchor="end" class="text-small" transform="rotate(-90 50 160)">Authority Direction →</text>
+  
+  <!-- Legend -->
+  <rect class="legend-box" x="50" y="50" width="200" height="30" rx="2"/>
+  <text x="60" y="70" class="text-small">Pipeline: Authority → Execution → Presentation</text>
+</svg>

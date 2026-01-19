@@ -1,0 +1,246 @@
+/* TRIZEL System Map — Additional Styles
+ * Extends tokens.css and scientific-ui.css
+ * Layout and typography only — no animations or shadows
+ */
+
+/* Language Sections */
+.language-section {
+  margin-bottom: var(--space-16);
+}
+
+.section-header {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.section-header h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-tight);
+}
+
+.language-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.language-separator {
+  margin: var(--space-16) 0;
+  border: none;
+  border-top: 2px solid var(--color-border);
+}
+
+/* Diagram Sections */
+.diagram-section {
+  margin: var(--space-12) 0;
+}
+
+.diagram-section h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-snug);
+}
+
+.diagram-description {
+  font-size: var(--text-base);
+  color: var(--color-text-medium);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.diagram-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.diagram-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.diagram-legend {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.diagram-legend h4 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.diagram-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diagram-legend li {
+  font-size: var(--text-sm);
+  color: var(--color-text-medium);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.diagram-legend li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: var(--font-bold);
+}
+
+.diagram-legend li strong {
+  color: var(--color-text);
+  font-weight: var(--font-semibold);
+}
+
+/* Notice Boxes */
+.notice-box {
+  background: var(--color-notice-bg);
+  border: 1px solid var(--color-notice-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.notice-box h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-notice-heading);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.notice-box p {
+  font-size: var(--text-base);
+  color: var(--color-notice-text);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.notice-box p:last-child {
+  margin-bottom: 0;
+}
+
+.notice-disclaimer {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent);
+}
+
+.notice-disclaimer h3 {
+  color: var(--color-accent-hover);
+}
+
+.notice-disclaimer p {
+  color: var(--color-text-medium);
+}
+
+.notice-small {
+  font-size: var(--text-sm);
+  margin-top: var(--space-4);
+}
+
+.notice-box a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.notice-box a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Page Footer */
+.page-footer {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.update-notice {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  font-style: italic;
+}
+
+.pr-placeholder {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .diagram-section h3 {
+    font-size: var(--text-xl);
+  }
+
+  .diagram-container {
+    padding: var(--space-4);
+  }
+
+  .diagram-legend {
+    padding: var(--space-4);
+  }
+
+  .notice-box {
+    padding: var(--space-4);
+  }
+}
+
+/* Print Optimization */
+@media print {
+  .language-separator {
+    page-break-after: always;
+  }
+
+  .diagram-section {
+    page-break-inside: avoid;
+  }
+
+  .notice-box {
+    border: 2px solid var(--color-border-strong);
+  }
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .diagram-legend li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .diagram-legend li {
+  padding-left: 0;
+  padding-right: var(--space-4);
+}
+
+[dir="rtl"] .section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .language-label {
+  text-align: right;
+}

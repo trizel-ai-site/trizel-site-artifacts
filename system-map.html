@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIZEL System Map (Static) — Multilingual</title>
+  <meta name="description" content="TRIZEL System Map: Visual documentation of the TRIZEL ecosystem architecture, accounts, organizations, and layer separation in 6 languages.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/scientific-ui.css">
+  <link rel="stylesheet" href="assets/css/system-map.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="brand">
+          <h1>TRIZEL</h1>
+          <p class="subtitle">System Map — Layer-2 Static Documentation</p>
+        </div>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="index_layer4_1_home.html">Layer-4.1 Home</a>
+          <a href="index_layer2_selector.html">Language Selector</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- English Section -->
+    <section class="language-section" id="en" lang="en">
+      <div class="section-header">
+        <h2>TRIZEL System Map (Static)</h2>
+        <p class="language-label">English (EN)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>What You Are Seeing</h3>
+        <p>
+          This page provides a <strong>static visual reference</strong> of the TRIZEL ecosystem structure. 
+          It shows accounts, organizations, repositories, and the three-layer authority pipeline. 
+          All diagrams are reference-only documentation—no integration, no execution, no live data.
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>Diagram 1: TRIZEL Ecosystem Map</h3>
+        <p class="diagram-description">
+          Complete overview of TRIZEL accounts, organizations, and repositories. 
+          Shows the reference relationships (not integrations) between components and the presentation layer.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="TRIZEL Ecosystem Map showing accounts (abdelkader-omran, trizel-admin), organizations (trizel-ai, trizel-ai-site), and their repositories with reference flow to the presentation layer" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Legend</h4>
+          <ul>
+            <li><strong>Account: abdelkader-omran</strong> — Personal account containing monitoring and data repositories</li>
+            <li><strong>Organization: trizel-ai</strong> — Core organization with governance, research, and internal tools</li>
+            <li><strong>Account: trizel-admin</strong> — Administrative control account for presentation gateway</li>
+            <li><strong>Organization: trizel-ai-site</strong> — Presentation organization hosting this static website</li>
+            <li><strong>trizel-lab</strong> — Marked as Private/Internal research documentation</li>
+            <li><strong>Arrows</strong> — Reference flow for presentation only (no integration or execution)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>Diagram 2: Authority &amp; Pipeline Map</h3>
+        <p class="diagram-description">
+          Three-layer architecture showing authority flow from governance (Layer-0) through internal execution (Layer-1) 
+          to static presentation (Layer-2). Includes gating concepts and approval boundaries.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="TRIZEL Authority Pipeline Map showing Layer-0 (Governance/Authority via trizel-core), Layer-1 (Internal Execution/Analysis with trizel-lab and tools), and Layer-2 (Presentation/Display via trizel-site) with gating approvals between layers" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Key Principles</h4>
+          <ul>
+            <li><strong>Layer-0: Governance / Authority</strong> — Final decision-making power (trizel-core)</li>
+            <li><strong>Layer-1: Internal Execution / Analysis</strong> — Private research and validation (trizel-lab + tools)</li>
+            <li><strong>Layer-2: Presentation / Display</strong> — Static public-facing website (this site)</li>
+            <li><strong>Gating</strong> — "Approved artifacts only" between Layer-0 and Layer-1</li>
+            <li><strong>Boundary</strong> — "No execution / no analysis / no pipelines" enforced at Layer-2</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>External References Only — No Integration or Execution</h3>
+        <p>
+          All repositories shown in these diagrams are external references. 
+          This website (Layer-2) has <strong>no integration</strong> with any system, 
+          performs <strong>no execution</strong>, conducts <strong>no analysis</strong>, 
+          and displays <strong>no live data</strong>. 
+          All content is static HTML/CSS/SVG only.
+        </p>
+        <p class="notice-small">
+          Authority derives exclusively from <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core (Layer-0 Governance)</a>.
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">Last updated: 2026-01-19 — Phase-C System Map Implementation (PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+
+    <!-- Separator -->
+    <hr class="language-separator">
+
+    <!-- French Section -->
+    <section class="language-section" id="fr" lang="fr">
+      <div class="section-header">
+        <h2>Carte du Système TRIZEL (Statique)</h2>
+        <p class="language-label">Français (FR)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>Ce Que Vous Voyez</h3>
+        <p>
+          Cette page fournit une <strong>référence visuelle statique</strong> de la structure de l'écosystème TRIZEL. 
+          Elle présente les comptes, organisations, dépôts et le pipeline d'autorité à trois couches. 
+          Tous les diagrammes sont une documentation de référence uniquement—aucune intégration, aucune exécution, aucune donnée en direct.
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>Diagramme 1 : Carte de l'Écosystème TRIZEL</h3>
+        <p class="diagram-description">
+          Vue d'ensemble complète des comptes, organisations et dépôts TRIZEL. 
+          Montre les relations de référence (non des intégrations) entre les composants et la couche de présentation.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="Carte de l'écosystème TRIZEL montrant les comptes (abdelkader-omran, trizel-admin), les organisations (trizel-ai, trizel-ai-site), et leurs dépôts avec le flux de référence vers la couche de présentation" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Légende</h4>
+          <ul>
+            <li><strong>Compte : abdelkader-omran</strong> — Compte personnel contenant les dépôts de surveillance et de données</li>
+            <li><strong>Organisation : trizel-ai</strong> — Organisation principale avec gouvernance, recherche et outils internes</li>
+            <li><strong>Compte : trizel-admin</strong> — Compte de contrôle administratif pour la passerelle de présentation</li>
+            <li><strong>Organisation : trizel-ai-site</strong> — Organisation de présentation hébergeant ce site web statique</li>
+            <li><strong>trizel-lab</strong> — Marqué comme documentation de recherche Privée/Interne</li>
+            <li><strong>Flèches</strong> — Flux de référence pour présentation uniquement (aucune intégration ou exécution)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>Diagramme 2 : Carte d'Autorité &amp; Pipeline</h3>
+        <p class="diagram-description">
+          Architecture à trois couches montrant le flux d'autorité depuis la gouvernance (Couche-0) à travers l'exécution interne (Couche-1) 
+          jusqu'à la présentation statique (Couche-2). Inclut les concepts de contrôle et les limites d'approbation.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="Carte du Pipeline d'Autorité TRIZEL montrant Couche-0 (Gouvernance/Autorité via trizel-core), Couche-1 (Exécution/Analyse Interne avec trizel-lab et outils), et Couche-2 (Présentation/Affichage via trizel-site) avec approbations de contrôle entre les couches" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Principes Clés</h4>
+          <ul>
+            <li><strong>Couche-0 : Gouvernance / Autorité</strong> — Pouvoir de décision final (trizel-core)</li>
+            <li><strong>Couche-1 : Exécution / Analyse Interne</strong> — Recherche et validation privées (trizel-lab + outils)</li>
+            <li><strong>Couche-2 : Présentation / Affichage</strong> — Site web public statique (ce site)</li>
+            <li><strong>Contrôle</strong> — « Artefacts approuvés uniquement » entre Couche-0 et Couche-1</li>
+            <li><strong>Limite</strong> — « Aucune exécution / aucune analyse / aucun pipeline » appliqué à la Couche-2</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>Références Externes Uniquement — Aucune Intégration ou Exécution</h3>
+        <p>
+          Tous les dépôts présentés dans ces diagrammes sont des références externes. 
+          Ce site web (Couche-2) n'a <strong>aucune intégration</strong> avec aucun système, 
+          ne réalise <strong>aucune exécution</strong>, ne conduit <strong>aucune analyse</strong>, 
+          et n'affiche <strong>aucune donnée en direct</strong>. 
+          Tout le contenu est uniquement HTML/CSS/SVG statique.
+        </p>
+        <p class="notice-small">
+          L'autorité dérive exclusivement de <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core (Gouvernance Couche-0)</a>.
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">Dernière mise à jour : 2026-01-19 — Implémentation de la Carte du Système Phase-C (PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+
+    <!-- Separator -->
+    <hr class="language-separator">
+
+    <!-- Arabic Section -->
+    <section class="language-section" id="ar" lang="ar" dir="rtl">
+      <div class="section-header">
+        <h2>خريطة نظام TRIZEL (ثابتة)</h2>
+        <p class="language-label">العربية (AR)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>ما تشاهده</h3>
+        <p>
+          توفر هذه الصفحة <strong>مرجعًا مرئيًا ثابتًا</strong> لبنية النظام البيئي TRIZEL. 
+          تعرض الحسابات والمنظمات والمستودعات وخط أنابيب السلطة ثلاثي الطبقات. 
+          جميع المخططات هي وثائق مرجعية فقط—لا تكامل، لا تنفيذ، لا بيانات مباشرة.
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>المخطط 1: خريطة النظام البيئي TRIZEL</h3>
+        <p class="diagram-description">
+          نظرة عامة كاملة على حسابات ومنظمات ومستودعات TRIZEL. 
+          تعرض علاقات المرجع (وليس التكامل) بين المكونات وطبقة العرض.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="خريطة النظام البيئي TRIZEL تعرض الحسابات (abdelkader-omran، trizel-admin)، المنظمات (trizel-ai، trizel-ai-site)، ومستودعاتهم مع تدفق المرجع إلى طبقة العرض" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>وسيلة الإيضاح</h4>
+          <ul>
+            <li><strong>الحساب: abdelkader-omran</strong> — حساب شخصي يحتوي على مستودعات المراقبة والبيانات</li>
+            <li><strong>المنظمة: trizel-ai</strong> — منظمة أساسية مع الحوكمة والبحث والأدوات الداخلية</li>
+            <li><strong>الحساب: trizel-admin</strong> — حساب تحكم إداري لبوابة العرض</li>
+            <li><strong>المنظمة: trizel-ai-site</strong> — منظمة العرض التي تستضيف هذا الموقع الثابت</li>
+            <li><strong>trizel-lab</strong> — تم تمييزه كوثائق بحثية خاصة/داخلية</li>
+            <li><strong>الأسهم</strong> — تدفق المرجع للعرض فقط (لا تكامل أو تنفيذ)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>المخطط 2: خريطة السلطة والأنابيب</h3>
+        <p class="diagram-description">
+          بنية من ثلاث طبقات تعرض تدفق السلطة من الحوكمة (الطبقة-0) من خلال التنفيذ الداخلي (الطبقة-1) 
+          إلى العرض الثابت (الطبقة-2). تتضمن مفاهيم البوابات وحدود الموافقة.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="خريطة خط أنابيب سلطة TRIZEL تعرض الطبقة-0 (الحوكمة/السلطة عبر trizel-core)، الطبقة-1 (التنفيذ/التحليل الداخلي مع trizel-lab والأدوات)، والطبقة-2 (العرض/الإظهار عبر trizel-site) مع موافقات البوابات بين الطبقات" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>المبادئ الأساسية</h4>
+          <ul>
+            <li><strong>الطبقة-0: الحوكمة / السلطة</strong> — سلطة اتخاذ القرار النهائي (trizel-core)</li>
+            <li><strong>الطبقة-1: التنفيذ / التحليل الداخلي</strong> — بحث وتحقق خاص (trizel-lab + أدوات)</li>
+            <li><strong>الطبقة-2: العرض / الإظهار</strong> — موقع عام ثابت (هذا الموقع)</li>
+            <li><strong>البوابات</strong> — "القطع المعتمدة فقط" بين الطبقة-0 والطبقة-1</li>
+            <li><strong>الحد</strong> — "لا تنفيذ / لا تحليل / لا أنابيب" مطبق على الطبقة-2</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>مراجع خارجية فقط — لا تكامل أو تنفيذ</h3>
+        <p>
+          جميع المستودعات المعروضة في هذه المخططات هي مراجع خارجية. 
+          هذا الموقع (الطبقة-2) ليس لديه <strong>أي تكامل</strong> مع أي نظام، 
+          لا يؤدي <strong>أي تنفيذ</strong>، لا يجري <strong>أي تحليل</strong>، 
+          ولا يعرض <strong>أي بيانات مباشرة</strong>. 
+          جميع المحتويات هي HTML/CSS/SVG ثابت فقط.
+        </p>
+        <p class="notice-small">
+          تستمد السلطة حصريًا من <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core (حوكمة الطبقة-0)</a>.
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">آخر تحديث: 2026-01-19 — تنفيذ خريطة النظام المرحلة-C (PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+
+    <!-- Separator -->
+    <hr class="language-separator">
+
+    <!-- Russian Section -->
+    <section class="language-section" id="ru" lang="ru">
+      <div class="section-header">
+        <h2>Карта Системы TRIZEL (Статическая)</h2>
+        <p class="language-label">Русский (RU)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>Что Вы Видите</h3>
+        <p>
+          Эта страница представляет <strong>статический визуальный справочник</strong> структуры экосистемы TRIZEL. 
+          Она показывает учетные записи, организации, репозитории и трехуровневый конвейер авторитета. 
+          Все диаграммы являются справочной документацией—никакой интеграции, никакого выполнения, никаких живых данных.
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>Диаграмма 1: Карта Экосистемы TRIZEL</h3>
+        <p class="diagram-description">
+          Полный обзор учетных записей, организаций и репозиториев TRIZEL. 
+          Показывает справочные отношения (не интеграции) между компонентами и уровнем презентации.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="Карта экосистемы TRIZEL, показывающая учетные записи (abdelkader-omran, trizel-admin), организации (trizel-ai, trizel-ai-site) и их репозитории с потоком ссылок на уровень презентации" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Легенда</h4>
+          <ul>
+            <li><strong>Учетная запись: abdelkader-omran</strong> — Личная учетная запись с репозиториями мониторинга и данных</li>
+            <li><strong>Организация: trizel-ai</strong> — Основная организация с управлением, исследованиями и внутренними инструментами</li>
+            <li><strong>Учетная запись: trizel-admin</strong> — Учетная запись административного контроля для шлюза презентации</li>
+            <li><strong>Организация: trizel-ai-site</strong> — Организация презентации, размещающая этот статический веб-сайт</li>
+            <li><strong>trizel-lab</strong> — Отмечен как частная/внутренняя исследовательская документация</li>
+            <li><strong>Стрелки</strong> — Поток ссылок только для презентации (никакой интеграции или выполнения)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>Диаграмма 2: Карта Авторитета и Конвейера</h3>
+        <p class="diagram-description">
+          Трехуровневая архитектура, показывающая поток авторитета от управления (Уровень-0) через внутреннее выполнение (Уровень-1) 
+          к статической презентации (Уровень-2). Включает концепции шлюзов и границ утверждения.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="Карта конвейера авторитета TRIZEL, показывающая Уровень-0 (Управление/Авторитет через trizel-core), Уровень-1 (Внутреннее Выполнение/Анализ с trizel-lab и инструментами) и Уровень-2 (Презентация/Отображение через trizel-site) с утверждениями шлюзов между уровнями" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Ключевые Принципы</h4>
+          <ul>
+            <li><strong>Уровень-0: Управление / Авторитет</strong> — Окончательная власть принятия решений (trizel-core)</li>
+            <li><strong>Уровень-1: Внутреннее Выполнение / Анализ</strong> — Частные исследования и валидация (trizel-lab + инструменты)</li>
+            <li><strong>Уровень-2: Презентация / Отображение</strong> — Статический публичный веб-сайт (этот сайт)</li>
+            <li><strong>Шлюзование</strong> — "Только утвержденные артефакты" между Уровнем-0 и Уровнем-1</li>
+            <li><strong>Граница</strong> — "Никакого выполнения / никакого анализа / никаких конвейеров" применяется на Уровне-2</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>Только Внешние Ссылки — Никакой Интеграции или Выполнения</h3>
+        <p>
+          Все репозитории, показанные на этих диаграммах, являются внешними ссылками. 
+          Этот веб-сайт (Уровень-2) <strong>не имеет интеграции</strong> с какой-либо системой, 
+          <strong>не выполняет</strong> никаких операций, <strong>не проводит анализ</strong>, 
+          и <strong>не отображает живые данные</strong>. 
+          Весь контент является только статическим HTML/CSS/SVG.
+        </p>
+        <p class="notice-small">
+          Авторитет исходит исключительно из <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core (Управление Уровня-0)</a>.
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">Последнее обновление: 2026-01-19 — Реализация Карты Системы Фазы-C (PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+
+    <!-- Separator -->
+    <hr class="language-separator">
+
+    <!-- German Section -->
+    <section class="language-section" id="de" lang="de">
+      <div class="section-header">
+        <h2>TRIZEL Systemkarte (Statisch)</h2>
+        <p class="language-label">Deutsch (DE)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>Was Sie Sehen</h3>
+        <p>
+          Diese Seite bietet eine <strong>statische visuelle Referenz</strong> der TRIZEL-Ökosystemstruktur. 
+          Sie zeigt Konten, Organisationen, Repositories und die dreistufige Autoritätspipeline. 
+          Alle Diagramme sind nur Referenzdokumentation—keine Integration, keine Ausführung, keine Live-Daten.
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>Diagramm 1: TRIZEL Ökosystemkarte</h3>
+        <p class="diagram-description">
+          Vollständige Übersicht über TRIZEL-Konten, Organisationen und Repositories. 
+          Zeigt die Referenzbeziehungen (keine Integrationen) zwischen Komponenten und der Präsentationsschicht.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="TRIZEL Ökosystemkarte zeigt Konten (abdelkader-omran, trizel-admin), Organisationen (trizel-ai, trizel-ai-site) und ihre Repositories mit Referenzfluss zur Präsentationsschicht" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Legende</h4>
+          <ul>
+            <li><strong>Konto: abdelkader-omran</strong> — Persönliches Konto mit Überwachungs- und Daten-Repositories</li>
+            <li><strong>Organisation: trizel-ai</strong> — Kernorganisation mit Governance, Forschung und internen Tools</li>
+            <li><strong>Konto: trizel-admin</strong> — Administratives Kontrollkonto für Präsentations-Gateway</li>
+            <li><strong>Organisation: trizel-ai-site</strong> — Präsentationsorganisation, die diese statische Website hostet</li>
+            <li><strong>trizel-lab</strong> — Markiert als private/interne Forschungsdokumentation</li>
+            <li><strong>Pfeile</strong> — Referenzfluss nur für Präsentation (keine Integration oder Ausführung)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>Diagramm 2: Autoritäts- und Pipeline-Karte</h3>
+        <p class="diagram-description">
+          Dreistufige Architektur, die den Autoritätsfluss von der Governance (Schicht-0) über die interne Ausführung (Schicht-1) 
+          zur statischen Präsentation (Schicht-2) zeigt. Enthält Gating-Konzepte und Genehmigungsgrenzen.
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="TRIZEL Autoritätspipeline-Karte zeigt Schicht-0 (Governance/Autorität über trizel-core), Schicht-1 (Interne Ausführung/Analyse mit trizel-lab und Tools) und Schicht-2 (Präsentation/Anzeige über trizel-site) mit Gating-Genehmigungen zwischen den Schichten" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>Schlüsselprinzipien</h4>
+          <ul>
+            <li><strong>Schicht-0: Governance / Autorität</strong> — Endgültige Entscheidungsbefugnis (trizel-core)</li>
+            <li><strong>Schicht-1: Interne Ausführung / Analyse</strong> — Private Forschung und Validierung (trizel-lab + Tools)</li>
+            <li><strong>Schicht-2: Präsentation / Anzeige</strong> — Statische öffentliche Website (diese Seite)</li>
+            <li><strong>Gating</strong> — "Nur genehmigte Artefakte" zwischen Schicht-0 und Schicht-1</li>
+            <li><strong>Grenze</strong> — "Keine Ausführung / keine Analyse / keine Pipelines" auf Schicht-2 erzwungen</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>Nur Externe Referenzen — Keine Integration oder Ausführung</h3>
+        <p>
+          Alle in diesen Diagrammen gezeigten Repositories sind externe Referenzen. 
+          Diese Website (Schicht-2) hat <strong>keine Integration</strong> mit irgendeinem System, 
+          führt <strong>keine Ausführung</strong> durch, führt <strong>keine Analyse</strong> durch, 
+          und zeigt <strong>keine Live-Daten</strong> an. 
+          Alle Inhalte sind nur statisches HTML/CSS/SVG.
+        </p>
+        <p class="notice-small">
+          Die Autorität stammt ausschließlich von <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core (Schicht-0 Governance)</a>.
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">Letzte Aktualisierung: 2026-01-19 — Phase-C Systemkarte-Implementierung (PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+
+    <!-- Separator -->
+    <hr class="language-separator">
+
+    <!-- Chinese Section -->
+    <section class="language-section" id="zh" lang="zh">
+      <div class="section-header">
+        <h2>TRIZEL 系统地图（静态）</h2>
+        <p class="language-label">中文 (ZH)</p>
+      </div>
+
+      <div class="notice-box" role="alert">
+        <h3>您看到的内容</h3>
+        <p>
+          此页面提供TRIZEL生态系统结构的<strong>静态视觉参考</strong>。 
+          它展示了账户、组织、存储库和三层权限管道。 
+          所有图表仅供参考文档使用—无集成、无执行、无实时数据。
+        </p>
+      </div>
+
+      <article class="diagram-section">
+        <h3>图表1：TRIZEL 生态系统地图</h3>
+        <p class="diagram-description">
+          TRIZEL账户、组织和存储库的完整概述。 
+          显示组件与展示层之间的参考关系（非集成）。
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-system-map-v1.svg" 
+               alt="TRIZEL生态系统地图显示账户（abdelkader-omran、trizel-admin）、组织（trizel-ai、trizel-ai-site）及其存储库与向展示层的参考流" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>图例</h4>
+          <ul>
+            <li><strong>账户：abdelkader-omran</strong> — 包含监控和数据存储库的个人账户</li>
+            <li><strong>组织：trizel-ai</strong> — 核心组织，包含治理、研究和内部工具</li>
+            <li><strong>账户：trizel-admin</strong> — 展示网关的管理控制账户</li>
+            <li><strong>组织：trizel-ai-site</strong> — 托管此静态网站的展示组织</li>
+            <li><strong>trizel-lab</strong> — 标记为私有/内部研究文档</li>
+            <li><strong>箭头</strong> — 仅用于展示的参考流（无集成或执行）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="diagram-section">
+        <h3>图表2：权限与管道地图</h3>
+        <p class="diagram-description">
+          三层架构显示从治理（层级-0）通过内部执行（层级-1） 
+          到静态展示（层级-2）的权限流。包含网关概念和审批边界。
+        </p>
+        <div class="diagram-container">
+          <img src="assets/diagrams/trizel-pipeline-map-v1.svg" 
+               alt="TRIZEL权限管道地图显示层级-0（通过trizel-core的治理/权限）、层级-1（使用trizel-lab和工具的内部执行/分析）和层级-2（通过trizel-site的展示/显示）以及层级之间的网关审批" 
+               class="diagram-image">
+        </div>
+        <div class="diagram-legend">
+          <h4>关键原则</h4>
+          <ul>
+            <li><strong>层级-0：治理 / 权限</strong> — 最终决策权力（trizel-core）</li>
+            <li><strong>层级-1：内部执行 / 分析</strong> — 私有研究和验证（trizel-lab + 工具）</li>
+            <li><strong>层级-2：展示 / 显示</strong> — 静态公共网站（本站点）</li>
+            <li><strong>网关</strong> — 层级-0和层级-1之间"仅批准的工件"</li>
+            <li><strong>边界</strong> — 层级-2强制执行"无执行 / 无分析 / 无管道"</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="notice-box notice-disclaimer" role="alert">
+        <h3>仅外部参考 — 无集成或执行</h3>
+        <p>
+          这些图表中显示的所有存储库都是外部参考。 
+          此网站（层级-2）与任何系统<strong>无集成</strong>， 
+          <strong>不执行</strong>任何操作，<strong>不进行分析</strong>， 
+          并且<strong>不显示实时数据</strong>。 
+          所有内容仅为静态HTML/CSS/SVG。
+        </p>
+        <p class="notice-small">
+          权限完全来自<a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core（层级-0治理）</a>。
+        </p>
+      </div>
+
+      <footer class="page-footer">
+        <p class="update-notice">最后更新：2026-01-19 — 阶段-C系统地图实施（PR #<span class="pr-placeholder">TBD</span>)</p>
+      </footer>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        TRIZEL Scientific Presentation Surface — Layer-UI<br>
+        All content governed by <a href="docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">Scientific Presentation Contract</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
