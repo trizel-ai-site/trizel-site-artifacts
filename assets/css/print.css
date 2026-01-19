@@ -1,0 +1,141 @@
+/* TRIZEL — Print Stylesheet
+ * Optimized for printing and PDF generation
+ * Ensures professional document output
+ */
+
+@media print {
+  /* Reset colors for print */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    background: #fff;
+  }
+
+  /* Headers and footers */
+  .site-header {
+    border-bottom: 2pt solid #000;
+    padding-bottom: 1cm;
+    margin-bottom: 1cm;
+  }
+
+  .site-footer {
+    border-top: 1pt solid #000;
+    padding-top: 0.5cm;
+    margin-top: 2cm;
+    font-size: 10pt;
+  }
+
+  /* Navigation - hide for print */
+  .header-nav {
+    display: none;
+  }
+
+  /* Notice box */
+  .notice-box {
+    border: 2pt solid #666;
+    padding: 0.5cm;
+    margin-bottom: 1cm;
+    page-break-inside: avoid;
+  }
+
+  .notice-box h2 {
+    font-size: 14pt;
+    margin-bottom: 0.3cm;
+  }
+
+  /* Section headers */
+  .section-header {
+    margin: 1cm 0 0.75cm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 18pt;
+    margin-bottom: 0.3cm;
+  }
+
+  /* Module cards */
+  .module-grid {
+    display: block;
+  }
+
+  .module-card {
+    border: 1pt solid #000;
+    padding: 0.5cm;
+    margin-bottom: 0.5cm;
+    page-break-inside: avoid;
+  }
+
+  .module-card:last-child {
+    page-break-after: auto;
+  }
+
+  .module-title h3 {
+    font-size: 14pt;
+    margin-bottom: 0.2cm;
+  }
+
+  .module-type {
+    font-size: 9pt;
+  }
+
+  .module-description {
+    font-size: 11pt;
+    margin-bottom: 0.3cm;
+  }
+
+  /* Links - show URL after text */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Don't show URL for internal anchors */
+  a[href^="#"]::after {
+    content: "";
+  }
+
+  /* Icons - simplify for print */
+  .module-icon {
+    width: 1.5cm;
+    height: 1.5cm;
+    opacity: 1;
+  }
+
+  /* Hide decorative elements */
+  .module-link .label::before {
+    display: none;
+  }
+
+  /* Ensure proper page breaks */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  article, section {
+    page-break-inside: avoid;
+  }
+
+  /* Typography adjustments for print */
+  .brand h1 {
+    font-size: 24pt;
+  }
+
+  .brand .subtitle {
+    font-size: 12pt;
+  }
+}

@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRIZEL — Scientific Presentation Surface</title>
   <meta name="description" content="TRIZEL: Institutional documentation and presentation of AI governance research under strict layer separation principles.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/scientific-ui.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
       <div class="header-content">
         <div class="brand">
           <h1>TRIZEL</h1>
           <p class="subtitle">Scientific Presentation Surface — Layer-UI</p>
         </div>
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Main navigation">
           <a href="index_layer4_1_home.html">Layer-4.1 Home (Preserved)</a>
           <a href="index_layer2_selector.html">Language Selector (Layer-2)</a>
           <a href="docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">Governance Contract</a>
@@ -24,9 +26,9 @@
     </div>
   </header>
 
-  <main class="container">
-    <div class="notice-box">
-      <h2>Layer-UI Notice — Reference-Only Display</h2>
+  <main class="container" role="main">
+    <div class="notice-box" role="alert" aria-labelledby="notice-heading">
+      <h2 id="notice-heading">Layer-UI Notice — Reference-Only Display</h2>
       <p>
         This page provides <strong>static reference links</strong> to TRIZEL system components. 
         No integration, no execution, no live data. All authority derives from 
@@ -34,8 +36,8 @@
       </p>
     </div>
 
-    <section class="section-header">
-      <h2>TRIZEL System — Module Catalog</h2>
+    <section class="section-header" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">TRIZEL System — Module Catalog</h2>
       <p>
         An institutional catalog of validated components with external reference links. 
         Each module represents a scientific function within the TRIZEL architecture.
@@ -245,7 +247,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>
         TRIZEL Scientific Presentation Surface — Layer-UI<br>
