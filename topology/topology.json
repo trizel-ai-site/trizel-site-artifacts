@@ -1,0 +1,185 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-19T10:56:00Z",
+  "description": "Static system topology for TRIZEL repository relationships",
+  "metadata": {
+    "phase": "Layer-3 Phase Declaration",
+    "status": "static",
+    "authority": "trizel-core",
+    "type": "hand-authored"
+  },
+  "organizations": [
+    {
+      "id": "trizel-ai-site",
+      "name": "trizel-ai-site",
+      "type": "github-organization",
+      "url": "https://github.com/trizel-ai-site",
+      "description": "Primary TRIZEL organization"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "trizel-core",
+      "name": "trizel-core",
+      "type": "repository",
+      "layer": "0",
+      "owner": "trizel-ai-site",
+      "url": "https://github.com/trizel-ai-site/trizel-core",
+      "description": "Layer-0: Governance framework and policy authority",
+      "role": "governance",
+      "authority": "final-decision-making"
+    },
+    {
+      "id": "trizel-lab",
+      "name": "trizel-lab",
+      "type": "repository",
+      "layer": "1",
+      "owner": "trizel-ai-site",
+      "url": "https://github.com/trizel-ai-site/trizel-lab",
+      "description": "Layer-1: Research documentation",
+      "role": "research",
+      "authority": "scientific-technical"
+    },
+    {
+      "id": "trizel-site",
+      "name": "trizel-site",
+      "type": "repository",
+      "layer": "2",
+      "owner": "trizel-ai-site",
+      "url": "https://github.com/trizel-ai-site/trizel-site",
+      "description": "Layer-2/2.5/3: Presentation, epistemic mapping, and topology",
+      "role": "presentation",
+      "authority": "none"
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer-0",
+      "name": "Layer-0",
+      "description": "Governance / Authority",
+      "repositories": ["trizel-core"],
+      "authority": "final-decision-making",
+      "function": "Policy establishment"
+    },
+    {
+      "id": "layer-1",
+      "name": "Layer-1",
+      "description": "Internal Research & Analysis",
+      "repositories": ["trizel-lab"],
+      "authority": "scientific-technical",
+      "function": "Research execution"
+    },
+    {
+      "id": "layer-2",
+      "name": "Layer-2",
+      "description": "Presentation / Display",
+      "repositories": ["trizel-site"],
+      "authority": "none",
+      "function": "Public presentation"
+    },
+    {
+      "id": "layer-2-5",
+      "name": "Layer-2.5",
+      "description": "System Interface / Epistemic Atlas",
+      "location": "trizel-site/atlas/",
+      "authority": "none",
+      "function": "Epistemic mapping"
+    },
+    {
+      "id": "layer-3",
+      "name": "Layer-3",
+      "description": "System Linking & Repository Topology",
+      "location": "trizel-site/topology/",
+      "authority": "none",
+      "function": "Topology visibility"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "trizel-ai-site",
+      "target": "trizel-core",
+      "type": "owns",
+      "description": "Organizational ownership"
+    },
+    {
+      "source": "trizel-ai-site",
+      "target": "trizel-lab",
+      "type": "owns",
+      "description": "Organizational ownership"
+    },
+    {
+      "source": "trizel-ai-site",
+      "target": "trizel-site",
+      "type": "owns",
+      "description": "Organizational ownership"
+    },
+    {
+      "source": "trizel-core",
+      "target": "trizel-lab",
+      "type": "governs",
+      "description": "Policy establishment and governance"
+    },
+    {
+      "source": "trizel-core",
+      "target": "trizel-site",
+      "type": "governs",
+      "description": "Policy establishment and governance"
+    },
+    {
+      "source": "trizel-lab",
+      "target": "trizel-site",
+      "type": "informs",
+      "description": "Research content references"
+    },
+    {
+      "source": "trizel-site",
+      "target": "trizel-core",
+      "type": "references",
+      "description": "Governance document references"
+    },
+    {
+      "source": "trizel-site",
+      "target": "trizel-lab",
+      "type": "references",
+      "description": "Research repository references"
+    },
+    {
+      "source": "layer-0",
+      "target": "layer-1",
+      "type": "governs",
+      "description": "Authority flow"
+    },
+    {
+      "source": "layer-1",
+      "target": "layer-2",
+      "type": "informs",
+      "description": "Informational flow"
+    },
+    {
+      "source": "layer-2",
+      "target": "layer-2-5",
+      "type": "extends",
+      "description": "Extension relationship"
+    },
+    {
+      "source": "layer-2-5",
+      "target": "layer-3",
+      "type": "extends",
+      "description": "Extension relationship"
+    }
+  ],
+  "constraints": {
+    "data_source": "hand-authored",
+    "update_frequency": "static",
+    "dynamic_content": false,
+    "api_integration": false,
+    "live_data": false,
+    "repository_introspection": false,
+    "metadata_fetching": false,
+    "analytics": false,
+    "search": false,
+    "filters": false,
+    "execution": false,
+    "inference": false
+  }
+}
