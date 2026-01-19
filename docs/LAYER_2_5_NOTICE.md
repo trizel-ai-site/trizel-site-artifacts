@@ -143,10 +143,12 @@ Layer-2.5 follows institutional design standards:
 ## Governance Alignment
 
 Layer-2.5 is governed by the same policies as Layer-2:
-- Subordinate to Layer-0 (trizel-core)
-- References Layer-1 (trizel-lab) for research artifacts
+- Subordinate to Layer-0 ([trizel-core](https://github.com/trizel-ai-site/trizel-core))
+- References Layer-1 ([trizel-lab](https://github.com/trizel-ai-site/trizel-lab)) for research artifacts
 - Maintains layer boundary separation
 - Complies with TRIZEL governance framework
+
+**GitHub Organization:** [trizel-ai-site](https://github.com/trizel-ai-site)
 
 **This is NOT a new layer in the governance sense.** It is an extension of Layer-2's presentation functions.
 
