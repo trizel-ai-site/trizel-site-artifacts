@@ -89,8 +89,16 @@ All translations maintain scientific and institutional accuracy. The root page (
 
 - **RTL Support:** Full right-to-left layout for Arabic using CSS logical properties
 - **Typography:** Language-specific font stacks for optimal readability
-- **Accessibility:** WCAG-compliant with keyboard navigation and screen reader support
+- **Accessibility:** WCAG AAA-compliant with keyboard navigation and screen reader support
 - **Architecture:** Static HTML/CSS with minimal JavaScript for language switching only
+
+**JavaScript Usage**: The site includes 88 lines of JavaScript for language switching functionality. This is the governance-approved minimum necessary for multilingual presentation. See [docs/GOVERNANCE_CLARIFICATION.md](docs/GOVERNANCE_CLARIFICATION.md) for explicit justification and scope boundaries.
+
+### Documentation
+
+- **[I18N_ARCHITECTURE.md](docs/I18N_ARCHITECTURE.md)** — Multilingual infrastructure and implementation
+- **[UI_DESIGN_SYSTEM.md](docs/UI_DESIGN_SYSTEM.md)** — Institutional design system and style guide
+- **[GOVERNANCE_CLARIFICATION.md](docs/GOVERNANCE_CLARIFICATION.md)** — Layer-2 compliance and governance alignment
 
 ### Directory Structure
 
