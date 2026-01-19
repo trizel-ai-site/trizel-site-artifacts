@@ -116,6 +116,7 @@ All translations maintain scientific and institutional accuracy. The root page (
 
 ## References
 
+- **GitHub Organization:** [trizel-ai-site](https://github.com/trizel-ai-site) — TRIZEL repository home
 - **Governance Authority:** [trizel-core](https://github.com/trizel-ai-site/trizel-core)
 - **Research Documentation:** [trizel-lab](https://github.com/trizel-ai-site/trizel-lab)
 

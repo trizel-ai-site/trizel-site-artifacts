@@ -237,6 +237,7 @@ li {
   font-size: var(--font-size-xs);
   color: var(--color-text-subtle);
   font-style: italic;
+  font-weight: 400;
 }
 
 .header-meta {
