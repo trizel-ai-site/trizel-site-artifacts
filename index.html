@@ -3,101 +3,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TRIZEL — Institutional</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>TRIZEL — Select Language / Sélectionner la langue / اختر اللغة / 选择语言 / Выберите язык</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    .lang-selector {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    
+    .memory-marker {
+      font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #15803d;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 48px;
+    }
+    
+    .instruction {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+    
+    .lang-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    
+    .lang-link {
+      display: block;
+      padding: 16px 24px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #0f172a;
+      font-size: 1.125rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    
+    .lang-link:hover {
+      background: #f0f9ff;
+      border-color: #0369a1;
+      transform: translateY(-2px);
+    }
+    
+    .lang-link:focus {
+      outline: 2px solid #0369a1;
+      outline-offset: 2px;
+    }
+    
+    .lang-native {
+      font-size: 1rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    
+    .footer-note {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 32px;
+    }
+    
+    .layer-badge {
+      display: inline-block;
+      background: #15803d;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <h1>TRIZEL</h1>
-        <p class="memory-marker">AUTO DZ ACT</p>
-        <p class="memory-label">Foundational Epistemic Memory Marker</p>
-      </div>
-      <div class="header-meta">
-        <span class="layer-badge">Layer-2</span>
-        <p class="tagline">Presentation Only — No Analysis — No Execution</p>
-      </div>
+  <div class="lang-selector">
+    <h1>TRIZEL</h1>
+    <p class="memory-marker">AUTO DZ ACT</p>
+    <span class="layer-badge">Layer-2</span>
+    
+    <p class="instruction">Select your language / Sélectionnez votre langue / اختر لغتك / 选择您的语言 / Выберите ваш язык</p>
+    
+    <div class="lang-options">
+      <a href="/en/" class="lang-link">
+        <div>English</div>
+        <div class="lang-native">Institutional</div>
+      </a>
+      <a href="/fr/" class="lang-link">
+        <div>Français</div>
+        <div class="lang-native">Institutionnel</div>
+      </a>
+      <a href="/ar/" class="lang-link" dir="rtl">
+        <div>العربية</div>
+        <div class="lang-native">مؤسسي</div>
+      </a>
+      <a href="/zh/" class="lang-link">
+        <div>中文</div>
+        <div class="lang-native">机构</div>
+      </a>
+      <a href="/ru/" class="lang-link">
+        <div>Русский</div>
+        <div class="lang-native">Институциональный</div>
+      </a>
     </div>
-  </header>
-
-  <main class="container">
-    <section id="layer-notice" class="card disclaimer">
-      <h2>Layer-2 Notice</h2>
-      <p class="explicit">
-        This repository is <strong>Layer-2 (Presentation/Display only)</strong>. It contains no scientific content, performs no analysis, and has no execution capabilities. All authority derives from <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Layer-0)</a>, the canonical governance repository.
-      </p>
-    </section>
-
-    <section id="overview" class="card">
-      <h2>Institutional Overview</h2>
-      <p>
-        TRIZEL is governed as described in the repository governance artifacts. This page is a static, presentation-only summary intended for human readers and institutional stakeholders.
-      </p>
-    </section>
-
-    <section id="governance-status" class="card">
-      <h2>Governance Status</h2>
-      <dl>
-        <dt>Layer-2 (Governance)</dt>
-        <dd>COMPLETE — frozen. Registry and governance artifacts are maintained under <code>docs/</code> and protected by CODEOWNERS and branch protection.</dd>
-        <dt>Layer-3 (Presentation)</dt>
-        <dd>Static content only. No automation, no scripts, no DNS or domain configuration performed here.</dd>
-      </dl>
-    </section>
-
-    <section id="scope-constraints" class="card">
-      <h2>Scope & Constraints</h2>
-      <ul>
-        <li>Publishing identity: <strong>trizel-admin</strong> (Layer-2 publishing account).</li>
-        <li>Allowed changes for this PR: HTML and CSS only, presentation content.</li>
-        <li>Forbidden changes: docs/, .github/, branch protection, workflows, DNS, custom domains, registry files.</li>
-        <li>No JavaScript or dynamic code is included in this PR.</li>
-      </ul>
-    </section>
-
-    <section id="references" class="card">
-      <h2>Governance & References</h2>
-      <div class="governance-primary">
-        <h3>Canonical Governance Authority (Layer-0)</h3>
-        <p>
-          <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" class="governance-link">
-            <strong>trizel-core</strong> — Governance Framework &amp; Policy Authority
-          </a>
-        </p>
-        <p class="note">All policies, standards, and governance decisions originate from Layer-0.</p>
-      </div>
-      <div class="references-secondary">
-        <h3>Layer-2 Documentation</h3>
-        <ul>
-          <li><a href="/docs/ACCOUNT_REGISTRY.md">Account Registry</a></li>
-          <li><a href="/docs/LAYER_BOUNDARIES.md">Layer Boundaries</a></li>
-          <li><a href="/docs/PRESENTATION_SCOPE.md">Presentation Scope</a></li>
-          <li><a href="/.github/CODEOWNERS">CODEOWNERS</a></li>
-        </ul>
-        <h3>Site Structure</h3>
-        <ul>
-          <li><a href="/docs/SITE_MAP.md">Site Map</a></li>
-          <li><a href="/docs/LAYER2_COMPLIANCE_AUDIT.md">Compliance Audit</a></li>
-          <li><a href="/docs/DESIGN_AUDIT.md">Design Audit</a></li>
-        </ul>
-      </div>
-      <p class="live-site">
-        <strong>Live Site:</strong> <a href="https://trizel-ai-site.github.io/trizel-site/">https://trizel-ai-site.github.io/trizel-site/</a>
-      </p>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact & Attribution</h2>
-      <p>For governance, publishing, or security inquiries, contact the governance team per repository CODEOWNERS. This page is maintained as a presentation artifact only.</p>
-      <p>© TRIZEL</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>Static presentation — no dynamic content. Last updated in branch <code>content/layer-3-institutional</code>.</p>
-    </div>
-  </footer>
+    
+    <p class="footer-note">Layer-2 Presentation Repository — Display Only</p>
+  </div>
 </body>
 </html>
