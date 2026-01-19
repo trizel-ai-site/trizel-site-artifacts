@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .bg { fill: #fafbfc; }
+      .box { fill: #ffffff; stroke: #0969da; stroke-width: 2; }
+      .box-org { fill: #ffffff; stroke: #64748b; stroke-width: 2; }
+      .box-private { fill: #fff8e6; stroke: #f0c744; stroke-width: 2; }
+      .box-presentation { fill: #ddf4ff; stroke: #0969da; stroke-width: 2.5; }
+      .text-title { font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; fill: #0f1419; }
+      .text-label { font-family: system-ui, sans-serif; font-size: 12px; fill: #3c4752; }
+      .text-small { font-family: system-ui, sans-serif; font-size: 11px; fill: #64748b; }
+      .text-heading { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 700; fill: #0f1419; }
+      .arrow { stroke: #94a3b8; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+      .group-border { fill: none; stroke: #d1d9e0; stroke-width: 1; stroke-dasharray: 4,4; }
+      .legend-box { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="text-heading">TRIZEL Ecosystem Map — Accounts &amp; Repositories</text>
+  <text x="600" y="50" text-anchor="middle" class="text-small">Reference-only display — No integration or execution</text>
+  
+  <!-- Account: abdelkader-omran -->
+  <rect class="group-border" x="50" y="80" width="320" height="320" rx="8"/>
+  <text x="210" y="100" text-anchor="middle" class="text-title">Account: abdelkader-omran</text>
+  
+  <rect class="box" x="70" y="120" width="280" height="60" rx="4"/>
+  <text x="210" y="145" text-anchor="middle" class="text-label">trizel-monitor</text>
+  <text x="210" y="162" text-anchor="middle" class="text-small">Monitoring tools</text>
+  
+  <rect class="box" x="70" y="200" width="280" height="60" rx="4"/>
+  <text x="210" y="220" text-anchor="middle" class="text-label">AUTO-DZ-ACT-3I-ATLAS-DAILY</text>
+  <text x="210" y="237" text-anchor="middle" class="text-small">Daily data archive</text>
+  
+  <rect class="box" x="70" y="280" width="280" height="60" rx="4"/>
+  <text x="210" y="300" text-anchor="middle" class="text-label">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</text>
+  <text x="210" y="317" text-anchor="middle" class="text-small">Analysis infrastructure</text>
+  
+  <!-- Org: trizel-ai -->
+  <rect class="group-border" x="400" y="80" width="350" height="500" rx="8"/>
+  <text x="575" y="100" text-anchor="middle" class="text-title">Organization: trizel-ai</text>
+  
+  <rect class="box" x="420" y="120" width="310" height="60" rx="4"/>
+  <text x="575" y="145" text-anchor="middle" class="text-label">trizel-core</text>
+  <text x="575" y="162" text-anchor="middle" class="text-small">Governance / Authority (Layer-0)</text>
+  
+  <rect class="box" x="420" y="200" width="310" height="60" rx="4"/>
+  <text x="575" y="220" text-anchor="middle" class="text-label">trizel-epistemic-engine</text>
+  <text x="575" y="237" text-anchor="middle" class="text-small">Core epistemic validation</text>
+  
+  <rect class="box" x="420" y="280" width="310" height="60" rx="4"/>
+  <text x="575" y="300" text-anchor="middle" class="text-label">Auto-dz-act</text>
+  <text x="575" y="317" text-anchor="middle" class="text-small">Automated processing</text>
+  
+  <rect class="box" x="420" y="360" width="310" height="60" rx="4"/>
+  <text x="575" y="380" text-anchor="middle" class="text-label">Auto-dz-monitor</text>
+  <text x="575" y="397" text-anchor="middle" class="text-small">Monitoring system</text>
+  
+  <rect class="box" x="420" y="440" width="310" height="60" rx="4"/>
+  <text x="575" y="460" text-anchor="middle" class="text-label">Auto-dz-api-monitor</text>
+  <text x="575" y="477" text-anchor="middle" class="text-small">API monitoring</text>
+  
+  <rect class="box-private" x="420" y="520" width="310" height="60" rx="4"/>
+  <text x="575" y="545" text-anchor="middle" class="text-label">trizel-lab (Private/Internal)</text>
+  <text x="575" y="562" text-anchor="middle" class="text-small">Internal research documentation</text>
+  
+  <!-- Account: trizel-admin -->
+  <rect class="group-border" x="50" y="430" width="320" height="150" rx="8"/>
+  <text x="210" y="450" text-anchor="middle" class="text-title">Account: trizel-admin</text>
+  <text x="210" y="470" text-anchor="middle" class="text-small">Control / Presentation Account</text>
+  
+  <rect class="box-org" x="70" y="490" width="280" height="60" rx="4"/>
+  <text x="210" y="515" text-anchor="middle" class="text-label">(Administrative control)</text>
+  <text x="210" y="532" text-anchor="middle" class="text-small">Gateway for Layer-2</text>
+  
+  <!-- Org: trizel-ai-site -->
+  <rect class="group-border" x="800" y="80" width="350" height="200" rx="8"/>
+  <text x="975" y="100" text-anchor="middle" class="text-title">Organization: trizel-ai-site</text>
+  
+  <rect class="box-presentation" x="820" y="120" width="310" height="80" rx="4"/>
+  <text x="975" y="150" text-anchor="middle" class="text-label">trizel-site</text>
+  <text x="975" y="167" text-anchor="middle" class="text-small">This website (Layer-2 Presentation)</text>
+  <text x="975" y="184" text-anchor="middle" class="text-small">Static HTML/CSS/SVG only</text>
+  
+  <!-- Reference arrows -->
+  <path class="arrow" d="M 350 150 L 820 160"/>
+  <text x="585" y="145" class="text-small">Referenced for</text>
+  <text x="585" y="160" class="text-small">presentation</text>
+  
+  <path class="arrow" d="M 350 230 L 820 160"/>
+  <path class="arrow" d="M 350 310 L 820 170"/>
+  <path class="arrow" d="M 730 390 L 820 180"/>
+  <path class="arrow" d="M 730 470 L 820 185"/>
+  <path class="arrow" d="M 370 520 L 820 190"/>
+  
+  <!-- Legend -->
+  <rect class="legend-box" x="50" y="620" width="1100" height="150" rx="4"/>
+  <text x="60" y="645" class="text-title">Legend</text>
+  
+  <rect class="box" x="70" y="660" width="100" height="30" rx="2"/>
+  <text x="180" y="680" class="text-small">Standard Repository</text>
+  
+  <rect class="box-private" x="300" y="660" width="100" height="30" rx="2"/>
+  <text x="410" y="680" class="text-small">Private/Internal Repository</text>
+  
+  <rect class="box-presentation" x="600" y="660" width="100" height="30" rx="2"/>
+  <text x="710" y="680" class="text-small">Presentation Layer (Layer-2)</text>
+  
+  <line x1="70" y1="720" x2="150" y2="720" class="arrow"/>
+  <text x="160" y="725" class="text-small">Reference flow (no integration/execution)</text>
+  
+  <text x="70" y="750" class="text-small">All arrows indicate reference-only display links. No live data, no integration, no execution.</text>
+</svg>
