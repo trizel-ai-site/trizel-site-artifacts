@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — Select Language</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    .lang-selector {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    
+    .memory-marker {
+      font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #15803d;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .atlas-subtitle {
+      font-size: 1.125rem;
+      color: #64748b;
+      margin-bottom: 48px;
+    }
+    
+    .layer-badge {
+      display: inline-block;
+      background: #0369a1;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    
+    .instruction {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+    
+    .lang-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    
+    .lang-link {
+      display: block;
+      padding: 16px 24px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #0f172a;
+      font-size: 1.125rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    
+    .lang-link:hover {
+      background: #f0f9ff;
+      border-color: #0369a1;
+      transform: translateY(-2px);
+    }
+    
+    .lang-link:focus {
+      outline: 2px solid #0369a1;
+      outline-offset: 2px;
+    }
+    
+    .lang-native {
+      font-size: 1rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    
+    .footer-note {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-selector">
+    <h1>TRIZEL Atlas</h1>
+    <p class="memory-marker">AUTO DZ ACT</p>
+    <p class="atlas-subtitle">Epistemic System Interface</p>
+    <span class="layer-badge">Layer-2.5</span>
+    
+    <p class="instruction">Select your language / Sélectionnez votre langue / اختر لغتك / 选择您的语言 / Выберите ваш язык</p>
+    
+    <div class="lang-options">
+      <a href="en/" class="lang-link">
+        <div>English</div>
+        <div class="lang-native">System Interface</div>
+      </a>
+      <a href="fr/" class="lang-link">
+        <div>Français</div>
+        <div class="lang-native">Interface Système</div>
+      </a>
+      <a href="ar/" class="lang-link" dir="rtl">
+        <div>العربية</div>
+        <div class="lang-native">واجهة النظام</div>
+      </a>
+      <a href="zh/" class="lang-link">
+        <div>中文</div>
+        <div class="lang-native">系统接口</div>
+      </a>
+      <a href="ru/" class="lang-link">
+        <div>Русский</div>
+        <div class="lang-native">Системный Интерфейс</div>
+      </a>
+    </div>
+    
+    <p class="footer-note">Layer-2.5 System Interface — Display Only — No Analysis</p>
+  </div>
+</body>
+</html>

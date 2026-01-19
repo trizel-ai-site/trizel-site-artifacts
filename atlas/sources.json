@@ -1,0 +1,160 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-19T09:43:00Z",
+  "description": "Repository to artifact to evidence mapping",
+  "repositories": [
+    {
+      "id": "trizel-core",
+      "name": "trizel-core",
+      "layer": "Layer-0",
+      "url": "https://github.com/trizel-ai-site/trizel-core",
+      "description": "Canonical governance framework and policy authority",
+      "artifacts": [
+        {
+          "id": "governance-policies",
+          "type": "document",
+          "name": "Governance Policies",
+          "description": "Standards, policies, and governance decisions",
+          "path": "docs/",
+          "evidence": [
+            {
+              "id": "layer-separation-policy",
+              "type": "document",
+              "description": "Three-layer separation model specification",
+              "reference": "https://github.com/trizel-ai-site/trizel-core"
+            },
+            {
+              "id": "governance-framework",
+              "type": "document",
+              "description": "Institutional governance framework",
+              "reference": "https://github.com/trizel-ai-site/trizel-core"
+            }
+          ]
+        },
+        {
+          "id": "auto-dz-act-marker",
+          "type": "document",
+          "name": "AUTO DZ ACT",
+          "description": "Foundational epistemic memory marker",
+          "path": "README.md",
+          "evidence": [
+            {
+              "id": "memory-marker-definition",
+              "type": "document",
+              "description": "Definition and institutional significance",
+              "reference": "https://github.com/trizel-ai-site/trizel-core"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trizel-lab",
+      "name": "trizel-lab",
+      "layer": "Layer-1",
+      "url": "https://github.com/trizel-ai-site/trizel-lab",
+      "description": "Internal research documentation repository",
+      "artifacts": [
+        {
+          "id": "research-docs",
+          "type": "document",
+          "name": "Research Documentation",
+          "description": "Internal research artifacts and analysis materials",
+          "path": "docs/",
+          "evidence": [
+            {
+              "id": "research-methodology",
+              "type": "document",
+              "description": "Research methodologies and procedures",
+              "reference": "https://github.com/trizel-ai-site/trizel-lab"
+            },
+            {
+              "id": "analysis-artifacts",
+              "type": "document",
+              "description": "Analysis artifacts and validation materials",
+              "reference": "https://github.com/trizel-ai-site/trizel-lab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trizel-site",
+      "name": "trizel-site",
+      "layer": "Layer-2",
+      "url": "https://github.com/trizel-ai-site/trizel-site",
+      "description": "Public presentation repository",
+      "artifacts": [
+        {
+          "id": "presentation-pages",
+          "type": "document",
+          "name": "Presentation Pages",
+          "description": "Institutional presentation interface",
+          "path": "en/index.html",
+          "evidence": [
+            {
+              "id": "layer2-notice",
+              "type": "file",
+              "description": "Layer-2 presentation-only notice",
+              "reference": "docs/LAYER_BOUNDARIES.md"
+            },
+            {
+              "id": "governance-references",
+              "type": "file",
+              "description": "References to Layer-0 governance authority",
+              "reference": "docs/PRESENTATION_SCOPE.md"
+            }
+          ]
+        },
+        {
+          "id": "multilingual-interface",
+          "type": "document",
+          "name": "Multilingual Interface",
+          "description": "Five-language presentation system",
+          "path": "i18n/translations.json",
+          "evidence": [
+            {
+              "id": "i18n-architecture",
+              "type": "file",
+              "description": "Internationalization architecture documentation",
+              "reference": "docs/I18N_ARCHITECTURE.md"
+            },
+            {
+              "id": "translation-parity",
+              "type": "file",
+              "description": "Semantic equivalence across all languages",
+              "reference": "i18n/translations.json"
+            }
+          ]
+        },
+        {
+          "id": "epistemic-atlas",
+          "type": "document",
+          "name": "Epistemic Atlas (Layer-2.5)",
+          "description": "Static system interface and epistemic mapping",
+          "path": "atlas/",
+          "evidence": [
+            {
+              "id": "layer2-5-notice",
+              "type": "file",
+              "description": "Layer-2.5 scope and constraints documentation",
+              "reference": "docs/LAYER_2_5_NOTICE.md"
+            },
+            {
+              "id": "atlas-schema",
+              "type": "file",
+              "description": "Read-only schema documentation",
+              "reference": "docs/ATLAS_SCHEMA.md"
+            },
+            {
+              "id": "static-mapping",
+              "type": "file",
+              "description": "Static epistemic relationship mapping",
+              "reference": "atlas/map.json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

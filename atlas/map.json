@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-19T09:43:00Z",
+  "description": "Static epistemic relationships in TRIZEL system",
+  "nodes": [
+    {
+      "id": "trizel-core",
+      "type": "repository",
+      "name": "trizel-core",
+      "description": "Layer-0 governance framework and policy authority",
+      "url": "https://github.com/trizel-ai-site/trizel-core"
+    },
+    {
+      "id": "trizel-lab",
+      "type": "repository",
+      "name": "trizel-lab",
+      "description": "Layer-1 research documentation",
+      "url": "https://github.com/trizel-ai-site/trizel-lab"
+    },
+    {
+      "id": "trizel-site",
+      "type": "repository",
+      "name": "trizel-site",
+      "description": "Layer-2 presentation repository",
+      "url": "https://github.com/trizel-ai-site/trizel-site"
+    },
+    {
+      "id": "governance-framework",
+      "type": "artifact",
+      "name": "Governance Framework",
+      "description": "Policies, standards, and governance decisions"
+    },
+    {
+      "id": "research-documentation",
+      "type": "artifact",
+      "name": "Research Documentation",
+      "description": "Internal research artifacts and analysis"
+    },
+    {
+      "id": "presentation-interface",
+      "type": "artifact",
+      "name": "Presentation Interface",
+      "description": "Public-facing institutional presentation"
+    },
+    {
+      "id": "layer-boundaries",
+      "type": "evidence",
+      "name": "Layer Boundaries",
+      "description": "Three-layer separation model documentation"
+    },
+    {
+      "id": "auto-dz-act",
+      "type": "evidence",
+      "name": "AUTO DZ ACT",
+      "description": "Foundational epistemic memory marker"
+    }
+  ],
+  "edges": [
+    {
+      "source": "trizel-core",
+      "target": "governance-framework",
+      "relationship": "produces"
+    },
+    {
+      "source": "trizel-lab",
+      "target": "research-documentation",
+      "relationship": "produces"
+    },
+    {
+      "source": "trizel-site",
+      "target": "presentation-interface",
+      "relationship": "produces"
+    },
+    {
+      "source": "governance-framework",
+      "target": "trizel-lab",
+      "relationship": "governs"
+    },
+    {
+      "source": "governance-framework",
+      "target": "trizel-site",
+      "relationship": "governs"
+    },
+    {
+      "source": "research-documentation",
+      "target": "presentation-interface",
+      "relationship": "informs"
+    },
+    {
+      "source": "layer-boundaries",
+      "target": "governance-framework",
+      "relationship": "documents"
+    },
+    {
+      "source": "auto-dz-act",
+      "target": "trizel-core",
+      "relationship": "validates"
+    },
+    {
+      "source": "presentation-interface",
+      "target": "trizel-core",
+      "relationship": "references"
+    },
+    {
+      "source": "presentation-interface",
+      "target": "trizel-lab",
+      "relationship": "references"
+    }
+  ]
+}

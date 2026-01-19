@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — Epistemic System Interface</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">Epistemic System Interface</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">Layer-2.5</span>
+        <p class="tagline">Display Only — No Analysis — No Execution — No Inference</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">Language:</span>
+          <select id="lang-switcher" aria-label="Select Language" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>Layer-2.5 Notice</h2>
+      <p class="explicit">
+        This is the <strong>Layer-2.5 Epistemic Atlas</strong>, a read-only system interface that displays static relationships between TRIZEL components. This interface performs <strong>no analysis, no inference, and no execution</strong>. All data is pre-validated and sourced from authoritative Layer-0 and Layer-1 repositories. Full documentation: <a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>System Overview</h2>
+      <p>
+        The TRIZEL Atlas provides a structural mapping of the epistemic relationships within the TRIZEL system. This mapping displays how repositories, artifacts, and evidence connect within the three-layer governance framework.
+      </p>
+      <p>
+        <strong>Display-only:</strong> This interface presents static, pre-validated data without performing analysis or interpretation.
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>Repositories</h2>
+      <p>The TRIZEL system operates across three layers, each with designated repositories:</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Layer-0: Governance</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Canonical governance framework and policy authority</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Authority: Final decision-making power</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Layer-1: Research & Analysis</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Internal research documentation repository</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Authority: Scientific and technical operations</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Layer-2: Presentation</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Public presentation repository (this site)</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Authority: None — presentation-only</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>Epistemic Relationships</h2>
+      <p>The following relationships describe the structural connections between system components. These are <strong>descriptive only</strong> and do not imply execution or causation.</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Governance Flow</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ governs →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Layer-0 governance establishes policies for Layer-1 research</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ governs →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Layer-0 governance establishes policies for Layer-2 presentation</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Information Flow</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ informs →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Layer-1 research informs Layer-2 presentation content</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ references →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Layer-2 presentation references Layer-0 governance authority</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ references →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Layer-2 presentation references Layer-1 research documentation</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>System Artifacts</h2>
+      <p>Key artifacts produced by each repository, with evidence supporting their existence and validity.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core (Layer-0)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Governance Policies</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Standards, policies, and governance decisions</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> Layer separation model specification, institutional governance framework</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Foundational epistemic memory marker</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> Definition and institutional significance documentation</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab (Layer-1)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Research Documentation</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Internal research artifacts and analysis materials</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> Research methodologies, analysis artifacts, validation materials</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site (Layer-2)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Presentation Pages</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Institutional presentation interface</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> Layer-2 notices, governance references</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Multilingual Interface</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Five-language presentation system (EN, FR, AR, ZH, RU)</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> I18n architecture documentation, translation parity</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Epistemic Atlas (Layer-2.5)</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Static system interface and epistemic mapping (this page)</p>
+          <p style="font-size: 0.875rem;"><strong>Evidence:</strong> Layer-2.5 notices, schema documentation, static mapping</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>Data Sources</h2>
+      <p>All data displayed in this interface is sourced from static, pre-validated files:</p>
+      <ul>
+        <li><code>map.json</code> — Static epistemic relationship mapping (<a href="../map.json">view</a>)</li>
+        <li><code>sources.json</code> — Repository → artifact → evidence references (<a href="../sources.json">view</a>)</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>Schema documentation:</strong> <a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>Navigation</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Return to Presentation Layer</h3>
+        <p><a href="../../en/">← Back to TRIZEL Presentation (Layer-2)</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Documentation</h3>
+        <ul>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">Layer-2.5 Notice</a> — Scope and constraints</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">Atlas Schema</a> — Data structure documentation</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">Layer Boundaries</a> — Three-layer separation model</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Institutional Notice</h2>
+      <p>
+        This Atlas is maintained as a <strong>display-only artifact</strong> within Layer-2. It contains no scientific content, performs no analysis, and has no execution capabilities. All authority derives from <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Layer-0)</a>.
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — Layer-2.5 System Interface</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Static system interface — no dynamic content — no analysis — no inference</p>
+    </div>
+  </footer>
+</body>
+</html>

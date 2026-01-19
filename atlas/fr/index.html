@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — Interface Système Épistémique</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">Interface Système Épistémique</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">Couche-2.5</span>
+        <p class="tagline">Affichage Uniquement — Aucune Analyse — Aucune Exécution — Aucune Inférence</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">Langue :</span>
+          <select id="lang-switcher" aria-label="Sélectionner la langue" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>Avis Couche-2.5</h2>
+      <p class="explicit">
+        Ceci est l'<strong>Atlas Épistémique Couche-2.5</strong>, une interface système en lecture seule qui affiche les relations statiques entre les composants TRIZEL. Cette interface n'effectue <strong>aucune analyse, aucune inférence et aucune exécution</strong>. Toutes les données sont pré-validées et proviennent de dépôts autoritaires des Couches-0 et Couche-1. Documentation complète : <a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>Vue d'Ensemble du Système</h2>
+      <p>
+        L'Atlas TRIZEL fournit une cartographie structurelle des relations épistémiques au sein du système TRIZEL. Cette cartographie affiche comment les dépôts, les artefacts et les preuves se connectent dans le cadre de gouvernance à trois couches.
+      </p>
+      <p>
+        <strong>Affichage uniquement :</strong> Cette interface présente des données statiques pré-validées sans effectuer d'analyse ou d'interprétation.
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>Dépôts</h2>
+      <p>Le système TRIZEL fonctionne sur trois couches, chacune avec des dépôts désignés :</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Couche-0 : Gouvernance</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Cadre de gouvernance canonique et autorité politique</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorité : Pouvoir décisionnel final</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Couche-1 : Recherche et Analyse</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Dépôt de documentation de recherche interne</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorité : Opérations scientifiques et techniques</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Couche-2 : Présentation</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Dépôt de présentation publique (ce site)</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorité : Aucune — présentation uniquement</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>Relations Épistémiques</h2>
+      <p>Les relations suivantes décrivent les connexions structurelles entre les composants du système. Elles sont <strong>descriptives uniquement</strong> et n'impliquent ni exécution ni causalité.</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Flux de Gouvernance</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ gouverne →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">La gouvernance de la Couche-0 établit des politiques pour la recherche de la Couche-1</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ gouverne →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">La gouvernance de la Couche-0 établit des politiques pour la présentation de la Couche-2</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Flux d'Information</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ informe →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">La recherche de la Couche-1 informe le contenu de présentation de la Couche-2</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ référence →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">La présentation de la Couche-2 référence l'autorité de gouvernance de la Couche-0</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ référence →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">La présentation de la Couche-2 référence la documentation de recherche de la Couche-1</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>Artefacts du Système</h2>
+      <p>Artefacts clés produits par chaque dépôt, avec des preuves soutenant leur existence et leur validité.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core (Couche-0)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Politiques de Gouvernance</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Normes, politiques et décisions de gouvernance</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Spécification du modèle de séparation des couches, cadre de gouvernance institutionnel</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Marqueur de mémoire épistémique fondamental</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Documentation de la définition et de l'importance institutionnelle</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab (Couche-1)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Documentation de Recherche</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Artefacts de recherche interne et matériaux d'analyse</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Méthodologies de recherche, artefacts d'analyse, matériaux de validation</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site (Couche-2)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Pages de Présentation</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Interface de présentation institutionnelle</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Avis de la Couche-2, références de gouvernance</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Interface Multilingue</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Système de présentation en cinq langues (EN, FR, AR, ZH, RU)</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Documentation de l'architecture i18n, parité de traduction</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Atlas Épistémique (Couche-2.5)</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Interface système statique et cartographie épistémique (cette page)</p>
+          <p style="font-size: 0.875rem;"><strong>Preuve :</strong> Avis de la Couche-2.5, documentation du schéma, cartographie statique</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>Sources de Données</h2>
+      <p>Toutes les données affichées dans cette interface proviennent de fichiers statiques pré-validés :</p>
+      <ul>
+        <li><code>map.json</code> — Cartographie des relations épistémiques statiques (<a href="../map.json">voir</a>)</li>
+        <li><code>sources.json</code> — Références dépôt → artefact → preuve (<a href="../sources.json">voir</a>)</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>Documentation du schéma :</strong> <a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>Navigation</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Retour à la Couche de Présentation</h3>
+        <p><a href="../../fr/">← Retour à la Présentation TRIZEL (Couche-2)</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Documentation</h3>
+        <ul>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">Avis Couche-2.5</a> — Portée et contraintes</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">Schéma Atlas</a> — Documentation de la structure des données</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">Limites des Couches</a> — Modèle de séparation en trois couches</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Avis Institutionnel</h2>
+      <p>
+        Cet Atlas est maintenu comme un <strong>artefact d'affichage uniquement</strong> au sein de la Couche-2. Il ne contient aucun contenu scientifique, n'effectue aucune analyse et n'a aucune capacité d'exécution. Toute autorité dérive de <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Couche-0)</a>.
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — Interface Système Couche-2.5</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Interface système statique — aucun contenu dynamique — aucune analyse — aucune inférence</p>
+    </div>
+  </footer>
+</body>
+</html>
