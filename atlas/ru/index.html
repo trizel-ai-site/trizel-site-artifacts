@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — Эпистемический Системный Интерфейс</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">Эпистемический Системный Интерфейс</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">Уровень-2.5</span>
+        <p class="tagline">Только Отображение — Без Анализа — Без Выполнения — Без Вывода</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">Язык:</span>
+          <select id="lang-switcher" aria-label="Выберите язык" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>Уведомление Уровня-2.5</h2>
+      <p class="explicit">
+        Это <strong>Эпистемический Атлас Уровня-2.5</strong>, интерфейс системы только для чтения, который отображает статические отношения между компонентами TRIZEL. Этот интерфейс <strong>не выполняет никакого анализа, вывода и исполнения</strong>. Все данные предварительно проверены и получены из авторитетных репозиториев Уровня-0 и Уровня-1. Полная документация: <a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>Обзор Системы</h2>
+      <p>
+        TRIZEL Atlas предоставляет структурное отображение эпистемических отношений внутри системы TRIZEL. Это отображение показывает, как репозитории, артефакты и доказательства связаны в рамках трехуровневой структуры управления.
+      </p>
+      <p>
+        <strong>Только для отображения:</strong> Этот интерфейс представляет статические, предварительно проверенные данные без выполнения анализа или интерпретации.
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>Репозитории</h2>
+      <p>Система TRIZEL работает на трех уровнях, каждый с назначенными репозиториями:</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Уровень-0: Управление</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Каноническая структура управления и политическая власть</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Полномочия: Окончательное право принятия решений</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Уровень-1: Исследования и Анализ</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Внутренний исследовательский репозиторий документации</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Полномочия: Научные и технические операции</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Уровень-2: Презентация</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Публичный репозиторий презентации (этот сайт)</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Полномочия: Нет — только презентация</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>Эпистемические Отношения</h2>
+      <p>Следующие отношения описывают структурные связи между компонентами системы. Они являются <strong>только описательными</strong> и не подразумевают исполнения или причинности.</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Поток Управления</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ управляет →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Управление Уровня-0 устанавливает политики для исследований Уровня-1</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ управляет →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Управление Уровня-0 устанавливает политики для презентации Уровня-2</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Информационный Поток</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ информирует →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Исследования Уровня-1 информируют содержание презентации Уровня-2</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ ссылается →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Презентация Уровня-2 ссылается на управляющую власть Уровня-0</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ ссылается →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Презентация Уровня-2 ссылается на исследовательскую документацию Уровня-1</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>Системные Артефакты</h2>
+      <p>Ключевые артефакты, произведенные каждым репозиторием, с доказательствами, подтверждающими их существование и валидность.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core (Уровень-0)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Политики Управления</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Стандарты, политики и решения по управлению</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Спецификация модели разделения уровней, структура институционального управления</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Основополагающий эпистемический маркер памяти</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Определение и документация институционального значения</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab (Уровень-1)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Исследовательская Документация</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Внутренние исследовательские артефакты и аналитические материалы</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Методологии исследования, аналитические артефакты, проверочные материалы</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site (Уровень-2)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Страницы Презентации</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Институциональный интерфейс презентации</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Уведомления Уровня-2, ссылки на управление</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Многоязычный Интерфейс</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Система презентации на пяти языках (EN, FR, AR, ZH, RU)</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Документация архитектуры I18n, паритет переводов</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Эпистемический Атлас (Уровень-2.5)</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Статический системный интерфейс и эпистемическое картирование (эта страница)</p>
+          <p style="font-size: 0.875rem;"><strong>Доказательства:</strong> Уведомления Уровня-2.5, документация схемы, статическое картирование</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>Источники Данных</h2>
+      <p>Все данные, отображаемые в этом интерфейсе, получены из статических, предварительно проверенных файлов:</p>
+      <ul>
+        <li><code>map.json</code> — Статическое картирование эпистемических отношений (<a href="../map.json">просмотр</a>)</li>
+        <li><code>sources.json</code> — Ссылки репозиторий → артефакт → доказательство (<a href="../sources.json">просмотр</a>)</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>Документация схемы:</strong> <a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>Навигация</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Вернуться к Уровню Презентации</h3>
+        <p><a href="../../ru/">← Назад к Презентации TRIZEL (Уровень-2)</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Документация</h3>
+        <ul>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">Уведомление Уровня-2.5</a> — Область и ограничения</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">Схема Атласа</a> — Документация структуры данных</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">Границы Уровней</a> — Трехуровневая модель разделения</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Институциональное Уведомление</h2>
+      <p>
+        Этот Атлас поддерживается как <strong>артефакт только для отображения</strong> в рамках Уровня-2. Он не содержит научного контента, не выполняет анализ и не имеет возможностей выполнения. Вся власть исходит из <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Уровень-0)</a>.
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — Системный Интерфейс Уровня-2.5</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Статический системный интерфейс — без динамического контента — без анализа — без вывода</p>
+    </div>
+  </footer>
+</body>
+</html>

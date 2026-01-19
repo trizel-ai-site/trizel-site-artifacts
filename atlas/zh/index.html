@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — 认知系统接口</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">认知系统接口</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">层级-2.5</span>
+        <p class="tagline">仅展示 — 无分析 — 无执行 — 无推理</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">语言：</span>
+          <select id="lang-switcher" aria-label="选择语言" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>层级-2.5 通知</h2>
+      <p class="explicit">
+        这是<strong>层级-2.5 认知图谱</strong>，一个只读系统接口，显示TRIZEL组件之间的静态关系。该接口<strong>不执行任何分析、推理和执行</strong>。所有数据均经过预验证，并来源于权威的层级-0和层级-1存储库。完整文档：<a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>系统概述</h2>
+      <p>
+        TRIZEL Atlas提供TRIZEL系统内认知关系的结构映射。该映射显示存储库、工件和证据如何在三层治理框架内连接。
+      </p>
+      <p>
+        <strong>仅展示：</strong>该接口呈现静态的、预验证的数据，不执行分析或解释。
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>存储库</h2>
+      <p>TRIZEL系统在三个层级上运行，每个层级都有指定的存储库：</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">层级-0：治理</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">规范治理框架和政策权威</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">权限：最终决策权</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">层级-1：研究与分析</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">内部研究文档存储库</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">权限：科学和技术操作</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">层级-2：展示</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">公共展示存储库（本网站）</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">权限：无 — 仅展示</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>认知关系</h2>
+      <p>以下关系描述了系统组件之间的结构连接。这些<strong>仅为描述性</strong>，不意味着执行或因果关系。</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">治理流程</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ 治理 →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">层级-0治理为层级-1研究制定政策</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ 治理 →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">层级-0治理为层级-2展示制定政策</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">信息流程</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ 通知 →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">层级-1研究为层级-2展示内容提供信息</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ 引用 →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">层级-2展示引用层级-0治理权威</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ 引用 →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">层级-2展示引用层级-1研究文档</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>系统工件</h2>
+      <p>每个存储库产生的关键工件，以及支持其存在和有效性的证据。</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core（层级-0）</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">治理政策</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">标准、政策和治理决策</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>层级分离模型规范、机构治理框架</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">基础认识论记忆标记</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>定义和机构意义文档</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab（层级-1）</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">研究文档</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">内部研究工件和分析材料</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>研究方法、分析工件、验证材料</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site（层级-2）</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">展示页面</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">机构展示接口</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>层级-2通知、治理引用</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">多语言接口</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">五语言展示系统（EN、FR、AR、ZH、RU）</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>I18n架构文档、翻译对等</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">认知图谱（层级-2.5）</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">静态系统接口和认知映射（本页面）</p>
+          <p style="font-size: 0.875rem;"><strong>证据：</strong>层级-2.5通知、模式文档、静态映射</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>数据源</h2>
+      <p>此接口中显示的所有数据均来自静态的、预验证的文件：</p>
+      <ul>
+        <li><code>map.json</code> — 静态认知关系映射（<a href="../map.json">查看</a>）</li>
+        <li><code>sources.json</code> — 存储库 → 工件 → 证据引用（<a href="../sources.json">查看</a>）</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>模式文档：</strong><a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>导航</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">返回展示层</h3>
+        <p><a href="../../zh/">← 返回TRIZEL展示（层级-2）</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">文档</h3>
+        <ul>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">层级-2.5通知</a> — 范围和约束</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">图谱模式</a> — 数据结构文档</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">层级边界</a> — 三层分离模型</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>机构通知</h2>
+      <p>
+        本图谱在层级-2内作为<strong>仅展示工件</strong>维护。它不包含科学内容，不执行任何分析，也没有执行能力。所有权限均来源于<a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core（层级-0）</a>。
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — 层级-2.5系统接口</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>静态系统接口 — 无动态内容 — 无分析 — 无推理</p>
+    </div>
+  </footer>
+</body>
+</html>

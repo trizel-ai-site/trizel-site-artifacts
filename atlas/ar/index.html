@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — واجهة النظام المعرفي</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">واجهة النظام المعرفي</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">الطبقة-2.5</span>
+        <p class="tagline">العرض فقط — لا تحليل — لا تنفيذ — لا استنتاج</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">اللغة:</span>
+          <select id="lang-switcher" aria-label="اختر اللغة" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>إشعار الطبقة-2.5</h2>
+      <p class="explicit">
+        هذا هو <strong>أطلس الطبقة-2.5 المعرفي</strong>، واجهة نظام للقراءة فقط تعرض العلاقات الثابتة بين مكونات TRIZEL. لا تقوم هذه الواجهة بـ <strong>أي تحليل أو استنتاج أو تنفيذ</strong>. جميع البيانات تم التحقق منها مسبقًا ومصدرها من مستودعات الطبقة-0 والطبقة-1 الموثوقة. الوثائق الكاملة: <a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>نظرة عامة على النظام</h2>
+      <p>
+        يوفر TRIZEL Atlas رسمًا هيكليًا للعلاقات المعرفية داخل نظام TRIZEL. يعرض هذا الرسم كيفية ارتباط المستودعات والآثار والأدلة ضمن إطار الحوكمة ذي الطبقات الثلاث.
+      </p>
+      <p>
+        <strong>للعرض فقط:</strong> تعرض هذه الواجهة بيانات ثابتة تم التحقق منها مسبقًا دون إجراء تحليل أو تفسير.
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>المستودعات</h2>
+      <p>يعمل نظام TRIZEL عبر ثلاث طبقات، لكل منها مستودعات محددة:</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">الطبقة-0: الحوكمة</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">إطار الحوكمة القانوني وسلطة السياسة</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">السلطة: سلطة اتخاذ القرار النهائية</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">الطبقة-1: البحث والتحليل</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">مستودع وثائق البحث الداخلي</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">السلطة: العمليات العلمية والتقنية</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">الطبقة-2: العرض</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">مستودع العرض العام (هذا الموقع)</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">السلطة: لا شيء — للعرض فقط</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>العلاقات المعرفية</h2>
+      <p>تصف العلاقات التالية الروابط الهيكلية بين مكونات النظام. هذه <strong>وصفية فقط</strong> ولا تعني التنفيذ أو السببية.</p>
+      
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">تدفق الحوكمة</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ يحكم →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">تضع حوكمة الطبقة-0 السياسات لأبحاث الطبقة-1</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ يحكم →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">تضع حوكمة الطبقة-0 السياسات لعرض الطبقة-2</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">تدفق المعلومات</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ يُعلم →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">تُعلم أبحاث الطبقة-1 محتوى عرض الطبقة-2</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ يشير إلى →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">يشير عرض الطبقة-2 إلى سلطة حوكمة الطبقة-0</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ يشير إلى →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">يشير عرض الطبقة-2 إلى وثائق أبحاث الطبقة-1</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>آثار النظام</h2>
+      <p>الآثار الرئيسية التي ينتجها كل مستودع، مع الأدلة الداعمة لوجودها وصحتها.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core (الطبقة-0)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">سياسات الحوكمة</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">المعايير والسياسات وقرارات الحوكمة</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> مواصفات نموذج فصل الطبقات، إطار الحوكمة المؤسسية</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">علامة الذاكرة المعرفية الأساسية</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> وثائق التعريف والأهمية المؤسسية</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab (الطبقة-1)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">وثائق البحث</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">آثار الأبحاث الداخلية ومواد التحليل</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> منهجيات البحث، آثار التحليل، مواد التحقق</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site (الطبقة-2)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">صفحات العرض</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">واجهة العرض المؤسسي</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> إشعارات الطبقة-2، مراجع الحوكمة</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">الواجهة متعددة اللغات</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">نظام عرض بخمس لغات (EN, FR, AR, ZH, RU)</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> وثائق بنية I18n، تكافؤ الترجمة</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">الأطلس المعرفي (الطبقة-2.5)</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">واجهة النظام الثابتة والرسم المعرفي (هذه الصفحة)</p>
+          <p style="font-size: 0.875rem;"><strong>الدليل:</strong> إشعارات الطبقة-2.5، وثائق المخطط، الرسم الثابت</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>مصادر البيانات</h2>
+      <p>جميع البيانات المعروضة في هذه الواجهة مصدرها ملفات ثابتة تم التحقق منها مسبقًا:</p>
+      <ul>
+        <li><code>map.json</code> — رسم العلاقات المعرفية الثابت (<a href="../map.json">عرض</a>)</li>
+        <li><code>sources.json</code> — مراجع المستودع → الأثر → الدليل (<a href="../sources.json">عرض</a>)</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>وثائق المخطط:</strong> <a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>التنقل</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">العودة إلى طبقة العرض</h3>
+        <p><a href="../../ar/">← العودة إلى عرض TRIZEL (الطبقة-2)</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">الوثائق</h3>
+        <ul>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">إشعار الطبقة-2.5</a> — النطاق والقيود</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">مخطط الأطلس</a> — وثائق هيكل البيانات</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">حدود الطبقات</a> — نموذج الفصل ثلاثي الطبقات</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>إشعار مؤسسي</h2>
+      <p>
+        يتم الاحتفاظ بهذا الأطلس كـ <strong>أثر للعرض فقط</strong> ضمن الطبقة-2. لا يحتوي على محتوى علمي، ولا يقوم بأي تحليل، وليس لديه قدرات تنفيذ. جميع الصلاحيات مستمدة من <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (الطبقة-0)</a>.
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — واجهة النظام الطبقة-2.5</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>واجهة نظام ثابتة — لا محتوى ديناميكي — لا تحليل — لا استنتاج</p>
+    </div>
+  </footer>
+</body>
+</html>
