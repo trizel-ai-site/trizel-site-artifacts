@@ -1,0 +1,192 @@
+/* TRIZEL Statistics — Additional Styles
+ * Extends tokens.css, scientific-ui.css, and system-map.css
+ * Static metrics display — Layout and typography only
+ */
+
+/* Statistics Grid Layout */
+.stats-section {
+  margin: var(--space-12) 0;
+}
+
+.stats-section h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-snug);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Statistic Cards */
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.stat-card:hover {
+  border-color: var(--color-accent);
+}
+
+.stat-value {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  color: var(--color-accent);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+}
+
+.stat-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-medium);
+  line-height: var(--leading-relaxed);
+}
+
+/* Page Footer */
+.page-footer {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.update-notice {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .stat-card {
+    padding: var(--space-5);
+  }
+
+  .stat-value {
+    font-size: var(--text-4xl);
+  }
+
+  .stat-label {
+    font-size: var(--text-base);
+  }
+
+  .stat-description {
+    font-size: var(--text-xs);
+  }
+
+  .stats-section h3 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Print Optimization */
+@media print {
+  .stats-grid {
+    display: block;
+  }
+
+  .stat-card {
+    border: 1pt solid #000;
+    padding: 0.4cm;
+    margin-bottom: 0.3cm;
+    page-break-inside: avoid;
+  }
+
+  .stat-value {
+    font-size: 18pt;
+    color: #000;
+  }
+
+  .stat-label {
+    font-size: 12pt;
+    font-weight: 600;
+  }
+
+  .stat-description {
+    font-size: 10pt;
+  }
+
+  .stats-section {
+    page-break-inside: avoid;
+    margin: 0.5cm 0;
+  }
+
+  .stats-section h3 {
+    font-size: 14pt;
+    margin-bottom: 0.3cm;
+    page-break-after: avoid;
+  }
+
+  .page-footer {
+    margin-top: 1cm;
+    page-break-before: avoid;
+  }
+
+  .update-notice {
+    font-size: 9pt;
+  }
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .stat-card {
+  text-align: center;
+}
+
+[dir="rtl"] .stats-section h3 {
+  text-align: right;
+}
+
+[dir="rtl"] .stat-value,
+[dir="rtl"] .stat-label,
+[dir="rtl"] .stat-description {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Accessibility Enhancements */
+.stat-card:focus-within {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .stat-card {
+    border-width: 2px;
+  }
+
+  .stat-value {
+    font-weight: var(--font-bold);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card {
+    transition: none;
+  }
+}
