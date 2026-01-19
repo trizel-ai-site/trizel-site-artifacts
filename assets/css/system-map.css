@@ -225,3 +225,22 @@
     border: 2px solid var(--color-border-strong);
   }
 }
+
+/* RTL Support for Arabic */
+[dir="rtl"] .diagram-legend li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .diagram-legend li {
+  padding-left: 0;
+  padding-right: var(--space-4);
+}
+
+[dir="rtl"] .section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .language-label {
+  text-align: right;
+}
