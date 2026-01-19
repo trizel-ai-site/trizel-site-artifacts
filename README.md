@@ -73,6 +73,10 @@ This repository serves as a **presentation-only** interface for public stakehold
 
 **No authority** — Layer-2 has no decision-making or interpretative power.
 
+## Governance / Contract
+
+All website content and presentation decisions are governed by the canonical **[Scientific Presentation Contract](docs/SCIENTIFIC_PRESENTATION_CONTRACT.md)**, which establishes the authoritative rules for what is allowed, what is forbidden, and how content must be represented on the TRIZEL public website.
+
 ## Multilingual Support
 
 This site is available in five languages with full semantic equivalence:
