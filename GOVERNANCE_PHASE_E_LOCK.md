@@ -5,6 +5,8 @@
 **Authority:** Layer-0 Governance (trizel-core)  
 **Date:** 2026-01-21  
 
+> **Note:** This document provides explicit governance hardening and Phase F prohibition details. For the complete Phase E framework and operational guidelines, see [PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md).
+
 ---
 
 ## PHASE E: ACTIVE AND FROZEN
@@ -29,13 +31,15 @@ This is **NOT** a temporary state. Phase E is the **permanent operational mode**
 
 ### What is Phase F?
 
-Phase F would represent:
+Phase F would represent an evolution beyond Phase E that would include interactive and dynamic capabilities. While Phase E (as defined in [PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md)) is strictly read-only and static, Phase F would introduce:
 - Interactive dashboards
 - Live data visualization
 - Real-time analytics
 - Dynamic data exploration
 - Automated data pipelines
 - Active monitoring interfaces
+
+These capabilities are **explicitly forbidden** under current governance.
 
 ### Why Phase F is Prohibited
 
@@ -123,8 +127,8 @@ The following activities are **STRICTLY FORBIDDEN** and constitute Phase F viola
 ### Enforcement
 
 All PRs are subject to:
-- **Automated compliance checks** — Phase E boundary verification
 - **Governance review** — Layer-0 approval for scope changes
+- **Manual verification** — Phase E boundary verification during review
 - **Explicit rejection** — Phase F proposals rejected on sight
 
 **There are NO exceptions to this governance lock.**
