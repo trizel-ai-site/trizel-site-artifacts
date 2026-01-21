@@ -108,7 +108,7 @@
     .skip-to-main {
       position: absolute;
       top: -999px;
-      left: -999px;
+      inset-inline-start: -999px;
       z-index: 999;
       padding: 12px;
       background: #0369a1;
@@ -119,13 +119,13 @@
     
     .skip-to-main:focus {
       top: 0;
-      left: 0;
+      inset-inline-start: 0;
     }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
-  <div class="lang-selector" id="main-content" role="main">
+  <main class="lang-selector" id="main-content">
     <h1>TRIZEL</h1>
     <p class="memory-marker">AUTO DZ ACT</p>
     <span class="layer-badge">Layer-2</span>
@@ -159,6 +159,6 @@
     <p class="footer-note" style="margin-top: 16px;">
       <a href="https://github.com/trizel-ai-site" style="color: #0369a1; text-decoration: none;">GitHub Organization</a>
     </p>
-  </div>
+  </main>
 </body>
 </html>
