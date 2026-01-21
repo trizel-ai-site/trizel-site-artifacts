@@ -10,7 +10,8 @@ This repository is **Layer-2** in the TRIZEL three-layer architecture.
 
 ## Quick Links
 
-- **[Public System Map](system-map/index.md)** — Static documentation of TRIZEL system structure
+- **[Public System Map](system-map/)** — Static documentation of TRIZEL system structure
+  - [English](system-map/index.en.md) | [Français](system-map/index.fr.md) | [العربية](system-map/index.ar.md) | [中文](system-map/index.zh.md)
 
 ## Three-Layer Architecture
 
