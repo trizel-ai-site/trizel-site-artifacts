@@ -1,5 +1,15 @@
 # TRIZEL — Phase E Scientific Observatory (Read-Only)
 
+## Current Governance State: Phase E (Read-Only)
+
+**Status:** PHASE E ACTIVE AND FROZEN  
+**Authority:** Layer-0 Governance (trizel-core)  
+**Phase F:** EXPLICITLY PROHIBITED — NOT AUTHORIZED
+
+This repository operates under strict **Phase E governance lockdown**. See [GOVERNANCE_PHASE_E_LOCK.md](GOVERNANCE_PHASE_E_LOCK.md) for complete governance framework and Phase F prohibition details.
+
+---
+
 ## Repository Classification
 
 **Phase E — Scientific Observatory (Display Only)**
