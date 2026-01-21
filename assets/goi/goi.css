@@ -1,0 +1,323 @@
+/* TRIZEL — GOI (Global Observation & Production Index) Styles
+ * Scientific presentation layer
+ * Pure CSS, No JavaScript required
+ * Mobile-first, fast, institutional design
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   GOI LAYOUT — BASE
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #ffffff;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.goi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GOI HEADER
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-header {
+  background: #f8f9fa;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 1.5rem 0;
+}
+
+.goi-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.goi-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.goi-brand-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.goi-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1f2937;
+}
+
+.goi-brand-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANGUAGE SWITCHER
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.goi-lang-link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background: #f3f4f6;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.goi-lang-link:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.goi-lang-link.active {
+  background: #0969da;
+  color: #ffffff;
+  border-color: #0969da;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVIGATION TABS
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0;
+}
+
+.goi-nav-tabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.goi-nav-link {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  color: #6b7280;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.goi-nav-link:hover {
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+.goi-nav-link.active {
+  color: #0969da;
+  border-bottom-color: #0969da;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN CONTENT
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-main {
+  padding: 2rem 0 4rem;
+}
+
+.goi-section {
+  margin-bottom: 3rem;
+}
+
+.goi-section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.goi-section-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PUBLISHED ENTRIES
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-entries {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.goi-entries-header {
+  background: #f9fafb;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.goi-entries-empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.goi-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.goi-table th {
+  background: #f9fafb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.goi-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.goi-table tr:last-child td {
+  border-bottom: none;
+}
+
+.goi-table tr:hover {
+  background: #f9fafb;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.goi-footer-content {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.goi-footer-link {
+  color: #0969da;
+  text-decoration: underline;
+}
+
+.goi-footer-link:hover {
+  color: #0550ae;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BACK LINK
+   ═══════════════════════════════════════════════════════════════ */
+
+.goi-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #f3f4f6;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.goi-back-link:hover {
+  background: #e5e7eb;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .goi-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .goi-brand h1 {
+    font-size: 1.25rem;
+  }
+
+  .goi-nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .goi-section-title {
+    font-size: 1.5rem;
+  }
+
+  .goi-table {
+    font-size: 0.8rem;
+  }
+
+  .goi-table th,
+  .goi-table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .goi-brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .goi-brand h1 {
+    font-size: 1.1rem;
+  }
+
+  .goi-nav-link {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

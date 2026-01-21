@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реестр Производства — GOI — TRIZEL</title>
+  <meta name="description" content="Реестр научных продуктов и вычислительных артефактов из экосистемы TRIZEL.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Реестр Производства</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Выбор языка">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link active">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="Разделы GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.ru.html" class="goi-nav-link">Главная</a>
+        <a href="../observations/index.ru.html" class="goi-nav-link">Наблюдения</a>
+        <a href="index.ru.html" class="goi-nav-link active">Производство</a>
+        <a href="../repositories/index.ru.html" class="goi-nav-link">Репозитории</a>
+        <a href="../snapshots/index.ru.html" class="goi-nav-link">Снимки</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.ru.html" class="goi-back-link">← Назад на главную GOI</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Производство — Реестр</h2>
+        <p class="goi-section-description">
+          Реестр производства каталогизирует научные результаты, вычислительные артефакты и производные продукты из экосистемы TRIZEL. 
+          Этот раздел предоставляет метаданные о научных результатах, включая модели, наборы данных, анализы и публикации с их происхождением и зависимостями.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Опубликованные Записи</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">Таблица Реестра</div>
+          <div class="goi-entries-empty">
+            Опубликованных записей пока нет
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Источник Данных</h3>
+        <p class="goi-section-description">
+          Эта страница отображает данные из: <code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>Текущий Статус:</strong> Метаданные производства еще не опубликованы. Этот реестр будет заполнен, когда репозитории Слоя-2 и Слоя-3 создадут и зафиксируют свои файлы метаданных в <code>/goi/data/sources/</code>.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Проверка</h3>
+        <p class="goi-section-description">
+          Все записи производства проверяются через:
+        </p>
+        <ol class="goi-section-description">
+          <li>История коммитов Git в этом репозитории</li>
+          <li>Проверка схемы JSON (схема: <code>/goi/schemas/production.meta.schema.json</code>)</li>
+          <li>Цепочки происхождения, связывающие результаты с их исходными данными</li>
+          <li>Метаданные вычислительной воспроизводимости (когда доступны)</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          Научная Обсерватория TRIZEL Фаза E — Отображение Только для Чтения<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Декларация Фазы E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Блокировка Управления</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

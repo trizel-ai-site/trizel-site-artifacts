@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Observation & Production Index (GOI) — TRIZEL</title>
+  <meta name="description" content="Scientific registry providing static, verifiable metadata for the TRIZEL ecosystem.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Global Observation & Production Index</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Language selection">
+          <a href="index.en.html" class="goi-lang-link active">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="GOI sections">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="index.en.html" class="goi-nav-link active">Home</a>
+        <a href="pages/observations/index.en.html" class="goi-nav-link">Observations</a>
+        <a href="pages/production/index.en.html" class="goi-nav-link">Production</a>
+        <a href="pages/repositories/index.en.html" class="goi-nav-link">Repositories</a>
+        <a href="pages/snapshots/index.en.html" class="goi-nav-link">Snapshots</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="/" class="goi-back-link">← Back to TRIZEL Home</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Purpose</h2>
+        <p class="goi-section-description">
+          The Global Observation & Production Index (GOI) is a scientific registry providing static, verifiable metadata for the TRIZEL ecosystem.
+        </p>
+        <p class="goi-section-description">
+          This index catalogs:
+        </p>
+        <ul class="goi-section-description">
+          <li><strong>Observations:</strong> Data sources, archives, and monitoring outputs</li>
+          <li><strong>Production:</strong> Scientific outputs and analysis results</li>
+          <li><strong>Repositories:</strong> Ecosystem structure and component inventory</li>
+          <li><strong>Snapshots:</strong> Frozen reference bundles with integrity verification</li>
+        </ul>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Index Sections</h2>
+        <div class="goi-entries">
+          <div style="padding: 1.5rem;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/observations/index.en.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Observations
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Registry of observation data sources and metadata
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/production/index.en.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Production
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Ledger of scientific production outputs
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/repositories/index.en.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Repositories
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Ecosystem inventory and structure
+                </p>
+              </li>
+              <li style="margin-bottom: 0;">
+                <a href="pages/snapshots/index.en.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Snapshots
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Published snapshot registry
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">How to Verify</h2>
+        <p class="goi-section-description">
+          All GOI data is static and verifiable:
+        </p>
+        <ol class="goi-section-description">
+          <li><strong>Static Data Source:</strong> <code>/goi/data/global-index.json</code></li>
+          <li><strong>Commit History:</strong> All updates are tracked via Git commits in this repository</li>
+          <li><strong>Schema Validation:</strong> All data conforms to published JSON schemas in <code>/goi/schemas/</code></li>
+          <li><strong>No Runtime Execution:</strong> No JavaScript, no APIs, no dynamic data fetching</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          TRIZEL Phase E Scientific Observatory — Read-Only Display<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Phase E Declaration</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Governance Lock</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

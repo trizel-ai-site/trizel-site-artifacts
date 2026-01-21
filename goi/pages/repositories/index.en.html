@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositories Inventory — GOI — TRIZEL</title>
+  <meta name="description" content="Inventory of ecosystem repositories and their structural metadata from the TRIZEL ecosystem.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Repositories Inventory</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Language selection">
+          <a href="index.en.html" class="goi-lang-link active">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="GOI sections">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.en.html" class="goi-nav-link">Home</a>
+        <a href="../observations/index.en.html" class="goi-nav-link">Observations</a>
+        <a href="../production/index.en.html" class="goi-nav-link">Production</a>
+        <a href="index.en.html" class="goi-nav-link active">Repositories</a>
+        <a href="../snapshots/index.en.html" class="goi-nav-link">Snapshots</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.en.html" class="goi-back-link">← Back to GOI Home</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Repositories — Ecosystem Inventory</h2>
+        <p class="goi-section-description">
+          The Repositories Inventory catalogs the structural components of the TRIZEL ecosystem including code repositories, documentation sites, and infrastructure components. 
+          This section provides metadata about repository organization, layer classification, maintainers, and inter-repository dependencies.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Published Entries</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">Inventory Table</div>
+          <div class="goi-entries-empty">
+            No published entries yet
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Data Source</h3>
+        <p class="goi-section-description">
+          This page displays data from: <code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>Current Status:</strong> No repository metadata has been published yet. This inventory will be populated as ecosystem repositories register and commit their metadata files to <code>/goi/data/sources/</code>.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Verification</h3>
+        <p class="goi-section-description">
+          All repository entries are verifiable through:
+        </p>
+        <ol class="goi-section-description">
+          <li>Git commit history in this repository</li>
+          <li>JSON schema validation (schema: <code>/goi/schemas/repository.meta.schema.json</code>)</li>
+          <li>Cross-references to actual GitHub repository URLs</li>
+          <li>Layer topology validation against ecosystem architecture</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          TRIZEL Phase E Scientific Observatory — Read-Only Display<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Phase E Declaration</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Governance Lock</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registre de Production — GOI — TRIZEL</title>
+  <meta name="description" content="Registre des productions scientifiques et artefacts informatiques de l'écosystème TRIZEL.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Registre de Production</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Sélection de langue">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link active">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="Sections GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.fr.html" class="goi-nav-link">Accueil</a>
+        <a href="../observations/index.fr.html" class="goi-nav-link">Observations</a>
+        <a href="index.fr.html" class="goi-nav-link active">Production</a>
+        <a href="../repositories/index.fr.html" class="goi-nav-link">Dépôts</a>
+        <a href="../snapshots/index.fr.html" class="goi-nav-link">Instantanés</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.fr.html" class="goi-back-link">← Retour à l'accueil GOI</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Production — Registre</h2>
+        <p class="goi-section-description">
+          Le registre de production catalogue les productions scientifiques, artefacts informatiques et produits dérivés de l'écosystème TRIZEL. 
+          Cette section fournit des métadonnées sur les productions de recherche, y compris les modèles, ensembles de données, analyses et publications avec leur provenance et dépendances.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Entrées Publiées</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">Tableau de Registre</div>
+          <div class="goi-entries-empty">
+            Aucune entrée publiée pour le moment
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Source de Données</h3>
+        <p class="goi-section-description">
+          Cette page affiche les données de : <code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>Statut Actuel :</strong> Aucune métadonnée de production n'a encore été publiée. Ce registre sera rempli lorsque les dépôts de Couche-2 et Couche-3 produiront et soumettront leurs fichiers de métadonnées dans <code>/goi/data/sources/</code>.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Vérification</h3>
+        <p class="goi-section-description">
+          Toutes les entrées de production sont vérifiables via :
+        </p>
+        <ol class="goi-section-description">
+          <li>Historique des commits Git dans ce dépôt</li>
+          <li>Validation de schéma JSON (schéma : <code>/goi/schemas/production.meta.schema.json</code>)</li>
+          <li>Chaînes de provenance reliant les sorties à leurs données sources</li>
+          <li>Métadonnées de reproductibilité informatique (lorsque disponibles)</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          Observatoire Scientifique TRIZEL Phase E — Affichage en Lecture Seule<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Déclaration Phase E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Verrouillage de Gouvernance</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دفتر الإنتاج — GOI — TRIZEL</title>
+  <meta name="description" content="دفتر المخرجات العلمية والمصنوعات الحسابية من نظام TRIZEL البيئي.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">دفتر الإنتاج</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="اختيار اللغة">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link active">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="أقسام GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.ar.html" class="goi-nav-link">الرئيسية</a>
+        <a href="../observations/index.ar.html" class="goi-nav-link">الملاحظات</a>
+        <a href="index.ar.html" class="goi-nav-link active">الإنتاج</a>
+        <a href="../repositories/index.ar.html" class="goi-nav-link">المستودعات</a>
+        <a href="../snapshots/index.ar.html" class="goi-nav-link">اللقطات</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.ar.html" class="goi-back-link">← العودة إلى الصفحة الرئيسية GOI</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">الإنتاج — دفتر الأستاذ</h2>
+        <p class="goi-section-description">
+          يقوم دفتر الإنتاج بفهرسة المخرجات العلمية والمصنوعات الحسابية والمنتجات المشتقة من نظام TRIZEL البيئي.
+          يوفر هذا القسم بيانات وصفية حول مخرجات البحث بما في ذلك النماذج ومجموعات البيانات والتحليلات والمنشورات مع مصدرها وتبعياتها.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">الإدخالات المنشورة</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">جدول دفتر الأستاذ</div>
+          <div class="goi-entries-empty">
+            لا توجد إدخالات منشورة بعد
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">مصدر البيانات</h3>
+        <p class="goi-section-description">
+          تعرض هذه الصفحة البيانات من: <code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>الحالة الحالية:</strong> لم يتم نشر بيانات وصفية للإنتاج بعد. سيتم ملء دفتر الأستاذ هذا عندما تنتج مستودعات الطبقة 2 والطبقة 3 وتلتزم بملفات البيانات الوصفية الخاصة بها في <code>/goi/data/sources/</code>.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">التحقق</h3>
+        <p class="goi-section-description">
+          جميع إدخالات الإنتاج قابلة للتحقق من خلال:
+        </p>
+        <ol class="goi-section-description">
+          <li>سجل الالتزام Git في هذا المستودع</li>
+          <li>التحقق من صحة مخطط JSON (المخطط: <code>/goi/schemas/production.meta.schema.json</code>)</li>
+          <li>سلاسل المصدر التي تربط المخرجات ببيانات المصدر الخاصة بها</li>
+          <li>بيانات وصفية للإعادة الحسابية (عند توفرها)</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          المرصد العلمي TRIZEL المرحلة E — عرض للقراءة فقط<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">إعلان المرحلة E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">قفل الحوكمة</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>快照登记册 — GOI — TRIZEL</title>
+  <meta name="description" content="TRIZEL生态系统冻结参考包和带时间戳快照的登记册。">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">快照登记册</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="语言选择">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link active">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="GOI部分">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.zh.html" class="goi-nav-link">首页</a>
+        <a href="../observations/index.zh.html" class="goi-nav-link">观测</a>
+        <a href="../production/index.zh.html" class="goi-nav-link">生产</a>
+        <a href="../repositories/index.zh.html" class="goi-nav-link">知识库</a>
+        <a href="index.zh.html" class="goi-nav-link active">快照</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.zh.html" class="goi-back-link">← 返回GOI首页</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">快照 — 发布登记册</h2>
+        <p class="goi-section-description">
+          快照登记册编目TRIZEL生态系统的冻结参考包、带时间戳的发布版本和归档包。
+          本部分提供关于不可变生态系统快照的元数据，包括其内容、版本标识符、完整性哈希和官方出版记录。
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">已发布条目</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">登记表</div>
+          <div class="goi-entries-empty">
+            尚无已发布条目
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">数据源</h3>
+        <p class="goi-section-description">
+          此页面显示来自以下位置的数据：<code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>当前状态：</strong>尚未发布快照元数据。当创建生态系统快照并将其元数据文件提交到<code>/goi/data/sources/</code>时，此登记册将被填充。
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">验证</h3>
+        <p class="goi-section-description">
+          所有快照条目可通过以下方式验证：
+        </p>
+        <ol class="goi-section-description">
+          <li>此存储库中的Git提交历史</li>
+          <li>JSON模式验证（模式：<code>/goi/schemas/snapshot.meta.schema.json</code>）</li>
+          <li>用于包内容的加密完整性哈希</li>
+          <li>时间戳验证和发布审计跟踪</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          TRIZEL阶段E科学观测站 — 只读显示<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">阶段E声明</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">治理锁定</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

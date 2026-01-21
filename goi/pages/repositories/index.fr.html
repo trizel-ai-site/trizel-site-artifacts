@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventaire des Dépôts — GOI — TRIZEL</title>
+  <meta name="description" content="Inventaire des dépôts de l'écosystème et leurs métadonnées structurelles de l'écosystème TRIZEL.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Inventaire des Dépôts</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Sélection de langue">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link active">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="Sections GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="../../index.fr.html" class="goi-nav-link">Accueil</a>
+        <a href="../observations/index.fr.html" class="goi-nav-link">Observations</a>
+        <a href="../production/index.fr.html" class="goi-nav-link">Production</a>
+        <a href="index.fr.html" class="goi-nav-link active">Dépôts</a>
+        <a href="../snapshots/index.fr.html" class="goi-nav-link">Instantanés</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="../../index.fr.html" class="goi-back-link">← Retour à l'accueil GOI</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Dépôts — Inventaire de l'Écosystème</h2>
+        <p class="goi-section-description">
+          L'inventaire des dépôts catalogue les composants structurels de l'écosystème TRIZEL, y compris les dépôts de code, les sites de documentation et les composants d'infrastructure. 
+          Cette section fournit des métadonnées sur l'organisation des dépôts, la classification des couches, les mainteneurs et les dépendances entre dépôts.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Entrées Publiées</h3>
+        <div class="goi-entries">
+          <div class="goi-entries-header">Tableau d'Inventaire</div>
+          <div class="goi-entries-empty">
+            Aucune entrée publiée pour le moment
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Source de Données</h3>
+        <p class="goi-section-description">
+          Cette page affiche les données de : <code>/goi/data/global-index.json</code>
+        </p>
+        <p class="goi-section-description">
+          <strong>Statut Actuel :</strong> Aucune métadonnée de dépôt n'a encore été publiée. Cet inventaire sera rempli lorsque les dépôts de l'écosystème s'enregistreront et soumettront leurs fichiers de métadonnées dans <code>/goi/data/sources/</code>.
+        </p>
+      </section>
+
+      <section class="goi-section">
+        <h3 class="goi-section-title" style="font-size: 1.25rem;">Vérification</h3>
+        <p class="goi-section-description">
+          Toutes les entrées de dépôt sont vérifiables via :
+        </p>
+        <ol class="goi-section-description">
+          <li>Historique des commits Git dans ce dépôt</li>
+          <li>Validation de schéma JSON (schéma : <code>/goi/schemas/repository.meta.schema.json</code>)</li>
+          <li>Références croisées vers les URLs réelles des dépôts GitHub</li>
+          <li>Validation de la topologie des couches par rapport à l'architecture de l'écosystème</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          Observatoire Scientifique TRIZEL Phase E — Affichage en Lecture Seule<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Déclaration Phase E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Verrouillage de Gouvernance</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

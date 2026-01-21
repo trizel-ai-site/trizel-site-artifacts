@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Глобальный индекс наблюдения и производства (GOI) — TRIZEL</title>
+  <meta name="description" content="Научный реестр, предоставляющий статические, проверяемые метаданные для экосистемы TRIZEL.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Глобальный индекс наблюдения и производства</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Выбор языка">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link active">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="Разделы GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="index.ru.html" class="goi-nav-link active">Главная</a>
+        <a href="pages/observations/index.ru.html" class="goi-nav-link">Наблюдения</a>
+        <a href="pages/production/index.ru.html" class="goi-nav-link">Производство</a>
+        <a href="pages/repositories/index.ru.html" class="goi-nav-link">Репозитории</a>
+        <a href="pages/snapshots/index.ru.html" class="goi-nav-link">Снапшоты</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="/" class="goi-back-link">← Вернуться на главную TRIZEL</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Назначение</h2>
+        <p class="goi-section-description">
+          Глобальный индекс наблюдения и производства (GOI) — это научный реестр, предоставляющий статические, проверяемые метаданные для экосистемы TRIZEL.
+        </p>
+        <p class="goi-section-description">
+          Этот индекс каталогизирует:
+        </p>
+        <ul class="goi-section-description">
+          <li><strong>Наблюдения:</strong> Источники данных, архивы и результаты мониторинга</li>
+          <li><strong>Производство:</strong> Научные результаты и результаты анализа</li>
+          <li><strong>Репозитории:</strong> Структура экосистемы и инвентаризация компонентов</li>
+          <li><strong>Снапшоты:</strong> Замороженные справочные пакеты с проверкой целостности</li>
+        </ul>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Разделы индекса</h2>
+        <div class="goi-entries">
+          <div style="padding: 1.5rem;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/observations/index.ru.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Наблюдения
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Реестр источников данных наблюдений и метаданных
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/production/index.ru.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Производство
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Реестр научных результатов производства
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/repositories/index.ru.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Репозитории
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Инвентаризация и структура экосистемы
+                </p>
+              </li>
+              <li style="margin-bottom: 0;">
+                <a href="pages/snapshots/index.ru.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Снапшоты
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Реестр опубликованных снапшотов
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Как проверить</h2>
+        <p class="goi-section-description">
+          Все данные GOI статичны и проверяемы:
+        </p>
+        <ol class="goi-section-description">
+          <li><strong>Статический источник данных:</strong> <code>/goi/data/global-index.json</code></li>
+          <li><strong>История коммитов:</strong> Все обновления отслеживаются через Git-коммиты в этом репозитории</li>
+          <li><strong>Проверка схемы:</strong> Все данные соответствуют опубликованным JSON-схемам в <code>/goi/schemas/</code></li>
+          <li><strong>Без выполнения во время выполнения:</strong> Без JavaScript, без API, без динамической выборки данных</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          Научная обсерватория TRIZEL фазы E — Отображение только для чтения<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Декларация фазы E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Блокировка управления</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
