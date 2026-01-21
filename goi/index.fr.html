@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Mondial d'Observation et de Production (GOI) — TRIZEL</title>
+  <meta name="description" content="Registre scientifique fournissant des métadonnées statiques et vérifiables pour l'écosystème TRIZEL.">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">Index Mondial d'Observation et de Production</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="Sélection de langue">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link active">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="Sections GOI">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="index.fr.html" class="goi-nav-link active">Accueil</a>
+        <a href="pages/observations/index.fr.html" class="goi-nav-link">Observations</a>
+        <a href="pages/production/index.fr.html" class="goi-nav-link">Production</a>
+        <a href="pages/repositories/index.fr.html" class="goi-nav-link">Référentiels</a>
+        <a href="pages/snapshots/index.fr.html" class="goi-nav-link">Instantanés</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="/" class="goi-back-link">← Retour à l'accueil TRIZEL</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Objectif</h2>
+        <p class="goi-section-description">
+          L'Index Mondial d'Observation et de Production (GOI) est un registre scientifique fournissant des métadonnées statiques et vérifiables pour l'écosystème TRIZEL.
+        </p>
+        <p class="goi-section-description">
+          Cet index catalogue :
+        </p>
+        <ul class="goi-section-description">
+          <li><strong>Observations :</strong> Sources de données, archives et sorties de surveillance</li>
+          <li><strong>Production :</strong> Résultats scientifiques et résultats d'analyse</li>
+          <li><strong>Référentiels :</strong> Structure de l'écosystème et inventaire des composants</li>
+          <li><strong>Instantanés :</strong> Ensembles de référence figés avec vérification d'intégrité</li>
+        </ul>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Sections de l'index</h2>
+        <div class="goi-entries">
+          <div style="padding: 1.5rem;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/observations/index.fr.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Observations
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Registre des sources de données d'observation et des métadonnées
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/production/index.fr.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Production
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Registre des résultats de production scientifique
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/repositories/index.fr.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Référentiels
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Inventaire et structure de l'écosystème
+                </p>
+              </li>
+              <li style="margin-bottom: 0;">
+                <a href="pages/snapshots/index.fr.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  Instantanés
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  Registre des instantanés publiés
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">Comment vérifier</h2>
+        <p class="goi-section-description">
+          Toutes les données GOI sont statiques et vérifiables :
+        </p>
+        <ol class="goi-section-description">
+          <li><strong>Source de données statique :</strong> <code>/goi/data/global-index.json</code></li>
+          <li><strong>Historique des commits :</strong> Toutes les mises à jour sont suivies via les commits Git dans ce dépôt</li>
+          <li><strong>Validation de schéma :</strong> Toutes les données sont conformes aux schémas JSON publiés dans <code>/goi/schemas/</code></li>
+          <li><strong>Aucune exécution à l'exécution :</strong> Pas de JavaScript, pas d'API, pas de récupération de données dynamique</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          Observatoire Scientifique TRIZEL Phase E — Affichage en lecture seule<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">Déclaration Phase E</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">Verrouillage de gouvernance</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

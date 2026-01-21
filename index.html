@@ -7,6 +7,7 @@
   <meta name="description" content="TRIZEL Phase E Scientific Observatory: Read-only institutional documentation and presentation of AI governance research under strict layer separation principles. Snapshot-based, governance-controlled, display only.">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/scientific-ui.css">
+  <link rel="stylesheet" href="assets/ui/pro.css">
   <link rel="stylesheet" href="assets/css/print.css" media="print">
 </head>
 <body>
@@ -29,38 +30,83 @@
     </div>
   </header>
 
-  <main class="container" role="main">
-    <!-- Global Observation & Production Index (GOI) — Primary Interface -->
-    <section class="section-header" aria-labelledby="goi-heading" style="margin-bottom: 3rem;">
-      <h2 id="goi-heading">Global Observation & Production Index (GOI)</h2>
-      <p style="font-size: 1.125rem; font-weight: 500; margin-bottom: 1.5rem;">
-        Canonical, evidence-first publication layer of TRIZEL
-      </p>
-      <p>
-        Scientific registry providing static, verifiable metadata for the TRIZEL ecosystem. 
-        Catalogs observations, production outputs, repositories, and published snapshots.
-      </p>
-      <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
-        <a href="/goi/index.en.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          English (EN) →
-        </a>
-        <a href="/goi/index.fr.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          Français (FR) →
-        </a>
-        <a href="/goi/index.de.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          Deutsch (DE) →
-        </a>
-        <a href="/goi/index.ru.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          Русский (RU) →
-        </a>
-        <a href="/goi/index.zh.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          中文 (ZH) →
-        </a>
-        <a href="/goi/index.ar.md" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
-          العربية (AR) →
-        </a>
-      </div>
+  <main role="main">
+    <!-- Hero Section -->
+    <section class="pro-hero">
+      <img src="assets/brand/trizel-logo.svg" alt="TRIZEL" class="pro-hero-logo">
+      <h1>TRIZEL</h1>
+      <p class="pro-hero-tagline">Phase E Scientific Observatory — Institutional Documentation & Research Display</p>
     </section>
+
+    <!-- Professional Tile Cards -->
+    <section class="pro-tiles">
+      <!-- Tile A: Global Observation & Production Index (GOI) -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">Global Observation & Production Index (GOI)</h2>
+        <p class="pro-tile-description">
+          Canonical publication registry providing static, verifiable metadata for the TRIZEL ecosystem. 
+          Catalogs observations, production outputs, repositories, and snapshots.
+        </p>
+        <a href="/goi/index.en.html" class="pro-tile-cta">View GOI →</a>
+      </article>
+
+      <!-- Tile B: System Map -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">System Map</h2>
+        <p class="pro-tile-description">
+          Visual documentation of the complete TRIZEL ecosystem—accounts, organizations, repositories, 
+          and the three-layer authority pipeline.
+        </p>
+        <a href="system-map.html" class="pro-tile-cta">View Map →</a>
+      </article>
+
+      <!-- Tile C: Snapshots -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">Snapshots</h2>
+        <p class="pro-tile-description">
+          Published snapshot registry with frozen reference bundles and integrity verification. 
+          Static archival records of system state at specific timestamps.
+        </p>
+        <a href="/goi/pages/snapshots/index.en.html" class="pro-tile-cta">View Snapshots →</a>
+      </article>
+
+      <!-- Tile D: Publications / References -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">Publications / References</h2>
+        <p class="pro-tile-description">
+          Scientific publications, research documentation, and institutional reference materials. 
+          Governance-approved literature and methodology documentation.
+        </p>
+        <a href="phase-e/" class="pro-tile-cta">View Publications →</a>
+      </article>
+
+      <!-- Tile E: Observatory Status -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">Observatory Status</h2>
+        <p class="pro-tile-description">
+          Phase E governance-controlled status display. Read-only institutional metrics, 
+          fixed declarative values, no live data or dynamic computation.
+        </p>
+        <a href="statistics.html" class="pro-tile-cta">View Statistics →</a>
+      </article>
+
+      <!-- Tile F: Modules Catalog -->
+      <article class="pro-tile">
+        <h2 class="pro-tile-title">Modules Catalog</h2>
+        <p class="pro-tile-description">
+          Institutional catalog of validated components with external reference links. 
+          Each module represents a scientific function within the TRIZEL architecture.
+        </p>
+        <a href="#modules-catalog" class="pro-tile-cta pro-tile-cta-secondary">View Catalog ↓</a>
+      </article>
+    </section>
+
+    <!-- Legacy Content Section -->
+    <section class="pro-legacy">
+      <div class="pro-legacy-toggle">
+        <h2 class="pro-legacy-header">📚 Legacy / Archive Content</h2>
+        <div class="pro-legacy-content">
+          <div class="container">
 
     <div class="notice-box" role="alert" aria-labelledby="notice-heading">
       <h2 id="notice-heading">Phase E Scientific Observatory — Read-Only Display</h2>
@@ -104,7 +150,7 @@
       </p>
     </section>
 
-    <section class="section-header" aria-labelledby="catalog-heading">
+    <section class="section-header" aria-labelledby="catalog-heading" id="modules-catalog">
       <h2 id="catalog-heading">TRIZEL System — Module Catalog</h2>
       <p>
         An institutional catalog of validated components with external reference links. 
@@ -196,7 +242,7 @@
       <!-- Module 5: AUTO DZ ACT -->
       <article class="module-card">
         <div class="module-header">
-          <img src="assets/brand/icon-algorithm.svg" alt="" class="module-icon" aria-hidden="true">
+          <img src="assets/brand/auto-dz-act-logo.svg" alt="AUTO DZ ACT Badge" class="module-icon" aria-hidden="true">
           <div class="module-title">
             <h3>AUTO DZ ACT</h3>
             <span class="module-type">Canonical Algorithm</span>
@@ -204,6 +250,9 @@
         </div>
         <p class="module-description">
           Foundational epistemic memory marker and validation algorithm. Scientifically defined, non-theoretical methodological core.
+        </p>
+        <p class="module-description" style="font-size: 0.875rem; font-style: italic; margin-top: 0.5rem;">
+          <strong>Method Reference:</strong> Core epistemic validation methodology documented in governance frameworks.
         </p>
         <div class="module-links">
           <p class="module-link" style="color: #64748b; font-size: 0.875rem; margin: 0;">
@@ -313,6 +362,10 @@
         </div>
       </article>
     </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">

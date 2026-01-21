@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球观测与生产指数 (GOI) — TRIZEL</title>
+  <meta name="description" content="为 TRIZEL 生态系统提供静态、可验证元数据的科学注册表。">
+  <link rel="stylesheet" href="/assets/goi/goi.css">
+</head>
+<body class="goi-page">
+  <!-- Header -->
+  <header class="goi-header">
+    <div class="goi-container">
+      <div class="goi-header-content">
+        <div class="goi-brand">
+          <img src="/assets/brand/trizel-logo.svg" alt="TRIZEL" class="goi-brand-logo">
+          <div>
+            <h1>TRIZEL — GOI</h1>
+            <p class="goi-brand-subtitle">全球观测与生产指数</p>
+          </div>
+        </div>
+        <nav class="goi-lang-switcher" aria-label="语言选择">
+          <a href="index.en.html" class="goi-lang-link">EN</a>
+          <a href="index.fr.html" class="goi-lang-link">FR</a>
+          <a href="index.de.html" class="goi-lang-link">DE</a>
+          <a href="index.ru.html" class="goi-lang-link">RU</a>
+          <a href="index.zh.html" class="goi-lang-link active">ZH</a>
+          <a href="index.ar.html" class="goi-lang-link">AR</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="goi-nav" aria-label="GOI 部分">
+    <div class="goi-container">
+      <div class="goi-nav-tabs">
+        <a href="index.zh.html" class="goi-nav-link active">首页</a>
+        <a href="pages/observations/index.zh.html" class="goi-nav-link">观测</a>
+        <a href="pages/production/index.zh.html" class="goi-nav-link">生产</a>
+        <a href="pages/repositories/index.zh.html" class="goi-nav-link">存储库</a>
+        <a href="pages/snapshots/index.zh.html" class="goi-nav-link">快照</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="goi-main">
+    <div class="goi-container">
+      <a href="/" class="goi-back-link">← 返回 TRIZEL 主页</a>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">目的</h2>
+        <p class="goi-section-description">
+          全球观测与生产指数 (GOI) 是一个科学注册表，为 TRIZEL 生态系统提供静态、可验证的元数据。
+        </p>
+        <p class="goi-section-description">
+          该指数编目：
+        </p>
+        <ul class="goi-section-description">
+          <li><strong>观测：</strong>数据源、档案和监测输出</li>
+          <li><strong>生产：</strong>科学产出和分析结果</li>
+          <li><strong>存储库：</strong>生态系统结构和组件清单</li>
+          <li><strong>快照：</strong>具有完整性验证的冻结参考包</li>
+        </ul>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">指数部分</h2>
+        <div class="goi-entries">
+          <div style="padding: 1.5rem;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/observations/index.zh.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  观测
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  观测数据源和元数据注册表
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/production/index.zh.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  生产
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  科学生产产出的分类账
+                </p>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="pages/repositories/index.zh.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  存储库
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  生态系统清单和结构
+                </p>
+              </li>
+              <li style="margin-bottom: 0;">
+                <a href="pages/snapshots/index.zh.html" style="color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                  快照
+                </a>
+                <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.95rem;">
+                  已发布快照注册表
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="goi-section">
+        <h2 class="goi-section-title">如何验证</h2>
+        <p class="goi-section-description">
+          所有 GOI 数据都是静态且可验证的：
+        </p>
+        <ol class="goi-section-description">
+          <li><strong>静态数据源：</strong><code>/goi/data/global-index.json</code></li>
+          <li><strong>提交历史记录：</strong>所有更新都通过此存储库中的 Git 提交进行跟踪</li>
+          <li><strong>架构验证：</strong>所有数据都符合 <code>/goi/schemas/</code> 中发布的 JSON 架构</li>
+          <li><strong>无运行时执行：</strong>无 JavaScript、无 API、无动态数据获取</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="goi-footer">
+    <div class="goi-container">
+      <div class="goi-footer-content">
+        <p>
+          TRIZEL E阶段科学天文台 — 只读显示<br>
+          <a href="/PHASE_E_DECLARATION.md" class="goi-footer-link">E阶段声明</a> | 
+          <a href="/GOVERNANCE_PHASE_E_LOCK.md" class="goi-footer-link">治理锁定</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
