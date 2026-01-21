@@ -1,0 +1,92 @@
+{
+  "goi_terms": {
+    "global_observation_production_index": {
+      "en": "Global Observation & Production Index",
+      "fr": "Index Mondial d'Observation et de Production",
+      "de": "Globaler Beobachtungs- und Produktionsindex",
+      "ru": "Глобальный индекс наблюдений и производства",
+      "zh": "全球观测与生产指数",
+      "ar": "مؤشر المراقبة والإنتاج العالمي"
+    },
+    "observations": {
+      "en": "Observations",
+      "fr": "Observations",
+      "de": "Beobachtungen",
+      "ru": "Наблюдения",
+      "zh": "观测",
+      "ar": "الملاحظات"
+    },
+    "production": {
+      "en": "Production",
+      "fr": "Production",
+      "de": "Produktion",
+      "ru": "Производство",
+      "zh": "生产",
+      "ar": "الإنتاج"
+    },
+    "repositories": {
+      "en": "Repositories",
+      "fr": "Référentiels",
+      "de": "Repositories",
+      "ru": "Репозитории",
+      "zh": "存储库",
+      "ar": "المستودعات"
+    },
+    "snapshots": {
+      "en": "Snapshots",
+      "fr": "Instantanés",
+      "de": "Schnappschüsse",
+      "ru": "Снимки",
+      "zh": "快照",
+      "ar": "اللقطات"
+    },
+    "integrity": {
+      "en": "Integrity",
+      "fr": "Intégrité",
+      "de": "Integrität",
+      "ru": "Целостность",
+      "zh": "完整性",
+      "ar": "النزاهة"
+    },
+    "provenance": {
+      "en": "Provenance",
+      "fr": "Provenance",
+      "de": "Herkunft",
+      "ru": "Происхождение",
+      "zh": "来源",
+      "ar": "المصدر"
+    },
+    "registry": {
+      "en": "Registry",
+      "fr": "Registre",
+      "de": "Register",
+      "ru": "Реестр",
+      "zh": "注册表",
+      "ar": "السجل"
+    },
+    "ledger": {
+      "en": "Ledger",
+      "fr": "Registre",
+      "de": "Verzeichnis",
+      "ru": "Журнал",
+      "zh": "分类账",
+      "ar": "دفتر الأستاذ"
+    },
+    "reference_only": {
+      "en": "Reference Only",
+      "fr": "Référence Uniquement",
+      "de": "Nur Referenz",
+      "ru": "Только для справки",
+      "zh": "仅供参考",
+      "ar": "للإشارة فقط"
+    },
+    "no_published_entries": {
+      "en": "No published entries yet",
+      "fr": "Aucune entrée publiée pour le moment",
+      "de": "Noch keine veröffentlichten Einträge",
+      "ru": "Пока нет опубликованных записей",
+      "zh": "尚无已发布的条目",
+      "ar": "لا توجد إدخالات منشورة حتى الآن"
+    }
+  }
+}

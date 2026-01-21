@@ -35,6 +35,8 @@ This repository is **Layer-2** in the TRIZEL three-layer architecture, operating
 
 ## Quick Links
 
+- **[Global Observation & Production Index (GOI)](goi/index.en.md)** — Scientific registry and reference index
+  - [English](goi/index.en.md) | [Français](goi/index.fr.md) | [Deutsch](goi/index.de.md) | [Русский](goi/index.ru.md) | [中文](goi/index.zh.md) | [العربية](goi/index.ar.md)
 - **[Phase E Declaration](PHASE_E_DECLARATION.md)** — Official Phase E governance framework and boundaries
 - **[Public System Map](system-map/)** — Static documentation of TRIZEL system structure
   - [English](system-map/index.en.md) | [Français](system-map/index.fr.md) | [العربية](system-map/index.ar.md) | [中文](system-map/index.zh.md)

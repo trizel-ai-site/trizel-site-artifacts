@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://trizel-ai-site.github.io/trizel-site-artifacts/goi/schemas/global-index.schema.json",
+  "title": "Global Index Schema",
+  "description": "Schema for the merged index of the entire TRIZEL ecosystem (Layer-2 view). This provides a unified view of all observations, production outputs, and snapshots.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "multilingual_titles",
+    "sources",
+    "observation_ledger",
+    "production_ledger",
+    "snapshots_registry"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of this schema (e.g., '1.0.0')",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this index was generated (ISO 8601 UTC)"
+    },
+    "multilingual_titles": {
+      "type": "object",
+      "required": ["en", "fr", "de", "ru", "zh", "ar"],
+      "properties": {
+        "en": {
+          "type": "string",
+          "description": "English title"
+        },
+        "fr": {
+          "type": "string",
+          "description": "French title"
+        },
+        "de": {
+          "type": "string",
+          "description": "German title"
+        },
+        "ru": {
+          "type": "string",
+          "description": "Russian title"
+        },
+        "zh": {
+          "type": "string",
+          "description": "Chinese title"
+        },
+        "ar": {
+          "type": "string",
+          "description": "Arabic title"
+        }
+      },
+      "description": "Multilingual titles for the index"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repo_id", "repo_name", "owner", "role"],
+        "properties": {
+          "repo_id": {
+            "type": "string",
+            "description": "Repository identifier"
+          },
+          "repo_name": {
+            "type": "string",
+            "description": "Repository name"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Repository owner"
+          },
+          "role": {
+            "type": "string",
+            "description": "Repository role classification"
+          },
+          "domains_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Domains supported by this source"
+          }
+        }
+      },
+      "description": "Summary of data sources (per-repo metadata)"
+    },
+    "observation_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_repo": {
+            "type": "string",
+            "description": "Source repository"
+          },
+          "role": {
+            "type": "string",
+            "description": "Repository role"
+          },
+          "domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Scientific domains"
+          },
+          "coverage": {
+            "type": "string",
+            "description": "Temporal coverage description"
+          },
+          "inventory": {
+            "type": "string",
+            "description": "Inventory summary"
+          },
+          "official_sources": {
+            "type": "string",
+            "description": "Official source citations"
+          }
+        }
+      },
+      "description": "Ledger of observation entries"
+    },
+    "production_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "output_id": {
+            "type": "string",
+            "description": "Unique output identifier"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of output"
+          },
+          "source_repo": {
+            "type": "string",
+            "description": "Source repository"
+          },
+          "snapshot_id": {
+            "type": "string",
+            "description": "Associated snapshot identifier"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Production date (ISO 8601)"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the output"
+          }
+        }
+      },
+      "description": "Ledger of production outputs"
+    },
+    "snapshots_registry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "description": "Unique snapshot identifier"
+          },
+          "date_frozen": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date when snapshot was frozen (ISO 8601)"
+          },
+          "scope": {
+            "type": "string",
+            "description": "Scope of the snapshot"
+          },
+          "contents": {
+            "type": "string",
+            "description": "Description of contents"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the snapshot"
+          },
+          "integrity": {
+            "type": "string",
+            "description": "Integrity verification information"
+          }
+        }
+      },
+      "description": "Registry of published snapshots"
+    }
+  }
+}

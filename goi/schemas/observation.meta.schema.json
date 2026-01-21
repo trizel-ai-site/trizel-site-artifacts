@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://trizel-ai-site.github.io/trizel-site-artifacts/goi/schemas/observation.meta.schema.json",
+  "title": "Observation Metadata Schema",
+  "description": "Schema for per-repository static telemetry/metadata produced by Layer-1 tools (e.g., Auto-DZ-ACT). This repository only hosts the schema definition.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "repo_id",
+    "repo_name",
+    "owner",
+    "role",
+    "domains_supported",
+    "source_official",
+    "coverage",
+    "inventory",
+    "last_updated_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of this schema (e.g., '1.0.0')",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "repo_id": {
+      "type": "string",
+      "description": "Unique identifier for the repository"
+    },
+    "repo_name": {
+      "type": "string",
+      "description": "Name of the repository"
+    },
+    "owner": {
+      "type": "string",
+      "description": "Repository owner (account or organization)"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["raw", "archive", "analysis", "monitor", "lab", "governance"],
+      "description": "Classification of repository role"
+    },
+    "domains_supported": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of scientific domains (e.g., atlas, cosmology, cosmic-phenomena)"
+    },
+    "source_official": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "org", "official_url", "citation_note"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the official source"
+          },
+          "org": {
+            "type": "string",
+            "description": "Organization providing the data"
+          },
+          "official_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Official URL of the source"
+          },
+          "citation_note": {
+            "type": "string",
+            "description": "Citation information"
+          }
+        }
+      },
+      "description": "Official sources referenced by this repository"
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["date_min", "date_max", "cadence"],
+      "properties": {
+        "date_min": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Earliest date covered (ISO 8601)"
+        },
+        "date_max": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Latest date covered (ISO 8601)"
+        },
+        "cadence": {
+          "type": "string",
+          "description": "Update frequency (e.g., 'daily', 'weekly', 'monthly')"
+        }
+      },
+      "description": "Temporal coverage of the data"
+    },
+    "inventory": {
+      "type": "object",
+      "required": ["file_count", "total_bytes", "artifact_types"],
+      "properties": {
+        "file_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of files"
+        },
+        "total_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total size in bytes"
+        },
+        "artifact_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of artifact file types (e.g., 'csv', 'json', 'fits')"
+        }
+      },
+      "description": "Inventory of repository contents"
+    },
+    "last_updated_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last update (ISO 8601 UTC)"
+    },
+    "integrity": {
+      "type": "object",
+      "properties": {
+        "manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$",
+          "description": "SHA-256 hash of the manifest file"
+        }
+      },
+      "description": "Optional integrity verification data"
+    }
+  }
+}

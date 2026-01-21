@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-01-21T20:15:00Z",
+  "multilingual_titles": {
+    "en": "Global Observation & Production Index",
+    "fr": "Index Mondial d'Observation et de Production",
+    "de": "Globaler Beobachtungs- und Produktionsindex",
+    "ru": "Глобальный индекс наблюдений и производства",
+    "zh": "全球观测与生产指数",
+    "ar": "مؤشر المراقبة والإنتاج العالمي"
+  },
+  "sources": [],
+  "observation_ledger": [],
+  "production_ledger": [],
+  "snapshots_registry": []
+}
