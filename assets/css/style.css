@@ -148,6 +148,45 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   GOVERNANCE CITATION
+   ═══════════════════════════════════════════════════════════════ */
+
+.governance-citation {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin-block-end: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  text-align: center;
+}
+
+.governance-citation strong {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-inline-end: var(--spacing-xs);
+}
+
+.governance-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.governance-link:hover {
+  border-bottom-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.governance-link:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 a:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;

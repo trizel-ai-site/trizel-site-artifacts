@@ -88,6 +88,36 @@ strong {
   color: #0f172a;
 }
 
+/* Governance Citation */
+.governance-citation {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 2px solid #0369a1;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.governance-citation strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.governance-link {
+  color: #0369a1;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.governance-link:hover {
+  border-bottom-color: #0369a1;
+  text-decoration: none;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    LAYOUT
    ═══════════════════════════════════════════════════════════════ */
