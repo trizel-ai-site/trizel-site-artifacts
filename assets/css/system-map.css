@@ -1,88 +1,103 @@
-/* TRIZEL System Map — Additional Styles
+/* TRIZEL System Map — Additional Styles (Phase E.1 Enhanced)
  * Extends tokens.css and scientific-ui.css
- * Layout and typography only — no animations or shadows
+ * NASA-grade layout and typography — Static visual documentation
  */
 
 /* Language Sections */
 .language-section {
   margin-bottom: var(--space-16);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .section-header {
   margin-bottom: var(--space-8);
-  padding-bottom: var(--space-4);
-  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-5);
+  border-bottom: 3px solid var(--color-border);
 }
 
 .section-header h2 {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
   color: var(--color-text);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
 }
 
 .language-label {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-wider);
 }
 
 .language-separator {
   margin: var(--space-16) 0;
   border: none;
-  border-top: 2px solid var(--color-border);
+  border-top: 3px solid var(--color-border);
 }
 
-/* Diagram Sections */
+/* Diagram Sections — Enhanced presentation */
 .diagram-section {
   margin: var(--space-12) 0;
+  padding: var(--space-6);
+  background: var(--color-surface-overlay);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
 }
 
 .diagram-section h3 {
-  font-size: var(--text-2xl);
-  font-weight: var(--font-semibold);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
   color: var(--color-text);
-  margin-bottom: var(--space-4);
-  line-height: var(--leading-snug);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .diagram-description {
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   color: var(--color-text-medium);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
+  max-width: var(--content-max-width);
 }
 
 .diagram-container {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-8);
   margin: var(--space-6) 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .diagram-image {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.diagram-legend {
-  margin-top: var(--space-6);
-  padding: var(--space-6);
-  background: var(--color-bg);
-  border-left: 3px solid var(--color-accent);
   border-radius: var(--radius-md);
 }
 
+.diagram-legend {
+  margin-top: var(--space-8);
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-info-bg);
+  border-left: 6px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
 .diagram-legend h4 {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
   color: var(--color-text);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+  letter-spacing: var(--tracking-tight);
 }
 
 .diagram-legend ul {

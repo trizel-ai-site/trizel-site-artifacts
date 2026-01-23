@@ -1,19 +1,24 @@
-/* TRIZEL Statistics — Additional Styles
+/* TRIZEL Statistics — Additional Styles (Phase E.1 Enhanced)
  * Extends tokens.css, scientific-ui.css, and system-map.css
- * Static metrics display — Layout and typography only
+ * Static metrics display — NASA-grade layout and typography
  */
 
 /* Statistics Grid Layout */
 .stats-section {
   margin: var(--space-12) 0;
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .stats-section h3 {
-  font-size: var(--text-2xl);
-  font-weight: var(--font-semibold);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
   color: var(--color-text);
   margin-bottom: var(--space-6);
-  line-height: var(--leading-snug);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .stats-grid {
@@ -23,32 +28,36 @@
   margin-bottom: var(--space-8);
 }
 
-/* Statistic Cards */
+/* Statistic Cards — Enhanced professional polish */
 .stat-card {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-8);
   text-align: center;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-card:hover {
   border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .stat-value {
-  font-size: var(--text-5xl);
-  font-weight: var(--font-bold);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
   color: var(--color-accent);
   line-height: var(--leading-tight);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
   font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-tighter);
 }
 
 .stat-label {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
   color: var(--color-text);
   line-height: var(--leading-snug);
   margin-bottom: var(--space-3);

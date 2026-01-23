@@ -5,45 +5,54 @@
 
 :root {
   /* ═══════════════════════════════════════════════════════════════
-     COLOR TOKENS — Institutional Neutral Palette
+     COLOR TOKENS — Institutional Neutral Palette (NASA-grade)
      ═══════════════════════════════════════════════════════════════ */
   
-  /* Background layers */
-  --color-bg: #fafbfc;
+  /* Background layers — Refined scientific grays */
+  --color-bg: #f5f7fa;
   --color-surface: #ffffff;
   --color-surface-raised: #ffffff;
+  --color-surface-overlay: #fafbfc;
   
-  /* Borders and dividers */
-  --color-border: #d1d9e0;
-  --color-border-light: #e8ecef;
-  --color-border-strong: #94a3b8;
+  /* Borders and dividers — Enhanced precision */
+  --color-border: #cbd5e1;
+  --color-border-light: #e2e8f0;
+  --color-border-strong: #64748b;
+  --color-border-accent: #0969da;
   
-  /* Text hierarchy */
-  --color-text: #0f1419;
-  --color-text-medium: #3c4752;
+  /* Text hierarchy — NASA-grade readability */
+  --color-text: #0f172a;
+  --color-text-medium: #334155;
   --color-text-muted: #64748b;
   --color-text-subtle: #94a3b8;
+  --color-text-inverse: #ffffff;
   
-  /* Accent — Single institutional blue (NASA-inspired) */
-  --color-accent: #0969da;
-  --color-accent-hover: #0550ae;
-  --color-accent-bg: #ddf4ff;
+  /* Accent — NASA institutional blue (WCAG AAA compliant) */
+  --color-accent: #0b5fb8;
+  --color-accent-hover: #084a8f;
+  --color-accent-active: #063970;
+  --color-accent-bg: #e0f2fe;
+  --color-accent-border: #7dd3fc;
   
-  /* Notice/Warning — Institutional amber (WCAG-AA compliant) */
+  /* Notice/Warning — Institutional amber (WCAG AA compliant) */
   --color-notice-bg: #fffbeb;
-  --color-notice-border: #d97706;
-  --color-notice-text: #92400e;
-  --color-notice-heading: #78350f;
+  --color-notice-border: #f59e0b;
+  --color-notice-text: #78350f;
+  --color-notice-heading: #92400e;
   
-  /* Status colors (minimal use) */
-  --color-success: #1a7f37;
-  --color-error: #cf222e;
+  /* Status colors — Scientific observatory palette */
+  --color-success: #166534;
+  --color-success-bg: #f0fdf4;
+  --color-error: #991b1b;
+  --color-error-bg: #fef2f2;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
   
-  /* Info/Reference box */
-  --color-info-bg: #f0f9ff;
-  --color-info-border: #0284c7;
-  --color-info-text: #0c4a6e;
-  --color-info-heading: #075985;
+  /* Info/Reference box — Enhanced clarity */
+  --color-info-bg: #eff6ff;
+  --color-info-border: #3b82f6;
+  --color-info-text: #1e3a8a;
+  --color-info-heading: #1e40af;
   
   /* ═══════════════════════════════════════════════════════════════
      SPACING SCALE — 4px base unit
@@ -60,65 +69,78 @@
   --space-16: 4rem;    /* 64px */
   
   /* ═══════════════════════════════════════════════════════════════
-     TYPOGRAPHY SCALE — System font stack
+     TYPOGRAPHY SCALE — NASA-grade institutional typography
      ═══════════════════════════════════════════════════════════════ */
   
-  /* Font families */
-  --font-system: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'SF Mono', Monaco, 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  /* Font families — System fonts for maximum clarity and performance */
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
   
-  /* Font sizes */
-  --text-xs: 0.75rem;      /* 12px */
-  --text-sm: 0.875rem;     /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg: 1.125rem;     /* 18px */
-  --text-xl: 1.25rem;      /* 20px */
-  --text-2xl: 1.5rem;      /* 24px */
-  --text-3xl: 1.875rem;    /* 30px */
-  --text-4xl: 2.25rem;     /* 36px */
-  --text-5xl: 3rem;        /* 48px */
+  /* Font sizes — Refined type scale for scientific content */
+  --text-xs: 0.75rem;      /* 12px — Captions, metadata */
+  --text-sm: 0.875rem;     /* 14px — Supporting text */
+  --text-base: 1rem;       /* 16px — Body text (optimal readability) */
+  --text-lg: 1.125rem;     /* 18px — Lead paragraphs */
+  --text-xl: 1.25rem;      /* 20px — H6, subsection headings */
+  --text-2xl: 1.5rem;      /* 24px — H5, section headings */
+  --text-3xl: 1.875rem;    /* 30px — H4, major sections */
+  --text-4xl: 2.25rem;     /* 36px — H3, primary sections */
+  --text-5xl: 3rem;        /* 48px — H2, page titles */
+  --text-6xl: 3.75rem;     /* 60px — H1, hero titles */
   
-  /* Font weights */
+  /* Font weights — Precise institutional hierarchy */
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
+  --font-extrabold: 800;
   
-  /* Line heights */
-  --leading-tight: 1.25;
-  --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
-  --leading-loose: 1.75;
+  /* Line heights — Optimized for research content readability */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
+  --leading-loose: 1.8;
   
-  /* Letter spacing */
-  --tracking-tight: -0.02em;
+  /* Letter spacing — Precision tuning for professional appearance */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
   --tracking-normal: 0;
-  --tracking-wide: 0.025em;
-  --tracking-wider: 0.05em;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.04em;
+  --tracking-widest: 0.08em;
   
   /* ═══════════════════════════════════════════════════════════════
-     LAYOUT TOKENS
+     LAYOUT TOKENS — NASA-grade precision
      ═══════════════════════════════════════════════════════════════ */
   
-  /* Border radius */
+  /* Border radius — Subtle, professional curves */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
+  --radius-xl: 12px;
   
-  /* Shadow — Minimal institutional elevation */
+  /* Shadow — Refined institutional elevation system */
   --shadow-none: none;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  --shadow-reverse-sm: 0 -1px 3px 0 rgba(15, 23, 42, 0.04);
   
-  /* Focus ring */
-  --focus-ring: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  /* Focus ring — WCAG 2.4.7 compliant */
+  --focus-ring: 0 0 0 3px rgba(11, 95, 184, 0.3);
+  --focus-ring-offset: 0 0 0 2px var(--color-surface);
   
-  /* Container widths */
+  /* Container widths — Research-grade content layout */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
-  --container-xl: 1200px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+  
+  /* Content max-width for optimal readability */
+  --content-max-width: 75ch;
   
   /* ═══════════════════════════════════════════════════════════════
      TRANSITIONS
