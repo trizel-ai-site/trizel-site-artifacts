@@ -16,128 +16,47 @@
   <meta name="citation_title" content="TRIZEL Institutional Scientific Observatory">
   <meta name="citation_doi" content="10.5281/zenodo.18354752">
   <meta name="citation_author_orcid" content="0009-0003-9884-3697">
-  
-  <style>
-    .lang-selector-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-6);
-      margin: var(--space-8) 0;
-    }
-    
-    .lang-selector-card {
-      padding: var(--space-6);
-      background: var(--color-surface);
-      border: 2px solid var(--color-border);
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      display: block;
-    }
-    
-    .lang-selector-card:hover,
-    .lang-selector-card:focus {
-      border-color: var(--color-accent);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transform: translateY(-2px);
-    }
-    
-    .lang-selector-card__flag {
-      font-size: 3rem;
-      margin-bottom: var(--space-3);
-      display: block;
-    }
-    
-    .lang-selector-card__name {
-      font-size: var(--text-2xl);
-      font-weight: var(--font-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-    
-    .lang-selector-card__native {
-      font-size: var(--text-lg);
-      color: var(--color-text-medium);
-    }
-  </style>
 </head>
 <body>
   <!-- Skip to content link for accessibility -->
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
+  <!-- Site Header with Language Selector -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutional Scientific Observatory</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/governance/">Governance</a>
+        <a href="/en/goi/">GOI</a>
+        <a href="/en/lab/">Lab</a>
+        <a href="/en/map/">Map</a>
+        <a href="/en/projects/">Projects</a>
+        <a href="/en/status/">Status</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Language:</span>
+        <a href="/en/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
   <!-- Hero Section -->
   <section class="hero" role="banner">
     <div class="container">
-      <h1 class="hero__title">TRIZEL</h1>
+      <h2 class="hero__title">Institutional Scientific Observatory</h2>
       <p class="hero__subtitle">
-        Institutional Scientific Observatory<br>
         Governed Research • Layer Separation • Progressive Enhancement
       </p>
-      <p style="margin-top: var(--space-4); font-size: var(--text-lg); color: #cbd5e1;">
-        Select your preferred language to continue:
-      </p>
-    </div>
-  </section>
-
-  <!-- Language Selector Section -->
-  <section class="section" style="background: var(--color-bg);">
-    <div class="container">
-      <div class="section__header">
-        <h2 class="section__title">Choose Your Language / Choisissez votre langue</h2>
-        <p class="section__description">
-          TRIZEL is available in 6 languages with full institutional documentation.
-          Select your preferred language to access the site.
-        </p>
-      </div>
-
-      <div class="lang-selector-grid">
-        <a href="/en/" class="lang-selector-card" lang="en">
-          <span class="lang-selector-card__flag">🇬🇧</span>
-          <div class="lang-selector-card__name">English</div>
-          <div class="lang-selector-card__native">EN</div>
-        </a>
-
-        <a href="/fr/" class="lang-selector-card" lang="fr">
-          <span class="lang-selector-card__flag">🇫🇷</span>
-          <div class="lang-selector-card__name">French</div>
-          <div class="lang-selector-card__native">Français</div>
-        </a>
-
-        <a href="/de/" class="lang-selector-card" lang="de">
-          <span class="lang-selector-card__flag">🇩🇪</span>
-          <div class="lang-selector-card__name">German</div>
-          <div class="lang-selector-card__native">Deutsch</div>
-        </a>
-
-        <a href="/ru/" class="lang-selector-card" lang="ru">
-          <span class="lang-selector-card__flag">🇷🇺</span>
-          <div class="lang-selector-card__name">Russian</div>
-          <div class="lang-selector-card__native">Русский</div>
-        </a>
-
-        <a href="/zh/" class="lang-selector-card" lang="zh">
-          <span class="lang-selector-card__flag">🇨🇳</span>
-          <div class="lang-selector-card__name">Chinese</div>
-          <div class="lang-selector-card__native">中文</div>
-        </a>
-
-        <a href="/ar/" class="lang-selector-card" lang="ar" dir="rtl">
-          <span class="lang-selector-card__flag">🇸🇦</span>
-          <div class="lang-selector-card__name">Arabic</div>
-          <div class="lang-selector-card__native">العربية</div>
-        </a>
-      </div>
-
-      <div class="banner banner--info" style="margin-top: var(--space-8);">
-        <div class="banner__title">Progressive Enhancement Active</div>
-        <div class="banner__content">
-          <p>
-            If you have JavaScript enabled, your language preference will be remembered for future visits.
-            The site works perfectly without JavaScript — all content is accessible via the language links above.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -303,6 +222,7 @@
         <li><a href="/goi/" class="site-footer__link">GOI</a></li>
         <li><a href="/en/map/" class="site-footer__link">Map</a></li>
         <li><a href="/en/lab/" class="site-footer__link">Lab</a></li>
+        <li><a href="/en/projects/" class="site-footer__link">Projects</a></li>
         <li><a href="/en/status/" class="site-footer__link">Status</a></li>
         <li><a href="https://doi.org/10.5281/zenodo.18354752" class="site-footer__link" target="_blank" rel="noopener">DOI</a></li>
         <li><a href="https://orcid.org/0009-0003-9884-3697" class="site-footer__link" target="_blank" rel="noopener">ORCID</a></li>
@@ -321,29 +241,15 @@
 
   <!-- Phase H1-C: Optional Progressive Enhancement JS -->
   <script>
-    // Optional: Auto-redirect to last language (progressive enhancement)
+    // Optional: Remember language preference (progressive enhancement)
     (function() {
       'use strict';
       
       // Only run if localStorage is supported
       if (typeof Storage === 'undefined') return;
       
-      // Check if we have a saved language preference
-      var savedLang = localStorage.getItem('trizel_lang');
-      
-      // If we have a saved preference and we're on the root page, redirect
-      if (savedLang && window.location.pathname === '/') {
-        var validLangs = ['en', 'fr', 'de', 'ru', 'zh', 'ar'];
-        if (validLangs.indexOf(savedLang) !== -1) {
-          // Give user 2 seconds to see the language chooser (accessibility)
-          setTimeout(function() {
-            window.location.href = '/' + savedLang + '/';
-          }, 2000);
-        }
-      }
-      
       // Save language choice when clicking a language link
-      var langLinks = document.querySelectorAll('.lang-selector-card');
+      var langLinks = document.querySelectorAll('.lang-link');
       langLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
           var lang = this.getAttribute('lang');
