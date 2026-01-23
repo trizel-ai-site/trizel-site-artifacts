@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at_utc": "2026-01-21T20:15:00Z",
+  "generated_at_utc": "2026-01-22T23:00:00Z",
   "multilingual_titles": {
     "en": "Global Observation & Production Index",
     "fr": "Index Mondial d'Observation et de Production",
@@ -9,7 +9,50 @@
     "zh": "全球观测与生产指数",
     "ar": "مؤشر المراقبة والإنتاج العالمي"
   },
-  "sources": [],
+  "sources": [
+    {
+      "repo_id": "AUTO-DZ-ACT-3I-ATLAS-DAILY",
+      "repo_name": "AUTO-DZ-ACT-3I-ATLAS-DAILY",
+      "owner": "abdelkader-omran",
+      "role": "raw"
+    },
+    {
+      "repo_id": "AUTO-DZ-ACT-ANALYSIS-3I-ATLAS",
+      "repo_name": "AUTO-DZ-ACT-ANALYSIS-3I-ATLAS",
+      "owner": "abdelkader-omran",
+      "role": "analysis"
+    },
+    {
+      "repo_id": "trizel-AI",
+      "repo_name": "trizel-AI",
+      "owner": "abdelkader-omran",
+      "role": "analysis"
+    },
+    {
+      "repo_id": "trizel-monitor",
+      "repo_name": "trizel-monitor",
+      "owner": "abdelkader-omran",
+      "role": "monitor"
+    },
+    {
+      "repo_id": "trizel-lab",
+      "repo_name": "trizel-lab",
+      "owner": "trizel-ai-site",
+      "role": "lab"
+    },
+    {
+      "repo_id": "Auto-dz-act",
+      "repo_name": "Auto-dz-act",
+      "owner": "trizel-ai",
+      "role": "raw"
+    },
+    {
+      "repo_id": "trizel-monitor-org",
+      "repo_name": "trizel-monitor",
+      "owner": "trizel-ai",
+      "role": "monitor"
+    }
+  ],
   "observation_ledger": [],
   "production_ledger": [],
   "snapshots_registry": []
