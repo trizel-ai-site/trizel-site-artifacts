@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase-F.3 Artifacts — 2026-01-23 | TRIZEL</title>
+  <meta name="description" content="Phase-F.3 institutional artifacts published on Layer-2 with byte-for-byte verification">
+  <style>
+    :root {
+      --color-primary: #1a1a1a;
+      --color-secondary: #4a4a4a;
+      --color-border: #d0d0d0;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f8f9fa;
+      --color-link: #0066cc;
+      --color-link-hover: #004499;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      color: var(--color-primary);
+      background-color: var(--color-bg);
+      padding: var(--spacing-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-primary);
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--color-secondary);
+      font-weight: 400;
+    }
+
+    .governance-notice {
+      background: var(--color-bg-alt);
+      border-left: 4px solid var(--color-secondary);
+      padding: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .governance-notice strong {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      font-size: 1.0625rem;
+    }
+
+    .governance-notice p {
+      margin: var(--spacing-xs) 0;
+      font-size: 0.9375rem;
+      color: var(--color-secondary);
+    }
+
+    section {
+      margin: var(--spacing-xl) 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .file-list {
+      list-style: none;
+      margin: var(--spacing-md) 0;
+    }
+
+    .file-item {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .file-item h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .file-item a {
+      color: var(--color-link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .file-item a:hover {
+      color: var(--color-link-hover);
+      text-decoration: underline;
+    }
+
+    .file-meta {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--color-secondary);
+      margin-top: var(--spacing-xs);
+    }
+
+    .hash {
+      word-break: break-all;
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+
+    .chart-container {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-md);
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .chart-container svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .verification-section {
+      background: #e8f4f8;
+      border: 2px solid #0066cc;
+      border-radius: 4px;
+      padding: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .verification-section h3 {
+      color: #004499;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .verification-list {
+      list-style: none;
+      margin: var(--spacing-sm) 0;
+    }
+
+    .verification-list li {
+      padding: var(--spacing-xs) 0;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+
+    .verification-list li::before {
+      content: "✓ ";
+      color: #00aa00;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    footer {
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--color-border);
+      font-size: 0.875rem;
+      color: var(--color-secondary);
+      text-align: center;
+    }
+
+    nav.breadcrumb {
+      margin-bottom: var(--spacing-md);
+      font-size: 0.9375rem;
+    }
+
+    nav.breadcrumb a {
+      color: var(--color-link);
+      text-decoration: none;
+    }
+
+    nav.breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    nav.breadcrumb span {
+      margin: 0 0.5rem;
+      color: var(--color-secondary);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: var(--spacing-sm);
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media print {
+      body {
+        max-width: none;
+        padding: 0;
+      }
+
+      .governance-notice, .verification-section {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../../../index.html">Home</a>
+    <span>/</span>
+    <a href="../../index.html">Artifacts</a>
+    <span>/</span>
+    <a href="../index.html">Phase-F.3</a>
+    <span>/</span>
+    <span aria-current="page">2026-01-23</span>
+  </nav>
+
+  <header>
+    <h1>Phase-F.3 Artifacts</h1>
+    <p class="subtitle">2026-01-23 — Layer-2 Publication (Byte-for-Byte Verified)</p>
+  </header>
+
+  <div class="governance-notice" role="note">
+    <strong>Static Archive — Governed / No JS / No Analytics</strong>
+    <p><strong>Source:</strong> TRIZEL-AI (Layer-1)</p>
+    <p>This is a governance-compliant static archive with no runtime behavior, no external dependencies, and no user tracking.</p>
+    <p><strong>Verification:</strong> All files are byte-for-byte mirrors of Layer-1 authoritative outputs, verified using SHA-256 cryptographic hashing.</p>
+  </div>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This directory contains Phase-F.3 institutional artifacts published on Layer-2 as a 
+        byte-for-byte mirror of the authoritative Layer-1 outputs.
+      </p>
+      <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+        <li><strong>Phase:</strong> F.3</li>
+        <li><strong>Date:</strong> 2026-01-23</li>
+        <li><strong>Layer-1 Source:</strong> trizel-ai/trizel-lab (authoritative, READ-ONLY)</li>
+        <li><strong>Layer-2 Target:</strong> trizel-ai-site/trizel-site-artifacts (publication)</li>
+        <li><strong>Status:</strong> FROZEN — Hashes fixed, no regeneration permitted</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Artifact Files</h2>
+      <ul class="file-list">
+        <li class="file-item">
+          <h3>1. <a href="statistics.csv" download>statistics.csv</a></h3>
+          <p>Raw statistical data in CSV format.</p>
+          <div class="file-meta">
+            SHA-256: <span class="hash">7cc3307a5ab4ced0621d25e4d8889d064d48b5bfc835441e6339f533c9705f90</span>
+          </div>
+        </li>
+        <li class="file-item">
+          <h3>2. <a href="statistics.json" download>statistics.json</a></h3>
+          <p>Structured statistical data in JSON format with metadata.</p>
+          <div class="file-meta">
+            SHA-256: <span class="hash">49d22d9aab2552e5b41545e3efeef81a6645287e0841ef36f524ef07ed660647</span>
+          </div>
+        </li>
+        <li class="file-item">
+          <h3>3. <a href="chart.svg" download>chart.svg</a></h3>
+          <p>Visual representation of statistics as an embedded SVG chart.</p>
+          <div class="file-meta">
+            SHA-256: <span class="hash">ac739e4c35840723f0d3497d7d354cbfbcabd92fd58bf417e2c3a42932b483d7</span>
+          </div>
+        </li>
+        <li class="file-item">
+          <h3>4. <a href="provenance.json" download>provenance.json</a></h3>
+          <p>Complete provenance information and metadata for this artifact set.</p>
+          <div class="file-meta">
+            SHA-256: <span class="hash">d90ef0eaea55db40cf45f33217a6106d3731f75a2da45b3afcfe94a9416965ca</span>
+          </div>
+        </li>
+        <li class="file-item">
+          <h3>5. <a href="README.md">README.md</a></h3>
+          <p>Human-readable documentation for this artifact set.</p>
+          <div class="file-meta">
+            SHA-256: <span class="hash">fd3bf345abb11f26a3afcf152710ee00c6bca333a6545173439d4d80f3cd48f8</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="chart-container">
+      <h2>Embedded Chart</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+        <title>Phase-F.3 Statistics Chart</title>
+        <rect width="400" height="300" fill="#f8f9fa"/>
+        <text x="200" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold">Phase-F.3 Statistics</text>
+        <text x="200" y="50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#666">2026-01-23</text>
+        
+        <!-- Bar chart -->
+        <rect x="50" y="100" width="80" height="150" fill="#4a90e2" opacity="0.8"/>
+        <text x="90" y="265" text-anchor="middle" font-family="sans-serif" font-size="11">Observations</text>
+        <text x="90" y="90" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold">1000</text>
+        
+        <rect x="160" y="80" width="80" height="170" fill="#50c878" opacity="0.8"/>
+        <text x="200" y="265" text-anchor="middle" font-family="sans-serif" font-size="11">Duration (s)</text>
+        <text x="200" y="70" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold">3600</text>
+        
+        <rect x="270" y="155" width="80" height="95" fill="#f5a623" opacity="0.8"/>
+        <text x="310" y="265" text-anchor="middle" font-family="sans-serif" font-size="11">Accuracy</text>
+        <text x="310" y="145" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold">0.95</text>
+        
+        <line x1="40" y1="250" x2="360" y2="250" stroke="#333" stroke-width="1"/>
+        <line x1="40" y1="80" x2="40" y2="250" stroke="#333" stroke-width="1"/>
+      </svg>
+    </section>
+
+    <section class="verification-section">
+      <h3>Cryptographic Verification</h3>
+      <p>All files have been verified as byte-for-byte mirrors of Layer-1 authoritative outputs:</p>
+      <ul class="verification-list">
+        <li>statistics.csv — Hash verified ✓</li>
+        <li>statistics.json — Hash verified ✓</li>
+        <li>chart.svg — Hash verified ✓</li>
+        <li>provenance.json — Hash verified ✓</li>
+        <li>README.md — Hash verified ✓</li>
+      </ul>
+      <p style="margin-top: 1rem; font-size: 0.875rem;">
+        <strong>Verification Method:</strong> SHA-256 cryptographic hashing<br>
+        <strong>Layer-1 → Layer-2:</strong> 1:1 equality confirmed for all 5 files
+      </p>
+    </section>
+
+    <section>
+      <h2>Governance</h2>
+      <h3 style="font-size: 1.125rem; margin: 1rem 0 0.5rem 0;">Layer-0 Authority</h3>
+      <ul style="padding-left: 1.5rem;">
+        <li><strong>Repository:</strong> trizel-core</li>
+        <li><strong>Role:</strong> Governance and policy decisions</li>
+      </ul>
+
+      <h3 style="font-size: 1.125rem; margin: 1rem 0 0.5rem 0;">Layer-1 Source (READ-ONLY)</h3>
+      <ul style="padding-left: 1.5rem;">
+        <li><strong>Organization:</strong> trizel-ai</li>
+        <li><strong>Repository:</strong> trizel-lab</li>
+        <li><strong>Path:</strong> artifacts/phase-f3/2026-01-23/</li>
+        <li><strong>Status:</strong> FROZEN</li>
+      </ul>
+
+      <h3 style="font-size: 1.125rem; margin: 1rem 0 0.5rem 0;">Layer-2 Publication</h3>
+      <ul style="padding-left: 1.5rem;">
+        <li><strong>Organization:</strong> trizel-ai-site</li>
+        <li><strong>Repository:</strong> trizel-site-artifacts</li>
+        <li><strong>Path:</strong> artifacts/phase-f3/2026-01-23/</li>
+        <li><strong>Publication Phase:</strong> F.4</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Prohibitions</h2>
+      <p>The following are strictly prohibited under Phase-F governance:</p>
+      <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+        <li>❌ No regeneration of artifact content</li>
+        <li>❌ No data transformation or formatting</li>
+        <li>❌ No JavaScript, analytics, or telemetry</li>
+        <li>❌ No publication outside specified path</li>
+        <li>❌ No proceeding without hash verification</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Phase-F.4 Publication</strong></p>
+    <p>Layer-2 — Read-Only Display — Byte-for-Byte Verified</p>
+    <p>© 2026 TRIZEL-AI — Static Archive — Governance-Controlled</p>
+  </footer>
+</body>
+</html>

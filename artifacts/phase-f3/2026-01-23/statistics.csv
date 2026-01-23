@@ -1,0 +1,4 @@
+metric,value,unit
+observations,1000,count
+duration,3600,seconds
+accuracy,0.95,ratio

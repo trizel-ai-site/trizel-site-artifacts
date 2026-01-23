@@ -1,0 +1,47 @@
+{
+  "artifact_set": "phase-f3-2026-01-23",
+  "layer_1_source": {
+    "organization": "trizel-ai",
+    "repository": "trizel-lab",
+    "path": "artifacts/phase-f3/2026-01-23/",
+    "status": "frozen"
+  },
+  "layer_2_target": {
+    "organization": "trizel-ai-site",
+    "repository": "trizel-site-artifacts",
+    "path": "artifacts/phase-f3/2026-01-23/",
+    "publication_date": "2026-01-23"
+  },
+  "files": [
+    {
+      "name": "statistics.csv",
+      "purpose": "Raw statistical data",
+      "format": "CSV"
+    },
+    {
+      "name": "statistics.json",
+      "purpose": "Structured statistical data",
+      "format": "JSON"
+    },
+    {
+      "name": "chart.svg",
+      "purpose": "Visual representation of statistics",
+      "format": "SVG"
+    },
+    {
+      "name": "provenance.json",
+      "purpose": "Provenance and metadata",
+      "format": "JSON"
+    },
+    {
+      "name": "README.md",
+      "purpose": "Human-readable documentation",
+      "format": "Markdown"
+    }
+  ],
+  "governance": {
+    "layer_0_authority": "trizel-core",
+    "publication_phase": "F.4",
+    "verification": "byte-for-byte mirror with SHA-256 verification"
+  }
+}
