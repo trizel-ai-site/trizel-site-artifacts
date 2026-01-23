@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIZEL - 机构科学观测站</title>
+  <title>通用对象索引 - TRIZEL</title>
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/base.css">
   <link rel="stylesheet" href="/assets/components.css">
@@ -18,7 +18,7 @@
           <p class="tagline">机构科学观测站</p>
         </a>
       </div>
-      <nav class="site-nav" aria-label="主导航">
+      <nav class="site-nav" aria-label="Main navigation">
         <a href="/zh/">首页</a>
         <a href="/zh/governance/">治理</a>
         <a href="/zh/goi/">通用对象索引</a>
@@ -26,46 +26,51 @@
         <a href="/zh/map/">地图</a>
         <a href="/zh/status/">状态</a>
       </nav>
-      <div class="lang-switcher" role="navigation" aria-label="语言选择器">
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
         <span class="lang-label">语言：</span>
-        <a href="/en/" class="lang-link" lang="en">EN</a>
-        <a href="/fr/" class="lang-link" lang="fr">FR</a>
-        <a href="/de/" class="lang-link" lang="de">DE</a>
-        <a href="/ru/" class="lang-link" lang="ru">RU</a>
-        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
-        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+        <a href="/en/goi/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/goi/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/goi/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/goi/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/goi/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/goi/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2>欢迎来到TRIZEL</h2>
-      <p>TRIZEL是一个按照严格治理协议运作的机构科学观测站。该系统实现了分层架构，将治理（第0层）、执行（第1层）和展示（第2层）分开。</p>
+    <h2>通用对象索引（GOI）</h2>
+    
+    <section class="goi-overview">
+      <h3>概述</h3>
+      <p>通用对象索引（GOI）是TRIZEL的结构化目录，用于研究工件、文档和机构对象。GOI通过治理控制的索引系统提供对研究输出的标准化访问。</p>
     </section>
 
-    <section class="mission">
-      <h3>使命</h3>
-      <p>通过多层架构提供透明的、受治理控制的科学研究成果和机构流程访问，确保关注点分离和机构问责制。</p>
+    <section class="goi-purpose">
+      <h3>目的</h3>
+      <p>GOI作为第一层执行和第二层展示之间的主要接口，确保所有已发布的研究工件符合治理标准并得到适当记录。</p>
     </section>
 
-    <section class="governance-summary">
-      <h3>治理框架</h3>
-      <p>所有操作均受<a href="/zh/governance/">TRIZEL治理框架</a>管理，该框架定义：</p>
+    <section class="goi-access">
+      <h3>访问GOI</h3>
       <ul>
-        <li>第0层：宪法治理和不可变规则</li>
-        <li>第1层：具有私有存储库和受控访问的执行层</li>
-        <li>第2层：公共展示层（本站点）</li>
+        <li><a href="/goi/index.en.html">GOI索引（英语）</a></li>
+        <li><a href="/goi/index.fr.html">GOI索引（法语）</a></li>
+        <li><a href="/goi/index.de.html">GOI索引（德语）</a></li>
+        <li><a href="/goi/index.ru.html">GOI索引（俄语）</a></li>
+        <li><a href="/goi/index.zh.html">GOI索引（中文）</a></li>
+        <li><a href="/goi/index.ar.html">GOI索引（阿拉伯语）</a></li>
       </ul>
     </section>
 
-    <section class="primary-resources">
-      <h3>主要资源</h3>
+    <section class="goi-structure">
+      <h3>结构</h3>
+      <p>GOI按以下方式组织研究工件：</p>
       <ul>
-        <li><a href="/zh/goi/">通用对象索引（GOI）</a> - 结构化研究成果</li>
-        <li><a href="/zh/lab/">实验室</a> - 研究环境概述</li>
-        <li><a href="/zh/map/">系统地图</a> - TRIZEL架构可视化</li>
-        <li><a href="/zh/status/">状态</a> - 当前系统状态</li>
+        <li>研究领域和类别</li>
+        <li>时间组织（阶段、里程碑）</li>
+        <li>治理状态和批准状态</li>
+        <li>多语言访问路径</li>
       </ul>
     </section>
   </main>
@@ -73,7 +78,7 @@
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-nav">
-        <a href="/artifacts/">成果</a>
+        <a href="/artifacts/">Artifacts</a>
         <a href="/zh/governance/">治理</a>
         <a href="/zh/goi/">通用对象索引</a>
         <a href="/zh/map/">地图</a>

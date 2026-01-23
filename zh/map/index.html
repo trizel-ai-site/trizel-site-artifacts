@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系统地图 - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/zh/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">机构科学观测站</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/zh/">首页</a>
+        <a href="/zh/governance/">治理</a>
+        <a href="/zh/goi/">通用对象索引</a>
+        <a href="/zh/lab/">实验室</a>
+        <a href="/zh/map/">地图</a>
+        <a href="/zh/status/">状态</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">语言：</span>
+        <a href="/en/map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/map/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/map/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/map/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/map/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/map/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>TRIZEL系统地图</h2>
+    
+    <section class="map-overview">
+      <h3>架构可视化</h3>
+      <p>TRIZEL系统地图展示了机构科学观测站的完整架构、组件关系和治理边界。</p>
+    </section>
+
+    <section class="map-display">
+      <figure>
+        <img src="/system-map/trizel-system-map.svg" alt="TRIZEL系统架构地图" style="max-width: 100%; height: auto;">
+        <figcaption>TRIZEL系统架构 - 基于层的治理模型</figcaption>
+      </figure>
+    </section>
+
+    <section class="map-legend">
+      <h3>图例</h3>
+      <dl>
+        <dt>第零层（宪法）</dt>
+        <dd>治理规则、不可变约束、宪法框架</dd>
+        
+        <dt>第一层（执行）</dt>
+        <dd>私有仓库、研究环境、受控执行</dd>
+        
+        <dt>第二层（展示）</dt>
+        <dd>公共界面、只读访问、已批准输出</dd>
+        
+        <dt>GOI</dt>
+        <dd>通用对象索引 - 结构化工件目录</dd>
+        
+        <dt>实验室</dt>
+        <dd>研究和开发执行环境</dd>
+      </dl>
+    </section>
+
+    <section class="map-navigation">
+      <h3>相关资源</h3>
+      <ul>
+        <li><a href="/zh/governance/">治理框架</a></li>
+        <li><a href="/zh/goi/">GOI访问</a></li>
+        <li><a href="/zh/lab/">实验室概述</a></li>
+        <li><a href="/zh/status/">系统状态</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/zh/governance/">治理</a>
+        <a href="/zh/goi/">通用对象索引</a>
+        <a href="/zh/map/">地图</a>
+        <a href="/zh/lab/">实验室</a>
+        <a href="/zh/status/">状态</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">第二层展示 • 无权限 • 无执行 • 治理控制</p>
+    </div>
+  </footer>
+</body>
+</html>

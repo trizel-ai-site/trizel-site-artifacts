@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIZEL - Institutional Scientific Observatory</title>
+  <title>System Map - TRIZEL</title>
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/base.css">
   <link rel="stylesheet" href="/assets/components.css">
@@ -28,44 +28,58 @@
       </nav>
       <div class="lang-switcher" role="navigation" aria-label="Language selector">
         <span class="lang-label">Language:</span>
-        <a href="/en/" class="lang-link" lang="en">EN</a>
-        <a href="/fr/" class="lang-link" lang="fr">FR</a>
-        <a href="/de/" class="lang-link" lang="de">DE</a>
-        <a href="/ru/" class="lang-link" lang="ru">RU</a>
-        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
-        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+        <a href="/en/map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/map/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/map/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/map/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/map/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/map/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h2>Welcome to TRIZEL</h2>
-      <p>TRIZEL is an institutional scientific observatory operating under strict governance protocols. This system implements a layered architecture separating governance (Layer-0), execution (Layer-1), and presentation (Layer-2).</p>
+    <h2>TRIZEL System Map</h2>
+    
+    <section class="map-overview">
+      <h3>Architecture Visualization</h3>
+      <p>The TRIZEL system map illustrates the complete architecture, component relationships, and governance boundaries of the institutional scientific observatory.</p>
     </section>
 
-    <section class="mission">
-      <h3>Mission</h3>
-      <p>To provide transparent, governance-controlled access to scientific research outputs and institutional processes through a multi-layered architecture that ensures separation of concerns and institutional accountability.</p>
+    <section class="map-display">
+      <figure>
+        <img src="/system-map/trizel-system-map.svg" alt="TRIZEL System Architecture Map" style="max-width: 100%; height: auto;">
+        <figcaption>TRIZEL System Architecture - Layer-based governance model</figcaption>
+      </figure>
     </section>
 
-    <section class="governance-summary">
-      <h3>Governance Framework</h3>
-      <p>All operations are governed by the <a href="/en/governance/">TRIZEL Governance Framework</a>, which defines:</p>
+    <section class="map-legend">
+      <h3>Legend</h3>
+      <dl>
+        <dt>Layer-0 (Constitutional)</dt>
+        <dd>Governance rules, immutable constraints, constitutional framework</dd>
+        
+        <dt>Layer-1 (Execution)</dt>
+        <dd>Private repositories, research environment, controlled execution</dd>
+        
+        <dt>Layer-2 (Presentation)</dt>
+        <dd>Public interface, read-only access, approved outputs</dd>
+        
+        <dt>GOI</dt>
+        <dd>General Object Index - structured artifact catalog</dd>
+        
+        <dt>Lab</dt>
+        <dd>Research and development execution environment</dd>
+      </dl>
+    </section>
+
+    <section class="map-navigation">
+      <h3>Related Resources</h3>
       <ul>
-        <li>Layer-0: Constitutional governance and immutable rules</li>
-        <li>Layer-1: Execution layer with private repositories and controlled access</li>
-        <li>Layer-2: Public presentation layer (this site)</li>
-      </ul>
-    </section>
-
-    <section class="primary-resources">
-      <h3>Primary Resources</h3>
-      <ul>
-        <li><a href="/en/goi/">GOI (General Object Index)</a> - Structured research artifacts</li>
-        <li><a href="/en/lab/">Lab</a> - Research environment overview</li>
-        <li><a href="/en/map/">System Map</a> - TRIZEL architecture visualization</li>
-        <li><a href="/en/status/">Status</a> - Current system state</li>
+        <li><a href="/en/governance/">Governance Framework</a></li>
+        <li><a href="/en/goi/">GOI Access</a></li>
+        <li><a href="/en/lab/">Lab Overview</a></li>
+        <li><a href="/en/status/">System Status</a></li>
       </ul>
     </section>
   </main>

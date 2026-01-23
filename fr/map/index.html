@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du Système - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/fr/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Observatoire Scientifique Institutionnel</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Langue:</span>
+        <a href="/en/map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/map/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/map/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/map/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/map/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/map/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Carte du Système TRIZEL</h2>
+    
+    <section class="map-overview">
+      <h3>Visualisation de l'Architecture</h3>
+      <p>La carte du système TRIZEL illustre l'architecture complète, les relations entre les composants et les limites de gouvernance de l'observatoire scientifique institutionnel.</p>
+    </section>
+
+    <section class="map-display">
+      <figure>
+        <img src="/system-map/trizel-system-map.svg" alt="Carte de l'Architecture du Système TRIZEL" style="max-width: 100%; height: auto;">
+        <figcaption>Architecture du Système TRIZEL - Modèle de gouvernance par couches</figcaption>
+      </figure>
+    </section>
+
+    <section class="map-legend">
+      <h3>Légende</h3>
+      <dl>
+        <dt>Couche-0 (Constitutionnelle)</dt>
+        <dd>Règles de gouvernance, contraintes immuables, cadre constitutionnel</dd>
+        
+        <dt>Couche-1 (Exécution)</dt>
+        <dd>Référentiels privés, environnement de recherche, exécution contrôlée</dd>
+        
+        <dt>Couche-2 (Présentation)</dt>
+        <dd>Interface publique, accès en lecture seule, résultats approuvés</dd>
+        
+        <dt>GOI</dt>
+        <dd>Index Général des Objets - catalogue d'artefacts structuré</dd>
+        
+        <dt>Laboratoire</dt>
+        <dd>Environnement d'exécution de recherche et développement</dd>
+      </dl>
+    </section>
+
+    <section class="map-navigation">
+      <h3>Ressources Connexes</h3>
+      <ul>
+        <li><a href="/fr/governance/">Cadre de Gouvernance</a></li>
+        <li><a href="/fr/goi/">Accès GOI</a></li>
+        <li><a href="/fr/lab/">Aperçu du Laboratoire</a></li>
+        <li><a href="/fr/status/">Statut du Système</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Présentation Couche-2 • Sans Autorité • Sans Exécution • Contrôlée par la Gouvernance</p>
+    </div>
+  </footer>
+</body>
+</html>

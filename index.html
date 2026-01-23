@@ -7,15 +7,60 @@
   <meta name="description" content="TRIZEL Institutional Scientific Observatory: Governed research documentation with strict layer separation. Progressive enhancement, static artifacts, no tracking.">
   
   <!-- Phase H1-C: New CSS Architecture -->
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/base.css">
-  <link rel="stylesheet" href="assets/components.css">
-  <link rel="stylesheet" href="assets/css/print.css" media="print">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
   
   <!-- Citation Metadata -->
   <meta name="citation_title" content="TRIZEL Institutional Scientific Observatory">
   <meta name="citation_doi" content="10.5281/zenodo.18354752">
   <meta name="citation_author_orcid" content="0009-0003-9884-3697">
+  
+  <style>
+    .lang-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+    
+    .lang-selector-card {
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .lang-selector-card:hover,
+    .lang-selector-card:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    
+    .lang-selector-card__flag {
+      font-size: 3rem;
+      margin-bottom: var(--space-3);
+      display: block;
+    }
+    
+    .lang-selector-card__name {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+    
+    .lang-selector-card__native {
+      font-size: var(--text-lg);
+      color: var(--color-text-medium);
+    }
+  </style>
 </head>
 <body>
   <!-- Skip to content link for accessibility -->
@@ -29,9 +74,69 @@
         Institutional Scientific Observatory<br>
         Governed Research • Layer Separation • Progressive Enhancement
       </p>
-      <div class="hero__actions">
-        <a href="/artifacts/" class="btn btn--primary">Browse Static Artifacts</a>
-        <a href="#mission" class="btn btn--secondary">Our Mission</a>
+      <p style="margin-top: var(--space-4); font-size: var(--text-lg); color: #cbd5e1;">
+        Select your preferred language to continue:
+      </p>
+    </div>
+  </section>
+
+  <!-- Language Selector Section -->
+  <section class="section" style="background: var(--color-bg);">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Choose Your Language / Choisissez votre langue</h2>
+        <p class="section__description">
+          TRIZEL is available in 6 languages with full institutional documentation.
+          Select your preferred language to access the site.
+        </p>
+      </div>
+
+      <div class="lang-selector-grid">
+        <a href="/en/" class="lang-selector-card" lang="en">
+          <span class="lang-selector-card__flag">🇬🇧</span>
+          <div class="lang-selector-card__name">English</div>
+          <div class="lang-selector-card__native">EN</div>
+        </a>
+
+        <a href="/fr/" class="lang-selector-card" lang="fr">
+          <span class="lang-selector-card__flag">🇫🇷</span>
+          <div class="lang-selector-card__name">French</div>
+          <div class="lang-selector-card__native">Français</div>
+        </a>
+
+        <a href="/de/" class="lang-selector-card" lang="de">
+          <span class="lang-selector-card__flag">🇩🇪</span>
+          <div class="lang-selector-card__name">German</div>
+          <div class="lang-selector-card__native">Deutsch</div>
+        </a>
+
+        <a href="/ru/" class="lang-selector-card" lang="ru">
+          <span class="lang-selector-card__flag">🇷🇺</span>
+          <div class="lang-selector-card__name">Russian</div>
+          <div class="lang-selector-card__native">Русский</div>
+        </a>
+
+        <a href="/zh/" class="lang-selector-card" lang="zh">
+          <span class="lang-selector-card__flag">🇨🇳</span>
+          <div class="lang-selector-card__name">Chinese</div>
+          <div class="lang-selector-card__native">中文</div>
+        </a>
+
+        <a href="/ar/" class="lang-selector-card" lang="ar" dir="rtl">
+          <span class="lang-selector-card__flag">🇸🇦</span>
+          <div class="lang-selector-card__name">Arabic</div>
+          <div class="lang-selector-card__native">العربية</div>
+        </a>
+      </div>
+
+      <div class="banner banner--info" style="margin-top: var(--space-8);">
+        <div class="banner__title">Progressive Enhancement Active</div>
+        <div class="banner__content">
+          <p>
+            If you have JavaScript enabled, your language preference will be remembered for future visits.
+            The site works perfectly without JavaScript — all content is accessible via the language links above.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -57,66 +162,48 @@
     </div>
   </div>
 
-  <!-- Main Navigation -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="container site-nav__container">
-      <a href="/" class="site-nav__brand">TRIZEL</a>
-      <ul class="site-nav__links">
-        <li><a href="/artifacts/" class="site-nav__link">Artifacts</a></li>
-        <li><a href="/scientific-narrative/" class="site-nav__link">Scientific Narrative</a></li>
-        <li><a href="/scientific-publication/" class="site-nav__link">Scientific Publication</a></li>
-        <li><a href="/goi/" class="site-nav__link">GOI Index</a></li>
-        <li><a href="/system-map.html" class="site-nav__link">System Map</a></li>
-        <li><a href="index_phase_f.html" class="site-nav__link">Phase F Site</a></li>
-      </ul>
+  <!-- Quick Access Navigation -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Quick Access</h2>
+        <p class="section__description">
+          Key resources available in all languages
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3 class="card__title">📦 Static Artifacts</h3>
+          <p class="card__description">
+            Cryptographically verified, byte-for-byte frozen research outputs. 
+            No JavaScript in artifacts, no regeneration, no transformation.
+          </p>
+          <a href="/artifacts/" class="card__link">Browse Artifacts</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">🔒 Governance</h3>
+          <p class="card__description">
+            All content flows from Layer-0 governance authority. No autonomous execution, 
+            no live data, no scientific claims.
+          </p>
+          <a href="/en/governance/" class="card__link">Read Governance Framework</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">📚 Global Observation Index</h3>
+          <p class="card__description">
+            Multilingual catalog of verified scientific artifacts with provenance tracking.
+          </p>
+          <a href="/goi/" class="card__link">Browse GOI</a>
+        </div>
+      </div>
     </div>
-  </nav>
+  </section>
 
   <!-- Main Content -->
   <main id="main-content">
-    <!-- Mission Section -->
-    <section class="section" id="mission">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Our Mission</h2>
-          <p class="section__description">
-            TRIZEL operates as a Layer-2 presentation observatory within a strict three-layer governance framework.
-            We provide public access to institutional scientific documentation while maintaining absolute separation
-            between governance, execution, and presentation.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3 class="card__title">🔒 Governance-First</h3>
-            <p class="card__description">
-              All content flows from Layer-0 governance authority. No autonomous execution, 
-              no live data, no scientific claims. Pure presentation layer.
-            </p>
-            <a href="GOVERNANCE_PHASE_E_LOCK.md" class="card__link">Read Governance Framework</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">📦 Static Artifacts</h3>
-            <p class="card__description">
-              Cryptographically verified, byte-for-byte frozen research outputs. 
-              No JavaScript in artifacts, no regeneration, no transformation.
-            </p>
-            <a href="/artifacts/" class="card__link">Browse Artifacts</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">🌐 Progressive Enhancement</h3>
-            <p class="card__description">
-              Site functions fully without JavaScript. JS only enhances UX. 
-              No analytics, no tracking, no external CDNs or remote assets.
-            </p>
-            <a href="#governance" class="card__link">View Governance</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Governance Summary -->
     <section class="section" id="governance" style="background: var(--color-bg);">
       <div class="container">
@@ -146,45 +233,7 @@
         </div>
 
         <div style="margin-top: 2rem; text-align: center;">
-          <a href="GOVERNANCE_PHASE_E_LOCK.md" class="btn btn--outline">Read Complete Governance Framework</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Primary Navigation Cards -->
-    <section class="section">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Primary Resources</h2>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3 class="card__title">Static Artifact Archive</h3>
-            <p class="card__description">
-              Browse frozen, cryptographically-verified research outputs. All artifacts are 
-              immutable, static HTML with no JavaScript or external dependencies.
-            </p>
-            <a href="/artifacts/" class="card__link">Browse Artifacts</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">Scientific Narrative</h3>
-            <p class="card__description">
-              Scope, boundaries, and context for TRIZEL's research activities. 
-              Read about our institutional framework and scientific approach.
-            </p>
-            <a href="/scientific-narrative/" class="card__link">Read Narrative</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">Scientific Publication</h3>
-            <p class="card__description">
-              Publication policies, citation guidelines, and claim boundaries. 
-              Understand how to properly reference and cite TRIZEL work.
-            </p>
-            <a href="/scientific-publication/" class="card__link">View Publication Info</a>
-          </div>
+          <a href="/en/governance/" class="btn btn--outline">Read Complete Governance Framework</a>
         </div>
       </div>
     </section>
@@ -217,45 +266,15 @@
       </div>
     </section>
 
-    <!-- Additional Resources -->
+    <!-- Legacy Resources Notice -->
     <section class="section">
       <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Additional Resources</h2>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3 class="card__title">Global Observation Index (GOI)</h3>
-            <p class="card__description">
-              Multilingual catalog of verified scientific artifacts with provenance tracking.
-            </p>
-            <a href="/goi/" class="card__link">Browse GOI</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">System Map</h3>
-            <p class="card__description">
-              Visual documentation of TRIZEL's system structure and relationships.
-            </p>
-            <a href="/system-map.html" class="card__link">View System Map</a>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">Statistics</h3>
-            <p class="card__description">
-              Repository statistics and institutional metrics.
-            </p>
-            <a href="/statistics.html" class="card__link">View Statistics</a>
-          </div>
-        </div>
-
-        <div class="banner banner--notice" style="margin-top: 3rem;">
-          <div class="banner__title">⚠️ Phase F Site Preserved</div>
+        <div class="banner banner--notice">
+          <div class="banner__title">⚠️ Legacy Resources Preserved</div>
           <div class="banner__content">
             <p>
-              This is the Phase H1-C modern homepage. The previous Phase F site
-              (index_phase_f.html) remains preserved for reference and historical access.
+              This is the Phase H1-C multilingual homepage. Previous Phase F resources
+              and single-language pages remain preserved for reference and historical access.
             </p>
             <p style="margin-top: 1rem;">
               <a href="index_phase_f.html" class="btn btn--outline" style="display: inline-block;">
@@ -280,9 +299,11 @@
       
       <ul class="site-footer__links">
         <li><a href="/artifacts/" class="site-footer__link">Artifacts</a></li>
-        <li><a href="/scientific-narrative/" class="site-footer__link">Narrative</a></li>
-        <li><a href="/scientific-publication/" class="site-footer__link">Publication</a></li>
-        <li><a href="GOVERNANCE_PHASE_E_LOCK.md" class="site-footer__link">Governance</a></li>
+        <li><a href="/en/governance/" class="site-footer__link">Governance</a></li>
+        <li><a href="/goi/" class="site-footer__link">GOI</a></li>
+        <li><a href="/en/map/" class="site-footer__link">Map</a></li>
+        <li><a href="/en/lab/" class="site-footer__link">Lab</a></li>
+        <li><a href="/en/status/" class="site-footer__link">Status</a></li>
         <li><a href="https://doi.org/10.5281/zenodo.18354752" class="site-footer__link" target="_blank" rel="noopener">DOI</a></li>
         <li><a href="https://orcid.org/0009-0003-9884-3697" class="site-footer__link" target="_blank" rel="noopener">ORCID</a></li>
       </ul>
@@ -298,8 +319,40 @@
     </div>
   </footer>
 
-  <!-- Phase H1-C: Minimal Progressive Enhancement JS (optional) -->
-  <script src="js/app.js" defer></script>
-  <script src="js/components/archive-banner.js" defer></script>
+  <!-- Phase H1-C: Optional Progressive Enhancement JS -->
+  <script>
+    // Optional: Auto-redirect to last language (progressive enhancement)
+    (function() {
+      'use strict';
+      
+      // Only run if localStorage is supported
+      if (typeof Storage === 'undefined') return;
+      
+      // Check if we have a saved language preference
+      var savedLang = localStorage.getItem('trizel_lang');
+      
+      // If we have a saved preference and we're on the root page, redirect
+      if (savedLang && window.location.pathname === '/') {
+        var validLangs = ['en', 'fr', 'de', 'ru', 'zh', 'ar'];
+        if (validLangs.indexOf(savedLang) !== -1) {
+          // Give user 2 seconds to see the language chooser (accessibility)
+          setTimeout(function() {
+            window.location.href = '/' + savedLang + '/';
+          }, 2000);
+        }
+      }
+      
+      // Save language choice when clicking a language link
+      var langLinks = document.querySelectorAll('.lang-selector-card');
+      langLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var lang = this.getAttribute('lang');
+          if (lang) {
+            localStorage.setItem('trizel_lang', lang);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

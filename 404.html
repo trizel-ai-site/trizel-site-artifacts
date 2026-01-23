@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found (404) | TRIZEL</title>
+  <meta name="robots" content="noindex">
+  
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  
+  <style>
+    .error-page {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-fluid-xl) var(--space-fluid-md);
+    }
+    
+    .error-page__code {
+      font-size: var(--text-fluid-6xl);
+      font-weight: var(--font-extrabold);
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      line-height: 1;
+    }
+    
+    .error-page__title {
+      font-size: var(--text-fluid-3xl);
+      margin-bottom: var(--space-6);
+      color: var(--color-text);
+    }
+    
+    .error-page__description {
+      font-size: var(--text-lg);
+      color: var(--color-text-medium);
+      max-width: 60ch;
+      margin: 0 auto var(--space-8);
+      line-height: var(--leading-relaxed);
+    }
+    
+    .error-page__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-top: var(--space-8);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/" style="text-decoration: none; color: inherit;">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutional Scientific Observatory</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/en/governance/">Governance</a>
+        <a href="/goi/">GOI</a>
+        <a href="/artifacts/">Artifacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="error-page">
+      <div class="error-page__code">404</div>
+      <h2 class="error-page__title">Page Not Found</h2>
+      <p class="error-page__description">
+        The requested page could not be found on this institutional scientific observatory.
+        This may be due to a broken link, mistyped URL, or the page may have been moved or removed.
+      </p>
+
+      <div class="banner banner--notice" style="max-width: 700px; margin: 2rem auto;">
+        <div class="banner__title">Layer-2 Presentation Repository</div>
+        <div class="banner__content">
+          <p>
+            This repository contains only governance-approved static content.
+            If you expected to find a page here, please check the navigation links below
+            or consult the <a href="/en/governance/">governance documentation</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="error-page__links">
+        <a href="/" class="btn btn--primary">Go to Home</a>
+        <a href="/en/governance/" class="btn btn--secondary">Governance</a>
+        <a href="/goi/" class="btn btn--secondary">GOI Index</a>
+        <a href="/en/map/" class="btn btn--secondary">System Map</a>
+        <a href="/artifacts/" class="btn btn--secondary">Artifacts</a>
+      </div>
+
+      <div class="card" style="max-width: 700px; margin: 3rem auto;">
+        <h3 class="card__title">Helpful Links</h3>
+        <ul style="text-align: left; margin-top: 1rem;">
+          <li><a href="/">Home</a> — Main entry point with language selection</li>
+          <li><a href="/en/governance/">Governance</a> — Framework and policies</li>
+          <li><a href="/goi/">Global Observation Index (GOI)</a> — Artifact catalog</li>
+          <li><a href="/en/lab/">Lab</a> — Research environment overview</li>
+          <li><a href="/en/map/">System Map</a> — Architecture visualization</li>
+          <li><a href="/en/status/">Status</a> — Current system state</li>
+          <li><a href="/artifacts/">Artifacts</a> — Static frozen outputs</li>
+        </ul>
+      </div>
+
+      <div class="card" style="max-width: 700px; margin: 2rem auto;">
+        <h3 class="card__title">Available Languages</h3>
+        <p style="margin-bottom: 1rem;">
+          TRIZEL supports 6 languages. You can access content in:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+          <a href="/en/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;">EN (English)</a>
+          <a href="/fr/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;">FR (Français)</a>
+          <a href="/de/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;">DE (Deutsch)</a>
+          <a href="/ru/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;">RU (Русский)</a>
+          <a href="/zh/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;">ZH (中文)</a>
+          <a href="/ar/" class="lang-link" style="padding: 0.5rem 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px;" dir="rtl">AR (العربية)</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/en/governance/">Governance</a>
+        <a href="/goi/">GOI</a>
+        <a href="/en/map/">Map</a>
+        <a href="/en/lab/">Lab</a>
+        <a href="/en/status/">Status</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Layer-2 Presentation • No Authority • No Execution • Governance-Controlled</p>
+    </div>
+  </footer>
+</body>
+</html>

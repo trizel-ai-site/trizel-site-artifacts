@@ -1,124 +1,90 @@
-<!doctype html>
-<html lang="fr" dir="ltr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TRIZEL — Institutionnel</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/lang-switcher.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIZEL - Observatoire Scientifique Institutionnel</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
-      <div class="governance-citation" role="note" aria-label="Governance Reference">
-        <strong>Référence de Gouvernance:</strong> 
-        <a href="https://github.com/trizel-ai/trizel-core/blob/main/docs/governance/LAYER1_CANONICAL_OBSERVATORY_REFERENCE.md" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="governance-link">
-          Référence de l'Observatoire Canonique Couche-0 (trizel-core)
+      <div class="brand">
+        <a href="/fr/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Observatoire Scientifique Institutionnel</p>
         </a>
       </div>
-      <div class="brand">
-        <h1>TRIZEL</h1>
-        <p class="memory-marker">AUTO DZ ACT</p>
-        <p class="memory-label">Marqueur de Mémoire Épistémique Fondamental</p>
-      </div>
-      <div class="header-meta">
-        <span class="layer-badge">Couche-2</span>
-        <p class="tagline">Présentation Uniquement — Aucune Analyse — Aucune Exécution</p>
-        <div class="lang-switcher">
-          <span class="lang-switcher-label">Langue :</span>
-          <select id="lang-switcher" aria-label="Sélectionner la langue">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="ar">العربية</option>
-            <option value="zh">中文</option>
-            <option value="ru">Русский</option>
-          </select>
-        </div>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Sélecteur de langue">
+        <span class="lang-label">Langue:</span>
+        <a href="/en/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="layer-notice" class="card disclaimer">
-      <h2>Avis Couche-2</h2>
-      <p class="explicit">
-        Ce dépôt est <strong>Couche-2 (Présentation/Affichage uniquement)</strong>. Il ne contient aucun contenu scientifique, n'effectue aucune analyse et n'a aucune capacité d'exécution. Toute autorité dérive de <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Couche-0)</a>, le dépôt de gouvernance canonique.
-      </p>
+    <section class="hero">
+      <h2>Bienvenue à TRIZEL</h2>
+      <p>TRIZEL est un observatoire scientifique institutionnel fonctionnant selon des protocoles de gouvernance stricts. Ce système met en œuvre une architecture en couches séparant la gouvernance (Couche-0), l'exécution (Couche-1) et la présentation (Couche-2).</p>
     </section>
 
-    <section id="overview" class="card">
-      <h2>Aperçu Institutionnel</h2>
-      <p>
-        TRIZEL est gouverné tel que décrit dans les artefacts de gouvernance du dépôt. Cette page est un résumé statique, destiné uniquement à la présentation, à l'intention des lecteurs humains et des parties prenantes institutionnelles.
-      </p>
+    <section class="mission">
+      <h3>Mission</h3>
+      <p>Fournir un accès transparent et contrôlé par la gouvernance aux résultats de la recherche scientifique et aux processus institutionnels grâce à une architecture multi-couches garantissant la séparation des préoccupations et la responsabilité institutionnelle.</p>
     </section>
 
-    <section id="governance-status" class="card">
-      <h2>État de Gouvernance</h2>
-      <dl>
-        <dt>Couche-2 (Gouvernance)</dt>
-        <dd>COMPLET — figé. Le registre et les artefacts de gouvernance sont maintenus sous <code>docs/</code> et protégés par CODEOWNERS et la protection de branche.</dd>
-        <dt>Couche-3 (Présentation)</dt>
-        <dd>Contenu statique uniquement. Aucune automatisation, aucun script, aucune configuration DNS ou de domaine effectuée ici.</dd>
-      </dl>
-    </section>
-
-    <section id="scope-constraints" class="card">
-      <h2>Portée et Contraintes</h2>
+    <section class="governance-summary">
+      <h3>Cadre de Gouvernance</h3>
+      <p>Toutes les opérations sont régies par le <a href="/fr/governance/">Cadre de Gouvernance TRIZEL</a>, qui définit:</p>
       <ul>
-        <li>Identité de publication : <strong>trizel-admin</strong> (compte de publication Couche-2).</li>
-        <li>Modifications autorisées pour cette PR : HTML et CSS uniquement, contenu de présentation.</li>
-        <li>Modifications interdites : docs/, .github/, protection de branche, workflows, DNS, domaines personnalisés, fichiers de registre.</li>
-        <li>Aucun JavaScript ou code dynamique n'est inclus dans cette PR.</li>
+        <li>Couche-0: Gouvernance constitutionnelle et règles immuables</li>
+        <li>Couche-1: Couche d'exécution avec dépôts privés et accès contrôlé</li>
+        <li>Couche-2: Couche de présentation publique (ce site)</li>
       </ul>
     </section>
 
-    <section id="references" class="card">
-      <h2>Gouvernance et Références</h2>
-      <div class="governance-primary">
-        <h3>Autorité de Gouvernance Canonique (Couche-0)</h3>
-        <p>
-          <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" class="governance-link">
-            <strong>trizel-core</strong> — Cadre de Gouvernance et Autorité Politique
-          </a>
-        </p>
-        <p class="note">Toutes les politiques, normes et décisions de gouvernance proviennent de la Couche-0.</p>
-      </div>
-      <div class="references-secondary">
-        <h3>Documentation Couche-2</h3>
-        <ul>
-          <li><a href="https://github.com/trizel-ai-site" target="_blank" rel="noopener">Organisation GitHub TRIZEL</a> — Accueil des dépôts</li>
-          <li><a href="../docs/ACCOUNT_REGISTRY.md">Registre des Comptes</a></li>
-          <li><a href="../docs/LAYER_BOUNDARIES.md">Limites des Couches</a></li>
-          <li><a href="../docs/PRESENTATION_SCOPE.md">Portée de Présentation</a></li>
-          <li><a href="../.github/CODEOWNERS">CODEOWNERS</a></li>
-        </ul>
-        <h3>Structure du Site</h3>
-        <ul>
-          <li><a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener">trizel-lab</a> — Référence externe au dépôt Couche-1 séparé (recherche interne uniquement)</li>
-          <li><a href="../docs/SITE_MAP.md">Plan du Site</a></li>
-          <li><a href="../docs/LAYER2_COMPLIANCE_AUDIT.md">Audit de Conformité</a></li>
-          <li><a href="../docs/DESIGN_AUDIT.md">Audit de Conception</a></li>
-        </ul>
-      </div>
-      <p class="live-site">
-        <strong>Site en Direct :</strong> <a href="https://trizel-ai-site.github.io/trizel-site/">https://trizel-ai-site.github.io/trizel-site/</a>
-      </p>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact et Attribution</h2>
-      <p>Pour les questions de gouvernance, de publication ou de sécurité, contactez l'équipe de gouvernance conformément aux CODEOWNERS du dépôt. Cette page est maintenue uniquement comme un artefact de présentation.</p>
-      <p>© TRIZEL</p>
+    <section class="primary-resources">
+      <h3>Ressources Principales</h3>
+      <ul>
+        <li><a href="/fr/goi/">GOI (Index Général des Objets)</a> - Artefacts de recherche structurés</li>
+        <li><a href="/fr/lab/">Laboratoire</a> - Aperçu de l'environnement de recherche</li>
+        <li><a href="/fr/map/">Carte du Système</a> - Visualisation de l'architecture TRIZEL</li>
+        <li><a href="/fr/status/">Statut</a> - État actuel du système</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Présentation statique — aucun contenu dynamique. Dernière mise à jour dans la branche <code>content/layer-3-institutional</code>.</p>
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artefacts</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Présentation Couche-2 • Sans Autorité • Sans Exécution • Contrôlée par la Gouvernance</p>
     </div>
   </footer>
 </body>

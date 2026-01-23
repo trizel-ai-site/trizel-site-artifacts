@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systemkarte - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/de/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutionelles Wissenschaftliches Observatorium</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/de/">Startseite</a>
+        <a href="/de/governance/">Governance</a>
+        <a href="/de/goi/">GOI</a>
+        <a href="/de/lab/">Labor</a>
+        <a href="/de/map/">Karte</a>
+        <a href="/de/status/">Status</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Sprache:</span>
+        <a href="/en/map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/map/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/map/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/map/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/map/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/map/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>TRIZEL Systemkarte</h2>
+    
+    <section class="map-overview">
+      <h3>Architekturvisualisierung</h3>
+      <p>Die TRIZEL-Systemkarte veranschaulicht die vollständige Architektur, Komponentenbeziehungen und Governance-Grenzen des institutionellen wissenschaftlichen Observatoriums.</p>
+    </section>
+
+    <section class="map-display">
+      <figure>
+        <img src="/system-map/trizel-system-map.svg" alt="TRIZEL Systemarchitektur-Karte" style="max-width: 100%; height: auto;">
+        <figcaption>TRIZEL Systemarchitektur - Schichtbasiertes Governance-Modell</figcaption>
+      </figure>
+    </section>
+
+    <section class="map-legend">
+      <h3>Legende</h3>
+      <dl>
+        <dt>Schicht-0 (Konstitutionell)</dt>
+        <dd>Governance-Regeln, unveränderliche Einschränkungen, konstitutioneller Rahmen</dd>
+        
+        <dt>Schicht-1 (Ausführung)</dt>
+        <dd>Private Repositories, Forschungsumgebung, kontrollierte Ausführung</dd>
+        
+        <dt>Schicht-2 (Präsentation)</dt>
+        <dd>Öffentliche Schnittstelle, schreibgeschützter Zugriff, genehmigte Ausgaben</dd>
+        
+        <dt>GOI</dt>
+        <dd>Allgemeiner Objektindex - strukturierter Artefaktkatalog</dd>
+        
+        <dt>Labor</dt>
+        <dd>Forschungs- und Entwicklungsausführungsumgebung</dd>
+      </dl>
+    </section>
+
+    <section class="map-navigation">
+      <h3>Verwandte Ressourcen</h3>
+      <ul>
+        <li><a href="/de/governance/">Governance-Rahmen</a></li>
+        <li><a href="/de/goi/">GOI-Zugriff</a></li>
+        <li><a href="/de/lab/">Labor-Übersicht</a></li>
+        <li><a href="/de/status/">Systemstatus</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/de/governance/">Governance</a>
+        <a href="/de/goi/">GOI</a>
+        <a href="/de/map/">Karte</a>
+        <a href="/de/lab/">Labor</a>
+        <a href="/de/status/">Status</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Schicht-2-Präsentation • Keine Autorität • Keine Ausführung • Governance-kontrolliert</p>
+    </div>
+  </footer>
+</body>
+</html>
