@@ -285,7 +285,7 @@ body {
 
 .notice-box a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   border-radius: var(--radius-sm);
 }
 
@@ -521,7 +521,7 @@ body {
 
 .site-footer a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   border-radius: var(--radius-sm);
 }
 
@@ -672,7 +672,7 @@ body {
 
 .back-to-top:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
 }
 
 /* Enhanced typography hierarchy — NASA-grade precision */

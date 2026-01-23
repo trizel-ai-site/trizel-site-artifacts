@@ -197,14 +197,6 @@
   text-align: center;
 }
 
-/* Accessibility Enhancements */
-.stat-card:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color),
-              var(--shadow-md);
-  border-color: var(--color-accent);
-}
-
 /* High Contrast Mode Support — WCAG 1.4.6 (Phase E.3) */
 @media (prefers-contrast: high) {
   .stat-card {

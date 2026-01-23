@@ -147,10 +147,6 @@
   --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
   --shadow-reverse-sm: 0 -1px 3px 0 rgba(15, 23, 42, 0.04);
   
-  /* Focus ring — WCAG 2.4.7 compliant */
-  --focus-ring: 0 0 0 3px rgba(11, 95, 184, 0.3);
-  --focus-ring-offset: 0 0 0 2px var(--color-surface);
-  
   /* Container widths — Research-grade content layout */
   --container-sm: 640px;
   --container-md: 768px;
