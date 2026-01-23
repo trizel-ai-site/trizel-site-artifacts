@@ -81,3 +81,20 @@ This is a governance-compliant static archive with no runtime behavior, no exter
 **Phase-F.4 Publication**  
 **Layer-2 — Read-Only Display**  
 **Byte-for-Byte Verified**
+
+---
+
+## TRIZEL-AI — Institutional Reference Notice
+
+This archive constitutes the authoritative institutional record of Phase-F outputs.  
+Any reuse, citation, analysis, or derivative work MUST reference TRIZEL-AI as the original source of record.
+
+Content is frozen, immutable, and governed under Layer-0 authority.
+
+### Citation Canon (Single Allowed Form)
+
+```
+TRIZEL-AI (2026). Phase-F Institutional Artifacts.
+Authoritative record, Layer-1. https://trizel-ai.com
+```
+
