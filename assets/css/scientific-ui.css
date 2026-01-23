@@ -2,7 +2,7 @@
  * Layer-UI: Static catalog display only
  * No JavaScript dependencies — Pure CSS only
  * Institutional, neutral, reference-only
- * NASA/ESA-grade visual quality
+ * NASA/ESA-grade visual quality (Phase E.1 Enhanced)
  */
 
 @import url('tokens.css');
@@ -29,6 +29,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -43,20 +45,22 @@ body {
 
 .site-header {
   background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
   padding: var(--space-8) 0;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Governance Citation Styling */
+/* Governance Citation Styling — Enhanced prominence */
 .governance-citation {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border: 2px solid var(--color-accent);
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
   margin-bottom: var(--space-6);
   font-size: var(--text-sm);
   line-height: var(--leading-snug);
   text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .governance-citation strong {
@@ -92,11 +96,11 @@ body {
 }
 
 .brand h1 {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-tight);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  letter-spacing: var(--tracking-tighter);
   color: var(--color-text);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
   line-height: var(--leading-tight);
 }
 
@@ -141,15 +145,17 @@ body {
 .notice-box {
   background: var(--color-notice-bg);
   border: 2px solid var(--color-notice-border);
+  border-left-width: 6px;
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-6) var(--space-8);
   margin-bottom: var(--space-8);
   line-height: var(--leading-relaxed);
+  box-shadow: var(--shadow-sm);
 }
 
 .notice-box h2 {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
   margin-bottom: var(--space-4);
   color: var(--color-notice-heading);
   line-height: var(--leading-tight);
@@ -234,10 +240,11 @@ body {
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .module-card:hover {
-  border-color: var(--color-border-strong);
+  border-color: var(--color-accent);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
@@ -344,10 +351,11 @@ body {
 
 .site-footer {
   background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-10) 0;
+  border-top: 2px solid var(--color-border);
+  padding: var(--space-12) 0;
   margin-top: var(--space-16);
   text-align: center;
+  box-shadow: 0 -1px 3px 0 rgba(15, 23, 42, 0.04);
 }
 
 .site-footer p {
@@ -383,20 +391,22 @@ body {
    EXPLANATORY BOXES & TOOLTIPS (Phase E Enhancement)
    ═══════════════════════════════════════════════════════════════ */
 
-/* Info box for explanatory content */
+/* Info box for explanatory content — Enhanced visual hierarchy */
 .info-box {
   background: var(--color-info-bg);
   border: 2px solid var(--color-info-border);
+  border-left-width: 6px;
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-6) var(--space-8);
   margin: var(--space-8) 0;
   line-height: var(--leading-relaxed);
+  box-shadow: var(--shadow-sm);
 }
 
 .info-box h3 {
-  font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  margin-bottom: var(--space-4);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-5);
   color: var(--color-info-heading);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
@@ -527,38 +537,151 @@ body {
   box-shadow: var(--focus-ring);
 }
 
-/* Enhanced typography hierarchy */
+/* Enhanced typography hierarchy — NASA-grade precision */
 h1 {
-  font-size: var(--text-5xl);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--text-4xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
-}
-
-h2 {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-semibold);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text);
-  margin-top: var(--space-10);
-  margin-bottom: var(--space-5);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
 }
 
 h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: var(--font-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
   margin-bottom: var(--space-4);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-medium);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-text-medium);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+h6 {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  color: var(--color-text-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+/* Paragraph spacing for readability */
+p {
+  margin-bottom: var(--space-4);
+  max-width: 75ch; /* Optimal reading length */
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 /* Section anchor links */
 .section-anchor {
   scroll-margin-top: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS & INTERACTIVE ELEMENTS — Professional polish
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-system);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background: var(--color-accent-active);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* Link styles — Enhanced institutional appearance */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
 }
 
 /* ═══════════════════════════════════════════════════════════════
