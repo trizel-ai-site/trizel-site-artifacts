@@ -184,6 +184,49 @@ To continue Phase H1-C, request: **"TRIZEL next"**
 
 ---
 
+## Reader-1 Addition (Phase-F Governance Reader)
+
+**Added:** 2026-01-23 (Same PR)
+
+### Implementation
+
+Created professional reader page at `/phase-f-governance/` to address UX issue where governance documents opened as raw markdown files.
+
+**Files Added:**
+- `/phase-f-governance/index.html` — Clean reader page for PHASE_F_GOVERNANCE.md content
+
+**Features:**
+- Reuses Phase H1-C CSS architecture (base.css, components.css, tokens.css)
+- Proper document structure with navigation, header, main, footer
+- Metadata box with institutional information (Authority, Display, Status)
+- Full content conversion from markdown to semantic HTML
+- "Back to Home" and "View Raw Markdown" actions
+- Progressive enhancement (works without JS)
+
+**Files Modified:**
+- `/assets/base.css` — Added responsive table handling, reduced motion support, enhanced print styles
+
+**Routing Fix:**
+- No routing changes needed (PHASE_F_GOVERNANCE.md links were not present in index.html)
+- Reader available at clean URL: `/phase-f-governance/`
+
+**Responsive & Accessibility Hardening:**
+- ✅ Mobile-first responsive typography using clamp() (already in tokens.css)
+- ✅ Readable line length: max-width 75ch for content
+- ✅ Responsive images: max-width:100%, height:auto (already in base.css)
+- ✅ Responsive tables: overflow-x:auto wrapper with touch scrolling
+- ✅ Accessible focus styles (already in tokens.css and base.css)
+- ✅ Reduced motion support: @media (prefers-reduced-motion: reduce)
+- ✅ Enhanced print styles: remove nav/footer, avoid breaks, show URLs
+
+**Verification:**
+- ✅ No changes in `/artifacts/**`
+- ✅ Works without JavaScript
+- ✅ No external network calls
+- ✅ Responsive on 320px and large desktop
+
+---
+
 **Implementation Status:** ✅ COMPLETE  
 **Compliance Status:** ✅ VERIFIED  
 **Security Status:** ✅ PASSED  
