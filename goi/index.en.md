@@ -23,6 +23,7 @@ This index catalogs:
 - **[Production](pages/production/index.en.md)** — Ledger of scientific production outputs
 - **[Repositories](pages/repositories/index.en.md)** — Ecosystem inventory and structure
 - **[Snapshots](pages/snapshots/index.en.md)** — Published snapshot registry
+- **[Institutional Statistics](pages/institutional-statistics/index.en.md)** — Static institutional statistics
 
 ## Language Selection
 
