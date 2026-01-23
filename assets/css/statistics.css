@@ -50,14 +50,26 @@
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   text-align: center;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  /* Phase E.3: Refined institutional timing */
+  transition: border-color var(--transition-base), 
+              box-shadow var(--transition-base), 
+              transform var(--transition-slow);
   box-shadow: var(--shadow-sm);
 }
 
+/* Subtle hover — NASA-grade restraint (Phase E.3) */
 .stat-card:hover {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+/* Enhanced keyboard focus (Phase E.3) */
+.stat-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color),
+              var(--shadow-md);
+  border-color: var(--color-accent);
 }
 
 .stat-value {
@@ -185,30 +197,28 @@
   text-align: center;
 }
 
-/* Accessibility Enhancements */
-.stat-card:focus-within {
-  outline: none;
-  box-shadow: var(--focus-ring);
-}
-
-/* High Contrast Mode Support */
+/* High Contrast Mode Support — WCAG 1.4.6 (Phase E.3) */
 @media (prefers-contrast: high) {
   .stat-card {
-    border-width: 2px;
+    border-width: 3px;
   }
 
   .stat-value {
     font-weight: var(--font-bold);
   }
+  
+  .stat-label {
+    font-weight: var(--font-extrabold);
+  }
 }
 
-/* Reduced Motion Support */
+/* Reduced Motion Support — WCAG 2.3.3 (Phase E.3) */
 @media (prefers-reduced-motion: reduce) {
   .stat-card {
-    transition: none;
+    transition: none !important;
   }
   
   .stat-card:hover {
-    transform: none;
+    transform: none !important;
   }
 }

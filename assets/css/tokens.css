@@ -147,10 +147,6 @@
   --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
   --shadow-reverse-sm: 0 -1px 3px 0 rgba(15, 23, 42, 0.04);
   
-  /* Focus ring — WCAG 2.4.7 compliant */
-  --focus-ring: 0 0 0 3px rgba(11, 95, 184, 0.3);
-  --focus-ring-offset: 0 0 0 2px var(--color-surface);
-  
   /* Container widths — Research-grade content layout */
   --container-sm: 640px;
   --container-md: 768px;
@@ -174,9 +170,15 @@
   --breakpoint-ultrawide: 2560px;
   
   /* ═══════════════════════════════════════════════════════════════
-     TRANSITIONS
+     TRANSITIONS — Phase E.3: NASA-grade institutional timing
      ═══════════════════════════════════════════════════════════════ */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 120ms ease-out;
+  --transition-base: 150ms ease-out;
+  --transition-slow: 180ms cubic-bezier(0.2, 0, 0, 1);
+  
+  /* Focus ring enhancement — High visibility for keyboard navigation */
+  --focus-ring-width: 3px;
+  --focus-ring-color: rgba(11, 95, 184, 0.4);
+  --focus-ring-offset-width: 2px;
+  --focus-offset-color: var(--color-surface);
 }

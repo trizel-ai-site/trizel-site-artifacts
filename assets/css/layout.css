@@ -163,11 +163,14 @@
    TOUCH-FRIENDLY SPACING — Mobile optimization
    ═══════════════════════════════════════════════════════════════ */
 
-/* Touch targets — Minimum 44x44px (WCAG 2.5.5) */
+/* Touch targets — Minimum 44x44px (WCAG 2.5.5, Phase E.3) */
 .touch-target {
   min-height: 44px;
   min-width: 44px;
   padding: var(--space-3) var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Mobile-specific spacing */
@@ -277,15 +280,19 @@
    ACCESSIBILITY — Motion & Color Scheme Preferences
    ═══════════════════════════════════════════════════════════════ */
 
-/* Respect prefers-reduced-motion */
+/* Respect prefers-reduced-motion — WCAG 2.3.3 (Phase E.3) */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
   }
 }
 

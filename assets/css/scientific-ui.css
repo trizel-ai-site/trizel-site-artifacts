@@ -24,6 +24,29 @@ html {
   -moz-osx-font-smoothing: grayscale;
   /* Prevent horizontal scroll (Phase E.2) */
   overflow-x: hidden;
+  /* Smooth scrolling for skip links (disabled with prefers-reduced-motion) */
+  scroll-behavior: smooth;
+}
+
+/* Skip to content link — WCAG 2.4.1 (Phase E.3) */
+.skip-to-content {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  z-index: 9999;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+  border-radius: 0 0 var(--radius-md) 0;
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
 }
 
 body {
@@ -103,10 +126,16 @@ body {
   border-bottom-color: var(--color-accent);
 }
 
+/* Enhanced keyboard focus (Phase E.3) */
 .governance-link:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   border-radius: var(--radius-sm);
+}
+
+.governance-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: var(--space-1);
 }
 
 .header-content {
@@ -175,18 +204,32 @@ body {
   font-weight: var(--font-medium);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--transition-fast), 
+              border-color var(--transition-fast),
+              color var(--transition-fast);
   border: 1px solid transparent;
+  /* Minimum touch target (Phase E.3) */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-nav a:hover {
   background-color: var(--color-accent-bg);
   border-color: var(--color-border-light);
+  color: var(--color-accent);
 }
 
+/* Enhanced keyboard focus (Phase E.3) */
 .header-nav a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+}
+
+.header-nav a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -242,7 +285,7 @@ body {
 
 .notice-box a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   border-radius: var(--radius-sm);
 }
 
@@ -312,14 +355,26 @@ body {
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  /* Phase E.3: Refined institutional timing */
+  transition: border-color var(--transition-base), 
+              box-shadow var(--transition-base), 
+              transform var(--transition-slow);
   box-shadow: var(--shadow-sm);
 }
 
+/* Subtle hover — NASA-grade restraint (Phase E.3) */
 .module-card:hover {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+/* Enhanced keyboard focus (Phase E.3) */
+.module-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color),
+              var(--shadow-md);
+  border-color: var(--color-accent);
 }
 
 .module-header {
@@ -383,9 +438,13 @@ body {
   font-size: var(--text-sm);
   padding: var(--space-3);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  /* Phase E.3: Refined timing */
+  transition: background-color var(--transition-base), 
+              border-color var(--transition-base);
   border: 1px solid var(--color-border-light);
   background-color: var(--color-bg);
+  /* Minimum touch target (Phase E.3) */
+  min-height: 44px;
 }
 
 .module-link:hover {
@@ -393,9 +452,15 @@ body {
   border-color: var(--color-border);
 }
 
+/* Enhanced keyboard focus (Phase E.3) */
 .module-link:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+}
+
+.module-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .module-link .label {
@@ -456,7 +521,7 @@ body {
 
 .site-footer a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
   border-radius: var(--radius-sm);
 }
 
@@ -607,7 +672,7 @@ body {
 
 .back-to-top:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
 }
 
 /* Enhanced typography hierarchy — NASA-grade precision */
@@ -700,13 +765,27 @@ p:last-child {
   border: 1px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  /* Phase E.3: Refined institutional timing */
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              transform var(--transition-slow);
   box-shadow: var(--shadow-sm);
+  /* Minimum touch target (Phase E.3) */
+  min-height: 44px;
+  min-width: 44px;
 }
 
+/* Enhanced keyboard focus (Phase E.3) */
 .btn:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color),
+              var(--shadow-sm);
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -715,6 +794,7 @@ p:last-child {
   border-color: var(--color-accent);
 }
 
+/* Subtle hover — NASA-grade restraint (Phase E.3) */
 .btn-primary:hover {
   background: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
@@ -725,6 +805,7 @@ p:last-child {
 .btn-primary:active {
   background: var(--color-accent-active);
   transform: translateY(0);
+  transition-duration: 60ms;
 }
 
 .btn-secondary {
@@ -743,7 +824,8 @@ p:last-child {
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  /* Phase E.3: Refined timing */
+  transition: color var(--transition-base);
 }
 
 a:hover {
@@ -751,9 +833,16 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Enhanced keyboard focus (Phase E.3) */
 a:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  border-radius: var(--radius-sm);
+}
+
+a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
@@ -927,23 +1016,26 @@ a:focus {
    ACCESSIBILITY — Motion & Color Scheme (Phase E.2)
    ═══════════════════════════════════════════════════════════════ */
 
-/* Respect prefers-reduced-motion */
+/* Respect prefers-reduced-motion — WCAG 2.3.3 (Phase E.3) */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
   }
   
-  .module-card:hover {
-    transform: none;
-  }
-  
-  .btn-primary:hover {
-    transform: none;
+  .module-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .stat-card:hover {
+    transform: none !important;
   }
 }
 
@@ -988,15 +1080,30 @@ a:focus {
   }
 }
 
-/* High contrast mode support */
+/* High contrast mode support — WCAG 1.4.6 (Phase E.3) */
 @media (prefers-contrast: high) {
   .module-card,
   .notice-box,
-  .info-box {
-    border-width: 2px;
+  .info-box,
+  .governance-citation {
+    border-width: 3px;
   }
   
   .btn {
     border-width: 2px;
+    font-weight: var(--font-semibold);
+  }
+  
+  a:focus-visible,
+  .btn:focus-visible,
+  .header-nav a:focus-visible,
+  .module-link:focus-visible {
+    outline-width: 4px;
+  }
+  
+  /* Enhanced focus ring visibility */
+  :focus-visible {
+    outline-width: 4px;
+    outline-color: currentColor;
   }
 }
