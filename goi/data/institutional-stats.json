@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-01-23T00:00:00Z",
+  "scope": "GOI | Phase-D | Static",
+  "declared_statistics": {
+    "layer_1_repositories": 7,
+    "raw_observational_sources": 2,
+    "analysis_repositories": 3,
+    "monitoring_repositories": 2,
+    "last_governance_update": "PR #48"
+  },
+  "constraints": [
+    "static_only",
+    "no_js",
+    "no_execution",
+    "no_inference"
+  ]
+}
