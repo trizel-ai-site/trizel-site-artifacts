@@ -39,8 +39,43 @@
   </header>
 
   <main class="container" role="main">
+    <!-- Governance Explanation Box -->
+    <div class="info-box" style="margin-top: 0;">
+      <h3>🔒 TRIZEL Governance Framework</h3>
+      <p>
+        TRIZEL operates under a strict <strong>three-layer governance model</strong> that ensures institutional 
+        accountability and scientific rigor. This framework separates authority, execution, and presentation 
+        into independent layers, each with clearly defined boundaries.
+      </p>
+      <p>
+        <strong>Layer-0 (Governance):</strong> Establishes policies, approves artifacts, maintains final authority. 
+        All decisions flow from <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener">trizel-core</a> 
+        governance repository.
+      </p>
+      <p>
+        <strong>Layer-1 (Execution):</strong> Internal research, analysis, and validation. Private repositories 
+        perform scientific work under <span class="tooltip">Layer-0 authorization<span class="tooltip-text">All Layer-1 activities require explicit approval from Layer-0 governance before proceeding.</span></span>.
+      </p>
+      <p>
+        <strong>Layer-2 (Presentation):</strong> This repository—public-facing display of approved content only. 
+        No authority, no execution, no live data. See <a href="GOVERNANCE_PHASE_E_LOCK.md">Governance Phase E Lock</a> 
+        for complete framework.
+      </p>
+    </div>
+
+    <!-- Navigation Shortcuts -->
+    <nav aria-label="Page sections" style="margin: 2rem 0; padding: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px;">
+      <p style="font-weight: 600; margin-bottom: 1rem; color: var(--color-text-medium);">Quick Navigation:</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+        <a href="#goi" style="padding: 0.5rem 1rem; background: var(--color-accent-bg); color: var(--color-accent); text-decoration: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500;">GOI Index</a>
+        <a href="#system-map" style="padding: 0.5rem 1rem; background: var(--color-accent-bg); color: var(--color-accent); text-decoration: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500;">System Map</a>
+        <a href="#statistics" style="padding: 0.5rem 1rem; background: var(--color-accent-bg); color: var(--color-accent); text-decoration: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500;">Statistics</a>
+        <a href="#catalog" style="padding: 0.5rem 1rem; background: var(--color-accent-bg); color: var(--color-accent); text-decoration: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500;">Module Catalog</a>
+      </div>
+    </nav>
+
     <!-- Global Observation & Production Index (GOI) — Primary Interface -->
-    <section class="section-header" aria-labelledby="goi-heading" style="margin-bottom: 3rem;">
+    <section class="section-header section-anchor" id="goi" aria-labelledby="goi-heading" style="margin-bottom: 2rem;">
       <h2 id="goi-heading">Global Observation & Production Index (GOI)</h2>
       <p style="font-size: 1.125rem; font-weight: 500; margin-bottom: 1.5rem;">
         Canonical, evidence-first publication layer of TRIZEL
@@ -49,7 +84,7 @@
         Scientific registry providing static, verifiable metadata for the TRIZEL ecosystem. 
         Catalogs observations, production outputs, repositories, and published snapshots.
       </p>
-      <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+      <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
         <a href="/goi/index.en.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0969da; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
           English (EN) →
         </a>
@@ -71,6 +106,26 @@
       </div>
     </section>
 
+    <!-- GOI Explanation Box -->
+    <div class="info-box">
+      <h3>What is the GOI?</h3>
+      <p>
+        The <strong>Global Observation & Production Index (GOI)</strong> serves as TRIZEL's canonical publication registry—a 
+        structured, multilingual catalog of verified scientific artifacts. Unlike traditional academic repositories, 
+        the GOI explicitly separates observation (data sources) from production (analytical outputs), ensuring 
+        clear <span class="tooltip">provenance<span class="tooltip-text">The documented origin and chain of custody for all scientific data and outputs.</span></span> and institutional accountability.
+      </p>
+      <p>
+        <strong>Key principles:</strong>
+      </p>
+      <ul>
+        <li><strong>Evidence-first:</strong> All entries include verifiable metadata and frozen snapshots</li>
+        <li><strong>Layer separation:</strong> Clear distinction between governance, execution, and presentation</li>
+        <li><strong>Multilingual access:</strong> Full documentation in 6 languages (EN/FR/DE/RU/ZH/AR)</li>
+        <li><strong>Static registry:</strong> No dynamic updates—all changes require governance approval</li>
+      </ul>
+    </div>
+
     <div class="notice-box" role="alert" aria-labelledby="notice-heading">
       <h2 id="notice-heading">Phase E Scientific Observatory — Read-Only Display</h2>
       <p>
@@ -87,7 +142,30 @@
       </p>
     </div>
 
-    <section class="section-header" aria-labelledby="system-map-heading" style="margin-top: 3rem;">
+    <!-- Phase E Explanation Box -->
+    <div class="info-box">
+      <h3>Understanding Phase E</h3>
+      <p>
+        <strong>Phase E</strong> represents the final presentation layer in TRIZEL's governance model—a strictly 
+        read-only <span class="tooltip">observatory<span class="tooltip-text">A display system for viewing approved scientific content without the ability to execute, modify, or analyze data.</span></span> designed for public institutional communication. This phase enforces absolute separation 
+        between execution (internal research) and display (public presentation).
+      </p>
+      <p>
+        <strong>Phase E guarantees:</strong>
+      </p>
+      <ul>
+        <li><strong>No live data:</strong> All content is frozen, approved snapshots</li>
+        <li><strong>No execution:</strong> This repository runs no code, performs no analysis</li>
+        <li><strong>Governance control:</strong> Every update requires Layer-0 authorization</li>
+        <li><strong>Phase F prohibition:</strong> Dashboards, analytics, and interactivity are explicitly forbidden</li>
+      </ul>
+      <p>
+        Phase E ensures that what you see is exactly what has been formally approved—no automated updates, 
+        no hidden processes, no dynamic behavior. See <a href="PHASE_E_DECLARATION.md">Phase E Declaration</a> for complete framework.
+      </p>
+    </div>
+
+    <section class="section-header section-anchor" id="system-map" aria-labelledby="system-map-heading" style="margin-top: 3rem;">
       <h2 id="system-map-heading">🗺️ TRIZEL System Map</h2>
       <p>
         New: Visual documentation of the complete TRIZEL ecosystem—accounts, organizations, repositories, 
@@ -100,7 +178,7 @@
       </p>
     </section>
 
-    <section class="section-header" aria-labelledby="statistics-heading">
+    <section class="section-header section-anchor" id="statistics" aria-labelledby="statistics-heading">
       <h2 id="statistics-heading">📊 Institutional Statistics</h2>
       <p>
         New: Static reference metrics describing the institutional structure and scope of the TRIZEL scientific system. 
@@ -113,7 +191,29 @@
       </p>
     </section>
 
-    <section class="section-header" aria-labelledby="catalog-heading">
+    <!-- Phase D Statistics Explanation -->
+    <div class="info-box">
+      <h3>Phase D: Institutional Statistics</h3>
+      <p>
+        <strong>Phase D</strong> introduced static institutional metrics that describe TRIZEL's structural architecture. 
+        These are not performance metrics or analytics—they are fixed declarative values that document system scope.
+      </p>
+      <p>
+        <strong>What Phase D statistics represent:</strong>
+      </p>
+      <ul>
+        <li><strong>Architecture layers:</strong> The three-layer governance model (Layer-0/1/2)</li>
+        <li><strong>Repository counts:</strong> Static inventory of system components</li>
+        <li><strong>Language support:</strong> Multilingual documentation coverage</li>
+        <li><strong>Presentation metrics:</strong> Display infrastructure specifications</li>
+      </ul>
+      <p>
+        Phase D statistics are frozen reference values, updated only through governance-approved changes. 
+        They describe "what exists" not "what is happening"—no live counters, no API calls, no dynamic data.
+      </p>
+    </div>
+
+    <section class="section-header section-anchor" id="catalog" aria-labelledby="catalog-heading">
       <h2 id="catalog-heading">TRIZEL System — Module Catalog</h2>
       <p>
         An institutional catalog of validated components with external reference links. 
@@ -324,6 +424,11 @@
           </p>
         </div>
       </article>
+    </div>
+
+    <!-- Back to Top -->
+    <div style="text-align: center; margin: 3rem 0;">
+      <a href="#" class="back-to-top">↑ Back to Top</a>
     </div>
   </main>
 

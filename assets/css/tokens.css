@@ -29,15 +29,21 @@
   --color-accent-hover: #0550ae;
   --color-accent-bg: #ddf4ff;
   
-  /* Notice/Warning — Institutional amber */
-  --color-notice-bg: #fff8e6;
-  --color-notice-border: #f0c744;
-  --color-notice-text: #7a5f00;
-  --color-notice-heading: #5c4600;
+  /* Notice/Warning — Institutional amber (WCAG-AA compliant) */
+  --color-notice-bg: #fffbeb;
+  --color-notice-border: #d97706;
+  --color-notice-text: #92400e;
+  --color-notice-heading: #78350f;
   
   /* Status colors (minimal use) */
   --color-success: #1a7f37;
   --color-error: #cf222e;
+  
+  /* Info/Reference box */
+  --color-info-bg: #f0f9ff;
+  --color-info-border: #0284c7;
+  --color-info-text: #0c4a6e;
+  --color-info-heading: #075985;
   
   /* ═══════════════════════════════════════════════════════════════
      SPACING SCALE — 4px base unit

@@ -380,6 +380,188 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   EXPLANATORY BOXES & TOOLTIPS (Phase E Enhancement)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Info box for explanatory content */
+.info-box {
+  background: var(--color-info-bg);
+  border: 2px solid var(--color-info-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+  line-height: var(--leading-relaxed);
+}
+
+.info-box h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  color: var(--color-info-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.info-box p {
+  color: var(--color-info-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.info-box ul {
+  margin: var(--space-3) 0;
+  padding-left: var(--space-6);
+  color: var(--color-info-text);
+}
+
+.info-box li {
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
+}
+
+/* Pure CSS tooltip (no JavaScript) */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--color-accent);
+  cursor: help;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 280px;
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  text-align: left;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  position: absolute;
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -140px;
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-text) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Breadcrumb navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-subtle);
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--color-text);
+  font-weight: var(--font-medium);
+}
+
+/* Back to top link */
+.back-to-top {
+  display: inline-block;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  margin-top: var(--space-8);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-accent-bg);
+  border-color: var(--color-accent);
+}
+
+.back-to-top:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Enhanced typography hierarchy */
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-5);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+/* Section anchor links */
+.section-anchor {
+  scroll-margin-top: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 
@@ -460,6 +642,19 @@ body {
 
   .module-title h3 {
     font-size: var(--text-lg);
+  }
+  
+  .info-box {
+    padding: var(--space-5);
+  }
+  
+  .tooltip .tooltip-text {
+    width: 240px;
+    margin-left: -120px;
+  }
+  
+  .breadcrumb {
+    font-size: var(--text-xs);
   }
 }
 
