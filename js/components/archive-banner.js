@@ -35,11 +35,17 @@
       </div>
     `;
 
-    // Insert at top of body, after skip link
+    // Insert at top of body, after skip link if it exists
     const skipLink = document.querySelector('.skip-to-content');
-    if (skipLink && skipLink.nextSibling) {
-      skipLink.parentNode.insertBefore(banner, skipLink.nextSibling);
+    if (skipLink) {
+      // Insert after skip link
+      if (skipLink.nextSibling) {
+        skipLink.parentNode.insertBefore(banner, skipLink.nextSibling);
+      } else {
+        skipLink.parentNode.appendChild(banner);
+      }
     } else {
+      // No skip link, insert at beginning of body
       document.body.insertBefore(banner, document.body.firstChild);
     }
 
