@@ -14,8 +14,7 @@
     fr: { name: 'Français', dir: 'ltr' },
     ar: { name: 'العربية', dir: 'rtl' },
     zh: { name: '中文', dir: 'ltr' },
-    ru: { name: 'Русский', dir: 'ltr' },
-    de: { name: 'Deutsch', dir: 'ltr' }
+    ru: { name: 'Русский', dir: 'ltr' }
   };
   
   /**
