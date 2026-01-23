@@ -1,0 +1,496 @@
+/* TRIZEL — Institutional Responsive Layout & Grid System
+ * Phase-E.2: NASA/ESA-grade fully responsive layout
+ * CSS Grid-based institutional layout with container queries
+ * HTML + CSS only — No JavaScript
+ */
+
+@import url('tokens.css');
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS & CONTAINER QUERIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Container Query Support with Safe Fallbacks */
+@supports (container-type: inline-size) {
+  .responsive-container {
+    container-type: inline-size;
+    container-name: main-container;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INSTITUTIONAL GRID SYSTEM — CSS Grid Based
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Main Layout Grid */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+/* Two Column Grid — Tablet and Up */
+@media (min-width: 768px) {
+  .grid-layout-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Three Column Grid — Desktop and Up */
+@media (min-width: 1024px) {
+  .grid-layout-3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Four Column Grid — Large Desktop */
+@media (min-width: 1280px) {
+  .grid-layout-4col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Auto-fit Grid — Responsive without media queries */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-6);
+}
+
+/* Auto-fill Grid — Alternative approach */
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--space-6);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FLUID SPACING SYSTEM — Viewport-based scaling
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fluid Container Padding */
+.container-fluid {
+  padding-left: clamp(1rem, 4vw, 3rem);
+  padding-right: clamp(1rem, 4vw, 3rem);
+  padding-top: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Fluid Section Spacing */
+.section-spacing {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+/* Fluid Gap System */
+.gap-fluid-sm {
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.gap-fluid-md {
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.gap-fluid-lg {
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FLUID TYPOGRAPHY — Viewport-responsive text scaling
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fluid Headings */
+.text-fluid-h1 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.text-fluid-h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-fluid-h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-fluid-h4 {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: var(--leading-snug);
+}
+
+/* Fluid Body Text */
+.text-fluid-body {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: var(--leading-relaxed);
+}
+
+.text-fluid-lead {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: var(--leading-relaxed);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INSTITUTIONAL READING CONTAINER — Optimal readability
+   ═══════════════════════════════════════════════════════════════ */
+
+.reading-container {
+  max-width: min(75ch, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Wide reading for technical content */
+.reading-container-wide {
+  max-width: min(90ch, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Narrow for optimal focus */
+.reading-container-narrow {
+  max-width: min(60ch, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOUCH-FRIENDLY SPACING — Mobile optimization
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Touch targets — Minimum 44x44px (WCAG 2.5.5) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--space-3) var(--space-4);
+}
+
+/* Mobile-specific spacing */
+@media (max-width: 767px) {
+  .mobile-spacing-lg {
+    padding: var(--space-6);
+  }
+  
+  .mobile-spacing-md {
+    padding: var(--space-4);
+  }
+  
+  .mobile-spacing-sm {
+    padding: var(--space-3);
+  }
+  
+  .mobile-gap-lg {
+    gap: var(--space-5);
+  }
+  
+  .mobile-gap-md {
+    gap: var(--space-4);
+  }
+  
+  .mobile-gap-sm {
+    gap: var(--space-3);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE UTILITIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Prevent horizontal scroll */
+.no-overflow {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Full width container */
+.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive flex utilities */
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+@media (max-width: 767px) {
+  .flex-responsive {
+    flex-direction: column;
+  }
+}
+
+/* Responsive stack */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stack-lg {
+  gap: var(--space-8);
+}
+
+.stack-sm {
+  gap: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BREAKPOINT-SPECIFIC VISIBILITY
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Mobile only */
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Tablet and up */
+@media (max-width: 767px) {
+  .tablet-up {
+    display: none !important;
+  }
+}
+
+/* Desktop only */
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Ultra-wide only */
+@media (max-width: 2559px) {
+  .ultrawide-only {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY — Motion & Color Scheme Preferences
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Respect prefers-color-scheme: dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode color overrides */
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-surface-raised: #334155;
+    --color-surface-overlay: #1e293b;
+    
+    --color-border: #475569;
+    --color-border-light: #334155;
+    --color-border-strong: #94a3b8;
+    
+    --color-text: #f1f5f9;
+    --color-text-medium: #cbd5e1;
+    --color-text-muted: #94a3b8;
+    --color-text-subtle: #64748b;
+    --color-text-inverse: #0f172a;
+    
+    --color-accent: #60a5fa;
+    --color-accent-hover: #93c5fd;
+    --color-accent-active: #bfdbfe;
+    --color-accent-bg: #1e3a8a;
+    --color-accent-border: #3b82f6;
+    
+    --color-notice-bg: #422006;
+    --color-notice-border: #f59e0b;
+    --color-notice-text: #fbbf24;
+    --color-notice-heading: #fcd34d;
+    
+    --color-info-bg: #1e3a8a;
+    --color-info-border: #3b82f6;
+    --color-info-text: #93c5fd;
+    --color-info-heading: #bfdbfe;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS — Complete coverage
+   Mobile: 320-430px | Tablet: 768-1024px | Desktop: 1280-1920px | Ultra-wide: 2560px+
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Mobile First — Base styles for 320px+ */
+/* Already defined in tokens.css and scientific-ui.css */
+
+/* Small Mobile — 320px to 374px */
+@media (max-width: 374px) {
+  .container {
+    padding: var(--space-4) var(--space-3);
+  }
+  
+  .text-fluid-h1 {
+    font-size: 1.75rem;
+  }
+  
+  .text-fluid-h2 {
+    font-size: 1.375rem;
+  }
+}
+
+/* Mobile — 375px to 767px */
+@media (min-width: 375px) and (max-width: 767px) {
+  .container {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+/* Tablet — 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+/* Laptop/Desktop — 1024px to 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+/* Large Desktop — 1280px to 1919px */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+/* Full HD — 1920px to 2559px */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Ultra-wide — 2560px+ */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1600px;
+    padding: var(--space-12) var(--space-8);
+  }
+  
+  /* Increase base font size for ultra-wide */
+  html {
+    font-size: 18px;
+  }
+  
+  /* More generous spacing */
+  .section-spacing {
+    margin-top: clamp(3rem, 6vw, 6rem);
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTAINER QUERIES — Modern responsive approach with fallbacks
+   ═══════════════════════════════════════════════════════════════ */
+
+@supports (container-type: inline-size) {
+  /* Card grid using container queries */
+  @container main-container (min-width: 768px) {
+    .container-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @container main-container (min-width: 1024px) {
+    .container-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @container main-container (min-width: 1280px) {
+    .container-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+/* Fallback for browsers without container query support */
+@supports not (container-type: inline-size) {
+  @media (min-width: 768px) {
+    .container-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .container-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GRID RHYTHM — Consistent vertical spacing
+   ═══════════════════════════════════════════════════════════════ */
+
+.grid-rhythm > * + * {
+  margin-top: var(--space-6);
+}
+
+.grid-rhythm-lg > * + * {
+  margin-top: var(--space-8);
+}
+
+.grid-rhythm-xl > * + * {
+  margin-top: var(--space-12);
+}
+
+.grid-rhythm-sm > * + * {
+  margin-top: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT STYLES — Maintain layout in print
+   ═══════════════════════════════════════════════════════════════ */
+
+@media print {
+  /* Reset to single column */
+  .grid-layout,
+  .grid-auto-fit,
+  .grid-auto-fill {
+    display: block;
+  }
+  
+  /* Remove all transitions and animations */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Force light mode for print */
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+  }
+}

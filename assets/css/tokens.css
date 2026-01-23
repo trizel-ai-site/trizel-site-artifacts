@@ -55,7 +55,7 @@
   --color-info-heading: #1e40af;
   
   /* ═══════════════════════════════════════════════════════════════
-     SPACING SCALE — 4px base unit
+     SPACING SCALE — 4px base unit with fluid variants
      ═══════════════════════════════════════════════════════════════ */
   --space-1: 0.25rem;  /* 4px */
   --space-2: 0.5rem;   /* 8px */
@@ -67,6 +67,13 @@
   --space-10: 2.5rem;  /* 40px */
   --space-12: 3rem;    /* 48px */
   --space-16: 4rem;    /* 64px */
+  
+  /* Fluid spacing — Viewport-responsive (Phase E.2) */
+  --space-fluid-sm: clamp(0.5rem, 1vw, 1rem);
+  --space-fluid-md: clamp(1rem, 2vw, 2rem);
+  --space-fluid-lg: clamp(1.5rem, 3vw, 3rem);
+  --space-fluid-xl: clamp(2rem, 4vw, 4rem);
+  --space-fluid-2xl: clamp(3rem, 6vw, 6rem);
   
   /* ═══════════════════════════════════════════════════════════════
      TYPOGRAPHY SCALE — NASA-grade institutional typography
@@ -87,6 +94,18 @@
   --text-4xl: 2.25rem;     /* 36px — H3, primary sections */
   --text-5xl: 3rem;        /* 48px — H2, page titles */
   --text-6xl: 3.75rem;     /* 60px — H1, hero titles */
+  
+  /* Fluid typography — Viewport-responsive (Phase E.2) */
+  --text-fluid-xs: clamp(0.7rem, 1.2vw, 0.75rem);
+  --text-fluid-sm: clamp(0.8rem, 1.5vw, 0.875rem);
+  --text-fluid-base: clamp(0.875rem, 1.8vw, 1rem);
+  --text-fluid-lg: clamp(1rem, 2vw, 1.125rem);
+  --text-fluid-xl: clamp(1.125rem, 2.5vw, 1.25rem);
+  --text-fluid-2xl: clamp(1.25rem, 3vw, 1.5rem);
+  --text-fluid-3xl: clamp(1.5rem, 4vw, 1.875rem);
+  --text-fluid-4xl: clamp(1.75rem, 5vw, 2.25rem);
+  --text-fluid-5xl: clamp(2rem, 6vw, 3rem);
+  --text-fluid-6xl: clamp(2.25rem, 7vw, 3.75rem);
   
   /* Font weights — Precise institutional hierarchy */
   --font-normal: 400;
@@ -138,9 +157,21 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1440px;
+  --container-max: 1600px;  /* Ultra-wide maximum */
   
-  /* Content max-width for optimal readability */
+  /* Content max-width for optimal readability (Phase E.2 enhanced) */
   --content-max-width: 75ch;
+  --content-max-width-wide: 90ch;
+  --content-max-width-narrow: 60ch;
+  
+  /* Responsive breakpoints (Phase E.2) */
+  --breakpoint-mobile: 320px;
+  --breakpoint-mobile-lg: 430px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-tablet-lg: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-desktop-lg: 1920px;
+  --breakpoint-ultrawide: 2560px;
   
   /* ═══════════════════════════════════════════════════════════════
      TRANSITIONS

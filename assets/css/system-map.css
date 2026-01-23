@@ -19,7 +19,7 @@
 }
 
 .section-header h2 {
-  font-size: var(--text-4xl);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
   font-weight: var(--font-extrabold);
   color: var(--color-text);
   margin-bottom: var(--space-3);
@@ -51,7 +51,7 @@
 }
 
 .diagram-section h3 {
-  font-size: var(--text-3xl);
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
   font-weight: var(--font-bold);
   color: var(--color-text);
   margin-bottom: var(--space-5);
@@ -204,15 +204,11 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: var(--text-2xl);
+@media (max-width: 767px) {
+  .language-section {
+    padding: var(--space-5);
   }
-
-  .diagram-section h3 {
-    font-size: var(--text-xl);
-  }
-
+  
   .diagram-container {
     padding: var(--space-4);
   }
@@ -223,6 +219,28 @@
 
   .notice-box {
     padding: var(--space-4);
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .language-section {
+    padding: var(--space-6);
+  }
+}
+
+/* Ultra-wide enhancements */
+@media (min-width: 2560px) {
+  .language-section {
+    padding: var(--space-12);
+  }
+  
+  .diagram-container {
+    padding: var(--space-12);
+  }
+  
+  .diagram-legend {
+    padding: var(--space-8) var(--space-10);
   }
 }
 
