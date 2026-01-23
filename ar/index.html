@@ -1,125 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TRIZEL — مؤسسي</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/lang-switcher.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIZEL - المرصد العلمي المؤسسي</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
-      <div class="governance-citation" role="note" aria-label="Governance Reference">
-        <strong>مرجع الحوكمة:</strong> 
-        <a href="https://github.com/trizel-ai/trizel-core/blob/main/docs/governance/LAYER1_CANONICAL_OBSERVATORY_REFERENCE.md" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="governance-link"
-           dir="ltr">
-          مرجع المرصد القانوني الطبقة-0 (trizel-core)
+      <div class="brand">
+        <a href="/ar/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">المرصد العلمي المؤسسي</p>
         </a>
       </div>
-      <div class="brand">
-        <h1>TRIZEL</h1>
-        <p class="memory-marker">AUTO DZ ACT</p>
-        <p class="memory-label">علامة الذاكرة المعرفية الأساسية</p>
-      </div>
-      <div class="header-meta">
-        <span class="layer-badge">الطبقة-2</span>
-        <p class="tagline">العرض فقط — لا تحليل — لا تنفيذ</p>
-        <div class="lang-switcher">
-          <span class="lang-switcher-label">اللغة:</span>
-          <select id="lang-switcher" aria-label="اختر اللغة">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="ar">العربية</option>
-            <option value="zh">中文</option>
-            <option value="ru">Русский</option>
-          </select>
-        </div>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar/">الرئيسية</a>
+        <a href="/ar/governance/">الحوكمة</a>
+        <a href="/ar/goi/">الفهرس</a>
+        <a href="/ar/lab/">المختبر</a>
+        <a href="/ar/map/">الخريطة</a>
+        <a href="/ar/status/">الحالة</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="محدد اللغة">
+        <span class="lang-label">اللغة:</span>
+        <a href="/en/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="layer-notice" class="card disclaimer">
-      <h2>إشعار الطبقة-2</h2>
-      <p class="explicit">
-        هذا المستودع هو <strong>الطبقة-2 (العرض/الإظهار فقط)</strong>. لا يحتوي على محتوى علمي، ولا يؤدي أي تحليل، وليس لديه قدرات تنفيذية. جميع الصلاحيات مستمدة من <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (الطبقة-0)</a>، مستودع الحوكمة القانوني.
-      </p>
+    <section class="hero">
+      <h2>مرحبًا بك في TRIZEL</h2>
+      <p>TRIZEL هو مرصد علمي مؤسسي يعمل بموجب بروتوكولات حوكمة صارمة. يطبق هذا النظام بنية متعددة الطبقات تفصل الحوكمة (الطبقة 0) والتنفيذ (الطبقة 1) والعرض (الطبقة 2).</p>
     </section>
 
-    <section id="overview" class="card">
-      <h2>نظرة عامة مؤسسية</h2>
-      <p>
-        يتم حوكمة TRIZEL كما هو موضح في آثار الحوكمة الخاصة بالمستودع. هذه الصفحة هي ملخص ثابت للعرض فقط، مخصص للقراء البشريين وأصحاب المصلحة المؤسسيين.
-      </p>
+    <section class="mission">
+      <h3>المهمة</h3>
+      <p>توفير وصول شفاف وخاضع للحوكمة إلى نتائج البحث العلمي والعمليات المؤسسية من خلال بنية متعددة الطبقات تضمن فصل المخاوف والمساءلة المؤسسية.</p>
     </section>
 
-    <section id="governance-status" class="card">
-      <h2>حالة الحوكمة</h2>
-      <dl>
-        <dt>الطبقة-2 (الحوكمة)</dt>
-        <dd>مكتمل — مجمد. يتم الاحتفاظ بالسجل وآثار الحوكمة تحت <code>docs/</code> ومحمية بواسطة CODEOWNERS وحماية الفرع.</dd>
-        <dt>الطبقة-3 (العرض)</dt>
-        <dd>محتوى ثابت فقط. لا أتمتة، لا نصوص برمجية، لا تكوين DNS أو نطاق يتم تنفيذه هنا.</dd>
-      </dl>
-    </section>
-
-    <section id="scope-constraints" class="card">
-      <h2>النطاق والقيود</h2>
+    <section class="governance-summary">
+      <h3>إطار الحوكمة</h3>
+      <p>جميع العمليات تخضع لـ <a href="/ar/governance/">إطار حوكمة TRIZEL</a>، الذي يحدد:</p>
       <ul>
-        <li>هوية النشر: <strong>trizel-admin</strong> (حساب النشر للطبقة-2).</li>
-        <li>التغييرات المسموح بها لهذا PR: HTML و CSS فقط، محتوى العرض.</li>
-        <li>التغييرات المحظورة: docs/, .github/, حماية الفرع، workflows، DNS، النطاقات المخصصة، ملفات السجل.</li>
-        <li>لا يتم تضمين JavaScript أو كود ديناميكي في هذا PR.</li>
+        <li>الطبقة 0: الحوكمة الدستورية والقواعد الثابتة</li>
+        <li>الطبقة 1: طبقة التنفيذ مع المستودعات الخاصة والوصول المحكوم</li>
+        <li>الطبقة 2: طبقة العرض العامة (هذا الموقع)</li>
       </ul>
     </section>
 
-    <section id="references" class="card">
-      <h2>الحوكمة والمراجع</h2>
-      <div class="governance-primary">
-        <h3>سلطة الحوكمة القانونية (الطبقة-0)</h3>
-        <p>
-          <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" class="governance-link">
-            <strong>trizel-core</strong> — إطار الحوكمة وسلطة السياسة
-          </a>
-        </p>
-        <p class="note">جميع السياسات والمعايير وقرارات الحوكمة تنشأ من الطبقة-0.</p>
-      </div>
-      <div class="references-secondary">
-        <h3>وثائق الطبقة-2</h3>
-        <ul>
-          <li><a href="https://github.com/trizel-ai-site" target="_blank" rel="noopener">منظمة TRIZEL على GitHub</a> — الصفحة الرئيسية للمستودعات</li>
-          <li><a href="../docs/ACCOUNT_REGISTRY.md">سجل الحسابات</a></li>
-          <li><a href="../docs/LAYER_BOUNDARIES.md">حدود الطبقات</a></li>
-          <li><a href="../docs/PRESENTATION_SCOPE.md">نطاق العرض</a></li>
-          <li><a href="../.github/CODEOWNERS">CODEOWNERS</a></li>
-        </ul>
-        <h3>بنية الموقع</h3>
-        <ul>
-          <li><a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener">trizel-lab</a> — مرجع خارجي لمستودع الطبقة-1 المنفصل (بحث داخلي فقط)</li>
-          <li><a href="../docs/SITE_MAP.md">خريطة الموقع</a></li>
-          <li><a href="../docs/LAYER2_COMPLIANCE_AUDIT.md">تدقيق الامتثال</a></li>
-          <li><a href="../docs/DESIGN_AUDIT.md">تدقيق التصميم</a></li>
-        </ul>
-      </div>
-      <p class="live-site">
-        <strong>الموقع المباشر:</strong> <a href="https://trizel-ai-site.github.io/trizel-site/">https://trizel-ai-site.github.io/trizel-site/</a>
-      </p>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>الاتصال والإسناد</h2>
-      <p>للاستفسارات المتعلقة بالحوكمة أو النشر أو الأمن، اتصل بفريق الحوكمة وفقًا لـ CODEOWNERS الخاص بالمستودع. يتم الاحتفاظ بهذه الصفحة كأثر عرض فقط.</p>
-      <p>© TRIZEL</p>
+    <section class="primary-resources">
+      <h3>الموارد الأساسية</h3>
+      <ul>
+        <li><a href="/ar/goi/">الفهرس العام للكائنات (GOI)</a> - النتائج البحثية المنظمة</li>
+        <li><a href="/ar/lab/">المختبر</a> - نظرة عامة على بيئة البحث</li>
+        <li><a href="/ar/map/">خريطة النظام</a> - تصور بنية TRIZEL</li>
+        <li><a href="/ar/status/">الحالة</a> - حالة النظام الحالية</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>عرض ثابت — لا محتوى ديناميكي. آخر تحديث في الفرع <code>content/layer-3-institutional</code>.</p>
+      <nav class="footer-nav">
+        <a href="/artifacts/">النتائج</a>
+        <a href="/ar/governance/">الحوكمة</a>
+        <a href="/ar/goi/">الفهرس</a>
+        <a href="/ar/map/">الخريطة</a>
+        <a href="/ar/lab/">المختبر</a>
+        <a href="/ar/status/">الحالة</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">الطبقة 2 العرض • بدون سلطة • بدون تنفيذ • تحت الحوكمة</p>
     </div>
   </footer>
 </body>

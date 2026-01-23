@@ -1,141 +1,90 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TRIZEL — Institutional</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/lang-switcher.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIZEL - Institutional Scientific Observatory</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
-      <div class="governance-citation" role="note" aria-label="Governance Reference">
-        <strong>Governance Reference:</strong> 
-        <a href="https://github.com/trizel-ai/trizel-core/blob/main/docs/governance/LAYER1_CANONICAL_OBSERVATORY_REFERENCE.md" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="governance-link">
-          Layer-0 Canonical Observatory Reference (trizel-core)
+      <div class="brand">
+        <a href="/en/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutional Scientific Observatory</p>
         </a>
       </div>
-      <div class="brand">
-        <h1>TRIZEL</h1>
-        <p class="memory-marker">AUTO DZ ACT</p>
-        <p class="memory-label">Foundational Epistemic Memory Marker</p>
-      </div>
-      <div class="header-meta">
-        <span class="layer-badge">Phase E Observatory</span>
-        <p class="tagline">Read-Only — Snapshot-Based — Governance-Controlled — Display Only</p>
-        <div class="lang-switcher">
-          <span class="lang-switcher-label">Language:</span>
-          <select id="lang-switcher" aria-label="Select Language">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="ar">العربية</option>
-            <option value="zh">中文</option>
-            <option value="ru">Русский</option>
-          </select>
-        </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/governance/">Governance</a>
+        <a href="/en/goi/">GOI</a>
+        <a href="/en/lab/">Lab</a>
+        <a href="/en/map/">Map</a>
+        <a href="/en/status/">Status</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Language:</span>
+        <a href="/en/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="layer-notice" class="card disclaimer">
-      <h2>Phase E Scientific Observatory Notice</h2>
-      <p class="explicit">
-        This repository is a <strong>Phase E Scientific Observatory (Read-Only Display)</strong>. 
-        It contains no scientific content, performs no analysis, executes no code, and displays no live data. 
-        All content is static snapshots. All authority derives from 
-        <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Layer-0)</a> — external reference only.
-      </p>
-      <p style="margin-top: 1rem; font-weight: 600; color: #dc2626;">
-        ⚠️ Phase E: No integration, no execution, no analysis, no live data, no dashboards (Phase F forbidden)
-      </p>
+    <section class="hero">
+      <h2>Welcome to TRIZEL</h2>
+      <p>TRIZEL is an institutional scientific observatory operating under strict governance protocols. This system implements a layered architecture separating governance (Layer-0), execution (Layer-1), and presentation (Layer-2).</p>
     </section>
 
-    <section id="overview" class="card">
-      <h2>Institutional Overview</h2>
-      <p>
-        TRIZEL is governed as described in the repository governance artifacts. This page is a static, presentation-only summary intended for human readers and institutional stakeholders.
-      </p>
+    <section class="mission">
+      <h3>Mission</h3>
+      <p>To provide transparent, governance-controlled access to scientific research outputs and institutional processes through a multi-layered architecture that ensures separation of concerns and institutional accountability.</p>
     </section>
 
-    <section id="governance-status" class="card">
-      <h2>Phase E Governance Status</h2>
-      <dl>
-        <dt>Phase E Classification</dt>
-        <dd>Scientific Observatory (Read-Only) — All content is static snapshots. Updates require Layer-0 approval.</dd>
-        <dt>Layer-2 / Phase E</dt>
-        <dd>COMPLETE — Governance artifacts frozen. Registry maintained under <code>docs/</code> and protected by CODEOWNERS.</dd>
-        <dt>Display Constraints</dt>
-        <dd>Static HTML/CSS only. No execution, no analysis, no live data. Minimal JavaScript (88 lines) for language switching only.</dd>
-        <dt>Phase F Prohibition</dt>
-        <dd>No dashboards, no analytics, no interactivity beyond language selection. Phase F features permanently forbidden.</dd>
-      </dl>
-    </section>
-
-    <section id="scope-constraints" class="card">
-      <h2>Phase E Scope & Constraints</h2>
+    <section class="governance-summary">
+      <h3>Governance Framework</h3>
+      <p>All operations are governed by the <a href="/en/governance/">TRIZEL Governance Framework</a>, which defines:</p>
       <ul>
-        <li><strong>Phase E Status:</strong> Read-only scientific observatory — snapshot-based, governance-controlled</li>
-        <li><strong>Allowed Content:</strong> Static institutional documentation, frozen diagrams, conceptual overviews (no claims)</li>
-        <li><strong>Forbidden Content:</strong> Execution, analysis, live data, dashboards, analytics, automation (beyond validation)</li>
-        <li><strong>External References:</strong> All links to execution/analysis repos are reference only — no integration, no pipelines</li>
-        <li><strong>Updates:</strong> Manual PR process with Layer-0 governance approval only</li>
-        <li><strong>JavaScript:</strong> 88 lines for language switching only (governance-approved minimum)</li>
+        <li>Layer-0: Constitutional governance and immutable rules</li>
+        <li>Layer-1: Execution layer with private repositories and controlled access</li>
+        <li>Layer-2: Public presentation layer (this site)</li>
       </ul>
     </section>
 
-    <section id="references" class="card">
-      <h2>Governance & References</h2>
-      <div class="governance-primary">
-        <h3>Canonical Governance Authority (Layer-0)</h3>
-        <p>
-          External Reference: <strong>trizel-core</strong> — Governance Framework &amp; Policy Authority
-        </p>
-        <p class="note" style="color: #dc2626; font-weight: 600;">
-          ⚠️ External reference only — No integration, no execution, no live data
-        </p>
-        <p class="note">All policies, standards, and governance decisions originate from Layer-0 (external authority).</p>
-      </div>
-      <div class="references-secondary">
-        <h3>Phase E Documentation</h3>
-        <ul>
-          <li><a href="../PHASE_E_DECLARATION.md">Phase E Declaration</a> — Official Phase E governance framework</li>
-          <li><a href="../docs/SCIENTIFIC_CONCEPTS.md">Scientific Concepts</a> — Conceptual reference (no claims)</li>
-          <li><a href="../docs/LAYER_BOUNDARIES.md">Layer Boundaries</a></li>
-          <li><a href="../docs/PRESENTATION_SCOPE.md">Presentation Scope</a></li>
-          <li><a href="../docs/GOVERNANCE_CLARIFICATION.md">Governance Clarification</a></li>
-        </ul>
-        <h3>External References (No Integration)</h3>
-        <ul>
-          <li>External Reference: trizel-lab — Layer-1 internal research (no access from Phase E)</li>
-          <li>External Reference: GitHub Organization trizel-ai-site (no integration)</li>
-        </ul>
-        <p style="margin-top: 1rem; font-size: 0.875rem; color: #64748b;">
-          All external references are for documentation purposes only. This repository has no integration, no execution, no live data.
-        </p>
-      </div>
-          <li><a href="../docs/DESIGN_AUDIT.md">Design Audit</a></li>
-        </ul>
-      </div>
-      <p class="live-site">
-        <strong>Live Site:</strong> <a href="https://trizel-ai-site.github.io/trizel-site/">https://trizel-ai-site.github.io/trizel-site/</a>
-      </p>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact & Attribution</h2>
-      <p>For governance, publishing, or security inquiries, contact the governance team per repository CODEOWNERS. This page is maintained as a presentation artifact only.</p>
-      <p>© TRIZEL</p>
+    <section class="primary-resources">
+      <h3>Primary Resources</h3>
+      <ul>
+        <li><a href="/en/goi/">GOI (General Object Index)</a> - Structured research artifacts</li>
+        <li><a href="/en/lab/">Lab</a> - Research environment overview</li>
+        <li><a href="/en/map/">System Map</a> - TRIZEL architecture visualization</li>
+        <li><a href="/en/status/">Status</a> - Current system state</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Static presentation — no dynamic content. Last updated in branch <code>content/layer-3-institutional</code>.</p>
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/en/governance/">Governance</a>
+        <a href="/en/goi/">GOI</a>
+        <a href="/en/map/">Map</a>
+        <a href="/en/lab/">Lab</a>
+        <a href="/en/status/">Status</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Layer-2 Presentation • No Authority • No Execution • Governance-Controlled</p>
     </div>
   </footer>
 </body>
