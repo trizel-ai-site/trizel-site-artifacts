@@ -1,0 +1,429 @@
+/**
+ * TRIZEL AI Assistant UI Component
+ * Phase-F.1: "Talk to TRIZEL-AI" UI Shell
+ * 
+ * Layer-2 Presentation Repository
+ * UI-only, no backend coupling, non-authoritative
+ * Governed under PHASE_F_GOVERNANCE.md
+ */
+
+/* ========================================
+   AI Assistant Floating Button
+   ======================================== */
+
+.trizel-ai-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  
+  /* Button styling */
+  background: linear-gradient(135deg, #0969da 0%, #0550ae 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  
+  /* Interactive states */
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.3),
+              0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Typography */
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Accessibility */
+  outline-offset: 2px;
+}
+
+.trizel-ai-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(9, 105, 218, 0.4),
+              0 4px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0a73ec 0%, #0656c2 100%);
+}
+
+.trizel-ai-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(9, 105, 218, 0.3);
+}
+
+.trizel-ai-button:focus-visible {
+  outline: 3px solid #0969da;
+  outline-offset: 4px;
+}
+
+/* Icon inside button */
+.trizel-ai-button-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trizel-ai-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ========================================
+   AI Assistant Modal/Dialog
+   ======================================== */
+
+.trizel-ai-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  
+  /* Backdrop */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  
+  /* Layout */
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  
+  /* Animation */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.trizel-ai-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.trizel-ai-modal-content {
+  background: var(--color-surface, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  max-height: 85vh;
+  
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  
+  /* Animation */
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trizel-ai-modal.active .trizel-ai-modal-content {
+  transform: scale(1);
+}
+
+/* ========================================
+   Modal Header
+   ======================================== */
+
+.trizel-ai-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border, #d0d7de);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trizel-ai-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text, #1f2328);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trizel-ai-modal-title-icon {
+  width: 24px;
+  height: 24px;
+  color: #0969da;
+}
+
+.trizel-ai-modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: var(--color-text-medium, #636c76);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.trizel-ai-modal-close:hover {
+  background: var(--color-bg-hover, #f6f8fa);
+}
+
+.trizel-ai-modal-close:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+.trizel-ai-modal-close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   Modal Body
+   ======================================== */
+
+.trizel-ai-modal-body {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Governance Notice */
+.trizel-ai-governance-notice {
+  background: #fff8c5;
+  border: 1px solid #d4a72c;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.trizel-ai-governance-notice-title {
+  font-weight: 600;
+  color: #735c0f;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trizel-ai-governance-notice-text {
+  font-size: 0.875rem;
+  color: #735c0f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.trizel-ai-governance-notice-text strong {
+  font-weight: 600;
+}
+
+/* AI Assistant Content */
+.trizel-ai-content {
+  color: var(--color-text, #1f2328);
+  line-height: 1.6;
+}
+
+.trizel-ai-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-text, #1f2328);
+}
+
+.trizel-ai-content p {
+  margin: 0 0 1rem 0;
+}
+
+.trizel-ai-content ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.trizel-ai-content li {
+  margin-bottom: 0.5rem;
+}
+
+.trizel-ai-content a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.trizel-ai-content a:hover {
+  text-decoration: underline;
+}
+
+/* Status Badge */
+.trizel-ai-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ddf4ff;
+  color: #0969da;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.trizel-ai-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0969da;
+}
+
+/* ========================================
+   Modal Footer
+   ======================================== */
+
+.trizel-ai-modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-border, #d0d7de);
+  background: var(--color-bg-subtle, #f6f8fa);
+  border-radius: 0 0 12px 12px;
+}
+
+.trizel-ai-footer-text {
+  font-size: 0.875rem;
+  color: var(--color-text-medium, #636c76);
+  margin: 0;
+  text-align: center;
+}
+
+.trizel-ai-footer-text a {
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.trizel-ai-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .trizel-ai-modal {
+    padding: 0;
+  }
+  
+  .trizel-ai-modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+  }
+  
+  .trizel-ai-modal-header,
+  .trizel-ai-modal-body,
+  .trizel-ai-modal-footer {
+    padding: 1rem;
+  }
+  
+  .trizel-ai-modal-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* ========================================
+   RTL Support (Arabic)
+   ======================================== */
+
+[dir="rtl"] .trizel-ai-button {
+  right: auto;
+  left: 2rem;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .trizel-ai-button {
+    right: auto;
+    left: 1.5rem;
+  }
+}
+
+[dir="rtl"] .trizel-ai-content ul {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  .trizel-ai-button,
+  .trizel-ai-modal {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Accessibility - Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .trizel-ai-button,
+  .trizel-ai-modal,
+  .trizel-ai-modal-content,
+  .trizel-ai-modal-close {
+    transition: none;
+  }
+  
+  .trizel-ai-button:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   Dark Mode Support (if implemented)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .trizel-ai-modal-content {
+    background: #161b22;
+    color: #c9d1d9;
+  }
+  
+  .trizel-ai-modal-header {
+    border-bottom-color: #30363d;
+  }
+  
+  .trizel-ai-modal-title {
+    color: #c9d1d9;
+  }
+  
+  .trizel-ai-modal-close {
+    color: #8b949e;
+  }
+  
+  .trizel-ai-modal-close:hover {
+    background: #21262d;
+  }
+  
+  .trizel-ai-modal-footer {
+    background: #0d1117;
+    border-top-color: #30363d;
+  }
+  
+  .trizel-ai-content {
+    color: #c9d1d9;
+  }
+  
+  .trizel-ai-content h3 {
+    color: #c9d1d9;
+  }
+  
+  .trizel-ai-footer-text {
+    color: #8b949e;
+  }
+}

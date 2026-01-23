@@ -1,29 +1,30 @@
-# TRIZEL — Phase E Scientific Observatory (Read-Only)
+# TRIZEL — Phase F Interactive Scientific Observatory
 
-## Current Governance State: Phase E (Read-Only)
+## Current Governance State: Phase F (Interactive & AI-Assisted)
 
-**Status:** PHASE E ACTIVE AND FROZEN  
+**Status:** PHASE F ACTIVE  
 **Authority:** Layer-0 Governance (trizel-core)  
-**Phase F:** EXPLICITLY PROHIBITED — NOT AUTHORIZED
+**Phase E:** CLOSED — Superseded by Phase F authorization
 
-This repository operates under strict **Phase E governance lockdown**. See [GOVERNANCE_PHASE_E_LOCK.md](GOVERNANCE_PHASE_E_LOCK.md) for complete governance framework and Phase F prohibition details.
+This repository operates under **Phase F governance framework**. See [PHASE_F_GOVERNANCE.md](PHASE_F_GOVERNANCE.md) for complete governance framework and AI interaction boundaries.
 
 ---
 
 ## Repository Classification
 
-**Phase E — Scientific Observatory (Display Only)**
+**Phase F — Interactive & AI-Assisted Scientific Observatory**
 
-This repository is **Layer-2** in the TRIZEL three-layer architecture, operating in **Phase E mode** as a read-only scientific observatory.
+This repository is **Layer-2** in the TRIZEL three-layer architecture, operating in **Phase F mode** as an interactive scientific observatory with AI-assisted navigation.
 
-### Phase E Status Declaration
+### Phase F Status Declaration
 
-- ✅ **Read-Only** — No execution, no analysis, no live data
-- ✅ **Snapshot-Based** — All content is frozen institutional documentation
+- ✅ **Interactive UI** — Governed user interaction within strict boundaries
+- ✅ **AI-Assisted** — "Talk to TRIZEL-AI" UI assistant for navigation and explanation
+- ✅ **Snapshot-Based** — All content remains frozen institutional documentation
 - ✅ **Governance-Controlled** — Updates require Layer-0 approval
-- ✅ **Display Only** — No authority, no integration, no pipelines
+- ✅ **UI-Only Interaction** — No execution, no analysis, no live data
 
-**See [PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md) for complete Phase E governance framework.**
+**See [PHASE_F_GOVERNANCE.md](PHASE_F_GOVERNANCE.md) for complete Phase F governance framework and AI interaction contract.**
 
 ---
 
@@ -69,11 +70,11 @@ The TRIZEL system operates under a strict three-layer separation model:
 - **Authority:** **NONE** — Display only, no execution, no analysis
 - **Status:** Static presentation, snapshot-based, governance-controlled
 
-## Layer-2 Scope and Constraints (Phase E)
+## Layer-2 Scope and Constraints (Phase F)
 
-This repository is **strictly limited** to Phase E presentation functions:
+This repository is **limited** to Phase F presentation and interaction functions:
 
-### Allowed Content (Phase E Approved)
+### Allowed Content (Phase F Approved)
 - Static structural descriptions
 - Navigation aids and orientation materials
 - Frozen reference documentation
@@ -81,33 +82,39 @@ This repository is **strictly limited** to Phase E presentation functions:
 - Conceptual diagrams (static SVG/images only)
 - Frozen tables and figures (no dynamic rendering)
 - Multilingual institutional documentation
+- **Interactive UI elements** (governed under Phase F)
+- **"Talk to TRIZEL-AI" assistant** (UI-only, non-authoritative)
+- **User interaction** (within strict governance boundaries)
 
-### Explicit Prohibitions (Phase E Enforced)
+### Explicit Prohibitions (Phase F Enforced)
 - ❌ No scientific authority or claims
 - ❌ No research role or execution
 - ❌ No analysis functions or data processing
 - ❌ No validation activities or testing
-- ❌ No AI logic, models, or algorithms
+- ❌ No AI logic, models, or algorithms (in this repository)
 - ❌ No scientific theories, hypotheses, or results
 - ❌ No experiments, datasets, or live data
 - ❌ No interpretation of research findings
 - ❌ No pipelines, automation, or CI/CD (beyond validation)
-- ❌ No dashboards, analytics, or Phase F features
+- ❌ No dashboards, analytics, or live data features
 - ❌ No integration with execution or analysis systems
+- ❌ No AI processing or computation (in this repository)
 
-## Purpose (Phase E Scientific Observatory)
+## Purpose (Phase F Scientific Observatory)
 
-This repository serves as a **Phase E Scientific Observatory** — a read-only, snapshot-based presentation interface for public stakeholders to:
-- Understand the TRIZEL system structure and architecture
-- Navigate to authoritative external resources (with clear disclaimers)
-- Access frozen institutional documentation
-- View static conceptual diagrams and reference materials
+This repository serves as a **Phase F Scientific Observatory** — an interactive, AI-assisted presentation interface for public stakeholders to:
+- Navigate the TRIZEL system structure and architecture with AI assistance
+- Understand frozen institutional documentation through interactive exploration
+- Access external resources with intelligent guidance
+- Interact with governance-controlled UI elements
+- Engage with the "Talk to TRIZEL-AI" assistant for navigation and explanation
 
-**Phase E Characteristics:**
-- **Read-Only** — All content is static snapshots
-- **Snapshot-Based** — No live data, no real-time updates
-- **Governance-Controlled** — Updates require Layer-0 approval
-- **Display Only** — No execution, no analysis, no integration
+**Phase F Characteristics:**
+- **Interactive UI** — Governed user interaction within strict boundaries
+- **AI-Assisted** — Single entry point ("Talk to TRIZEL-AI") for UI assistance
+- **Snapshot-Based** — All content remains static; no live data or real-time updates
+- **Governance-Controlled** — Updates and features require Layer-0 approval
+- **UI-Only** — No execution, no analysis, no scientific authority
 
 **Non-scientific** — This repository does not produce, validate, or interpret any research.
 
@@ -117,7 +124,7 @@ This repository serves as a **Phase E Scientific Observatory** — a read-only, 
 
 **No results** — This repository contains no experimental or analytical results.
 
-**No authority** — Layer-2 / Phase E has no decision-making or interpretative power.
+**No authority** — Layer-2 / Phase F has no decision-making or interpretative power.
 
 **No live data** — All content is frozen documentation, not dynamic systems.
 
@@ -148,7 +155,8 @@ All translations maintain scientific and institutional accuracy. The root page (
 
 ### Documentation
 
-- **[PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md)** — Official Phase E governance framework and constraints
+- **[PHASE_F_GOVERNANCE.md](PHASE_F_GOVERNANCE.md)** — Official Phase F governance framework and AI interaction contract
+- **[PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md)** — Historical Phase E governance framework (superseded)
 - **[I18N_ARCHITECTURE.md](docs/I18N_ARCHITECTURE.md)** — Multilingual infrastructure and implementation
 - **[UI_DESIGN_SYSTEM.md](docs/UI_DESIGN_SYSTEM.md)** — Institutional design system and style guide
 - **[GOVERNANCE_CLARIFICATION.md](docs/GOVERNANCE_CLARIFICATION.md)** — Layer-2 compliance and governance alignment
@@ -187,15 +195,16 @@ For questions regarding:
 
 ## Institutional Notice
 
-This is a formal institutional repository maintained under strict **Phase E Scientific Observatory** governance. All content is:
+This is a formal institutional repository maintained under strict **Phase F Scientific Observatory** governance. All content is:
 
-- **Phase E Classification** — Read-only, snapshot-based, governance-controlled
-- **Presentation-only** — No execution, no analysis, no live data
+- **Phase F Classification** — Interactive UI, AI-assisted, governance-controlled
+- **UI-Only Interaction** — No execution, no analysis, no live data
 - **No scientific weight** — Display surface only, zero authority
 - **External references only** — No integration with execution or analysis systems
+- **AI Assistance** — Single entry point ("Talk to TRIZEL-AI") for UI navigation only
 
 ---
 
-**Phase E Scientific Observatory** — Read-Only — Snapshot-Based — Governance-Controlled — Display Only  
+**Phase F Scientific Observatory** — Interactive UI — AI-Assisted — Governance-Controlled — UI-Only  
 **Layer-2 Repository** — Presentation-only — Non-scientific — No publication — No citation — No authority  
-**See [PHASE_E_DECLARATION.md](PHASE_E_DECLARATION.md) for complete governance framework**
+**See [PHASE_F_GOVERNANCE.md](PHASE_F_GOVERNANCE.md) for complete governance framework**
