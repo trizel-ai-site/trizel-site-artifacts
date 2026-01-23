@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Three-Layer Governance Architecture Illustration">
+  <defs>
+    <linearGradient id="layer0Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0969da;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0969da;stop-opacity:0.5" />
+    </linearGradient>
+    <linearGradient id="layer1Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.4" />
+    </linearGradient>
+    <linearGradient id="layer2Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Layer-0: Governance -->
+  <g>
+    <rect x="100" y="50" width="400" height="80" fill="url(#layer0Gradient)" rx="8" opacity="0.9"/>
+    <text x="300" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#fff">
+      LAYER-0
+    </text>
+    <text x="300" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#fff" opacity="0.9">
+      Governance / Authority
+    </text>
+    <!-- Icon -->
+    <circle cx="150" cy="90" r="15" fill="none" stroke="#fff" stroke-width="2"/>
+    <path d="M 150 82 L 150 98 M 142 90 L 158 90" stroke="#fff" stroke-width="2"/>
+  </g>
+  
+  <!-- Connection arrows -->
+  <g stroke="#0969da" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 300 130 L 300 160" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Layer-1: Execution -->
+  <g>
+    <rect x="100" y="160" width="400" height="80" fill="url(#layer1Gradient)" rx="8" opacity="0.8"/>
+    <text x="300" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#fff">
+      LAYER-1
+    </text>
+    <text x="300" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#fff" opacity="0.9">
+      Internal Research &amp; Analysis
+    </text>
+    <!-- Icon -->
+    <circle cx="150" cy="200" r="15" fill="none" stroke="#fff" stroke-width="2"/>
+    <rect x="143" y="193" width="14" height="14" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+  
+  <!-- Connection arrows -->
+  <g stroke="#6366f1" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 300 240 L 300 270" marker-end="url(#arrowhead2)"/>
+  </g>
+  
+  <!-- Layer-2: Presentation -->
+  <g>
+    <rect x="100" y="270" width="400" height="80" fill="url(#layer2Gradient)" rx="8" opacity="0.7"/>
+    <text x="300" y="305" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#fff">
+      LAYER-2
+    </text>
+    <text x="300" y="325" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#fff" opacity="0.9">
+      Presentation / Display
+    </text>
+    <!-- Icon -->
+    <circle cx="150" cy="310" r="15" fill="none" stroke="#fff" stroke-width="2"/>
+    <rect x="145" y="305" width="10" height="10" fill="none" stroke="#fff" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0969da" opacity="0.6"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6366f1" opacity="0.6"/>
+    </marker>
+  </defs>
+</svg>

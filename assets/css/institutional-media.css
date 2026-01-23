@@ -1,0 +1,221 @@
+/* TRIZEL — Institutional Media Layer CSS (Phase F.2)
+ * Static visual assets styling only
+ * No JavaScript dependencies — Pure CSS only
+ * Institutional polish for homepage hero and illustrations
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO BANNER SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-banner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: var(--color-surface);
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive hero sizing */
+@media (max-width: 767px) {
+  .hero-banner {
+    margin: 0;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-banner {
+    margin: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INSTITUTIONAL ILLUSTRATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.institutional-illustration {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: var(--space-6) auto;
+  display: block;
+}
+
+.institutional-illustration.inline {
+  max-width: 400px;
+  margin: var(--space-4) auto;
+}
+
+.institutional-illustration.small {
+  max-width: 300px;
+  margin: var(--space-3) auto;
+}
+
+/* Illustration containers */
+.illustration-container {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  margin: var(--space-6) 0;
+  text-align: center;
+}
+
+.illustration-container.minimal {
+  background: transparent;
+  border: none;
+  padding: var(--space-4) 0;
+}
+
+/* Responsive illustration sizing */
+@media (max-width: 767px) {
+  .institutional-illustration {
+    max-width: 100%;
+  }
+  
+  .institutional-illustration.inline {
+    max-width: 100%;
+  }
+  
+  .illustration-container {
+    padding: var(--space-4);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INSTITUTIONAL ICONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.institutional-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.institutional-icon.large {
+  width: 64px;
+  height: 64px;
+}
+
+.institutional-icon.small {
+  width: 32px;
+  height: 32px;
+}
+
+/* Icon with text grouping */
+.icon-text-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.icon-text-group .institutional-icon {
+  flex-shrink: 0;
+}
+
+/* Responsive icon sizing */
+@media (max-width: 767px) {
+  .institutional-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .institutional-icon.large {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL POLISH ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Enhanced section headers with visual elements */
+.section-header.institutional {
+  position: relative;
+  padding-left: calc(var(--space-8) + 48px);
+  margin-bottom: var(--space-6);
+}
+
+.section-header.institutional::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-header.governance::before {
+  background-image: url('../brand/icon-governance.svg');
+}
+
+.section-header.research::before {
+  background-image: url('../brand/icon-research.svg');
+}
+
+.section-header.layers::before {
+  background-image: url('../brand/icon-layers.svg');
+}
+
+.section-header.framework::before {
+  background-image: url('../brand/icon-framework.svg');
+}
+
+/* Responsive section headers */
+@media (max-width: 767px) {
+  .section-header.institutional {
+    padding-left: 0;
+    padding-top: calc(var(--space-6) + 40px);
+  }
+  
+  .section-header.institutional::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PERFORMANCE OPTIMIZATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Force GPU acceleration for smooth rendering */
+.hero-banner,
+.institutional-illustration,
+.illustration-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for users who prefer it (Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner,
+  .institutional-illustration,
+  .illustration-container {
+    transition: none;
+  }
+}
+
+/* Print styles for institutional media */
+@media print {
+  .hero-banner,
+  .institutional-illustration,
+  .illustration-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
