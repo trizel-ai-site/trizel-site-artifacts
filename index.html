@@ -6,11 +6,13 @@
   <title>TRIZEL — Institutional Scientific Observatory</title>
   <meta name="description" content="TRIZEL Institutional Scientific Observatory: Governed research documentation with strict layer separation. Progressive enhancement, static artifacts, no tracking.">
   
+  <!-- deploy-bump: 2026-01-24T09:26Z -->
+  
   <!-- Phase H1-C: New CSS Architecture -->
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/base.css">
-  <link rel="stylesheet" href="/assets/components.css">
-  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260124">
+  <link rel="stylesheet" href="/assets/base.css?v=20260124">
+  <link rel="stylesheet" href="/assets/components.css?v=20260124">
+  <link rel="stylesheet" href="/assets/css/print.css?v=20260124" media="print">
   
   <!-- Citation Metadata -->
   <meta name="citation_title" content="TRIZEL Institutional Scientific Observatory">
@@ -31,28 +33,39 @@
         </a>
       </div>
       <nav class="site-nav" aria-label="Main navigation">
+        <a href="/artifacts/">Artifacts</a>
         <a href="/en/governance/">Governance</a>
-        <a href="/en/goi/">GOI</a>
+        <a href="/goi/">GOI</a>
+        <a href="/system-map.html">Map</a>
         <a href="/en/lab/">Lab</a>
-        <a href="/en/map/">Map</a>
         <a href="/en/projects/">Projects</a>
         <a href="/en/status/">Status</a>
       </nav>
       <div class="lang-switcher" role="navigation" aria-label="Language selector">
-        <span class="lang-label">Language:</span>
-        <a href="/en/" class="lang-link" lang="en">EN</a>
-        <a href="/fr/" class="lang-link" lang="fr">FR</a>
-        <a href="/de/" class="lang-link" lang="de">DE</a>
-        <a href="/ru/" class="lang-link" lang="ru">RU</a>
-        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
-        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+        <a href="/en/" class="lang-link" lang="en">🇬🇧 EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">🇫🇷 FR</a>
+        <a href="/de/" class="lang-link" lang="de">🇩🇪 DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">🇷🇺 RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">🇨🇳 ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">🇩🇿 AR</a>
       </div>
     </div>
   </header>
 
+  <!-- Layer-2 Status Line -->
+  <div style="background: var(--color-bg-alt, #f8fafc); padding: 0.5rem 0; text-align: center; font-size: 0.875rem; color: var(--color-text-muted, #64748b); border-bottom: 1px solid var(--color-border, #e2e8f0);">
+    Layer-2 Presentation — Read-Only — Governance-Controlled
+  </div>
+
   <!-- Hero Section -->
   <section class="hero" role="banner">
     <div class="container">
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
+        <h2 style="margin: 0 0 0.75rem 0; font-size: 1.5rem; font-weight: 600; color: var(--color-text, #1e293b);">AUTO DZ ACT</h2>
+        <p style="margin: 0; font-size: 1rem; color: var(--color-text-muted, #64748b);">
+          Automated Detection of Zero-states and Anomalous Condition Transitions
+        </p>
+      </div>
       <h2 class="hero__title">Institutional Scientific Observatory</h2>
       <p class="hero__subtitle">
         Governed Research • Layer Separation • Progressive Enhancement
@@ -80,6 +93,48 @@
       </div>
     </div>
   </div>
+
+  <!-- TRIZEL Acronym Section -->
+  <section class="section" style="background: var(--color-bg-secondary, #ffffff);">
+    <div class="container container-narrow">
+      <h2 style="margin: 0 0 1.5rem 0; font-size: 1.5rem; font-weight: 600; text-align: center;">What does TRIZEL mean?</h2>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+          <strong>T</strong> — Traceability
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+          <strong>R</strong> — Reproducibility
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+          <strong>I</strong> — Integrity
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+          <strong>Z</strong> — Zero-State Awareness
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+          <strong>E</strong> — Evidence-First
+        </li>
+        <li style="padding: 0.75rem 0;">
+          <strong>L</strong> — Layered Governance
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DOI/ORCID Reference Block -->
+  <section class="section" style="background: var(--color-bg, #f8fafc); padding: 2rem 0;">
+    <div class="container container-narrow">
+      <div style="padding: 1.5rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; text-align: center;">
+        <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--color-text, #1e293b);">Scientific References</p>
+        <p style="margin: 0.5rem 0; font-size: 0.9375rem;">
+          <strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer" style="color: var(--color-link, #3b82f6); text-decoration: none;">https://doi.org/10.5281/zenodo.18354752</a>
+        </p>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.9375rem;">
+          <strong>ORCID:</strong> <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer" style="color: var(--color-link, #3b82f6); text-decoration: none;">0009-0003-9884-3697</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Quick Access Navigation -->
   <section class="section">
@@ -123,6 +178,19 @@
 
   <!-- Main Content -->
   <main id="main-content">
+    <!-- Layer-2 Statement -->
+    <section class="section" style="background: var(--color-bg-secondary, #ffffff); padding: 2rem 0;">
+      <div class="container container-narrow">
+        <div style="padding: 1.5rem; background: var(--color-bg, #f8fafc); border-left: 4px solid var(--color-primary, #3b82f6); border-radius: 4px;">
+          <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+            This site is a Layer-2 institutional presentation.
+            It has no authority, no execution capability, and no analytical function.
+            All content is governed and published under Layer-0 approval.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Governance Summary -->
     <section class="section" id="governance" style="background: var(--color-bg);">
       <div class="container">
