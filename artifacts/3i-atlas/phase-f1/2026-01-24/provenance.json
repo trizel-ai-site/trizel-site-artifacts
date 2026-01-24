@@ -1,0 +1,54 @@
+{
+  "program": "3I/ATLAS",
+  "artifact_id": "3i-atlas-phase-f1-2026-01-24",
+  "artifact_type": "laboratory_publication",
+  "phase": "Phase-F1",
+  "freeze_date": "2026-01-24",
+  "source_layer": "Layer-1",
+  "publication_layer": "Layer-2",
+  "status": "frozen",
+  "description": "First laboratory artifact for the 3I/ATLAS program, representing a frozen laboratory output approved for public read-only display. This artifact is static, non-executable, and not an analysis pipeline.",
+  "layer_1_source": {
+    "program": "3I/ATLAS",
+    "repository": "3I/ATLAS laboratory",
+    "path": "artifacts/phase-f1/2026-01-24/",
+    "status": "frozen"
+  },
+  "layer_2_target": {
+    "organization": "trizel-ai-site",
+    "repository": "trizel-site-artifacts",
+    "path": "artifacts/3i-atlas/phase-f1/2026-01-24/",
+    "publication_date": "2026-01-24"
+  },
+  "files": [
+    {
+      "name": "README.md",
+      "purpose": "Human-readable documentation",
+      "format": "Markdown"
+    },
+    {
+      "name": "provenance.json",
+      "purpose": "Provenance and metadata",
+      "format": "JSON"
+    },
+    {
+      "name": "HASH_VERIFICATION.md",
+      "purpose": "Hash verification documentation",
+      "format": "Markdown"
+    }
+  ],
+  "characteristics": {
+    "executable": false,
+    "live": false,
+    "analysis_pipeline": false,
+    "static_only": true,
+    "frozen": true,
+    "read_only": true
+  },
+  "governance": {
+    "layer_0_authority": "trizel-core",
+    "verification_required": true,
+    "regeneration_prohibited": true,
+    "modification_prohibited": true
+  }
+}
