@@ -179,3 +179,44 @@ nav a,
     scroll-behavior: auto !important;
   }
 }
+
+/* ========================================
+   Icon System (Local SVG)
+   Digital Quality Pack v1
+   ======================================== */
+
+/* Icon wrapper for inline SVG icons */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Icon spacing when used with text */
+.icon + span,
+a .icon {
+  margin-right: 0.375em;
+}
+
+/* RTL support for icons */
+[dir="rtl"] .icon + span,
+[dir="rtl"] a .icon {
+  margin-right: 0;
+  margin-left: 0.375em;
+}
+
+/* Navigation icons */
+.site-nav .icon,
+.footer-nav .icon {
+  width: 1.125em;
+  height: 1.125em;
+  vertical-align: -0.2em;
+}
+
+/* Ensure decorative icons are hidden from screen readers */
+.icon[aria-hidden="true"] {
+  pointer-events: none;
+}
