@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "as_of_utc": "2026-01-25T22:00:00Z",
+  "event_id": "3i-atlas",
+  "files": {
+    "daily-status.json": {
+      "sha256": "4789aa1c5a6c2b4b79f35454cf4453581a6ebc4db9e768749c9bf14bd43d0a81"
+    },
+    "latest.json": {
+      "sha256": "1d80c296266dc88758823adfdf5de10380c9971cd73676f4ccad1d9b54b6b2cb"
+    },
+    "ro-crate-metadata.json": {
+      "sha256": "9e17c5ba3a0a8127db5daa615e9fc7ce2cadd90c64674b24544a2e0f125efeb5"
+    }
+  }
+}

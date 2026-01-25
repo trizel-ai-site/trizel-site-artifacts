@@ -1,0 +1,55 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.json",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+      "about": {"@id": "./"}
+    },
+    {
+      "@type": "Dataset",
+      "@id": "./",
+      "name": "3I/ATLAS Daily Status Data Package",
+      "description": "Gate 2I placeholder-static data package for interstellar object 3I/ATLAS. Contains daily status indicator, declarative placeholder data, and integrity manifest.",
+      "datePublished": "2026-01-25T22:00:00Z",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TRIZEL Institutional Scientific Observatory"
+      },
+      "hasPart": [
+        {"@id": "daily-status.json"},
+        {"@id": "latest.json"},
+        {"@id": "manifest.json"}
+      ],
+      "trizel:gate": "2I",
+      "trizel:proof_type": "placeholder-static",
+      "trizel:event_id": "3i-atlas"
+    },
+    {
+      "@type": "File",
+      "@id": "daily-status.json",
+      "name": "Daily Status Indicator",
+      "description": "Daily status indicator for 3I/ATLAS with provenance and integrity metadata",
+      "encodingFormat": "application/json",
+      "trizel:role": "status-indicator"
+    },
+    {
+      "@type": "File",
+      "@id": "latest.json",
+      "name": "Latest Data (Placeholder)",
+      "description": "Explicit placeholder file - no derived values yet",
+      "encodingFormat": "application/json",
+      "trizel:role": "data-placeholder"
+    },
+    {
+      "@type": "File",
+      "@id": "manifest.json",
+      "name": "File Manifest with Checksums",
+      "description": "Manifest listing all files with SHA-256 checksums for integrity verification",
+      "encodingFormat": "application/json",
+      "trizel:role": "integrity-manifest"
+    }
+  ]
+}

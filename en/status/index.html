@@ -63,6 +63,21 @@
   <main id="main" class="container">
     <h2>System Status</h2>
     
+    <!-- Gate 2I Daily Indicator -->
+    <section class="daily-indicator" id="daily-indicator">
+      <h3>Gate 2I Observatory Data</h3>
+      <noscript>
+        <p>JavaScript is disabled. View the raw data: 
+          <a href="/data/publish/3i-atlas/daily-status.json">daily-status.json</a>
+        </p>
+      </noscript>
+      <div class="fallback">
+        <p>Loading daily indicator... If not loaded, view: 
+          <a href="/data/publish/3i-atlas/daily-status.json">daily-status.json</a>
+        </p>
+      </div>
+    </section>
+    
     <section class="repository-status">
       <h3>Repository Statistics</h3>
       <dl>
@@ -133,5 +148,8 @@
       <p class="footer-notice">Layer-2 Presentation • No Authority • No Execution • Governance-Controlled</p>
     </div>
   </footer>
+
+  <!-- Gate 2I Daily Indicator - Local JS only -->
+  <script src="/assets/js/daily-indicator.js"></script>
 </body>
 </html>

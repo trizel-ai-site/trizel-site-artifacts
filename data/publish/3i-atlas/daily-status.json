@@ -1,0 +1,23 @@
+{
+  "as_of_utc": "2026-01-25T22:00:00Z",
+  "event_id": "3i-atlas",
+  "designation": "3I/ATLAS",
+  "status": "OK",
+  "summary": "Placeholder-static demonstration for Gate 2I entry point. No real-time data. Local JSON files only.",
+  "gate": "2I",
+  "proof_type": "placeholder-static",
+  "provenance": {
+    "source_agency": "Not applicable (placeholder-static)",
+    "source_url": "https://minorplanetcenter.net/iau/ECS/MPCAT-OBS/3I.html",
+    "release_policy": "Public domain (MPC observational data)"
+  },
+  "integrity": {
+    "checksum_sha256": "placeholder_will_be_computed_in_manifest",
+    "validation_status": "self-described-placeholder"
+  },
+  "links": {
+    "crate": "/data/publish/3i-atlas/ro-crate-metadata.json",
+    "latest": "/data/publish/3i-atlas/latest.json",
+    "manifest": "/data/publish/3i-atlas/manifest.json"
+  }
+}
