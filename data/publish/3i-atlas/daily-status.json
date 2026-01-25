@@ -12,7 +12,7 @@
     "release_policy": "Public domain (MPC observational data)"
   },
   "integrity": {
-    "checksum_sha256": "placeholder_will_be_computed_in_manifest",
+    "checksum_sha256": "not-applicable-placeholder-static",
     "validation_status": "self-described-placeholder"
   },
   "links": {

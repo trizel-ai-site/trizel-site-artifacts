@@ -39,7 +39,7 @@
   // Render the daily indicator
   function renderIndicator(container, data) {
     const emoji = STATUS_EMOJI[data.status] || '⚪';
-    const timestamp = new Date(data.as_of_utc).toISOString();
+    const timestamp = data.as_of_utc;
     
     container.innerHTML = `
       <div class="daily-indicator-content">

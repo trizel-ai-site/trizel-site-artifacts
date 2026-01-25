@@ -4,6 +4,8 @@
   --muted:#9aa3a8;
   --text:#e6eef2;
   --accent:#5fb06a; /* restrained/neutral green */
+  --accent-bg:rgba(95,176,106,0.12);
+  --accent-bg-hover:rgba(95,176,106,0.2);
   --max-width:880px;
   --radius:10px;
   --gap:18px;
@@ -303,13 +305,13 @@ a .icon {
   text-decoration: none;
   font-size: 0.9rem;
   padding: 6px 12px;
-  background: rgba(95,176,106,0.12);
+  background: var(--accent-bg);
   border-radius: 6px;
   transition: background 0.2s;
 }
 
 .indicator-link:hover {
-  background: rgba(95,176,106,0.2);
+  background: var(--accent-bg-hover);
 }
 
 .indicator-link:focus-visible {
