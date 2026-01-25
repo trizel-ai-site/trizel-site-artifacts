@@ -1,0 +1,32 @@
+{
+  "goi": {
+    "section_shows_title": "Was dieser Abschnitt zeigt",
+    "section_shows_text": "Der Globale Beobachtungs- und Produktionsindex (GOI) zeigt einen strukturierten Katalog von TRIZEL-Forschungsartefakten, Dokumentation und institutionellen Objekten. GOI bietet schreibgeschützten Zugriff auf von der Governance genehmigte Materialien, die von Ebene-1 (Forschungsausführung) zu Ebene-2 (öffentliche Präsentation) veröffentlicht wurden.",
+    "section_does_not_show_title": "Was dieser Abschnitt nicht zeigt",
+    "section_does_not_show_text": "GOI bietet keinen direkten Zugriff auf Ebene-1-Ausführungsumgebungen, zeigt keine Echtzeit-Forschungsdaten oder Live-Metriken und enthält keine unveröffentlichten oder nicht genehmigten Forschungsmaterialien. GOI nimmt keine wissenschaftlichen Interpretationen oder Wertbewertungen des indexierten Inhalts vor.",
+    "layer_relationship_title": "Ebenenbeziehung",
+    "layer_relationship_text": "GOI funktioniert als Ebene-2-Präsentationsschnittstelle. Alle Autorität für Governance-Entscheidungen und Forschungsvalidierung stammt von Ebene-0 (trizel-core). Ebene-1-Ausführungsumgebungen sind getrennt und privat. Diese Seite zeigt nur Materialien, die Governance-Überprüfungs- und Genehmigungsprozesse bestanden haben.",
+    "reading_guidance_title": "Leseanleitung",
+    "reading_guidance_text": "Navigieren Sie durch GOI nach Forschungsbereich, zeitlicher Organisation oder Governance-Status. Jedes indexierte Element verweist auf sein vollständiges Artefakt oder seine Dokumentation. Mehrsprachige Zugriffspfade werden für institutionelle Transparenz in allen offiziellen Sprachen bereitgestellt."
+  },
+  "lab": {
+    "section_shows_title": "Was dieser Abschnitt zeigt",
+    "section_shows_text": "Der Labor-Abschnitt zeigt Informationen über TRIZELs Ebene-1-Ausführungsumgebung, in der Forschungs- und Entwicklungsaktivitäten stattfinden. Diese Seite bietet schreibgeschützte Dokumentation der Rolle des Labors, der Governance-Grenzen und der genehmigten öffentlichen Ausgaben.",
+    "section_does_not_show_title": "Was dieser Abschnitt nicht zeigt",
+    "section_does_not_show_text": "Der Labor-Abschnitt bietet keinen direkten Zugriff auf private Repositories, zeigt keine Echtzeit-Überwachung oder Live-Datenströme und enthält keine internen Forschungsprozesse oder nicht genehmigten Materialien. Über diese Ebene-2-Schnittstelle sind keine Ausführungsfunktionen verfügbar.",
+    "layer_relationship_title": "Ebenenbeziehung",
+    "layer_relationship_text": "Das Labor funktioniert als Ebene-1 (Ausführungsumgebung) unter strenger Governance-Kontrolle von Ebene-0 (trizel-core). Diese Seite ist Ebene-2 (nur Präsentation). Alle Laboraktivitäten unterliegen Governance-Genehmigungsprozessen vor der Veröffentlichung. Der direkte Laborzugriff ist auf von der Governance genehmigte Prozesse beschränkt.",
+    "reading_guidance_title": "Leseanleitung",
+    "reading_guidance_text": "Überprüfen Sie öffentliche Zähler und von der Governance genehmigte Meilensteine, um die Laborausgaben zu verstehen. Für veröffentlichte Forschungsartefakte navigieren Sie zu GOI. Für Governance-Richtlinien verweisen Sie auf die Ebene-0-Dokumentation. Diese Seite wahrt die Ebene-2-Präsentationsgrenzen."
+  },
+  "artifacts": {
+    "section_shows_title": "Was dieser Abschnitt zeigt",
+    "section_shows_text": "Der Artefakte-Abschnitt zeigt einen governance-konformen Katalog von TRIZEL-Institutionsartefakten, Forschungsergebnissen und Dokumentation. Dieser Katalog bietet strukturierten Zugriff auf zeitgestempelte Schnappschüsse und phasenorganisierte Materialien, die für die öffentliche Präsentation genehmigt wurden.",
+    "section_does_not_show_title": "Was dieser Abschnitt nicht zeigt",
+    "section_does_not_show_text": "Der Artefakte-Abschnitt enthält keine Live-Forschungsdaten, bietet keinen Zugriff auf unveröffentlichte Materialien und zeigt keine internen Ausführungs- oder Entwicklungsartefakte. Dieser Katalog macht keine wissenschaftlichen Behauptungen oder Interpretationen über die Artefakte, die er indexiert.",
+    "layer_relationship_title": "Ebenenbeziehung",
+    "layer_relationship_text": "Der Artefakte-Katalog funktioniert als Ebene-2 (Präsentation und Anzeige). Alle katalogisierten Materialien stammen aus von der Governance genehmigten Veröffentlichungswegen. Ebene-0 (trizel-core) behält die endgültige Autorität über Artefaktgenehmigung und -klassifizierung. Dieser Katalog ist schreibgeschützt und nicht autoritativ.",
+    "reading_guidance_title": "Leseanleitung",
+    "reading_guidance_text": "Navigieren Sie durch Artefakte nach Phasenbezeichnung, zeitlicher Organisation oder Artefakttyp. Jeder Katalogeintrag enthält Governance-Metadaten und Links zum vollständigen Artefaktinhalt. Artefakte sind chronologisch und nach institutioneller Phase organisiert für Klarheit."
+  }
+}

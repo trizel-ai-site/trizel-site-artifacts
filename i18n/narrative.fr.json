@@ -1,0 +1,32 @@
+{
+  "goi": {
+    "section_shows_title": "Ce que cette section affiche",
+    "section_shows_text": "L'Index Général d'Objets (GOI) affiche un catalogue structuré des artefacts de recherche TRIZEL, de la documentation et des objets institutionnels. Le GOI fournit un accès en lecture seule aux matériaux approuvés par la gouvernance qui ont été publiés de la Couche-1 (exécution de recherche) à la Couche-2 (présentation publique).",
+    "section_does_not_show_title": "Ce que cette section n'affiche pas",
+    "section_does_not_show_text": "Le GOI ne fournit pas d'accès direct aux environnements d'exécution de Couche-1, n'affiche pas de données de recherche en temps réel ou de métriques en direct, et n'inclut pas de matériaux de recherche non publiés ou non approuvés. Le GOI ne fait aucune interprétation scientifique ni évaluation de valeur du contenu indexé.",
+    "layer_relationship_title": "Relation de couche",
+    "layer_relationship_text": "Le GOI fonctionne comme une interface de présentation de Couche-2. Toute autorité pour les décisions de gouvernance et la validation de recherche provient de la Couche-0 (trizel-core). Les environnements d'exécution de Couche-1 sont séparés et privés. Cette page affiche uniquement les matériaux qui ont passé les processus d'examen et d'approbation de gouvernance.",
+    "reading_guidance_title": "Guide de lecture",
+    "reading_guidance_text": "Naviguez dans le GOI par domaine de recherche, organisation temporelle ou statut de gouvernance. Chaque élément indexé est lié à son artefact complet ou à sa documentation. Des chemins d'accès multilingues sont fournis pour la transparence institutionnelle dans toutes les langues officielles."
+  },
+  "lab": {
+    "section_shows_title": "Ce que cette section affiche",
+    "section_shows_text": "La section Laboratoire affiche des informations sur l'environnement d'exécution de Couche-1 de TRIZEL où se déroulent les activités de recherche et développement. Cette page fournit une documentation en lecture seule du rôle du Laboratoire, des limites de gouvernance et des sorties publiques approuvées.",
+    "section_does_not_show_title": "Ce que cette section n'affiche pas",
+    "section_does_not_show_text": "La section Laboratoire ne fournit pas d'accès direct aux référentiels privés, n'affiche pas de surveillance en temps réel ou de flux de données en direct, et n'inclut pas les processus de recherche internes ou les matériaux non approuvés. Aucune capacité d'exécution n'est disponible via cette interface de Couche-2.",
+    "layer_relationship_title": "Relation de couche",
+    "layer_relationship_text": "Le Laboratoire fonctionne comme Couche-1 (environnement d'exécution) sous contrôle strict de gouvernance de la Couche-0 (trizel-core). Cette page est de Couche-2 (présentation uniquement). Toutes les activités du Laboratoire sont soumises aux processus d'approbation de gouvernance avant publication. L'accès direct au Laboratoire est limité aux processus approuvés par la gouvernance.",
+    "reading_guidance_title": "Guide de lecture",
+    "reading_guidance_text": "Consultez les compteurs publics et les jalons approuvés par la gouvernance pour comprendre les sorties du Laboratoire. Pour les artefacts de recherche publiés, naviguez vers le GOI. Pour les politiques de gouvernance, référencez la documentation de Couche-0. Cette page maintient les limites de présentation de Couche-2."
+  },
+  "artifacts": {
+    "section_shows_title": "Ce que cette section affiche",
+    "section_shows_text": "La section Artefacts affiche un catalogue conforme à la gouvernance des artefacts institutionnels TRIZEL, des sorties de recherche et de la documentation. Ce catalogue fournit un accès structuré aux instantanés horodatés et aux matériaux organisés par phase qui ont été approuvés pour la présentation publique.",
+    "section_does_not_show_title": "Ce que cette section n'affiche pas",
+    "section_does_not_show_text": "La section Artefacts n'inclut pas de données de recherche en direct, ne fournit pas d'accès aux matériaux non publiés et n'affiche pas d'artefacts d'exécution ou de développement internes. Ce catalogue ne fait aucune revendication scientifique ni interprétation des artefacts qu'il indexe.",
+    "layer_relationship_title": "Relation de couche",
+    "layer_relationship_text": "Le catalogue d'Artefacts fonctionne comme Couche-2 (présentation et affichage). Tous les matériaux catalogués proviennent de voies de publication approuvées par la gouvernance. La Couche-0 (trizel-core) conserve l'autorité finale sur l'approbation et la classification des artefacts. Ce catalogue est en lecture seule et non autoritaire.",
+    "reading_guidance_title": "Guide de lecture",
+    "reading_guidance_text": "Naviguez dans les artefacts par désignation de phase, organisation temporelle ou type d'artefact. Chaque entrée de catalogue comprend des métadonnées de gouvernance et des liens vers le contenu complet de l'artefact. Les artefacts sont organisés chronologiquement et par phase institutionnelle pour plus de clarté."
+  }
+}

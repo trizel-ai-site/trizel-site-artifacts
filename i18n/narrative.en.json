@@ -1,0 +1,32 @@
+{
+  "goi": {
+    "section_shows_title": "This Section Shows",
+    "section_shows_text": "The General Object Index (GOI) displays a structured catalog of TRIZEL research artifacts, documentation, and institutional objects. GOI provides read-only access to governance-approved materials that have been published from Layer-1 (research execution) to Layer-2 (public presentation).",
+    "section_does_not_show_title": "This Section Does Not Show",
+    "section_does_not_show_text": "GOI does not provide direct access to Layer-1 execution environments, does not display real-time research data or live metrics, and does not include unpublished or unapproved research materials. GOI makes no scientific interpretations or value assessments of indexed content.",
+    "layer_relationship_title": "Layer Relationship",
+    "layer_relationship_text": "GOI operates as a Layer-2 presentation interface. All authority for governance decisions and research validation derives from Layer-0 (trizel-core). Layer-1 execution environments are separate and private. This page displays only materials that have passed governance review and approval processes.",
+    "reading_guidance_title": "Reading Guidance",
+    "reading_guidance_text": "Navigate GOI by research domain, temporal organization, or governance status. Each indexed item links to its full artifact or documentation. Multilingual access paths are provided for institutional transparency across all official languages."
+  },
+  "lab": {
+    "section_shows_title": "This Section Shows",
+    "section_shows_text": "The Lab section displays information about TRIZEL's Layer-1 execution environment where research and development activities occur. This page provides read-only documentation of the Lab's role, governance boundaries, and approved public outputs.",
+    "section_does_not_show_title": "This Section Does Not Show",
+    "section_does_not_show_text": "The Lab section does not provide direct access to private repositories, does not display real-time monitoring or live data streams, and does not include internal research processes or unapproved materials. No execution capabilities are available through this Layer-2 interface.",
+    "layer_relationship_title": "Layer Relationship",
+    "layer_relationship_text": "The Lab operates as Layer-1 (execution environment) under strict governance control from Layer-0 (trizel-core). This page is Layer-2 (presentation only). All Lab activities are subject to governance approval processes before publication. Direct Lab access is restricted to authorized governance-approved processes.",
+    "reading_guidance_title": "Reading Guidance",
+    "reading_guidance_text": "Review public counters and governance-approved milestones to understand Lab outputs. For published research artifacts, navigate to GOI. For governance policies, reference Layer-0 documentation. This page maintains Layer-2 presentation boundaries."
+  },
+  "artifacts": {
+    "section_shows_title": "This Section Shows",
+    "section_shows_text": "The Artifacts section displays a governance-compliant catalog of TRIZEL institutional artifacts, research outputs, and documentation. This catalog provides structured access to timestamped snapshots and phase-organized materials that have been approved for public presentation.",
+    "section_does_not_show_title": "This Section Does Not Show",
+    "section_does_not_show_text": "The Artifacts section does not include live research data, does not provide access to unpublished materials, and does not display internal execution or development artifacts. This catalog makes no scientific claims or interpretations about the artifacts it indexes.",
+    "layer_relationship_title": "Layer Relationship",
+    "layer_relationship_text": "The Artifacts catalog operates as Layer-2 (presentation and display). All cataloged materials originate from governance-approved publication pathways. Layer-0 (trizel-core) maintains final authority over artifact approval and classification. This catalog is read-only and non-authoritative.",
+    "reading_guidance_title": "Reading Guidance",
+    "reading_guidance_text": "Navigate artifacts by phase designation, temporal organization, or artifact type. Each catalog entry includes governance metadata and links to the full artifact content. Artifacts are organized chronologically and by institutional phase for clarity."
+  }
+}

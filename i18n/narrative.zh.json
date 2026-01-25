@@ -1,0 +1,32 @@
+{
+  "goi": {
+    "section_shows_title": "本节显示的内容",
+    "section_shows_text": "全球观测与生产指数（GOI）显示TRIZEL研究工物、文档和机构对象的结构化目录。GOI提供对已从第1层（研究执行）发布到第2层（公共展示）的治理批准材料的只读访问。",
+    "section_does_not_show_title": "本节不显示的内容",
+    "section_does_not_show_text": "GOI不提供对第1层执行环境的直接访问，不显示实时研究数据或实时指标，不包括未发布或未批准的研究材料。GOI不对索引内容进行科学解释或价值评估。",
+    "layer_relationship_title": "层级关系",
+    "layer_relationship_text": "GOI作为第2层展示界面运作。治理决策和研究验证的所有权力来自第0层（trizel-core）。第1层执行环境是独立和私有的。本页面仅显示已通过治理审查和批准流程的材料。",
+    "reading_guidance_title": "阅读指南",
+    "reading_guidance_text": "按研究领域、时间组织或治理状态浏览GOI。每个索引项都链接到其完整工物或文档。提供多语言访问路径，以实现所有官方语言的机构透明度。"
+  },
+  "lab": {
+    "section_shows_title": "本节显示的内容",
+    "section_shows_text": "实验室部分显示有关TRIZEL第1层执行环境的信息，研究和开发活动在此进行。本页面提供有关实验室角色、治理边界和批准的公共输出的只读文档。",
+    "section_does_not_show_title": "本节不显示的内容",
+    "section_does_not_show_text": "实验室部分不提供对私有存储库的直接访问，不显示实时监控或实时数据流，不包括内部研究流程或未批准的材料。通过此第2层界面无法使用执行功能。",
+    "layer_relationship_title": "层级关系",
+    "layer_relationship_text": "实验室作为第1层（执行环境）在第0层（trizel-core）的严格治理控制下运作。本页面是第2层（仅展示）。所有实验室活动在发布前都需要经过治理批准流程。对实验室的直接访问仅限于经治理批准的流程。",
+    "reading_guidance_title": "阅读指南",
+    "reading_guidance_text": "查看公共计数器和治理批准的里程碑以了解实验室输出。对于已发布的研究工物，请导航至GOI。对于治理政策，请参考第0层文档。本页面维持第2层展示边界。"
+  },
+  "artifacts": {
+    "section_shows_title": "本节显示的内容",
+    "section_shows_text": "工物部分显示符合治理的TRIZEL机构工物、研究输出和文档目录。此目录提供对已批准公共展示的带时间戳快照和按阶段组织的材料的结构化访问。",
+    "section_does_not_show_title": "本节不显示的内容",
+    "section_does_not_show_text": "工物部分不包括实时研究数据，不提供对未发布材料的访问，不显示内部执行或开发工物。此目录不对其索引的工物进行科学声明或解释。",
+    "layer_relationship_title": "层级关系",
+    "layer_relationship_text": "工物目录作为第2层（展示和显示）运作。所有目录材料均来自治理批准的发布途径。第0层（trizel-core）保留对工物批准和分类的最终权力。此目录是只读的且非权威的。",
+    "reading_guidance_title": "阅读指南",
+    "reading_guidance_text": "按阶段指定、时间组织或工物类型浏览工物。每个目录条目都包括治理元数据和指向完整工物内容的链接。工物按时间顺序和机构阶段组织以保持清晰。"
+  }
+}
