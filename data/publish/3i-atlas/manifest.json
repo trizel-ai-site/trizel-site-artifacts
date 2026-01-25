@@ -1,16 +1,17 @@
 {
   "schemaVersion": "1.0",
-  "as_of_utc": "2026-01-25T22:00:00Z",
+  "as_of_utc": "2026-01-25T23:01:00Z",
   "event_id": "3i-atlas",
+  "gate": "2I-B",
   "files": {
     "daily-status.json": {
-      "sha256": "4789aa1c5a6c2b4b79f35454cf4453581a6ebc4db9e768749c9bf14bd43d0a81"
+      "sha256": "608b3f4412b782ad33fbc82e0294fbfe0234f6ba3829919e173023a6d1d0e44a"
     },
-    "latest.json": {
-      "sha256": "1d80c296266dc88758823adfdf5de10380c9971cd73676f4ccad1d9b54b6b2cb"
+    "source-snapshot.json": {
+      "sha256": "c63edbbe997cdf340bf1e5b1c0b1e87be1142b0b96de0e4aa948100fceb0b3a5"
     },
     "ro-crate-metadata.json": {
-      "sha256": "9e17c5ba3a0a8127db5daa615e9fc7ce2cadd90c64674b24544a2e0f125efeb5"
+      "sha256": "c53babc8ae7422e86fbc7bf98dfb081c4a7aa82c1dccd33a6c26ef6dce793033"
     }
   }
 }

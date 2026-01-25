@@ -1,23 +1,18 @@
 {
-  "as_of_utc": "2026-01-25T22:00:00Z",
-  "event_id": "3i-atlas",
-  "designation": "3I/ATLAS",
-  "status": "OK",
-  "summary": "Placeholder-static demonstration for Gate 2I entry point. No real-time data. Local JSON files only.",
-  "gate": "2I",
-  "proof_type": "placeholder-static",
-  "provenance": {
-    "source_agency": "Not applicable (placeholder-static)",
-    "source_url": "https://minorplanetcenter.net/iau/ECS/MPCAT-OBS/3I.html",
-    "release_policy": "Public domain (MPC observational data)"
+  "gate": "2I-B",
+  "proof_type": "real-data-flow",
+  "event_id": "3I-ATLAS",
+  "as_of_utc": "2026-01-25T23:01:00Z",
+  "source": {
+    "repository": "abdelkader-omran/AUTO-DZ-ACT-3I-ATLAS-DAILY",
+    "path": "data/snapshots/official_snapshot_3I_ATLAS_20251219_123807.json",
+    "commit": "cc4d8f9020e2a7e084ab643645bc75c18d642188"
   },
+  "classification": "SNAPSHOT",
   "integrity": {
-    "checksum_sha256": "not-applicable-placeholder-static",
-    "validation_status": "self-described-placeholder"
+    "has_analysis": false,
+    "has_interpretation": false,
+    "checksum_verified": true
   },
-  "links": {
-    "crate": "/data/publish/3i-atlas/ro-crate-metadata.json",
-    "latest": "/data/publish/3i-atlas/latest.json",
-    "manifest": "/data/publish/3i-atlas/manifest.json"
-  }
+  "statement": "This file proves a full real-data flow from Layer-1 to Layer-2 without analysis."
 }

@@ -10,9 +10,9 @@
     {
       "@type": "Dataset",
       "@id": "./",
-      "name": "3I/ATLAS Daily Status Data Package",
-      "description": "Gate 2I placeholder-static data package for interstellar object 3I/ATLAS. Contains daily status indicator, declarative placeholder data, and integrity manifest.",
-      "datePublished": "2026-01-25T22:00:00Z",
+      "name": "3I/ATLAS Real Data Flow Package (Gate 2I-B)",
+      "description": "Gate 2I-B proof of full real-data flow from Layer-1 to Layer-2 without analysis. Contains verbatim snapshot from AUTO-DZ-ACT-3I-ATLAS-DAILY repository, declarative status indicator, and integrity manifest.",
+      "datePublished": "2026-01-25T23:01:00Z",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "publisher": {
         "@type": "Organization",
@@ -20,33 +20,39 @@
       },
       "hasPart": [
         {"@id": "daily-status.json"},
-        {"@id": "latest.json"},
+        {"@id": "source-snapshot.json"},
         {"@id": "manifest.json"}
       ],
-      "trizel:gate": "2I",
-      "trizel:proof_type": "placeholder-static",
+      "trizel:gate": "2I-B",
+      "trizel:baseline": "layer-2-baseline-v1",
+      "trizel:proof_type": "real-data-flow",
       "trizel:event_id": "3i-atlas"
     },
     {
       "@type": "File",
       "@id": "daily-status.json",
-      "name": "Daily Status Indicator",
-      "description": "Daily status indicator for 3I/ATLAS with provenance and integrity metadata",
+      "name": "Daily Status Indicator (Gate 2I-B)",
+      "description": "Declarative status indicator proving real-data flow from Layer-1 to Layer-2 with complete provenance metadata",
       "encodingFormat": "application/json",
-      "trizel:role": "status-indicator"
+      "trizel:role": "status-indicator",
+      "trizel:has_analysis": false,
+      "trizel:has_interpretation": false
     },
     {
       "@type": "File",
-      "@id": "latest.json",
-      "name": "Latest Data (Placeholder)",
-      "description": "Explicit placeholder file - no derived values yet",
+      "@id": "source-snapshot.json",
+      "name": "Layer-1 Source Snapshot (Verbatim Copy)",
+      "description": "Verbatim copy of real snapshot from abdelkader-omran/AUTO-DZ-ACT-3I-ATLAS-DAILY (commit cc4d8f9020e2a7e084ab643645bc75c18d642188)",
       "encodingFormat": "application/json",
-      "trizel:role": "data-placeholder"
+      "trizel:role": "layer1-snapshot",
+      "trizel:source_repository": "abdelkader-omran/AUTO-DZ-ACT-3I-ATLAS-DAILY",
+      "trizel:source_path": "data/snapshots/official_snapshot_3I_ATLAS_20251219_123807.json",
+      "trizel:source_commit": "cc4d8f9020e2a7e084ab643645bc75c18d642188"
     },
     {
       "@type": "File",
       "@id": "manifest.json",
-      "name": "File Manifest with Checksums",
+      "name": "File Manifest with SHA-256 Checksums",
       "description": "Manifest listing all files with SHA-256 checksums for integrity verification",
       "encodingFormat": "application/json",
       "trizel:role": "integrity-manifest"

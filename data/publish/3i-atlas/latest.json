@@ -1,9 +1,0 @@
-{
-  "message": "Declarative placeholder — no derived values yet",
-  "as_of_utc": "2026-01-25T22:00:00Z",
-  "event_id": "3i-atlas",
-  "designation": "3I/ATLAS",
-  "gate": "2I",
-  "proof_type": "placeholder-static",
-  "note": "This file is an explicit placeholder. It contains no observational data, no orbital elements, and no scientific interpretations. Future implementations may populate this with declarative observational records from authoritative sources."
-}
