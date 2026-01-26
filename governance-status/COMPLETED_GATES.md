@@ -3,7 +3,7 @@
 **Repository:** trizel-ai-site/trizel-site-artifacts  
 **Classification:** Publication-Support Repository  
 **Authority:** Layer-0 Governance (trizel-core)  
-**Date:** 2026-01-26  
+**Date:** 2026-01-26 (documentation compilation date)
 
 ---
 

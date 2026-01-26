@@ -3,7 +3,7 @@
 **Repository:** trizel-ai-site/trizel-site-artifacts  
 **Classification:** Publication-Support Repository  
 **Authority:** Layer-0 Governance (trizel-core)  
-**Date:** 2026-01-26  
+**Date:** 2026-01-26 (documentation compilation date)
 
 ---
 
@@ -92,7 +92,7 @@ This separation ensures:
 
 ## Repository Classification
 
-This repository is classified as **Layer-2 Presentation / Display Only** with the following constraints:
+This repository is a **publication-support repository** operating as **Layer-2** in the TRIZEL architecture with the following constraints:
 
 ### Layer-2 Scope
 - Static presentation of approved materials
