@@ -1,10 +1,16 @@
 # PHASE-F.1 POST-MERGE VALIDATION REPORT
 
+> **⚠️ GOVERNANCE NOTICE**  
+> This document represents **planned functionality** documented under the Phase F governance framework.  
+> **Current Governance State:** Post-Gate-4C / Pre-Gate-5  
+> **Current Status:** Layer-2 is presentation-only with **NO active AI features**, NO interactive elements, and NO execution capability.  
+> The Phase-F.1 validation described in this document pertains to historical planning; no AI features are active under the current governance state.
+
 **Repository:** trizel-ai-site/trizel-site-artifacts  
 **Branch:** main (post-merge of PR #56)  
 **Validation Date:** 2026-01-23  
 **Validator:** GitHub Copilot Workspace Agent  
-**Validation Scope:** Phase-F.1 Multilingual Semantic Lock
+**Validation Scope:** Phase-F.1 Multilingual Semantic Lock (Historical Documentation)
 
 ---
 

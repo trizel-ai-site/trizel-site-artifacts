@@ -1,8 +1,14 @@
 # Phase-F.4 Publication — COMPLETION REPORT
 
+> **⚠️ GOVERNANCE NOTICE**  
+> This document represents **historical completion documentation** for the Phase F governance framework.  
+> **Current Governance State:** Post-Gate-4C / Pre-Gate-5  
+> **Current Status:** Layer-2 is presentation-only with **NO active AI features**, NO interactive elements, and NO execution capability.  
+> The Phase-F.4 work described in this document is historical documentation; the repository is currently in presentation-only state.
+
 **Date:** 2026-01-23  
-**Phase:** F.4 (Layer-2 Governance-Compliant Publication)  
-**Status:** ✅ COMPLETE — Ready for Merge
+**Phase:** F.4 (Layer-2 Governance-Compliant Publication) — Historical Documentation  
+**Status:** ✅ COMPLETE — Documentation Only
 
 ---
 

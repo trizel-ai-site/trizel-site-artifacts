@@ -1,4 +1,13 @@
 /**
+ * GOVERNANCE NOTICE
+ * This file represents planned functionality documented under Phase F governance framework.
+ * Current state: Post-Gate-4C / Pre-Gate-5
+ * Status: NO active AI features in this repository
+ * Layer-2 is presentation-only, non-executable, display-only
+ * Any AI-assisted interface is not active under the current governance state.
+ */
+
+/**
  * TRIZEL AI Assistant UI Component
  * Phase-F.1: "Talk to TRIZEL-AI" UI Shell
  * 

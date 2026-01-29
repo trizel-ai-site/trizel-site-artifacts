@@ -1,7 +1,13 @@
 # PHASE-F GOVERNANCE & AI INTERACTION CONTRACT
 
+> **⚠️ GOVERNANCE NOTICE**  
+> This document represents a **planned governance framework (Phase F)** that was historically proposed.  
+> **Current Governance State:** Post-Gate-4C / Pre-Gate-5  
+> **Current Status:** Layer-2 is presentation-only with **NO active AI features**, NO interactive elements, and NO execution capability.  
+> Any AI-assisted interface described in this document is not active under the current governance state; Layer-2 is presentation-only.
+
 **Repository:** trizel-ai-site/trizel-site-artifacts  
-**Status:** PHASE F AUTHORIZED  
+**Status:** PHASE F AUTHORIZED (Historical Planning)  
 **Authority:** Layer-0 Governance (trizel-core)  
 **Date:** 2026-01-23  
 **Supersedes:** GOVERNANCE_PHASE_E_LOCK.md (Phase F prohibition lifted)
