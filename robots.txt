@@ -1,0 +1,12 @@
+# TRIZEL Institutional Scientific Observatory
+# Layer-2 Public Presentation Site
+# robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trizel-ai.com/sitemap.xml
+
+# Allow all search engines and AI crawlers
+# This is a public institutional site with open access
