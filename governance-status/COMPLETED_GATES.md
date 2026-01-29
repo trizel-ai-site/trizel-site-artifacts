@@ -44,6 +44,19 @@ The following governance gates have been completed:
 
 Gate 4A establishes execution readiness for downstream processes while maintaining strict separation between execution systems and publication surfaces. All artifacts produced under Gate 4A are structural and declarative, supporting audit and provenance tracking without performing scientific analysis.
 
+#### Gate 4C
+**Status:** COMPLETED  
+**Scope:** Chronological & Provenance Archive (3I-ATLAS-0001)
+
+**Gate 4C Specific Details:**
+- **Provenance:** Verified chronological and provenance reference
+- **Archive:** 3I-ATLAS-0001 observational archive
+- **Documentation:** Published to Zenodo (DOI: 10.5281/zenodo.18413908)
+- **Repository Role:** Publication-support surface only
+- **Constraints:** No execution, no analysis, no live data
+
+Gate 4C establishes the chronological and provenance archive for the 3I-ATLAS observational dataset, maintaining strict separation between archival documentation and scientific analysis.
+
 ---
 
 ## Gates NOT Yet Executed
