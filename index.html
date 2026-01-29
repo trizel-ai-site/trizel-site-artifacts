@@ -6,12 +6,35 @@
   <title>TRIZEL — Institutional Scientific Observatory</title>
   <meta name="description" content="TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.">
   
+  <!-- Canonical & Language Variants -->
+  <link rel="canonical" href="https://trizel-ai.com/">
+  <link rel="alternate" hreflang="en" href="https://trizel-ai.com/en/">
+  <link rel="alternate" hreflang="fr" href="https://trizel-ai.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://trizel-ai.com/de/">
+  <link rel="alternate" hreflang="ru" href="https://trizel-ai.com/ru/">
+  <link rel="alternate" hreflang="zh" href="https://trizel-ai.com/zh/">
+  <link rel="alternate" hreflang="ar" href="https://trizel-ai.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://trizel-ai.com/">
+  
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3b82f6">
+  
   <!-- OpenGraph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TRIZEL — Institutional Scientific Observatory">
   <meta property="og:description" content="TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.">
   <meta property="og:url" content="https://trizel-ai.com">
   <meta property="og:image" content="https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="ar_SA">
   
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
@@ -36,31 +59,65 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ResearchOrganization",
-    "name": "TRIZEL",
-    "url": "https://trizel-ai.com",
-    "logo": "https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png",
-    "description": "TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.",
-    "additionalProperty": [
+    "@graph": [
       {
-        "@type": "PropertyValue",
-        "name": "presentationOnly",
-        "value": "true"
+        "@type": ["Organization", "ResearchOrganization"],
+        "@id": "https://trizel-ai.com/#organization",
+        "name": "TRIZEL",
+        "alternateName": "TRIZEL Institutional Scientific Observatory",
+        "url": "https://trizel-ai.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png",
+          "width": 1024,
+          "height": 1024
+        },
+        "description": "TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.",
+        "sameAs": [
+          "https://doi.org/10.5281/zenodo.18354752",
+          "https://orcid.org/0009-0003-9884-3697"
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "presentationOnly",
+            "value": "true"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "noExecution",
+            "value": "true"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "noLiveData",
+            "value": "true"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "noAutonomousAI",
+            "value": "true"
+          }
+        ]
       },
       {
-        "@type": "PropertyValue",
-        "name": "noExecution",
-        "value": "true"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "noLiveData",
-        "value": "true"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "noAutonomousAI",
-        "value": "true"
+        "@type": "WebSite",
+        "@id": "https://trizel-ai.com/#website",
+        "url": "https://trizel-ai.com",
+        "name": "TRIZEL Institutional Scientific Observatory",
+        "description": "TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.",
+        "publisher": {
+          "@id": "https://trizel-ai.com/#organization"
+        },
+        "inLanguage": ["en", "fr", "de", "ru", "zh", "ar"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://trizel-ai.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   }
