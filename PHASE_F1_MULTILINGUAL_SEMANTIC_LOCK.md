@@ -1,8 +1,14 @@
 # PHASE-F.1 MULTILINGUAL SEMANTIC LOCK — COMPLETION DOCUMENTATION
 
+> **⚠️ GOVERNANCE NOTICE**  
+> This document represents **planned functionality** documented under the Phase F governance framework.  
+> **Current Governance State:** Post-Gate-4C / Pre-Gate-5  
+> **Current Status:** Layer-2 is presentation-only with **NO active AI features**, NO interactive elements, and NO execution capability.  
+> The "Talk to TRIZEL-AI" interface described in this document is not active under the current governance state; Layer-2 is presentation-only.
+
 **Repository:** trizel-ai-site/trizel-site-artifacts  
-**Phase:** F.1 — "Talk to TRIZEL-AI" UI Shell  
-**Status:** COMPLETE  
+**Phase:** F.1 — "Talk to TRIZEL-AI" UI Shell (Historical Planning)  
+**Status:** COMPLETE (Documentation Only)  
 **Date:** 2026-01-23  
 **Authority:** Layer-0 Governance (trizel-core)
 
