@@ -1,120 +1,214 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1700" viewBox="0 0 1200 1700">
   <defs>
+    <!-- Fonts & global text -->
     <style>
-      .bg { fill: #fafbfc; }
-      .box { fill: #ffffff; stroke: #0969da; stroke-width: 2; }
-      .box-org { fill: #ffffff; stroke: #64748b; stroke-width: 2; }
-      .box-private { fill: #fff8e6; stroke: #f0c744; stroke-width: 2; }
-      .box-presentation { fill: #ddf4ff; stroke: #0969da; stroke-width: 2.5; }
-      .text-title { font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; fill: #0f1419; }
-      .text-label { font-family: system-ui, sans-serif; font-size: 12px; fill: #3c4752; }
-      .text-small { font-family: system-ui, sans-serif; font-size: 11px; fill: #64748b; }
-      .text-heading { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 700; fill: #0f1419; }
-      .arrow { stroke: #94a3b8; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
-      .group-border { fill: none; stroke: #d1d9e0; stroke-width: 1; stroke-dasharray: 4,4; }
-      .legend-box { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1; }
+      :root { --fg:#111; --muted:#444; --border:#111; --blue:#dbeafe; --green:#dcfce7; --purple:#efe6ff; --boundary:#ffffff; }
+      text, tspan { font-family: "Inter","Noto Sans","Noto Sans Arabic","Arial","Helvetica","DejaVu Sans","Segoe UI",sans-serif; font-size:16px; fill:var(--fg); }
+      .title { font-size:22px; font-weight:700; }
+      .subtitle { font-size:16px; font-weight:600; fill:var(--muted); }
+      .band-label { font-size:18px; font-weight:700; }
+      .small { font-size:14px; }
+      .muted { fill:#333; }
+      .note { font-size:14px; fill:#222; }
+      /* Bands */
+      .band { stroke: var(--border); stroke-width:1; }
+      .band-blue { fill: var(--blue); }
+      .band-green { fill: var(--green); }
+      .band-purple { fill: var(--purple); }
+      .band-boundary { fill: var(--boundary); stroke-dasharray:8 6; }
+      /* Boxes */
+      .org { fill:#fff; stroke:#111; stroke-width:1.5; }
+      .repo { fill:#fff; stroke:#111; stroke-width:1; }
+      .repo-private { fill:#f2f2f2; stroke:#111; stroke-width:1; }
+      .repo-presentation { fill:#f9f5ff; stroke:#111; stroke-width:1; }
+      .panel { fill:#fff; stroke:#111; stroke-width:1.5; }
+      .legend-swatch { stroke:#111; stroke-width:1; }
+      /* Arrow markers (3 types only) */
+      .arrow-auth { stroke:#111; stroke-width:3; fill:none; marker-end:url(#mAuth); }
+      .arrow-pub { stroke:#111; stroke-width:2; fill:none; marker-end:url(#mPub); }
+      .arrow-ref { stroke:#111; stroke-width:1.5; fill:none; stroke-dasharray:4 4; marker-end:url(#mRef); }
+      /* Control-plane connectors (non-arrow, no semantics beyond dotted connective) */
+      .ctl-link { stroke:#666; stroke-width:1.5; stroke-dasharray:3 3; fill:none; }
+      .hdr { fill:#fff; stroke:#111; stroke-width:1.5; }
     </style>
-    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-      <polygon points="0 0, 8 4, 0 8" fill="#94a3b8"/>
+
+    <!-- Markers -->
+    <marker id="mAuth" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+    <marker id="mPub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+    <marker id="mRef" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
     </marker>
   </defs>
-  
-  <!-- Background -->
-  <rect class="bg" width="1200" height="800"/>
-  
-  <!-- Title -->
-  <text x="600" y="30" text-anchor="middle" class="text-heading">TRIZEL Ecosystem Map — Accounts &amp; Repositories</text>
-  <text x="600" y="50" text-anchor="middle" class="text-small">Reference-only display — No integration or execution</text>
-  
-  <!-- Account: abdelkader-omran -->
-  <rect class="group-border" x="50" y="80" width="320" height="320" rx="8"/>
-  <text x="210" y="100" text-anchor="middle" class="text-title">Account: abdelkader-omran</text>
-  
-  <rect class="box" x="70" y="120" width="280" height="60" rx="4"/>
-  <text x="210" y="145" text-anchor="middle" class="text-label">trizel-monitor</text>
-  <text x="210" y="162" text-anchor="middle" class="text-small">Monitoring tools</text>
-  
-  <rect class="box" x="70" y="200" width="280" height="60" rx="4"/>
-  <text x="210" y="220" text-anchor="middle" class="text-label">AUTO-DZ-ACT-3I-ATLAS-DAILY</text>
-  <text x="210" y="237" text-anchor="middle" class="text-small">Daily data archive</text>
-  
-  <rect class="box" x="70" y="280" width="280" height="60" rx="4"/>
-  <text x="210" y="300" text-anchor="middle" class="text-label">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</text>
-  <text x="210" y="317" text-anchor="middle" class="text-small">Analysis infrastructure</text>
-  
-  <!-- Org: trizel-ai -->
-  <rect class="group-border" x="400" y="80" width="350" height="500" rx="8"/>
-  <text x="575" y="100" text-anchor="middle" class="text-title">Organization: trizel-ai</text>
-  
-  <rect class="box" x="420" y="120" width="310" height="60" rx="4"/>
-  <text x="575" y="145" text-anchor="middle" class="text-label">trizel-core</text>
-  <text x="575" y="162" text-anchor="middle" class="text-small">Governance / Authority (Layer-0)</text>
-  
-  <rect class="box" x="420" y="200" width="310" height="60" rx="4"/>
-  <text x="575" y="220" text-anchor="middle" class="text-label">trizel-epistemic-engine</text>
-  <text x="575" y="237" text-anchor="middle" class="text-small">Core epistemic validation</text>
-  
-  <rect class="box" x="420" y="280" width="310" height="60" rx="4"/>
-  <text x="575" y="300" text-anchor="middle" class="text-label">Auto-dz-act</text>
-  <text x="575" y="317" text-anchor="middle" class="text-small">Automated processing</text>
-  
-  <rect class="box" x="420" y="360" width="310" height="60" rx="4"/>
-  <text x="575" y="380" text-anchor="middle" class="text-label">Auto-dz-monitor</text>
-  <text x="575" y="397" text-anchor="middle" class="text-small">Monitoring system</text>
-  
-  <rect class="box" x="420" y="440" width="310" height="60" rx="4"/>
-  <text x="575" y="460" text-anchor="middle" class="text-label">Auto-dz-api-monitor</text>
-  <text x="575" y="477" text-anchor="middle" class="text-small">API monitoring</text>
-  
-  <rect class="box-private" x="420" y="520" width="310" height="60" rx="4"/>
-  <text x="575" y="545" text-anchor="middle" class="text-label">trizel-lab (Private/Internal)</text>
-  <text x="575" y="562" text-anchor="middle" class="text-small">Internal research documentation</text>
-  
-  <!-- Account: trizel-admin -->
-  <rect class="group-border" x="50" y="430" width="320" height="150" rx="8"/>
-  <text x="210" y="450" text-anchor="middle" class="text-title">Account: trizel-admin</text>
-  <text x="210" y="470" text-anchor="middle" class="text-small">Control / Presentation Account</text>
-  
-  <rect class="box-org" x="70" y="490" width="280" height="60" rx="4"/>
-  <text x="210" y="515" text-anchor="middle" class="text-label">(Administrative control)</text>
-  <text x="210" y="532" text-anchor="middle" class="text-small">Gateway for Layer-2</text>
-  
-  <!-- Org: trizel-ai-site -->
-  <rect class="group-border" x="800" y="80" width="350" height="200" rx="8"/>
-  <text x="975" y="100" text-anchor="middle" class="text-title">Organization: trizel-ai-site</text>
-  
-  <rect class="box-presentation" x="820" y="120" width="310" height="80" rx="4"/>
-  <text x="975" y="150" text-anchor="middle" class="text-label">trizel-site</text>
-  <text x="975" y="167" text-anchor="middle" class="text-small">This website (Layer-2 Presentation)</text>
-  <text x="975" y="184" text-anchor="middle" class="text-small">Static HTML/CSS/SVG only</text>
-  
-  <!-- Reference arrows -->
-  <path class="arrow" d="M 350 150 L 820 160"/>
-  <text x="585" y="145" class="text-small">Referenced for</text>
-  <text x="585" y="160" class="text-small">presentation</text>
-  
-  <path class="arrow" d="M 350 230 L 820 160"/>
-  <path class="arrow" d="M 350 310 L 820 170"/>
-  <path class="arrow" d="M 730 390 L 820 180"/>
-  <path class="arrow" d="M 730 470 L 820 185"/>
-  <path class="arrow" d="M 370 520 L 820 190"/>
-  
+
+  <!-- Header -->
+  <rect x="20" y="20" width="1160" height="60" class="hdr"/>
+  <text x="40" y="55" class="title">TRIZEL — Institutional Architecture Map (EN canonical)</text>
+  <text x="40" y="80" class="subtitle">Reference-only display — no integration — no runtime — no metrics. EN is canonical; translations mirror structure.</text>
+
+  <!-- Bands: grid aligned -->
+  <rect x="20" y="100" width="840" height="160" class="band band-blue"/>
+  <rect x="20" y="270" width="840" height="360" class="band band-green"/>
+  <rect x="20" y="640" width="840" height="80"  class="band band-boundary"/>
+  <rect x="20" y="730" width="840" height="360" class="band band-purple"/>
+
+  <!-- Band labels -->
+  <text x="30" y="125" class="band-label">LAYER-0 — Constitutional Governance / Authority</text>
+  <text x="30" y="295" class="band-label">LAYER-1 — Internal Research &amp; Execution — Restricted/Private</text>
+  <text x="30" y="665" class="band-label">VALIDATION / APPROVAL BOUNDARY (publication gating)</text>
+  <text x="30" y="755" class="band-label">LAYER-2 — Public Presentation / Artifacts — Read-only</text>
+
+  <!-- LAYER-0 content -->
+  <rect x="40" y="140" width="320" height="100" rx="6" class="org"/>
+  <text x="55" y="165"><tspan>Organization: trizel-ai</tspan></text>
+  <rect x="60" y="180" width="280" height="50" rx="6" class="repo"/>
+  <text x="75" y="205"><tspan>Repository: trizel-core</tspan></text>
+  <text x="380" y="165" class="note"><tspan>Meaning: immutable governance rules,</tspan></text>
+  <text x="380" y="185" class="note"><tspan>final authority, no bypass.</tspan></text>
+
+  <!-- LAYER-1 content -->
+  <!-- Org box -->
+  <rect x="40" y="310" width="360" height="160" rx="6" class="org"/>
+  <text x="55" y="335"><tspan>Organization: trizel-ai</tspan></text>
+  <rect x="60" y="355" width="320" height="90" rx="6" class="repo-private"/>
+  <text x="75" y="380"><tspan>Repository: trizel-lab</tspan></text>
+  <text x="75" y="402" class="small"><tspan>(private / internal)</tspan></text>
+
+  <!-- Personal account group -->
+  <rect x="420" y="310" width="420" height="300" rx="6" class="org"/>
+  <text x="435" y="335"><tspan>Personal account: abdelkader-omran</tspan></text>
+  <rect x="440" y="355" width="380" height="40" rx="6" class="repo-private"/>
+  <text x="455" y="382"><tspan>AUTO-DZ-ACT-3I-ATLAS-DAILY</tspan></text>
+  <rect x="440" y="405" width="380" height="40" rx="6" class="repo-private"/>
+  <text x="455" y="432"><tspan>AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</tspan></text>
+  <rect x="440" y="455" width="380" height="40" rx="6" class="repo-private"/>
+  <text x="455" y="482"><tspan>trizel-AI</tspan></text>
+  <rect x="440" y="505" width="380" height="40" rx="6" class="repo-private"/>
+  <text x="455" y="532"><tspan>trizel-monitor</tspan></text>
+
+  <text x="40" y="630" class="note"><tspan>Meaning: controlled execution environment; research occurs here; access restricted; governed by Layer-0.</tspan></text>
+
+  <!-- Boundary contents -->
+  <rect x="40" y="650" width="220" height="60" rx="6" class="panel"/>
+  <text x="55" y="675"><tspan>Gate-0..Gate-4C: completed</tspan></text>
+  <text x="55" y="695" class="small"><tspan>(baseline protections; no execution detail)</tspan></text>
+
+  <rect x="280" y="650" width="220" height="60" rx="6" class="panel"/>
+  <text x="295" y="675"><tspan>Gate-5 — CLOSED</tspan></text>
+  <text x="295" y="695" class="small"><tspan>(execution switch; remains closed)</tspan></text>
+
+  <!-- LAYER-2 content -->
+  <rect x="40" y="760" width="780" height="300" rx="6" class="org"/>
+  <text x="55" y="785"><tspan>Organization: trizel-ai-site</tspan></text>
+
+  <rect x="60" y="810" width="340" height="70" rx="6" class="repo-presentation"/>
+  <text x="75" y="835"><tspan>trizel-site-artifacts</tspan></text>
+  <text x="75" y="855" class="small"><tspan>(website build source; GitHub Pages from main/root)</tspan></text>
+
+  <rect x="60" y="890" width="340" height="60" rx="6" class="repo-presentation"/>
+  <text x="75" y="919"><tspan>trizel-site</tspan></text>
+  <text x="430" y="815" class="small"><tspan>Meaning: presentation-only; static pages; no authority; no execution; no live metrics.</tspan></text>
+
+  <rect x="430" y="890" width="370" height="60" rx="6" class="repo-presentation"/>
+  <text x="445" y="919"><tspan>phase-e-gateway</tspan></text>
+  <text x="445" y="939" class="small"><tspan>(exists; later-phase; do not imply execution)</tspan></text>
+
+  <!-- RIGHT SIDE PANEL: CONTROL PLANE -->
+  <rect x="880" y="100" width="300" height="990" rx="6" class="panel"/>
+  <text x="895" y="125" class="band-label"><tspan>CONTROL PLANE</tspan></text>
+  <text x="895" y="145" class="small"><tspan>(permissions / approvals / access control)</tspan></text>
+
+  <rect x="900" y="170" width="260" height="80" rx="6" class="org"/>
+  <text x="915" y="200"><tspan>Identity: trizel-admin</tspan></text>
+  <text x="915" y="222" class="small"><tspan>Operational control for Layer-2 publication</tspan></text>
+
+  <!-- Dotted connectors (not arrows; no authority semantics) -->
+  <!-- to LAYER-2 org -->
+  <path d="M 1030 250 L 1030 760" class="ctl-link"/>
+  <!-- to LAYER-0 org management -->
+  <path d="M 1030 250 L 360 190" class="ctl-link"/>
+  <!-- to LAYER-1 org management -->
+  <path d="M 1030 250 L 400 330" class="ctl-link"/>
+
+  <text x="895" y="270" class="small"><tspan>Note: administrative control lines only (no scientific authority).</tspan></text>
+
+  <!-- AUTHORITY/GOVERNANCE arrows (solid, labeled "governs") -->
+  <path d="M 200 260 L 200 730" class="arrow-auth"/>
+  <text x="210" y="500" class="small">governs</text>
+
+  <path d="M 440 260 L 440 270" class="arrow-auth"/>
+  <text x="450" y="265" class="small">governs</text>
+
+  <!-- PUBLICATION FLOW arrow (solid, labeled "approved artifacts only") -->
+  <path d="M 760 520 L 760 730" class="arrow-pub"/>
+  <text x="770" y="635" class="small">approved artifacts only</text>
+
+  <!-- REFERENCE-ONLY links from Layer-2 to Layer-0/1 (thin dotted, labeled) -->
+  <path d="M 230 920 L 200 205" class="arrow-ref"/>
+  <text x="240" y="560" class="small">reference only (no integration / no execution)</text>
+
+  <path d="M 390 920 L 220 400" class="arrow-ref"/>
+  <text x="400" y="620" class="small">reference only (no integration / no execution)</text>
+
+  <!-- BOTTOM PANEL: DOI Registry + Legend + Execution status + Notes -->
+  <rect x="20" y="1100" width="1160" height="560" rx="6" class="panel"/>
+
   <!-- Legend -->
-  <rect class="legend-box" x="50" y="620" width="1100" height="150" rx="4"/>
-  <text x="60" y="645" class="text-title">Legend</text>
-  
-  <rect class="box" x="70" y="660" width="100" height="30" rx="2"/>
-  <text x="180" y="680" class="text-small">Standard Repository</text>
-  
-  <rect class="box-private" x="300" y="660" width="100" height="30" rx="2"/>
-  <text x="410" y="680" class="text-small">Private/Internal Repository</text>
-  
-  <rect class="box-presentation" x="600" y="660" width="100" height="30" rx="2"/>
-  <text x="710" y="680" class="text-small">Presentation Layer (Layer-2)</text>
-  
-  <line x1="70" y1="720" x2="150" y2="720" class="arrow"/>
-  <text x="160" y="725" class="text-small">Reference flow (no integration/execution)</text>
-  
-  <text x="70" y="750" class="text-small">All arrows indicate reference-only display links. No live data, no integration, no execution.</text>
+  <rect x="30" y="1110" width="540" height="160" rx="6" class="panel"/>
+  <text x="45" y="1140" class="band-label">Legend</text>
+
+  <!-- Band swatches -->
+  <rect x="45" y="1160" width="20" height="14" class="legend-swatch" style="fill:#dbeafe;"/>
+  <text x="75" y="1171" class="small">Layer-0 band: Governance/Authority</text>
+  <rect x="45" y="1185" width="20" height="14" class="legend-swatch" style="fill:#dcfce7;"/>
+  <text x="75" y="1196" class="small">Layer-1 band: Internal Research &amp; Execution (restricted)</text>
+  <rect x="45" y="1210" width="20" height="14" class="legend-swatch" style="fill:#efe6ff;"/>
+  <text x="75" y="1221" class="small">Layer-2 band: Public Presentation / Artifacts (read-only)</text>
+
+  <!-- Repo box meanings -->
+  <rect x="300" y="1160" width="20" height="14" class="legend-swatch" style="fill:#ffffff;"/>
+  <text x="330" y="1171" class="small">Repository (standard/public)</text>
+  <rect x="300" y="1185" width="20" height="14" class="legend-swatch" style="fill:#f2f2f2;"/>
+  <text x="330" y="1196" class="small">Repository (private/internal)</text>
+  <rect x="300" y="1210" width="20" height="14" class="legend-swatch" style="fill:#f9f5ff;"/>
+  <text x="330" y="1221" class="small">Repository (presentation artifact)</text>
+
+  <!-- Arrow legend -->
+  <path d="M 45 1245 L 145 1245" class="arrow-auth"/><text x="155" y="1249" class="small">Authority/Governance — label: "governs"</text>
+  <path d="M 45 1270 L 145 1270" class="arrow-pub"/><text x="155" y="1274" class="small">Publication flow — label: "approved artifacts only"</text>
+  <path d="M 45 1295 L 145 1295" class="arrow-ref"/><text x="155" y="1299" class="small">Reference-only — label: "reference only (no integration / no execution)"</text>
+
+  <text x="45" y="1325" class="small">Global disclaimer: Static map — presentation only — no runtime — no metrics.</text>
+
+  <!-- Execution status -->
+  <rect x="590" y="1110" width="580" height="160" rx="6" class="panel"/>
+  <text x="605" y="1140" class="band-label">Execution Status &amp; Governance Gate Position</text>
+  <text x="605" y="1165"><tspan>Execution CLOSED — Post-Gate-4C / Pre-Gate-5.</tspan></text>
+  <text x="605" y="1187" class="small"><tspan>Gate-5 is the execution switch; remains CLOSED until formal authorization.</tspan></text>
+  <text x="605" y="1207" class="small"><tspan>Gate-0..Gate-4C are completed baseline protections (display-only; no execution detail).</tspan></text>
+
+  <!-- DOI Registry -->
+  <rect x="30" y="1280" width="1120" height="300" rx="6" class="panel"/>
+  <text x="45" y="1308" class="band-label">Published Governance &amp; Data References (Zenodo)</text>
+  <text x="45" y="1332" class="small">DOIs are authoritative; site is presentation-only.</text>
+
+  <!-- DOI list (short-line citations only) -->
+  <text x="60" y="1360" class="small">• TRIZEL Institutional White Paper (canonical): 10.5281/zenodo.18424196</text>
+  <text x="60" y="1380" class="small">• Layer-2 Baseline v1: 10.5281/zenodo.18354752</text>
+  <text x="60" y="1400" class="small">• TRIZEL Scientific Ingest Layer: 10.5281/zenodo.18012859</text>
+  <text x="60" y="1420" class="small">• AUTO-DZ-ACT (epistemic validation algorithm): 10.5281/zenodo.18134257</text>
+  <text x="60" y="1440" class="small">• AUTO-DZ-ACT definition-only reference v1.0.0: 10.5281/zenodo.18215708</text>
+  <text x="60" y="1460" class="small">• Gate-1 governance baseline declaration: 10.5281/zenodo.18283981</text>
+  <text x="60" y="1480" class="small">• Gate-4C provenance archive (3I-ATLAS-0001): 10.5281/zenodo.18413908</text>
+  <text x="60" y="1500" class="small">• 3I/ATLAS daily observational snapshots: 10.5281/zenodo.18416881</text>
+
+  <!-- Other orgs / notes -->
+  <rect x="30" y="1520" width="1120" height="120" rx="6" class="panel"/>
+  <text x="45" y="1550" class="band-label">Other Orgs / Notes</text>
+  <text x="45" y="1575" class="small">• trizel-ai-group exists but inactive (no repositories).</text>
+  <text x="45" y="1598" class="small">• "Reference-only display — no integration — no runtime — no metrics."</text>
+
 </svg>
