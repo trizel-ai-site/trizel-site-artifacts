@@ -318,3 +318,58 @@ a .icon {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ========================================
+   Mobile Readability Patch
+   Institutional, Multilingual, Static-only
+   ======================================== */
+@media (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Baseline readable body text on mobile */
+  p, li, dd, dt, blockquote, .prose p, .prose li {
+    line-height: 1.75;
+    font-weight: 500;
+  }
+
+  /*
+    Contrast fix:
+    Use site's existing CSS variables for text colors
+    Ensure readable contrast on mobile screens
+  */
+  p, li, dd, dt, blockquote {
+    color: var(--color-text, #0f172a);
+  }
+
+  /* Muted text should remain readable on mobile */
+  .tagline,
+  .section__description,
+  .card__description,
+  .footer-notice,
+  .banner__content,
+  .banner__title {
+    color: var(--color-text-medium, #334155);
+  }
+
+  /* Ensure links remain legible inside content */
+  p a, li a, dd a {
+    text-underline-offset: 0.15em;
+  }
+
+  /* Dark sections (footer, hero) need light text */
+  .site-footer p,
+  .site-footer li,
+  .site-footer dd,
+  .site-footer__text {
+    color: #cbd5e1;
+  }
+
+  .hero p,
+  .hero li,
+  .hero dd {
+    color: var(--color-text-inverse, #ffffff);
+  }
+}
