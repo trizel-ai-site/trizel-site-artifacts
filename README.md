@@ -1,5 +1,9 @@
 # TRIZEL — Layer-2 Institutional Scientific Observatory
 
+⚠️ **Layer-2 is currently under a Stabilization & Indexing Hold.**  
+No modifications are permitted during this period without
+explicit governance approval.
+
 ## Current Governance State
 
 **Layer:** Layer-2 (Presentation)  
