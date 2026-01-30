@@ -334,3 +334,33 @@ a .icon {
     font-weight: 500;
   }
 }
+
+/* ==========================================================================
+   Contrast fix — scoped variable overrides for muted text on dark sections
+   WCAG AA aware (≥4.5:1 target), governance-safe, mobile-reinforced
+   Only affects .site-footer, .daily-indicator, and mobile .content
+   No global/root changes — brand palette preserved
+   ========================================================================== */
+
+/* Footer: strongest offender (uses var(--muted) heavily) */
+.site-footer {
+  --muted: #c0d4e8;     /* lighter cool blue-gray for better contrast on dark */
+}
+
+/* Daily indicator: lift timestamps/meta/secondary text */
+.daily-indicator {
+  --muted: #c0d4e8;
+}
+
+/* Mobile-only: small screens need higher contrast for muted text within content */
+@media (max-width: 768px) {
+  .content {
+    --muted: #d0e0f5;   /* higher lightness for mobile readability */
+  }
+}
+
+/* Safety net: headings/titles must never look "muted" in these dark blocks */
+.site-footer :is(h1, h2, h3, h4, h5, h6),
+.daily-indicator :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--text) !important;
+}
