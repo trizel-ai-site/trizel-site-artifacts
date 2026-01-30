@@ -387,3 +387,46 @@ a .icon {
     color: #a3c9ff !important; /* light blue, WCAG-safe on dark */
   }
 }
+
+/* ==========================================================================
+   Dark-container text token override (final contrast fix)
+   Fixes: dark titles (.section__title / h2) rendered with light-theme tokens on dark backgrounds
+   Scope: only inside existing dark containers: .content, .daily-indicator, .site-footer
+   No HTML changes. No :root changes. Append-only. Governance-safe.
+   ========================================================================== */
+
+/* 1) Establish dark-container tokens locally (do NOT touch :root) */
+.content,
+.daily-indicator,
+.site-footer {
+  --color-text: var(--text);
+  --color-text-medium: var(--muted);
+  --color-text-muted: var(--muted);
+}
+
+/* 2) Force section headings/descriptions to use corrected tokens inside dark containers */
+.content .section__title,
+.content h1, .content h2, .content h3,
+.daily-indicator .section__title,
+.daily-indicator h1, .daily-indicator h2, .daily-indicator h3,
+.site-footer .section__title,
+.site-footer h1, .site-footer h2, .site-footer h3 {
+  color: var(--color-text) !important;
+}
+
+.content .section__description,
+.daily-indicator .section__description,
+.site-footer .section__description {
+  color: var(--color-text-medium) !important;
+}
+
+/* 3) Mobile reinforcement (small screens + glare) */
+@media (max-width: 768px) {
+  .content .section__title,
+  .content h1, .content h2, .content h3 {
+    color: var(--text) !important;
+  }
+  .content .section__description {
+    color: var(--muted) !important;
+  }
+}
