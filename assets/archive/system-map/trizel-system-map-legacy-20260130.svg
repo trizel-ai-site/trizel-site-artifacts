@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 750" width="900" height="750">
+  <title>TRIZEL System Map - Three-Layer Architecture with Control Plane</title>
+  <desc>Static diagram showing TRIZEL layer separation: Layer-0 (Governance), Layer-1 (Research/Execution), Layer-2 (Public Presentation), with Phase-E Gateway and Control Plane</desc>
+  
+  <!-- Background -->
+  <rect width="900" height="750" fill="#f6f8fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#24292f">
+    TRIZEL System Architecture — Three-Layer Model
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="450" y="55" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#57606a">
+    Static Map — Presentation Only — No Runtime — No Metrics
+  </text>
+  
+  <!-- ========== LAYER-0: GOVERNANCE ========== -->
+  <g id="layer-0">
+    <!-- Box -->
+    <rect x="200" y="90" width="500" height="100" rx="8" fill="#0969da" stroke="#0550ae" stroke-width="3"/>
+    
+    <!-- Title -->
+    <text x="450" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#ffffff">
+      LAYER-0: GOVERNANCE / AUTHORITY
+    </text>
+    
+    <!-- Repository -->
+    <text x="450" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#ffffff">
+      trizel-ai/trizel-core
+    </text>
+    
+    <!-- Functions -->
+    <text x="450" y="165" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.9">
+      Establishes policies • Defines standards • Final authority
+    </text>
+  </g>
+  
+  <!-- Authority Badge -->
+  <rect x="110" y="105" width="70" height="28" rx="4" fill="#ffd33d" stroke="#e3b341" stroke-width="2"/>
+  <text x="145" y="124" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#24292f">
+    AUTHORITY
+  </text>
+  
+  <!-- Arrow: Layer-0 to Layer-1 -->
+  <g id="arrow-0-1">
+    <line x1="450" y1="190" x2="450" y2="240" stroke="#57606a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="475" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#57606a">
+      [governs]
+    </text>
+  </g>
+  
+  <!-- ========== LAYER-1: RESEARCH & EXECUTION ========== -->
+  <g id="layer-1">
+    <!-- Box -->
+    <rect x="200" y="240" width="500" height="130" rx="8" fill="#1f883d" stroke="#1a7f37" stroke-width="3"/>
+    
+    <!-- Title -->
+    <text x="450" y="265" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#ffffff">
+      LAYER-1: INTERNAL RESEARCH &amp; EXECUTION
+    </text>
+    
+    <!-- Repositories -->
+    <text x="450" y="290" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">
+      trizel-ai/trizel-lab (private)
+    </text>
+    <text x="450" y="310" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ffffff" opacity="0.9">
+      trizel-ai/* engines • abdelkader-omran/AUTO-DZ-ACT-* pipelines
+    </text>
+    
+    <!-- Functions -->
+    <text x="210" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • Conducts research experiments
+    </text>
+    <text x="210" y="353" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • Produces scientific findings
+    </text>
+    <text x="450" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • Maintains provenance
+    </text>
+    <text x="450" y="353" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • Performs validation (internal)
+    </text>
+  </g>
+  
+  <!-- Execution Badge -->
+  <rect x="110" y="260" width="70" height="28" rx="4" fill="#a8dadc" stroke="#457b9d" stroke-width="2"/>
+  <text x="145" y="279" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#24292f">
+    EXECUTION
+  </text>
+  
+  <!-- Arrow: Layer-1 to Validation Boundary -->
+  <g id="arrow-1-validation">
+    <line x1="450" y1="370" x2="450" y2="420" stroke="#57606a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="380" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#57606a">
+      [produces artifacts]
+    </text>
+  </g>
+  
+  <!-- ========== VALIDATION / APPROVAL BOUNDARY ========== -->
+  <g id="validation-boundary">
+    <!-- Dashed box -->
+    <rect x="180" y="420" width="540" height="60" rx="6" fill="#fff9e6" stroke="#d4a72c" stroke-width="2" stroke-dasharray="8,4"/>
+    
+    <!-- Title -->
+    <text x="450" y="440" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#6f4e37">
+      VALIDATION / APPROVAL BOUNDARY
+    </text>
+    
+    <!-- Notice -->
+    <text x="450" y="460" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#6f4e37">
+      ⚠ Human approval required • Validated artifacts only • Fail-closed
+    </text>
+  </g>
+  
+  <!-- Arrow: Validation to Layer-2 -->
+  <g id="arrow-validation-2">
+    <line x1="450" y1="480" x2="450" y2="530" stroke="#57606a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="370" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#57606a">
+      [approved artifacts only]
+    </text>
+  </g>
+  
+  <!-- ========== LAYER-2: PUBLIC PRESENTATION ========== -->
+  <g id="layer-2">
+    <!-- Box -->
+    <rect x="200" y="530" width="500" height="110" rx="8" fill="#8250df" stroke="#6e40c9" stroke-width="3"/>
+    
+    <!-- Title -->
+    <text x="450" y="555" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#ffffff">
+      LAYER-2: PUBLIC PRESENTATION / ARTIFACTS
+    </text>
+    
+    <!-- Repository -->
+    <text x="450" y="580" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">
+      trizel-ai-site/trizel-site-artifacts (this repo)
+    </text>
+    
+    <!-- Functions -->
+    <text x="210" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • Static documentation only
+    </text>
+    <text x="210" y="623" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • No code execution • No metrics
+    </text>
+    <text x="450" y="605" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • References Layer-0 &amp; Layer-1
+    </text>
+    <text x="450" y="623" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" opacity="0.85">
+      • NO AUTHORITY — Display only
+    </text>
+  </g>
+  
+  <!-- Display Badge -->
+  <rect x="110" y="550" width="70" height="28" rx="4" fill="#f1c0e8" stroke="#b565a7" stroke-width="2"/>
+  <text x="145" y="569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#24292f">
+    DISPLAY
+  </text>
+  
+  <!-- Arrow: Layer-2 to Public -->
+  <g id="arrow-2-public">
+    <line x1="450" y1="640" x2="450" y2="680" stroke="#57606a" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="475" y="665" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#57606a">
+      [presents to]
+    </text>
+  </g>
+  
+  <!-- Public Visitors -->
+  <g id="public">
+    <rect x="350" y="680" width="200" height="40" rx="6" fill="#e6e6e6" stroke="#999999" stroke-width="2"/>
+    <text x="450" y="705" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#24292f">
+      👥 Public Visitors
+    </text>
+  </g>
+  
+  <!-- ========== SIDE: PHASE-E GATEWAY ========== -->
+  <g id="phase-e-gateway">
+    <!-- Box -->
+    <rect x="30" y="420" width="130" height="80" rx="6" fill="#fff3cd" stroke="#d4a72c" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="95" y="440" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#6f4e37">
+      GATE
+    </text>
+    <text x="95" y="455" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#6f4e37">
+      Phase-E Gateway
+    </text>
+    
+    <!-- Functions -->
+    <text x="40" y="475" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#6f4e37">
+      • Human approval
+    </text>
+    <text x="40" y="488" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#6f4e37">
+      • Fail-closed
+    </text>
+  </g>
+  
+  <!-- Connection: Gateway to Boundary -->
+  <line x1="160" y1="460" x2="180" y2="450" stroke="#d4a72c" stroke-width="2" stroke-dasharray="4,2"/>
+  
+  <!-- ========== SIDE: CONTROL PLANE ========== -->
+  <g id="control-plane">
+    <!-- Box -->
+    <rect x="740" y="240" width="130" height="90" rx="6" fill="#e6f3ff" stroke="#0969da" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="805" y="260" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0550ae">
+      CONTROL PLANE
+    </text>
+    <text x="805" y="275" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#0550ae">
+      trizel-admin
+    </text>
+    
+    <!-- Functions -->
+    <text x="750" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#0550ae">
+      • Permissions
+    </text>
+    <text x="750" y="308" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#0550ae">
+      • Approvals
+    </text>
+    <text x="750" y="321" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#0550ae">
+      • Access control
+    </text>
+  </g>
+  
+  <!-- Connections: Control to Layers -->
+  <line x1="740" y1="280" x2="700" y2="140" stroke="#0969da" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="740" y1="290" x2="700" y2="305" stroke="#0969da" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="740" y1="300" x2="700" y2="580" stroke="#0969da" stroke-width="1.5" stroke-dasharray="4,2"/>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <text x="30" y="735" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#57606a">
+      Key Principles:
+    </text>
+    <text x="30" y="750" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#57606a">
+      • Authority flows downward only (Layer-0 → Layer-1 → Layer-2)
+    </text>
+    <text x="350" y="750" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#57606a">
+      • Layer-2 has NO authority • Human approval required for publication
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#57606a"/>
+    </marker>
+  </defs>
+</svg>
