@@ -364,3 +364,26 @@ a .icon {
 .daily-indicator :is(h1, h2, h3, h4, h5, h6) {
   color: var(--text) !important;
 }
+
+/* ==========================================================================
+   Mobile contrast fix — blue titles & DOI links inside dark content
+   Scoped, mobile-only, governance-safe
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Section titles inside content must never be dark-blue on dark bg */
+  .content h2,
+  .content h3,
+  .content .section-title,
+  .content .governance-title {
+    color: var(--text) !important; /* high-contrast light text */
+  }
+
+  /* DOI and governance links inside dark content */
+  .content a[href*="zenodo"],
+  .content a[href^="https://doi.org"],
+  .content .doi,
+  .content .governance-link {
+    color: #a3c9ff !important; /* light blue, WCAG-safe on dark */
+  }
+}
