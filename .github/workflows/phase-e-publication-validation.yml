@@ -5,11 +5,13 @@ on:
   pull_request:
     paths:
       - "lab/**"
+      - "phase-e/**"
       - "data/publish/3i-atlas/**"
       - ".github/workflows/phase-e-publication-validation.yml"
   push:
     paths:
       - "lab/**"
+      - "phase-e/**"
       - "data/publish/3i-atlas/**"
       - ".github/workflows/phase-e-publication-validation.yml"
   workflow_dispatch:
@@ -275,24 +277,3 @@ jobs:
           
           print('✓ Determinism verified: outputs are identical (excluding provenance timestamps)')
           PYTHON_SCRIPT
-
-      - name: Validation summary
-        if: success()
-        run: |
-          echo ""
-          echo "============================================================"
-          echo "PHASE-E PUBLICATION VALIDATION COMPLETE"
-          echo "============================================================"
-          echo "✓ Network-free enforcement verified"
-          echo "✓ Input source enforcement verified"
-          echo "✓ Publication engine executed successfully"
-          echo "✓ All required outputs created"
-          echo "✓ Manifest consistency validated"
-          echo "✓ Provenance metadata validated"
-          echo "✓ SHA256 checksums verified"
-          echo "✓ Deterministic execution verified"
-          echo "============================================================"
-          echo "Status: PRODUCTION-READY"
-          echo "Gate-6: CLOSED"
-          echo "Authority: NONE"
-          echo "============================================================"

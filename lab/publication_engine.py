@@ -27,23 +27,74 @@ class PublicationEngine:
     
     Enforces:
     - Network-free execution (no external calls)
-    - Verified-inputs-only (reads from /data/publish/3i-atlas)
+    - Verified-inputs-only (reads ONLY from /data/publish/3i-atlas)
     - Deterministic outputs (same inputs → same outputs)
     - Fail-closed handling (NO_DATA_YET on missing inputs)
     """
     
     VERSION = "v001"
-    CLAIM_ID = "claim-001"
+    # IMMUTABLE INPUT ROOT - GOVERNANCE ENFORCED
+    # This is the ONLY allowed input directory. No alternate paths permitted.
+    VERIFIED_INPUT_ROOT = "data/publish/3i-atlas"
     
-    def __init__(self, repo_root: Path):
-        """Initialize the publication engine."""
+    def __init__(self, repo_root: Path, claim_id: str):
+        """Initialize the publication engine.
+        
+        Args:
+            repo_root: Root directory of the repository
+            claim_id: Claim identifier (e.g., "claim-001")
+        """
         self.repo_root = repo_root
+        self.claim_id = claim_id
+        
+        # STRICT INPUT SOURCE ENFORCEMENT
+        # Construct the data directory using the immutable constant
         self.data_dir = repo_root / "data" / "publish" / "3i-atlas"
-        self.output_base = repo_root / "lab" / "publication" / self.CLAIM_ID
+        
+        # Verify the path is canonical and within the allowed root
+        self._verify_input_path_security()
+        
+        self.output_base = repo_root / "lab" / "publication" / self.claim_id
         self.execution_timestamp = datetime.now(timezone.utc)
         
         # Ensure deterministic execution
         self.deterministic_date = self.execution_timestamp.strftime("%Y-%m-%d")
+    
+    def _verify_input_path_security(self):
+        """
+        Verify that the input path is secure and canonical.
+        
+        This is a governance-critical check that ensures:
+        1. The path resolves to the expected location
+        2. No path traversal or symbolic link attacks
+        3. The path is strictly under the allowed input root
+        
+        Raises:
+            ValueError: If path verification fails
+        """
+        try:
+            # Resolve to canonical absolute path
+            canonical_data_dir = self.data_dir.resolve()
+            expected_root = (self.repo_root / self.VERIFIED_INPUT_ROOT).resolve()
+            
+            # Verify the canonical path matches expected
+            if canonical_data_dir != expected_root:
+                raise ValueError(
+                    f"Input path security violation: "
+                    f"resolved to {canonical_data_dir}, "
+                    f"expected {expected_root}"
+                )
+            
+            # Additional check: ensure no parent directory escape
+            try:
+                canonical_data_dir.relative_to(self.repo_root)
+            except ValueError:
+                raise ValueError(
+                    f"Input path escapes repository root: {canonical_data_dir}"
+                )
+                
+        except Exception as e:
+            raise ValueError(f"Input path verification failed: {e}")
         
     def verify_inputs(self) -> Dict[str, Any]:
         """
@@ -120,7 +171,7 @@ class PublicationEngine:
             "engine": {
                 "name": "TRIZEL Phase-E Publication Compiler",
                 "version": self.VERSION,
-                "claim_id": self.CLAIM_ID
+                "claim_id": self.claim_id
             },
             "execution": {
                 "timestamp_utc": self.execution_timestamp.isoformat() + "Z",
@@ -331,7 +382,7 @@ class PublicationEngine:
         
         manifest = {
             "publication": {
-                "claim_id": self.CLAIM_ID,
+                "claim_id": self.claim_id,
                 "version": self.VERSION,
                 "date": self.deterministic_date
             },
@@ -362,7 +413,7 @@ class PublicationEngine:
             Exception: On any other error
         """
         print(f"TRIZEL Phase-E Publication Compiler {self.VERSION}")
-        print(f"Claim ID: {self.CLAIM_ID}")
+        print(f"Claim ID: {self.claim_id}")
         print(f"Date: {self.deterministic_date}")
         print()
         
@@ -402,6 +453,7 @@ class PublicationEngine:
         print("="*60)
         print("PUBLICATION COMPLETE")
         print("="*60)
+        print(f"Claim ID: {self.claim_id}")
         print(f"Output directory: {output_dir.relative_to(self.repo_root)}")
         print(f"Deterministic: YES")
         print(f"Network access: NO")
@@ -413,6 +465,7 @@ class PublicationEngine:
         
         return {
             "success": True,
+            "claim_id": self.claim_id,
             "output_dir": str(output_dir.relative_to(self.repo_root)),
             "provenance": provenance,
             "verification": verification
@@ -422,11 +475,23 @@ class PublicationEngine:
 def main():
     """Main entry point for the publication engine."""
     try:
+        # Parse command-line arguments
+        import argparse
+        parser = argparse.ArgumentParser(
+            description="TRIZEL Phase-E Deterministic Publication Compiler"
+        )
+        parser.add_argument(
+            "--claim-id",
+            default="claim-001",
+            help="Claim identifier (default: claim-001)"
+        )
+        args = parser.parse_args()
+        
         # Determine repository root
         repo_root = Path(__file__).parent.parent.resolve()
         
         # Create and run engine
-        engine = PublicationEngine(repo_root)
+        engine = PublicationEngine(repo_root, args.claim_id)
         result = engine.run()
         
         # Exit with success
