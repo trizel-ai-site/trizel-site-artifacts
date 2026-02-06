@@ -1,0 +1,288 @@
+---
+name: phase-e-publication-validation
+
+on:
+  pull_request:
+    paths:
+      - "lab/**"
+      - "data/publish/3i-atlas/**"
+      - ".github/workflows/phase-e-publication-validation.yml"
+  push:
+    paths:
+      - "lab/**"
+      - "data/publish/3i-atlas/**"
+      - ".github/workflows/phase-e-publication-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-publication-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Network-free enforcement check
+        run: |
+          echo "Checking publication_engine.py for network calls..."
+          # Check for common network-related imports and calls
+          if grep -E "(import (requests|urllib|http\.client|socket)|urllib\.request|requests\.get|requests\.post|http\.client)" lab/publication_engine.py; then
+            echo "ERROR: Network-related imports detected in publication_engine.py"
+            exit 1
+          fi
+          echo "✓ No obvious network calls detected"
+
+      - name: Verify input source enforcement
+        run: |
+          echo "Verifying publication engine reads only from data/publish/3i-atlas..."
+          # Ensure the data_dir is correctly set to verified inputs only
+          if ! grep -q 'self.data_dir = repo_root / "data" / "publish" / "3i-atlas"' lab/publication_engine.py; then
+            echo "ERROR: Input source not correctly enforced"
+            exit 1
+          fi
+          echo "✓ Input source enforcement verified"
+
+      - name: Run publication engine (first execution)
+        id: run1
+        run: |
+          echo "Running publication engine (execution 1)..."
+          python3 lab/publication_engine.py
+          echo "✓ First execution completed"
+
+      - name: Verify outputs created
+        run: |
+          echo "Verifying output structure..."
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          # Check required files exist
+          test -f "$OUTPUT_DIR/manifest.json" || (echo "ERROR: manifest.json missing" && exit 1)
+          test -f "$OUTPUT_DIR/sha256sum.txt" || (echo "ERROR: sha256sum.txt missing" && exit 1)
+          test -f "$OUTPUT_DIR/provenance.json" || (echo "ERROR: provenance.json missing" && exit 1)
+          test -d "$OUTPUT_DIR/tables" || (echo "ERROR: tables/ directory missing" && exit 1)
+          test -d "$OUTPUT_DIR/derived" || (echo "ERROR: derived/ directory missing" && exit 1)
+          
+          # Check CSV and JSON tables exist
+          test -f "$OUTPUT_DIR/tables/platforms_registry.csv" || (echo "ERROR: platforms_registry.csv missing" && exit 1)
+          test -f "$OUTPUT_DIR/tables/platforms_registry.json" || (echo "ERROR: platforms_registry.json missing" && exit 1)
+          test -f "$OUTPUT_DIR/tables/sbdb_attempts.csv" || (echo "ERROR: sbdb_attempts.csv missing" && exit 1)
+          test -f "$OUTPUT_DIR/tables/sbdb_attempts.json" || (echo "ERROR: sbdb_attempts.json missing" && exit 1)
+          
+          # Check derived data exists
+          test -f "$OUTPUT_DIR/derived/statistics.json" || (echo "ERROR: statistics.json missing" && exit 1)
+          
+          echo "✓ All required outputs exist"
+
+      - name: Validate manifest consistency
+        run: |
+          echo "Validating manifest consistency..."
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          # Verify all files in manifest exist
+          python3 -c "
+import json
+import sys
+from pathlib import Path
+
+output_dir = Path('$OUTPUT_DIR')
+with open(output_dir / 'manifest.json') as f:
+    manifest = json.load(f)
+
+errors = []
+for filepath in manifest.get('files', {}).keys():
+    if not (output_dir / filepath).exists():
+        errors.append(f'File in manifest does not exist: {filepath}')
+
+if errors:
+    for error in errors:
+        print(error, file=sys.stderr)
+    sys.exit(1)
+
+print(f'✓ All {len(manifest[\"files\"])} files in manifest exist')
+"
+
+      - name: Validate provenance
+        run: |
+          echo "Validating provenance metadata..."
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          python3 -c "
+import json
+import sys
+
+with open('$OUTPUT_DIR/provenance.json') as f:
+    prov = json.load(f)
+
+# Check required fields
+required_fields = {
+    'engine': ['name', 'version', 'claim_id'],
+    'execution': ['timestamp_utc', 'date', 'deterministic', 'network_access'],
+    'inputs': ['source', 'files', 'checksums'],
+    'verification': ['inputs_verified', 'manifest_checked', 'integrity_confirmed'],
+    'constraints': ['gate_6_status', 'interpretation', 'claims', 'governance_authority']
+}
+
+errors = []
+for section, fields in required_fields.items():
+    if section not in prov:
+        errors.append(f'Missing section: {section}')
+        continue
+    for field in fields:
+        if field not in prov[section]:
+            errors.append(f'Missing field: {section}.{field}')
+
+# Check constraint values
+if prov.get('constraints', {}).get('gate_6_status') != 'CLOSED':
+    errors.append('Gate-6 must be CLOSED')
+if prov.get('constraints', {}).get('interpretation') != False:
+    errors.append('Interpretation must be False')
+if prov.get('constraints', {}).get('claims') != False:
+    errors.append('Claims must be False')
+if prov.get('constraints', {}).get('governance_authority') != False:
+    errors.append('Governance authority must be False')
+if prov.get('execution', {}).get('deterministic') != True:
+    errors.append('Deterministic must be True')
+if prov.get('execution', {}).get('network_access') != False:
+    errors.append('Network access must be False')
+
+if errors:
+    for error in errors:
+        print(error, file=sys.stderr)
+    sys.exit(1)
+
+print('✓ Provenance validation passed')
+print(f'  - Engine: {prov[\"engine\"][\"name\"]} {prov[\"engine\"][\"version\"]}')
+print(f'  - Claim ID: {prov[\"engine\"][\"claim_id\"]}')
+print(f'  - Deterministic: {prov[\"execution\"][\"deterministic\"]}')
+print(f'  - Network access: {prov[\"execution\"][\"network_access\"]}')
+print(f'  - Gate-6: {prov[\"constraints\"][\"gate_6_status\"]}')
+"
+
+      - name: Verify checksums
+        run: |
+          echo "Verifying SHA256 checksums..."
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          cd "$OUTPUT_DIR"
+          sha256sum -c sha256sum.txt
+          echo "✓ All checksums verified"
+
+      - name: Copy outputs for determinism check
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          # Copy first run outputs
+          cp -r "$OUTPUT_DIR" /tmp/run1
+          echo "✓ First run outputs copied"
+
+      - name: Run publication engine (second execution)
+        id: run2
+        run: |
+          echo "Running publication engine (execution 2 for determinism check)..."
+          
+          # Remove previous outputs
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          rm -rf "$OUTPUT_DIR"
+          
+          # Run again
+          python3 lab/publication_engine.py
+          echo "✓ Second execution completed"
+
+      - name: Verify determinism
+        run: |
+          echo "Verifying deterministic execution..."
+          DATE=$(date -u +%Y-%m-%d)
+          OUTPUT_DIR="lab/publication/claim-001/$DATE"
+          
+          # Compare outputs excluding timestamp fields
+          python3 -c "
+import json
+import sys
+from pathlib import Path
+
+def normalize_json(data):
+    '''Remove timestamp fields for comparison'''
+    if isinstance(data, dict):
+        return {k: normalize_json(v) for k, v in data.items() if 'timestamp' not in k.lower()}
+    elif isinstance(data, list):
+        return [normalize_json(item) for item in data]
+    return data
+
+run1_dir = Path('/tmp/run1')
+run2_dir = Path('$OUTPUT_DIR')
+
+# Compare JSON files
+json_files = ['manifest.json', 'provenance.json', 'derived/statistics.json']
+json_files.extend(['tables/platforms_registry.json', 'tables/sbdb_attempts.json'])
+
+errors = []
+for json_file in json_files:
+    file1 = run1_dir / json_file
+    file2 = run2_dir / json_file
+    
+    if not file1.exists() or not file2.exists():
+        continue
+        
+    with open(file1) as f1, open(file2) as f2:
+        data1 = normalize_json(json.load(f1))
+        data2 = normalize_json(json.load(f2))
+        
+        if data1 != data2:
+            errors.append(f'Determinism violation: {json_file} differs between runs')
+
+# Compare CSV files (should be identical)
+csv_files = ['tables/platforms_registry.csv', 'tables/sbdb_attempts.csv']
+for csv_file in csv_files:
+    file1 = run1_dir / csv_file
+    file2 = run2_dir / csv_file
+    
+    if not file1.exists() or not file2.exists():
+        continue
+        
+    with open(file1) as f1, open(file2) as f2:
+        content1 = f1.read()
+        content2 = f2.read()
+        
+        if content1 != content2:
+            errors.append(f'Determinism violation: {csv_file} differs between runs')
+
+if errors:
+    for error in errors:
+        print(error, file=sys.stderr)
+    sys.exit(1)
+
+print('✓ Determinism verified: outputs are identical (excluding timestamps)')
+"
+
+      - name: Validation summary
+        if: success()
+        run: |
+          echo ""
+          echo "============================================================"
+          echo "PHASE-E PUBLICATION VALIDATION COMPLETE"
+          echo "============================================================"
+          echo "✓ Network-free enforcement verified"
+          echo "✓ Input source enforcement verified"
+          echo "✓ Publication engine executed successfully"
+          echo "✓ All required outputs created"
+          echo "✓ Manifest consistency validated"
+          echo "✓ Provenance metadata validated"
+          echo "✓ SHA256 checksums verified"
+          echo "✓ Deterministic execution verified"
+          echo "============================================================"
+          echo "Status: PRODUCTION-READY"
+          echo "Gate-6: CLOSED"
+          echo "Authority: NONE"
+          echo "============================================================"

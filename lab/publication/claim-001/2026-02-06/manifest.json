@@ -1,0 +1,34 @@
+{
+  "files": {
+    "derived/statistics.json": {
+      "sha256": "78c2d05d0af99eb0fff2cddb909fef8a1f62665527da381d5bceb19d53063486",
+      "size_bytes": 477
+    },
+    "provenance.json": {
+      "sha256": "fe83a803aa9ecb851ffd696a6f69c017abd80983323327749719ab2ce5e4f7c8",
+      "size_bytes": 1006
+    },
+    "tables/platforms_registry.csv": {
+      "sha256": "aab8d46c103f4e483d43ea84be71c9ad16fd65b5aabaca5fe55d1af08b000835",
+      "size_bytes": 1023
+    },
+    "tables/platforms_registry.json": {
+      "sha256": "f0697e059cb4c73454c2b5853fbccca62645a2f4164072929ed9fbc3e3aca2e4",
+      "size_bytes": 1852
+    },
+    "tables/sbdb_attempts.csv": {
+      "sha256": "75413c3b9af4a1527e7c3bd1cdb91133991d95e35b8c33748854368135d59d11",
+      "size_bytes": 577
+    },
+    "tables/sbdb_attempts.json": {
+      "sha256": "51054e737e6b5b60c322572e0c42ca339baf15fe859b0788fabec3d12eb90536",
+      "size_bytes": 980
+    }
+  },
+  "publication": {
+    "claim_id": "claim-001",
+    "date": "2026-02-06",
+    "timestamp_utc": "2026-02-06T11:53:23.942731+00:00Z",
+    "version": "v001"
+  }
+}
