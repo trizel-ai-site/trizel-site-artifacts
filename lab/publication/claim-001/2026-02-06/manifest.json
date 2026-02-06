@@ -5,11 +5,11 @@
       "size_bytes": 477
     },
     "provenance.json": {
-      "sha256": "e03fdf7983dd9957cdbccefa2435e4c3318f13f5e2ee281896ed08be0d6ad9e3",
+      "sha256": "0445687015a5e5c15ac89b9397878012209299cbbeba9a26416bed181752ed00",
       "size_bytes": 1006
     },
     "sha256sum.txt": {
-      "sha256": "561a09f46406983bb39e63bfa7be157de6f2cbf37a545079af6e1ae0877363f3",
+      "sha256": "0baf7abe3b14aa3e1d00feff4fa60d66d734911fc98844c800e43853c423c179",
       "size_bytes": 628
     },
     "tables/platforms_registry.csv": {
@@ -32,7 +32,7 @@
   "publication": {
     "claim_id": "claim-001",
     "date": "2026-02-06",
-    "timestamp_utc": "2026-02-06T13:06:03.719847+00:00Z",
+    "timestamp_utc": "2026-02-06T13:23:12.499315+00:00Z",
     "version": "v001"
   }
 }

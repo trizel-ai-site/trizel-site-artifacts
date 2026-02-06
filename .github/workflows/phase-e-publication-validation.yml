@@ -213,7 +213,7 @@ jobs:
           DATE=$(date -u +%Y-%m-%d)
           OUTPUT_DIR="lab/publication/claim-001/$DATE"
           
-          # Compare outputs excluding timestamp fields
+          # Compare outputs excluding timestamp fields and timestamp-dependent checksums
           export OUTPUT_DIR
           python3 << 'PYTHON_SCRIPT'
           import json
@@ -229,11 +229,30 @@ jobs:
                   return [normalize_json(item) for item in data]
               return data
           
+          def normalize_manifest(data):
+              '''Remove timestamp-dependent file checksums from manifest'''
+              if not isinstance(data, dict):
+                  return data
+              
+              # Remove timestamp field
+              result = normalize_json(data)
+              
+              # Also remove checksums for files that contain timestamps
+              if 'files' in result and isinstance(result['files'], dict):
+                  # Keep only files that don't contain timestamps
+                  timestamp_files = {'provenance.json', 'sha256sum.txt'}
+                  result['files'] = {
+                      k: v for k, v in result['files'].items() 
+                      if k not in timestamp_files
+                  }
+              
+              return result
+          
           run1_dir = Path('/tmp/run1')
           run2_dir = Path(os.environ['OUTPUT_DIR'])
           
           # Compare JSON files
-          json_files = ['manifest.json', 'provenance.json', 'derived/statistics.json']
+          json_files = ['derived/statistics.json']
           json_files.extend(['tables/platforms_registry.json', 'tables/sbdb_attempts.json'])
           
           errors = []
@@ -250,6 +269,20 @@ jobs:
                   
                   if data1 != data2:
                       errors.append(f'Determinism violation: {json_file} differs between runs')
+          
+          # Special handling for manifest.json - exclude timestamp-dependent checksums
+          manifest1_path = run1_dir / 'manifest.json'
+          manifest2_path = run2_dir / 'manifest.json'
+          if manifest1_path.exists() and manifest2_path.exists():
+              with open(manifest1_path) as f1, open(manifest2_path) as f2:
+                  data1 = normalize_manifest(json.load(f1))
+                  data2 = normalize_manifest(json.load(f2))
+                  
+                  if data1 != data2:
+                      errors.append(f'Determinism violation: manifest.json differs between runs (excluding timestamp files)')
+          
+          # Provenance and sha256sum.txt are EXPECTED to differ due to timestamps
+          # So we don't check them for determinism
           
           # Compare CSV files (should be identical)
           csv_files = ['tables/platforms_registry.csv', 'tables/sbdb_attempts.csv']
@@ -272,7 +305,7 @@ jobs:
                   print(error, file=sys.stderr)
               sys.exit(1)
           
-          print('✓ Determinism verified: outputs are identical (excluding timestamps)')
+          print('✓ Determinism verified: outputs are identical (excluding timestamp-dependent files)')
           PYTHON_SCRIPT
 
       - name: Validation summary
