@@ -87,27 +87,29 @@ jobs:
           OUTPUT_DIR="lab/publication/claim-001/$DATE"
           
           # Verify all files in manifest exist
-          python3 -c "
-import json
-import sys
-from pathlib import Path
-
-output_dir = Path('$OUTPUT_DIR')
-with open(output_dir / 'manifest.json') as f:
-    manifest = json.load(f)
-
-errors = []
-for filepath in manifest.get('files', {}).keys():
-    if not (output_dir / filepath).exists():
-        errors.append(f'File in manifest does not exist: {filepath}')
-
-if errors:
-    for error in errors:
-        print(error, file=sys.stderr)
-    sys.exit(1)
-
-print(f'✓ All {len(manifest[\"files\"])} files in manifest exist')
-"
+          export OUTPUT_DIR
+          python3 << 'PYTHON_SCRIPT'
+          import json
+          import sys
+          from pathlib import Path
+          import os
+          
+          output_dir = Path(os.environ['OUTPUT_DIR'])
+          with open(output_dir / 'manifest.json') as f:
+              manifest = json.load(f)
+          
+          errors = []
+          for filepath in manifest.get('files', {}).keys():
+              if not (output_dir / filepath).exists():
+                  errors.append(f'File in manifest does not exist: {filepath}')
+          
+          if errors:
+              for error in errors:
+                  print(error, file=sys.stderr)
+              sys.exit(1)
+          
+          print(f'✓ All {len(manifest["files"])} files in manifest exist')
+          PYTHON_SCRIPT
 
       - name: Validate provenance
         run: |
@@ -115,57 +117,60 @@ print(f'✓ All {len(manifest[\"files\"])} files in manifest exist')
           DATE=$(date -u +%Y-%m-%d)
           OUTPUT_DIR="lab/publication/claim-001/$DATE"
           
-          python3 -c "
-import json
-import sys
-
-with open('$OUTPUT_DIR/provenance.json') as f:
-    prov = json.load(f)
-
-# Check required fields
-required_fields = {
-    'engine': ['name', 'version', 'claim_id'],
-    'execution': ['timestamp_utc', 'date', 'deterministic', 'network_access'],
-    'inputs': ['source', 'files', 'checksums'],
-    'verification': ['inputs_verified', 'manifest_checked', 'integrity_confirmed'],
-    'constraints': ['gate_6_status', 'interpretation', 'claims', 'governance_authority']
-}
-
-errors = []
-for section, fields in required_fields.items():
-    if section not in prov:
-        errors.append(f'Missing section: {section}')
-        continue
-    for field in fields:
-        if field not in prov[section]:
-            errors.append(f'Missing field: {section}.{field}')
-
-# Check constraint values
-if prov.get('constraints', {}).get('gate_6_status') != 'CLOSED':
-    errors.append('Gate-6 must be CLOSED')
-if prov.get('constraints', {}).get('interpretation') != False:
-    errors.append('Interpretation must be False')
-if prov.get('constraints', {}).get('claims') != False:
-    errors.append('Claims must be False')
-if prov.get('constraints', {}).get('governance_authority') != False:
-    errors.append('Governance authority must be False')
-if prov.get('execution', {}).get('deterministic') != True:
-    errors.append('Deterministic must be True')
-if prov.get('execution', {}).get('network_access') != False:
-    errors.append('Network access must be False')
-
-if errors:
-    for error in errors:
-        print(error, file=sys.stderr)
-    sys.exit(1)
-
-print('✓ Provenance validation passed')
-print(f'  - Engine: {prov[\"engine\"][\"name\"]} {prov[\"engine\"][\"version\"]}')
-print(f'  - Claim ID: {prov[\"engine\"][\"claim_id\"]}')
-print(f'  - Deterministic: {prov[\"execution\"][\"deterministic\"]}')
-print(f'  - Network access: {prov[\"execution\"][\"network_access\"]}')
-print(f'  - Gate-6: {prov[\"constraints\"][\"gate_6_status\"]}')
-"
+          export OUTPUT_DIR
+          python3 << 'PYTHON_SCRIPT'
+          import json
+          import sys
+          import os
+          
+          output_dir = os.environ['OUTPUT_DIR']
+          with open(f'{output_dir}/provenance.json') as f:
+              prov = json.load(f)
+          
+          # Check required fields
+          required_fields = {
+              'engine': ['name', 'version', 'claim_id'],
+              'execution': ['timestamp_utc', 'date', 'deterministic', 'network_access'],
+              'inputs': ['source', 'files', 'checksums'],
+              'verification': ['inputs_verified', 'manifest_checked', 'integrity_confirmed'],
+              'constraints': ['gate_6_status', 'interpretation', 'claims', 'governance_authority']
+          }
+          
+          errors = []
+          for section, fields in required_fields.items():
+              if section not in prov:
+                  errors.append(f'Missing section: {section}')
+                  continue
+              for field in fields:
+                  if field not in prov[section]:
+                      errors.append(f'Missing field: {section}.{field}')
+          
+          # Check constraint values
+          if prov.get('constraints', {}).get('gate_6_status') != 'CLOSED':
+              errors.append('Gate-6 must be CLOSED')
+          if prov.get('constraints', {}).get('interpretation') != False:
+              errors.append('Interpretation must be False')
+          if prov.get('constraints', {}).get('claims') != False:
+              errors.append('Claims must be False')
+          if prov.get('constraints', {}).get('governance_authority') != False:
+              errors.append('Governance authority must be False')
+          if prov.get('execution', {}).get('deterministic') != True:
+              errors.append('Deterministic must be True')
+          if prov.get('execution', {}).get('network_access') != False:
+              errors.append('Network access must be False')
+          
+          if errors:
+              for error in errors:
+                  print(error, file=sys.stderr)
+              sys.exit(1)
+          
+          print('✓ Provenance validation passed')
+          print(f'  - Engine: {prov["engine"]["name"]} {prov["engine"]["version"]}')
+          print(f'  - Claim ID: {prov["engine"]["claim_id"]}')
+          print(f'  - Deterministic: {prov["execution"]["deterministic"]}')
+          print(f'  - Network access: {prov["execution"]["network_access"]}')
+          print(f'  - Gate-6: {prov["constraints"]["gate_6_status"]}')
+          PYTHON_SCRIPT
 
       - name: Verify checksums
         run: |
@@ -207,64 +212,66 @@ print(f'  - Gate-6: {prov[\"constraints\"][\"gate_6_status\"]}')
           OUTPUT_DIR="lab/publication/claim-001/$DATE"
           
           # Compare outputs excluding timestamp fields
-          python3 -c "
-import json
-import sys
-from pathlib import Path
-
-def normalize_json(data):
-    '''Remove timestamp fields for comparison'''
-    if isinstance(data, dict):
-        return {k: normalize_json(v) for k, v in data.items() if 'timestamp' not in k.lower()}
-    elif isinstance(data, list):
-        return [normalize_json(item) for item in data]
-    return data
-
-run1_dir = Path('/tmp/run1')
-run2_dir = Path('$OUTPUT_DIR')
-
-# Compare JSON files
-json_files = ['manifest.json', 'provenance.json', 'derived/statistics.json']
-json_files.extend(['tables/platforms_registry.json', 'tables/sbdb_attempts.json'])
-
-errors = []
-for json_file in json_files:
-    file1 = run1_dir / json_file
-    file2 = run2_dir / json_file
-    
-    if not file1.exists() or not file2.exists():
-        continue
-        
-    with open(file1) as f1, open(file2) as f2:
-        data1 = normalize_json(json.load(f1))
-        data2 = normalize_json(json.load(f2))
-        
-        if data1 != data2:
-            errors.append(f'Determinism violation: {json_file} differs between runs')
-
-# Compare CSV files (should be identical)
-csv_files = ['tables/platforms_registry.csv', 'tables/sbdb_attempts.csv']
-for csv_file in csv_files:
-    file1 = run1_dir / csv_file
-    file2 = run2_dir / csv_file
-    
-    if not file1.exists() or not file2.exists():
-        continue
-        
-    with open(file1) as f1, open(file2) as f2:
-        content1 = f1.read()
-        content2 = f2.read()
-        
-        if content1 != content2:
-            errors.append(f'Determinism violation: {csv_file} differs between runs')
-
-if errors:
-    for error in errors:
-        print(error, file=sys.stderr)
-    sys.exit(1)
-
-print('✓ Determinism verified: outputs are identical (excluding timestamps)')
-"
+          export OUTPUT_DIR
+          python3 << 'PYTHON_SCRIPT'
+          import json
+          import sys
+          from pathlib import Path
+          import os
+          
+          def normalize_json(data):
+              '''Remove timestamp fields for comparison'''
+              if isinstance(data, dict):
+                  return {k: normalize_json(v) for k, v in data.items() if 'timestamp' not in k.lower()}
+              elif isinstance(data, list):
+                  return [normalize_json(item) for item in data]
+              return data
+          
+          run1_dir = Path('/tmp/run1')
+          run2_dir = Path(os.environ['OUTPUT_DIR'])
+          
+          # Compare JSON files
+          json_files = ['manifest.json', 'provenance.json', 'derived/statistics.json']
+          json_files.extend(['tables/platforms_registry.json', 'tables/sbdb_attempts.json'])
+          
+          errors = []
+          for json_file in json_files:
+              file1 = run1_dir / json_file
+              file2 = run2_dir / json_file
+              
+              if not file1.exists() or not file2.exists():
+                  continue
+                  
+              with open(file1) as f1, open(file2) as f2:
+                  data1 = normalize_json(json.load(f1))
+                  data2 = normalize_json(json.load(f2))
+                  
+                  if data1 != data2:
+                      errors.append(f'Determinism violation: {json_file} differs between runs')
+          
+          # Compare CSV files (should be identical)
+          csv_files = ['tables/platforms_registry.csv', 'tables/sbdb_attempts.csv']
+          for csv_file in csv_files:
+              file1 = run1_dir / csv_file
+              file2 = run2_dir / csv_file
+              
+              if not file1.exists() or not file2.exists():
+                  continue
+                  
+              with open(file1) as f1, open(file2) as f2:
+                  content1 = f1.read()
+                  content2 = f2.read()
+                  
+                  if content1 != content2:
+                      errors.append(f'Determinism violation: {csv_file} differs between runs')
+          
+          if errors:
+              for error in errors:
+                  print(error, file=sys.stderr)
+              sys.exit(1)
+          
+          print('✓ Determinism verified: outputs are identical (excluding timestamps)')
+          PYTHON_SCRIPT
 
       - name: Validation summary
         if: success()
