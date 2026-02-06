@@ -166,6 +166,286 @@
   border-bottom-color: var(--color-accent);
 }
 
+/* Compiler Outputs Section */
+.compiler-outputs {
+  margin: var(--space-8) 0;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.status-badge.status-verified {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-badge.status-deterministic {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.status-badge.status-network-free {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.status-badge.status-failed {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Publication Metadata */
+.publication-metadata {
+  font-size: 0.95rem;
+  color: var(--color-text-medium);
+  margin: var(--space-2) 0;
+}
+
+/* Publication Section */
+.publication-section {
+  margin: var(--space-8) 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.publication-section:first-of-type {
+  border-top: none;
+}
+
+.section-description {
+  color: var(--color-text-medium);
+  font-size: 0.95rem;
+  margin: var(--space-3) 0;
+}
+
+/* Statistics Grid */
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+/* Subsection */
+.subsection {
+  margin: var(--space-6) 0;
+  padding: var(--space-5);
+  background: var(--color-surface-raised);
+  border-radius: 6px;
+}
+
+.subsection h4 {
+  margin-top: 0;
+  color: var(--color-text);
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0 0;
+}
+
+.category-list li {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.category-list li:last-child {
+  border-bottom: none;
+}
+
+/* Data Table (for compiler outputs) */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.data-table thead {
+  background: var(--color-bg);
+}
+
+.data-table th {
+  text-align: left;
+  padding: var(--space-3);
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text-medium);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background: var(--color-surface-raised);
+}
+
+.data-table code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+  background: var(--color-bg);
+  padding: 2px 4px;
+  border-radius: 3px;
+  word-break: break-all;
+}
+
+/* Data Files */
+.data-files {
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  background: var(--color-surface-raised);
+  border-radius: 6px;
+}
+
+.data-files h4 {
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.data-files ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0 0;
+}
+
+.data-files li {
+  padding: var(--space-2) 0;
+  font-size: 0.9rem;
+}
+
+.data-files a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+}
+
+.data-files a:hover {
+  text-decoration: underline;
+}
+
+/* Provenance Box */
+.provenance-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  margin: var(--space-5) 0;
+}
+
+.provenance-box h4 {
+  margin-top: 0;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--space-2);
+}
+
+/* Metadata List */
+.metadata-list {
+  margin: var(--space-4) 0 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3) var(--space-5);
+  font-size: 0.9rem;
+}
+
+.metadata-list dt {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.metadata-list dd {
+  margin: 0;
+  color: var(--color-text-medium);
+}
+
+.metadata-list dd code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  background: var(--color-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.metadata-list dd ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0 0;
+}
+
+.metadata-list dd li {
+  padding: var(--space-1) 0;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+/* Checksum List */
+.checksum-list {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-4);
+  margin: var(--space-4) 0 0 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+  color: var(--color-text-medium);
+}
+
 /* How to Add Section */
 .how-to-add {
   margin: var(--space-8) 0;
