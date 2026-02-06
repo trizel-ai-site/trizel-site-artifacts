@@ -302,16 +302,29 @@ class PublicationEngine:
         return output_dir
     
     def _generate_manifest(self, output_dir: Path) -> Dict[str, Any]:
-        """Generate manifest.json for the publication."""
+        """Generate manifest.json for the publication.
+        
+        Excludes timestamp-containing files (provenance.json, sha256sum.txt) 
+        to ensure deterministic manifest checksums.
+        """
         files = {}
         
+        # Files to exclude from manifest for determinism
+        excluded_files = {"manifest.json", "provenance.json", "sha256sum.txt"}
+        
         for filepath in output_dir.rglob("*"):
-            if filepath.is_file() and filepath.name != "manifest.json":
+            if filepath.is_file():
                 rel_path = filepath.relative_to(output_dir)
+                filename = str(rel_path)
+                
+                # Skip excluded files
+                if filepath.name in excluded_files or filename in excluded_files:
+                    continue
+                
                 with open(filepath, 'rb') as f:
                     file_hash = hashlib.sha256(f.read()).hexdigest()
                 
-                files[str(rel_path)] = {
+                files[filename] = {
                     "sha256": file_hash,
                     "size_bytes": filepath.stat().st_size
                 }
@@ -320,8 +333,7 @@ class PublicationEngine:
             "publication": {
                 "claim_id": self.CLAIM_ID,
                 "version": self.VERSION,
-                "date": self.deterministic_date,
-                "timestamp_utc": self.execution_timestamp.isoformat() + "Z"
+                "date": self.deterministic_date
             },
             "files": files
         }
