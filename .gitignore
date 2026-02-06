@@ -16,3 +16,9 @@ Thumbs.db
 # Temporary files
 /tmp/
 *.tmp
+
+# Lab publication outputs (generated artifacts, not committed)
+# These are generated on-demand and should not be in version control
+/lab/publication/claim-001/*/
+__pycache__/
+*.pyc
