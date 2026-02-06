@@ -27,19 +27,25 @@ class PublicationEngine:
     
     Enforces:
     - Network-free execution (no external calls)
-    - Verified-inputs-only (reads from /data/publish/3i-atlas)
+    - Verified-inputs-only (reads from /data/publish/*)
     - Deterministic outputs (same inputs → same outputs)
     - Fail-closed handling (NO_DATA_YET on missing inputs)
     """
     
     VERSION = "v001"
-    CLAIM_ID = "claim-001"
     
-    def __init__(self, repo_root: Path):
-        """Initialize the publication engine."""
+    def __init__(self, repo_root: Path, claim_id: str, data_subdir: str = "3i-atlas"):
+        """Initialize the publication engine.
+        
+        Args:
+            repo_root: Root directory of the repository
+            claim_id: Claim identifier (e.g., "claim-001")
+            data_subdir: Subdirectory under data/publish/ to read from (default: "3i-atlas")
+        """
         self.repo_root = repo_root
-        self.data_dir = repo_root / "data" / "publish" / "3i-atlas"
-        self.output_base = repo_root / "lab" / "publication" / self.CLAIM_ID
+        self.claim_id = claim_id
+        self.data_dir = repo_root / "data" / "publish" / data_subdir
+        self.output_base = repo_root / "lab" / "publication" / self.claim_id
         self.execution_timestamp = datetime.now(timezone.utc)
         
         # Ensure deterministic execution
@@ -120,7 +126,7 @@ class PublicationEngine:
             "engine": {
                 "name": "TRIZEL Phase-E Publication Compiler",
                 "version": self.VERSION,
-                "claim_id": self.CLAIM_ID
+                "claim_id": self.claim_id
             },
             "execution": {
                 "timestamp_utc": self.execution_timestamp.isoformat() + "Z",
@@ -331,7 +337,7 @@ class PublicationEngine:
         
         manifest = {
             "publication": {
-                "claim_id": self.CLAIM_ID,
+                "claim_id": self.claim_id,
                 "version": self.VERSION,
                 "date": self.deterministic_date
             },
@@ -362,7 +368,7 @@ class PublicationEngine:
             Exception: On any other error
         """
         print(f"TRIZEL Phase-E Publication Compiler {self.VERSION}")
-        print(f"Claim ID: {self.CLAIM_ID}")
+        print(f"Claim ID: {self.claim_id}")
         print(f"Date: {self.deterministic_date}")
         print()
         
@@ -402,6 +408,7 @@ class PublicationEngine:
         print("="*60)
         print("PUBLICATION COMPLETE")
         print("="*60)
+        print(f"Claim ID: {self.claim_id}")
         print(f"Output directory: {output_dir.relative_to(self.repo_root)}")
         print(f"Deterministic: YES")
         print(f"Network access: NO")
@@ -413,6 +420,7 @@ class PublicationEngine:
         
         return {
             "success": True,
+            "claim_id": self.claim_id,
             "output_dir": str(output_dir.relative_to(self.repo_root)),
             "provenance": provenance,
             "verification": verification
@@ -422,11 +430,28 @@ class PublicationEngine:
 def main():
     """Main entry point for the publication engine."""
     try:
+        # Parse command-line arguments
+        import argparse
+        parser = argparse.ArgumentParser(
+            description="TRIZEL Phase-E Deterministic Publication Compiler"
+        )
+        parser.add_argument(
+            "--claim-id",
+            default="claim-001",
+            help="Claim identifier (default: claim-001)"
+        )
+        parser.add_argument(
+            "--data-subdir",
+            default="3i-atlas",
+            help="Subdirectory under data/publish/ to read from (default: 3i-atlas)"
+        )
+        args = parser.parse_args()
+        
         # Determine repository root
         repo_root = Path(__file__).parent.parent.resolve()
         
         # Create and run engine
-        engine = PublicationEngine(repo_root)
+        engine = PublicationEngine(repo_root, args.claim_id, args.data_subdir)
         result = engine.run()
         
         # Exit with success
