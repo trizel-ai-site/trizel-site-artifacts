@@ -288,8 +288,11 @@ class PublicationEngine:
         """
         manifest = {}
         
+        # Exclude self-referential files (sha256sum.txt and manifest.json contain hashes)
+        excluded_files = {'sha256sum.txt', 'manifest.json'}
+        
         for file_path in sorted(output_dir.rglob('*')):
-            if file_path.is_file() and file_path.name != 'sha256sum.txt':
+            if file_path.is_file() and file_path.name not in excluded_files:
                 relative_path = file_path.relative_to(output_dir)
                 manifest[str(relative_path)] = self.compute_sha256(file_path)
         
