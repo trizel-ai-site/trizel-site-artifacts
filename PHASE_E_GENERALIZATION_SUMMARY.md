@@ -48,20 +48,17 @@ python3 lab/generate_phase_e_pages.py
 - Made `claim_id` a constructor parameter
 - Added command-line arguments:
   - `--claim-id` (default: "claim-001")
-  - `--data-subdir` (default: "3i-atlas")
 - Maintained backward compatibility
 - Preserved all existing constraints
+- **GOVERNANCE ENFORCEMENT:** Input path strictly locked to `data/publish/3i-atlas/`
 
 **Usage:**
 ```bash
-# Default (claim-001 with 3i-atlas data)
+# Default (claim-001)
 python3 lab/publication_engine.py
 
 # Custom claim
 python3 lab/publication_engine.py --claim-id claim-002
-
-# Custom data directory
-python3 lab/publication_engine.py --claim-id claim-001 --data-subdir custom-data
 ```
 
 ### 3. Updated CI Validation Workflow
@@ -218,13 +215,13 @@ To add a new claim:
 
 1. **Prepare input data:**
    ```bash
-   mkdir -p data/publish/new-claim-data
-   # Add manifest.json, daily-status.json, source-snapshot.json
+   # Input data MUST be in data/publish/3i-atlas/
+   # This is the ONLY allowed input directory
    ```
 
 2. **Run publication compiler:**
    ```bash
-   python3 lab/publication_engine.py --claim-id claim-002 --data-subdir new-claim-data
+   python3 lab/publication_engine.py --claim-id claim-002
    ```
 
 3. **Regenerate pages:**
@@ -308,19 +305,22 @@ The CI workflow automatically validates everything:
 ✅ **Provenance tracking**
 ✅ **Integrity checksums**
 ✅ **Fail-closed behavior**
-✅ **Code review passed**
-✅ **Security scan passed**
-✅ **CI validation ready**
+✅ **Input source enforcement (governance-critical)**
+⚠️  **CI validation pending** - requires verification
+⚠️  **Security scan pending** - requires verification
+
+**Note:** CI must be verified GREEN before claiming production-ready status.
 
 ## Next Steps
 
 ### Immediate
-1. Merge this PR
-2. CI will validate automatically
-3. Pages will be regenerated on deployment
+1. ✅ Fix input source enforcement
+2. ⏳ Verify CI passes all checks
+3. ⏳ Confirm all checks GREEN
+4. ⏳ Update status after verification
 
 ### Future (When New Claims Added)
-1. Add verified data to `data/publish/{claim-name}/`
+1. Add verified data to `data/publish/3i-atlas/`
 2. Run `python3 lab/publication_engine.py --claim-id {claim-name}`
 3. Run `python3 lab/generate_phase_e_pages.py`
 4. Commit and push
@@ -328,9 +328,9 @@ The CI workflow automatically validates everything:
 
 ## Conclusion
 
-This implementation successfully generalizes the Phase-E presentation system while maintaining all existing constraints and adding comprehensive automation. The system is production-ready and can now handle an arbitrary number of claims and dates without manual intervention.
+This implementation generalizes the Phase-E presentation system while maintaining all existing constraints. The input source is now strictly enforced to `data/publish/3i-atlas/` to meet governance requirements.
 
-**Status:** Production-ready  
+**Status:** Awaiting CI verification  
 **Version:** v001  
 **Date:** 2026-02-06  
 **Gate-6:** CLOSED  
@@ -338,4 +338,5 @@ This implementation successfully generalizes the Phase-E presentation system whi
 
 ---
 
-**Implementation Complete** ✓
+**Implementation Complete** ✓  
+**CI Verification Required** ⏳

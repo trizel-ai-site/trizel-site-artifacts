@@ -18,18 +18,16 @@ Both components operate in a **deterministic, network-free, static-only** manner
 The publication compiler reads verified input data and generates publication outputs:
 
 ```bash
-# Run with default claim-001 and 3i-atlas data
+# Run with default claim-001
 python3 lab/publication_engine.py
 
 # Run with custom claim ID
 python3 lab/publication_engine.py --claim-id claim-002
-
-# Run with custom data directory
-python3 lab/publication_engine.py --claim-id claim-001 --data-subdir custom-data
 ```
 
 **Input Requirements:**
-- Verified inputs must exist in `data/publish/{data-subdir}/`
+- Verified inputs MUST exist in `data/publish/3i-atlas/`
+- This is the ONLY allowed input directory (governance enforced)
 - Required files: `manifest.json`, `daily-status.json`, `source-snapshot.json`
 
 **Output Structure:**
@@ -141,13 +139,14 @@ To add a new claim:
 
 1. **Prepare verified input data:**
    ```bash
-   mkdir -p data/publish/{data-subdir}
-   # Add manifest.json, daily-status.json, source-snapshot.json
+   # Input data MUST be added to the governance-enforced directory
+   # data/publish/3i-atlas/
+   # (This is the only allowed input directory)
    ```
 
 2. **Run publication compiler:**
    ```bash
-   python3 lab/publication_engine.py --claim-id claim-002 --data-subdir {data-subdir}
+   python3 lab/publication_engine.py --claim-id claim-002
    ```
 
 3. **Regenerate pages:**

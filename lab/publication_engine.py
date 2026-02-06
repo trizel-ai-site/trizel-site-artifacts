@@ -27,29 +27,74 @@ class PublicationEngine:
     
     Enforces:
     - Network-free execution (no external calls)
-    - Verified-inputs-only (reads from /data/publish/*)
+    - Verified-inputs-only (reads ONLY from /data/publish/3i-atlas)
     - Deterministic outputs (same inputs → same outputs)
     - Fail-closed handling (NO_DATA_YET on missing inputs)
     """
     
     VERSION = "v001"
+    # IMMUTABLE INPUT ROOT - GOVERNANCE ENFORCED
+    # This is the ONLY allowed input directory. No alternate paths permitted.
+    VERIFIED_INPUT_ROOT = "data/publish/3i-atlas"
     
-    def __init__(self, repo_root: Path, claim_id: str, data_subdir: str = "3i-atlas"):
+    def __init__(self, repo_root: Path, claim_id: str):
         """Initialize the publication engine.
         
         Args:
             repo_root: Root directory of the repository
             claim_id: Claim identifier (e.g., "claim-001")
-            data_subdir: Subdirectory under data/publish/ to read from (default: "3i-atlas")
         """
         self.repo_root = repo_root
         self.claim_id = claim_id
-        self.data_dir = repo_root / "data" / "publish" / data_subdir
+        
+        # STRICT INPUT SOURCE ENFORCEMENT
+        # Construct the data directory using the immutable constant
+        self.data_dir = repo_root / "data" / "publish" / "3i-atlas"
+        
+        # Verify the path is canonical and within the allowed root
+        self._verify_input_path_security()
+        
         self.output_base = repo_root / "lab" / "publication" / self.claim_id
         self.execution_timestamp = datetime.now(timezone.utc)
         
         # Ensure deterministic execution
         self.deterministic_date = self.execution_timestamp.strftime("%Y-%m-%d")
+    
+    def _verify_input_path_security(self):
+        """
+        Verify that the input path is secure and canonical.
+        
+        This is a governance-critical check that ensures:
+        1. The path resolves to the expected location
+        2. No path traversal or symbolic link attacks
+        3. The path is strictly under the allowed input root
+        
+        Raises:
+            ValueError: If path verification fails
+        """
+        try:
+            # Resolve to canonical absolute path
+            canonical_data_dir = self.data_dir.resolve()
+            expected_root = (self.repo_root / self.VERIFIED_INPUT_ROOT).resolve()
+            
+            # Verify the canonical path matches expected
+            if canonical_data_dir != expected_root:
+                raise ValueError(
+                    f"Input path security violation: "
+                    f"resolved to {canonical_data_dir}, "
+                    f"expected {expected_root}"
+                )
+            
+            # Additional check: ensure no parent directory escape
+            try:
+                canonical_data_dir.relative_to(self.repo_root)
+            except ValueError:
+                raise ValueError(
+                    f"Input path escapes repository root: {canonical_data_dir}"
+                )
+                
+        except Exception as e:
+            raise ValueError(f"Input path verification failed: {e}")
         
     def verify_inputs(self) -> Dict[str, Any]:
         """
@@ -440,18 +485,13 @@ def main():
             default="claim-001",
             help="Claim identifier (default: claim-001)"
         )
-        parser.add_argument(
-            "--data-subdir",
-            default="3i-atlas",
-            help="Subdirectory under data/publish/ to read from (default: 3i-atlas)"
-        )
         args = parser.parse_args()
         
         # Determine repository root
         repo_root = Path(__file__).parent.parent.resolve()
         
         # Create and run engine
-        engine = PublicationEngine(repo_root, args.claim_id, args.data_subdir)
+        engine = PublicationEngine(repo_root, args.claim_id)
         result = engine.run()
         
         # Exit with success
