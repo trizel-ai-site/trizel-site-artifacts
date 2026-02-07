@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "has_error": true,
+    "has_sbdb_payload": false,
+    "project": "TRIZEL Monitor",
+    "query_designation": "3I/ATLAS",
+    "retrieved_utc": "2025-12-19T12:38:07.375078Z"
+  },
+  "platform_counts_by_category": {
+    "authoritative_orbit_and_astrometry": 3,
+    "major_space_agencies_and_missions": 5,
+    "space_and_ground_archives": 4
+  },
+  "sbdb_failed_attempts": 4,
+  "sbdb_successful_attempts": 0,
+  "sbdb_total_attempts": 4,
+  "total_platforms": 12
+}
