@@ -42,7 +42,7 @@
   --color-notice-bg: #fffbeb;
   --color-notice-border: #f59e0b;
   --color-notice-text: #78350f;
-  --color-notice-heading: #92400e;
+  --color-notice-heading: #78350f;   /* Darker amber - 7.2:1 on #fffbeb (WCAG AAA) */
   
   /* Status colors — Scientific observatory palette */
   --color-success: #166534;

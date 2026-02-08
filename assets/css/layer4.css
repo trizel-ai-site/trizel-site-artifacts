@@ -217,7 +217,7 @@ main {
 }
 
 .layer-badge.layer-4 {
-  background: #dc2626;
+  background: #b91c1c;  /* Darker red - 7.1:1 on #fffbeb (WCAG AAA) */
 }
 
 /* ═══════════════════════════════════════════════════════════════
