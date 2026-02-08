@@ -1,0 +1,22 @@
+{
+  "name": "trizel-site-artifacts",
+  "version": "1.0.0",
+  "description": "TRIZEL Institutional Scientific Observatory - Static Site with WCAG Contrast Checking",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "contrast:check": "node scripts/contrast-check.js"
+  },
+  "devDependencies": {
+    "axe-core": "^4.8.4",
+    "playwright": "^1.41.0"
+  },
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "contrast",
+    "a11y"
+  ],
+  "author": "TRIZEL",
+  "license": "UNLICENSED"
+}
