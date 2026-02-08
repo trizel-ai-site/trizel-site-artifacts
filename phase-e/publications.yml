@@ -24,4 +24,12 @@
 # - Blank immutable_url => treat as invalid, do not display
 # - Never display performance/accuracy/results claims
 
-publications: []
+publications:
+  - id: claim-001-2026-02-07
+    claim: claim-001
+    date: 2026-02-07
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-07
+    doi: pending
+    notes: "نشر Phase-E حتمي. دون تفسير."
