@@ -1,0 +1,180 @@
+---
+name: phase-e-auto-publish
+
+# Automated Phase-E Publication Workflow
+# 
+# This workflow automatically generates and publishes Phase-E content when:
+# 1. New data is added to data/publish/3i-atlas/ (manual or automated)
+# 2. Triggered manually via workflow_dispatch
+# 3. Triggered by external repository (trizel-lab) via repository_dispatch
+# 4. Scheduled daily to catch any missed updates
+#
+# The workflow:
+# - Runs the publication compiler (deterministic, network-free)
+# - Runs the page generator (static HTML only)
+# - Updates publications.yml deterministically
+# - Commits and pushes changes to main branch
+#
+# Gate-6 remains CLOSED. This workflow performs deterministic transformation only.
+
+on:
+  # Manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      claim_id:
+        description: 'Claim ID to publish (default: claim-001)'
+        required: false
+        default: 'claim-001'
+  
+  # External trigger from trizel-lab (private repo)
+  repository_dispatch:
+    types: [phase-e-publish]
+  
+  # Scheduled daily run to catch any missed updates
+  schedule:
+    - cron: '0 1 * * *'  # Daily at 1 AM UTC
+  
+  # Auto-trigger when data/publish changes are pushed to main
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/publish/3i-atlas/**'
+
+permissions:
+  contents: write  # Required for committing and pushing
+  pull-requests: write  # Required if opening PRs (optional)
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Check for input data
+        id: check_data
+        run: |
+          if [ ! -d "data/publish/3i-atlas" ]; then
+            echo "❌ ERROR: Input directory data/publish/3i-atlas not found"
+            echo "has_data=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          if [ ! -f "data/publish/3i-atlas/manifest.json" ]; then
+            echo "⚠️  WARNING: manifest.json not found (no data to publish)"
+            echo "has_data=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "✓ Input data found"
+          echo "has_data=true" >> $GITHUB_OUTPUT
+      
+      - name: Run publication compiler
+        if: steps.check_data.outputs.has_data == 'true'
+        run: |
+          echo "Running publication compiler..."
+          
+          # Determine claim ID
+          CLAIM_ID="${{ github.event.inputs.claim_id }}"
+          if [ -z "$CLAIM_ID" ]; then
+            CLAIM_ID="claim-001"
+          fi
+          
+          echo "Claim ID: $CLAIM_ID"
+          
+          # Run compiler
+          python3 lab/publication_engine.py --claim-id "$CLAIM_ID" || {
+            echo "⚠️  Publication compiler failed (may be expected if no data yet)"
+            exit 0
+          }
+          
+          echo "✓ Publication compiler completed"
+      
+      - name: Run page generator
+        if: steps.check_data.outputs.has_data == 'true'
+        run: |
+          echo "Running page generator..."
+          python3 lab/generate_phase_e_pages.py
+          echo "✓ Page generator completed"
+      
+      - name: Update publications.yml
+        if: steps.check_data.outputs.has_data == 'true'
+        run: |
+          echo "Updating publications registry..."
+          python3 lab/update_publications_yml.py
+          echo "✓ Publications registry updated"
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "✓ Changes detected"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "ℹ️  No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Show changes summary
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "=== Changes Summary ==="
+          git status --short
+          echo ""
+          echo "=== Files Added/Modified ==="
+          git diff --name-only --cached || git diff --name-only
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          
+          # Add all generated files
+          git add lab/publication/
+          git add phase-e/
+          
+          # Commit with descriptive message
+          git commit -m "Auto-publish: Phase-E daily update $DATE" \
+                     -m "Automated publication generation" \
+                     -m "- Publication compiler: deterministic outputs" \
+                     -m "- Page generator: static HTML only" \
+                     -m "- Publications registry: auto-updated" \
+                     -m "" \
+                     -m "Gate-6: CLOSED (no interpretation, no claims)" \
+                     -m "Triggered by: ${{ github.event_name }}"
+          
+          # Push to main branch
+          git push origin main
+          
+          echo "✓ Changes committed and pushed"
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "=== Phase-E Auto-Publish Summary ==="
+          echo "Trigger: ${{ github.event_name }}"
+          echo "Data available: ${{ steps.check_data.outputs.has_data }}"
+          echo "Changes made: ${{ steps.check_changes.outputs.has_changes }}"
+          echo ""
+          if [ "${{ steps.check_data.outputs.has_data }}" == "true" ] && \
+             [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
+            echo "✅ Phase-E content published successfully"
+          elif [ "${{ steps.check_data.outputs.has_data }}" == "false" ]; then
+            echo "ℹ️  No data to publish (expected if data/publish is empty)"
+          else
+            echo "ℹ️  No changes needed (content already up to date)"
+          fi
