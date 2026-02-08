@@ -87,7 +87,6 @@ async function main() {
   console.log(`Languages: ${LANGUAGES.join(', ')}\n`);
   
   const browser = await chromium.launch({
-    executablePath: '/usr/bin/google-chrome',
     headless: true
   });
   

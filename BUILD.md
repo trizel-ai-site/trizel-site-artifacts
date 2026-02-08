@@ -2,6 +2,10 @@
 
 This document describes the build process for generating Phase-E publication pages.
 
+## Related Documentation
+
+- **[WCAG Contrast Checking Guide](WCAG_CONTRAST_GUIDE.md)** - Comprehensive guide for automated accessibility testing
+
 ## Overview
 
 The Phase-E system consists of two main components:

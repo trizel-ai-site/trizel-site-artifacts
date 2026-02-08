@@ -19,6 +19,28 @@ It contains **no execution**, **no analysis**, **no AI authority**, and **no sci
 
 ---
 
+## Accessibility & Quality Assurance
+
+This repository implements **WCAG 2.1 AA/AAA automated contrast checking** to ensure all content meets institutional accessibility standards across all languages and pages.
+
+**Comprehensive Documentation:** See [WCAG_CONTRAST_GUIDE.md](WCAG_CONTRAST_GUIDE.md)
+
+**Quick Start:**
+```bash
+# Install dependencies
+npm install
+
+# Start local server (in one terminal)
+npm run serve
+
+# Run contrast checks (in another terminal)
+npm run contrast:check
+```
+
+**CI/CD:** All pull requests are automatically checked for contrast violations via GitHub Actions.
+
+---
+
 ## Repository Classification
 
 **Layer-2 — Institutional Scientific Observatory (Read-Only)**
