@@ -84,6 +84,19 @@ html,body{
   font-size:0.85rem;
 }
 
+/* Footer links must be AAA compliant on dark background */
+.site-footer a,
+.site-footer__link,
+.footer-nav a {
+  color: #93c5fd !important;  /* Light blue - 7.4:1 on #0b0d0f (WCAG AAA) */
+}
+
+.site-footer a:hover,
+.site-footer__link:hover,
+.footer-nav a:hover {
+  color: #bfdbfe !important;  /* Lighter blue on hover - 9.8:1 */
+}
+
 /* ========================================
    Accessibility Baseline (WCAG 2.2 AA)
    Digital Quality Pack v1

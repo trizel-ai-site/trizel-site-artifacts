@@ -1115,29 +1115,36 @@ a:focus-visible {
 /* ═══════════════════════════════════════════════════════════════
    INLINE STYLE OVERRIDES — WCAG AAA Compliance
    Override hardcoded inline styles that don't meet contrast requirements
+   Use highly specific selectors to override inline styles
    ═══════════════════════════════════════════════════════════════ */
 
-/* Override hardcoded blue button color - use multiple selectors */
-.btn--outline[style],
-a.btn[style*="color"],
-a[class*="btn"][style*="#60a5fa"],
-[href="/artifacts/"][style] {
+/* Override hardcoded blue button color */
+a.btn.btn--outline[href="/artifacts/"] {
   color: var(--color-accent) !important;
   border-color: var(--color-accent) !important;
 }
 
-/* Override hardcoded footer text color */
-.site-footer__text[style],
-.site-footer p[style*="color"],
-footer [style*="#94a3b8"] {
+/* Override all buttons with inline styles */
+.btn[style],
+a.btn[style],
+button.btn[style] {
+  color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Override hardcoded footer text color - must be 7:1 on #0f172a */
+footer .site-footer__text[style] {
+  color: #cbd5e1 !important;  /* 9.1:1 on #0f172a (WCAG AAA) */
+}
+
+/* Target specific footer paragraph */
+footer p.site-footer__text:last-child {
   color: #cbd5e1 !important;  /* 9.1:1 on #0f172a (WCAG AAA) */
 }
 
 /* Ensure all inline-styled links meet WCAG AAA */
-a[style*="color"][href],
-a[href*="doi.org"][style],
-a[href*="orcid.org"][style],
-a[style*="#60a5fa"],
-a[style*="#3b82f6"] {
+a[href][style*="color"],
+a[href*="doi.org"][style*="color"],
+a[href*="orcid.org"][style*="color"] {
   color: var(--color-accent) !important;
 }

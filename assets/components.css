@@ -435,3 +435,28 @@
     flex-direction: column;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   INLINE STYLE OVERRIDES — WCAG AAA Compliance
+   Override hardcoded inline styles that don't meet contrast requirements
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Override hardcoded button colors that don't meet WCAG AAA */
+.btn[style],
+a.btn[style],
+.btn--outline[style] {
+  color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Override hardcoded footer text colors on dark backgrounds */
+.site-footer__text[style*="color"],
+.site-footer p[style*="color"],
+footer [style*="color"] {
+  color: #cbd5e1 !important;  /* 9.1:1 on #0f172a (WCAG AAA) */
+}
+
+/* Ensure all inline-styled links meet WCAG AAA */
+a[href][style*="color"] {
+  color: var(--color-accent) !important;
+}
