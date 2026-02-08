@@ -94,48 +94,48 @@
     {
       "designation": "3I/ATLAS",
       "ok": false,
-      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=3I/ATLAS&orb=1&phys-par=1",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=3I/ATLAS&phys-par=1",
       "error": {
         "type": "http_error",
         "http_status": 400,
         "message": "HTTP Error 400: Bad Request",
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=3I/ATLAS&orb=1&phys-par=1",
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=3I/ATLAS&phys-par=1",
         "body_preview": "{\"moreInfo\":\"https://ssd-api.jpl.nasa.gov/doc/sbdb.html\",\"message\":\"one or more query parameter was not recognized\",\"code\":\"400\"}\n"
       }
     },
     {
       "designation": "C/2025 N1",
       "ok": false,
-      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1&orb=1&phys-par=1",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1&phys-par=1",
       "error": {
         "type": "http_error",
         "http_status": 400,
         "message": "HTTP Error 400: Bad Request",
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1&orb=1&phys-par=1",
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1&phys-par=1",
         "body_preview": "{\"code\":\"400\",\"moreInfo\":\"https://ssd-api.jpl.nasa.gov/doc/sbdb.html\",\"message\":\"one or more query parameter was not recognized\"}\n"
       }
     },
     {
       "designation": "ATLAS",
       "ok": false,
-      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=ATLAS&orb=1&phys-par=1",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=ATLAS&phys-par=1",
       "error": {
         "type": "http_error",
         "http_status": 400,
         "message": "HTTP Error 400: Bad Request",
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=ATLAS&orb=1&phys-par=1",
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=ATLAS&phys-par=1",
         "body_preview": "{\"moreInfo\":\"https://ssd-api.jpl.nasa.gov/doc/sbdb.html\",\"code\":\"400\",\"message\":\"one or more query parameter was not recognized\"}\n"
       }
     },
     {
       "designation": "C/2025 N1 (ATLAS)",
       "ok": false,
-      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&orb=1&phys-par=1",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&phys-par=1",
       "error": {
         "type": "http_error",
         "http_status": 400,
         "message": "HTTP Error 400: Bad Request",
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&orb=1&phys-par=1",
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&phys-par=1",
         "body_preview": "{\"code\":\"400\",\"message\":\"one more more unexpected characters detected\",\"moreInfo\":\"https://ssd-api.jpl.nasa.gov/doc/sbdb.html\"}\n"
       }
     }
@@ -144,7 +144,7 @@
     "type": "http_error",
     "http_status": 400,
     "message": "HTTP Error 400: Bad Request",
-    "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&orb=1&phys-par=1",
+    "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=C/2025+N1+(ATLAS)&phys-par=1",
     "body_preview": "{\"code\":\"400\",\"message\":\"one more more unexpected characters detected\",\"moreInfo\":\"https://ssd-api.jpl.nasa.gov/doc/sbdb.html\"}\n"
   }
 }
