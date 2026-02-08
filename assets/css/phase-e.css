@@ -636,3 +636,36 @@
     page-break-inside: avoid;
   }
 }
+
+/* Dark Mode Overrides - Replace blue text with white/near-white for readability */
+@media (prefers-color-scheme: dark) {
+  /* Stat values - Use white instead of blue on dark backgrounds */
+  .stat-value {
+    color: var(--color-text);
+  }
+  
+  /* Process step numbers - Use white text instead of blue background */
+  .process-steps > li::before {
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+  }
+  
+  /* Ensure all table text is white/near-white, not blue */
+  .publications-table th,
+  .data-table th {
+    color: var(--color-text);
+  }
+  
+  .publications-table td,
+  .data-table td {
+    color: var(--color-text-medium);
+  }
+  
+  /* Links remain blue for contrast, but body text must be white */
+  .publications-table a,
+  .data-files a,
+  .reference-list a {
+    color: var(--color-accent);
+  }
+}
