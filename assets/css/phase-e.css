@@ -105,6 +105,7 @@
   margin: var(--space-5) 0;
 }
 
+/* Publications Table - Enhanced for scientific reading */
 .publications-table {
   width: 100%;
   border-collapse: collapse;
@@ -112,6 +113,8 @@
   border: 1px solid var(--color-border);
   border-radius: 6px;
   overflow: hidden;
+  /* Improved readability with subtle row spacing */
+  border-spacing: 0;
 }
 
 .publications-table thead {
@@ -124,16 +127,27 @@
   font-weight: 600;
   color: var(--color-text);
   border-bottom: 2px solid var(--color-border);
+  /* Enhanced typography for table headers */
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
 }
 
 .publications-table td {
   padding: var(--space-4);
   border-bottom: 1px solid var(--color-border-light);
   color: var(--color-text-medium);
+  /* Improved line-height for better readability */
+  line-height: 1.6;
 }
 
 .publications-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+/* Subtle row hover for better tracking across long tables */
+.publications-table tbody tr:hover {
+  background: var(--color-surface-raised);
+  transition: background-color 0.15s ease;
 }
 
 /* Empty State */
@@ -153,6 +167,7 @@
   font-size: 0.95rem;
   color: var(--color-text-muted);
   margin: 0;
+  line-height: 1.6;
 }
 
 .publications-table a {
@@ -290,7 +305,7 @@
   border-bottom: none;
 }
 
-/* Data Table (for compiler outputs) */
+/* Data Table (for compiler outputs) - Enhanced for scientific reading */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -299,6 +314,8 @@
   border-radius: 6px;
   overflow: hidden;
   font-size: 0.9rem;
+  /* Improved readability with subtle row spacing */
+  border-spacing: 0;
 }
 
 .data-table thead {
@@ -320,14 +337,21 @@
   padding: var(--space-3);
   border-bottom: 1px solid var(--color-border-light);
   color: var(--color-text-medium);
+  /* Improved line-height for better readability */
+  line-height: 1.6;
+  /* Prevent text overflow in narrow columns */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .data-table tbody tr:last-child td {
   border-bottom: none;
 }
 
+/* Subtle row hover for better tracking across long scientific tables */
 .data-table tbody tr:hover {
   background: var(--color-surface-raised);
+  transition: background-color 0.15s ease;
 }
 
 .data-table code {
@@ -620,6 +644,22 @@
   .publications-table td {
     padding: var(--space-3);
     font-size: 0.9rem;
+  }
+  
+  /* Enhanced mobile table readability */
+  .publications-table,
+  .data-table {
+    font-size: 0.85rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  /* Allow horizontal scroll for wide tables on mobile */
+  .table-container {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
