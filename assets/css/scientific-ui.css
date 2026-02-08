@@ -1111,3 +1111,33 @@ a:focus-visible {
     outline-color: currentColor;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   INLINE STYLE OVERRIDES — WCAG AAA Compliance
+   Override hardcoded inline styles that don't meet contrast requirements
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Override hardcoded blue button color - use multiple selectors */
+.btn--outline[style],
+a.btn[style*="color"],
+a[class*="btn"][style*="#60a5fa"],
+[href="/artifacts/"][style] {
+  color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Override hardcoded footer text color */
+.site-footer__text[style],
+.site-footer p[style*="color"],
+footer [style*="#94a3b8"] {
+  color: #cbd5e1 !important;  /* 9.1:1 on #0f172a (WCAG AAA) */
+}
+
+/* Ensure all inline-styled links meet WCAG AAA */
+a[style*="color"][href],
+a[href*="doi.org"][style],
+a[href*="orcid.org"][style],
+a[style*="#60a5fa"],
+a[style*="#3b82f6"] {
+  color: var(--color-accent) !important;
+}
