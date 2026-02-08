@@ -283,9 +283,17 @@ def main():
     for pub in new_pubs:
         print(f"  + {pub['id']}")
     
-    # Combine and sort (ensure date is string for comparison)
+    # Combine and sort by date (robust ISO date comparison)
     all_publications = existing_data.get("publications", []) + new_pubs
-    all_publications.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    # Parse dates for proper comparison (ISO format YYYY-MM-DD)
+    def parse_date_key(pub):
+        try:
+            return datetime.strptime(str(pub.get("date", "")), "%Y-%m-%d")
+        except (ValueError, TypeError):
+            # Fallback to string comparison for invalid dates
+            return str(pub.get("date", ""))
+    
+    all_publications.sort(key=parse_date_key, reverse=True)
     
     updated_data = {"publications": all_publications}
     
