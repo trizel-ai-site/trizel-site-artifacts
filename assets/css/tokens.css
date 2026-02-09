@@ -49,7 +49,7 @@
   --color-success-bg: #f0fdf4;
   --color-error: #991b1b;
   --color-error-bg: #fef2f2;
-  --color-error-on-light: #b91c1c;   /* Darker red - 7.1:1 on #fffbeb (WCAG AAA) */
+  --color-error-on-light: #991b1b;   /* Very dark red - 7.5:1 on #fffbeb, 7.1:1 on #fef2f2 (WCAG AAA) */
   --color-warning: #d97706;
   --color-warning-bg: #fef3c7;
   
