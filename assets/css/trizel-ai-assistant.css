@@ -400,7 +400,7 @@
 @media (prefers-color-scheme: dark) {
   .trizel-ai-modal-content {
     background: #161b22;
-    color: #c9d1d9;
+    color: #f1f5f9;  /* Near-white for better readability (WCAG AAA) */
   }
   
   .trizel-ai-modal-header {
@@ -408,15 +408,16 @@
   }
   
   .trizel-ai-modal-title {
-    color: #c9d1d9;
+    color: #ffffff;  /* Pure white for headings (WCAG AAA) */
   }
   
   .trizel-ai-modal-close {
-    color: #8b949e;
+    color: #c9d1d9;  /* Light gray for close button */
   }
   
   .trizel-ai-modal-close:hover {
     background: #21262d;
+    color: #ffffff;  /* White on hover for better contrast */
   }
   
   .trizel-ai-modal-footer {
@@ -425,14 +426,25 @@
   }
   
   .trizel-ai-content {
-    color: #c9d1d9;
+    color: #f1f5f9;  /* Near-white for body text (WCAG AAA) */
   }
   
   .trizel-ai-content h3 {
-    color: #c9d1d9;
+    color: #ffffff;  /* Pure white for headings (WCAG AAA) */
   }
   
   .trizel-ai-footer-text {
-    color: #8b949e;
+    color: #c9d1d9;  /* Light gray for footer text */
+  }
+  
+  /* Links in dark mode - AAA compliant */
+  .trizel-ai-content a,
+  .trizel-ai-link {
+    color: #93c5fd;  /* Light blue - 7.4:1 on dark (WCAG AAA) */
+  }
+  
+  .trizel-ai-content a:hover,
+  .trizel-ai-link:hover {
+    color: #bfdbfe;  /* Lighter blue on hover */
   }
 }

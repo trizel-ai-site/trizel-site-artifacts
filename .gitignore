@@ -31,7 +31,6 @@ build/
 
 # Node.js / npm
 node_modules/
-package-lock.json
 
 # WCAG Contrast checking
 contrast-report.json

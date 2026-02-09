@@ -277,3 +277,29 @@
 [dir="rtl"] .language-label {
   text-align: right;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   WCAG AAA CONTRAST FIXES — Override colors on light backgrounds
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Override text colors on error/warning background (#fef2f2) for AAA compliance */
+[style*="background: #fef2f2"] p,
+[style*="background: #fef2f2"] strong,
+[style*="background:#fef2f2"] p,
+[style*="background:#fef2f2"] strong,
+div[style*="#fef2f2"] p,
+div[style*="#fef2f2"] strong {
+  color: #1e293b !important;  /* Very dark gray - 11.8:1 on #fef2f2 (WCAG AAA) */
+}
+
+/* Ensure red headings on light backgrounds meet AAA contrast */
+[style*="background: #fef2f2"] h3,
+[style*="background:#fef2f2"] h3,
+div[style*="#fef2f2"] h3 {
+  color: var(--color-error-on-light) !important;
+}
+
+/* Ensure pr-placeholder has sufficient contrast */
+.pr-placeholder {
+  color: #475569 !important;  /* Darker gray for better contrast */
+}
