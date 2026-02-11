@@ -1,71 +1,313 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>منشورات المرحلة E — TRIZEL</title>
-  <meta name="description" content="المرحلة E من TRIZEL: مخرجات مترجم النشر الحتمي. قطع أثرية علمية قابلة للتكرار وخالية من الشبكة.">
-  
-  <!-- Canonical & Language Variants -->
-  <link rel="canonical" href="https://trizel-ai.com/phase-e/">
-  <link rel="alternate" hreflang="en" href="https://trizel-ai.com/en/phase-e/">
-  <link rel="alternate" hreflang="fr" href="https://trizel-ai.com/fr/phase-e/">
-  <link rel="alternate" hreflang="de" href="https://trizel-ai.com/de/phase-e/">
-  <link rel="alternate" hreflang="ru" href="https://trizel-ai.com/ru/phase-e/">
-  <link rel="alternate" hreflang="zh" href="https://trizel-ai.com/zh/phase-e/">
-  <link rel="alternate" hreflang="ar" href="https://trizel-ai.com/ar/phase-e/">
-  <link rel="alternate" hreflang="x-default" href="https://trizel-ai.com/phase-e/">
-  
-  <!-- Redirect to main Phase-E content (static HTML meta refresh) -->
-  <meta http-equiv="refresh" content="0;url=/phase-e/">
-  
-  <!-- Favicon & App Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
-  
-  <!-- Styles for fallback display -->
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/base.css">
-  <link rel="stylesheet" href="/assets/components.css">
-  
-  <style>
-    .redirect-notice {
-      max-width: 600px;
-      margin: 4rem auto;
-      padding: 2rem;
-      text-align: center;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .redirect-notice h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
-    .redirect-notice p {
-      color: #64748b;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-    .redirect-link {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #0b5fb8;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-    .redirect-link:hover {
-      background: #084a8f;
-    }
-  </style>
+  <title>Phase-E — Publications (Static Index) | TRIZEL</title>
+  <meta name="description" content="TRIZEL Phase-E: Static index of allowlisted publication references. No JavaScript, no runtime, no metrics.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/scientific-ui.css">
+  <link rel="stylesheet" href="../assets/css/phase-e.css">
+  <link rel="stylesheet" href="../assets/css/print.css" media="print">
 </head>
 <body>
-  <div class="redirect-notice">
-    <h1>منشورات المرحلة E</h1>
-    <p>جاري إعادة التوجيه إلى منشورات المرحلة E...</p>
-    <p>إذا لم يتم إعادة توجيهك تلقائيًا، يرجى النقر أدناه:</p>
-    <a href="/phase-e/" class="redirect-link">الانتقال إلى منشورات المرحلة E</a>
-  </div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="brand">
+          <h1><a href="../index.html" style="color: inherit; text-decoration: none;">TRIZEL</a></h1>
+          <p class="subtitle">Phase-E — Publications (Static Index)</p>
+        </div>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../system-map.html">System Map</a>
+          <a href="../docs/SCIENTIFIC_PRESENTATION_CONTRACT.md"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Governance</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container phase-e-main" role="main">
+    
+    <!-- S0: Title -->
+    <section class="section-header" aria-labelledby="phase-e-title">
+      <h2 id="phase-e-title">Phase-E — Publications (Static Index)</h2>
+    </section>
+
+    <!-- S1: Status Banner (Fail-Closed) -->
+    <div class="status-banner" role="status" aria-live="polite">
+      <h3>Status: Enabled (Static)</h3>
+      <ul class="status-list">
+        <li><strong>Publishing:</strong> Manual review only</li>
+        <li><strong>Automation:</strong> None</li>
+        <li><strong>Runtime:</strong> None</li>
+        <li><strong>Metrics:</strong> None</li>
+        <li><strong>JS:</strong> Disabled</li>
+      </ul>
+    </div>
+
+    <!-- S2: Governance Contract Summary -->
+    <section class="governance-summary" aria-labelledby="governance-heading">
+      <h3 id="governance-heading">Governance Contract Summary</h3>
+      <p>TRIZEL operates under strict layer separation principles:</p>
+      <ul>
+        <li><strong>Layer-0</strong> defines decisions only (trizel-core governance repository)</li>
+        <li><strong>Layer-1</strong> produces evidence only (trizel-lab internal research)</li>
+        <li><strong>Layer-2</strong> displays static references only (this site)</li>
+        <li><strong>Default = NO-GO</strong> unless explicitly allowlisted</li>
+        <li><strong>Human approval required</strong> for all publication additions</li>
+      </ul>
+    </section>
+
+    <!-- S3: What appears here -->
+    <section class="what-appears" aria-labelledby="what-appears-heading">
+      <h3 id="what-appears-heading">What Appears Here</h3>
+      <p>
+        This page lists publication-ready artifacts that have passed governance allowlisting. 
+        All entries are static references to immutable external resources.
+      </p>
+      <p class="claim-notice">
+        <strong>No performance claims are made on this site.</strong> 
+        Publications are listed for reference purposes only, following strict governance protocols.
+      </p>
+    </section>
+
+    <!-- S4: Compiler Outputs (Read-Only Data Presentation) -->
+    <section class="compiler-outputs" aria-labelledby="compiler-outputs-heading">
+      <h3 id="compiler-outputs-heading">Available Compiler Outputs</h3>
+      
+      <p class="registry-note">
+        <strong>Data Source:</strong> Deterministic outputs from the Phase-E Publication Compiler. 
+        These are generated from verified inputs at <code>data/publish/3i-atlas</code>. 
+        All data is presented read-only with provenance and checksums.
+      </p>
+
+      <div class="table-container">
+        <table class="publications-table">
+          <thead>
+            <tr>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Version</th>
+              <th scope="col">Status</th>
+              <th scope="col">Links</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>claim-001</td>
+              <td>2026-02-06</td>
+              <td>v001</td>
+              <td>
+                <span class="status-badge status-verified">Verified</span>
+                <span class="status-badge status-deterministic">Deterministic</span>
+                <span class="status-badge status-network-free">Network-Free</span>
+              </td>
+              <td>
+                <a href="claim-001.html">View Data</a> | 
+                <a href="../lab/publication/claim-001/2026-02-06/">Raw Files</a> | 
+                <a href="../lab/publication/claim-001/2026-02-06/provenance.json">Provenance</a>
+              </td>
+            </tr>
+            <tr>
+              <td>claim-001</td>
+              <td>2026-02-07</td>
+              <td>v001</td>
+              <td>
+                <span class="status-badge status-verified">Verified</span>
+                <span class="status-badge status-deterministic">Deterministic</span>
+                <span class="status-badge status-network-free">Network-Free</span>
+              </td>
+              <td>
+                <a href="claim-001.html">View Data</a> | 
+                <a href="../lab/publication/claim-001/2026-02-07/">Raw Files</a> | 
+                <a href="../lab/publication/claim-001/2026-02-07/provenance.json">Provenance</a>
+              </td>
+            </tr>
+            <tr>
+              <td>claim-001</td>
+              <td>2026-02-08</td>
+              <td>v001</td>
+              <td>
+                <span class="status-badge status-verified">Verified</span>
+                <span class="status-badge status-deterministic">Deterministic</span>
+                <span class="status-badge status-network-free">Network-Free</span>
+              </td>
+              <td>
+                <a href="claim-001.html">View Data</a> | 
+                <a href="../lab/publication/claim-001/2026-02-08/">Raw Files</a> | 
+                <a href="../lab/publication/claim-001/2026-02-08/provenance.json">Provenance</a>
+              </td>
+            </tr>
+            <tr>
+              <td>claim-001</td>
+              <td>2026-02-11</td>
+              <td>v001</td>
+              <td>
+                <span class="status-badge status-verified">Verified</span>
+                <span class="status-badge status-deterministic">Deterministic</span>
+                <span class="status-badge status-network-free">Network-Free</span>
+              </td>
+              <td>
+                <a href="claim-001.html">View Data</a> | 
+                <a href="../lab/publication/claim-001/2026-02-11/">Raw Files</a> | 
+                <a href="../lab/publication/claim-001/2026-02-11/provenance.json">Provenance</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="notice-box" role="note">
+        <h4>Data Presentation Only</h4>
+        <p>
+          These compiler outputs are presented exactly as generated. 
+          <strong>No analysis, no interpretation, no conclusions, no claims.</strong>
+          Gate-6 remains CLOSED. All data includes complete provenance and integrity checksums.
+        </p>
+      </div>
+    </section>
+
+    <!-- S5: Publications Index (Fail-Closed Table) -->
+    <section class="publications-index" aria-labelledby="publications-heading">
+      <h3 id="publications-heading">Publications Index</h3>
+      
+      <p class="registry-note">
+        <strong>Data Source:</strong> This table mirrors entries from 
+        <code>phase-e/publications.yml</code>. To add an item, update that file via PR 
+        and manually copy the entry into this table.
+      </p>
+
+      <div class="table-container">
+        <table class="publications-table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Artifact Type</th>
+              <th scope="col">Immutable Link</th>
+              <th scope="col">Source</th>
+              <th scope="col">Verification Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>claim-001-2026-02-07</td>
+              <td>Dataset</td>
+              <td><a href="../lab/publication/claim-001/2026-02-07/">Lab Data</a> (DOI: pending)</td>
+              <td>lab/publication/claim-001/2026-02-07</td>
+              <td>Published</td>
+            </tr>
+            
+            <!-- Example row format (HTML COMMENT ONLY - NOT VISIBLE) -->
+            <!--
+            <tr>
+              <td>example-paper-2026-01</td>
+              <td>Paper</td>
+              <td><a href="https://doi.org/10.XXXXX/example" target="_blank" rel="noopener">DOI Link</a></td>
+              <td>Conference/Journal Name</td>
+              <td>Allowlisted</td>
+            </tr>
+            -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- S6: How to Add a Publication (Minimum Manual) -->
+    <section class="how-to-add" aria-labelledby="how-to-add-heading">
+      <h3 id="how-to-add-heading">How to Add a Publication (Manual Process)</h3>
+      
+      <ol class="process-steps">
+        <li>
+          <strong>Add candidate to allowlist</strong> in phase-e-gateway repository via PR
+        </li>
+        <li>
+          <strong>Human review + approval</strong> of the allowlist entry
+        </li>
+        <li>
+          <strong>In this repository</strong>, update <code>phase-e/publications.yml</code> via PR
+          <ul>
+            <li>Use the schema format from <code>TEMPLATE_PUBLICATION_ENTRY.txt</code></li>
+            <li>Only immutable URLs accepted (DOI/Zenodo/permalink/release tag)</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Mirror the entry</strong> into the publications table above (copy/paste, no scripts)
+        </li>
+        <li>
+          <strong>Human merge</strong> after review
+        </li>
+      </ol>
+
+      <div class="notice-box" role="note">
+        <h4>Explicit Prohibitions</h4>
+        <ul>
+          <li><strong>No automatic publishing</strong> — All additions are manual</li>
+          <li><strong>No cross-repo writes</strong> from this site</li>
+          <li><strong>No mutable URLs</strong> — Branch URLs, latest release URLs, or non-versioned links are rejected</li>
+          <li><strong>Only immutable URLs accepted:</strong> DOI, Zenodo permalinks, tagged releases, institutional permalinks with version identifiers</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- S7: Safety & Limitations -->
+    <section class="safety-limitations" aria-labelledby="safety-heading">
+      <h3 id="safety-heading">Safety & Limitations</h3>
+      
+      <p>This Phase-E system is designed with strict safety constraints:</p>
+      
+      <div class="prohibited-list">
+        <h4>Explicitly Prohibited:</h4>
+        <ul>
+          <li><strong>No JavaScript</strong> — Zero client-side execution</li>
+          <li><strong>No fetch/runtime</strong> — No dynamic data loading</li>
+          <li><strong>No build process</strong> — No compilation or generation</li>
+          <li><strong>No counters</strong> — No view counts or visit tracking</li>
+          <li><strong>No analytics</strong> — No Google Analytics, no tracking pixels</li>
+          <li><strong>No dynamic charts</strong> — No runtime visualizations</li>
+          <li><strong>No external dependencies</strong> — No CDN fonts, no remote CSS</li>
+        </ul>
+      </div>
+
+      <p class="warning-text">
+        <strong>⚠️ Important:</strong> If a proposed change introduces any runtime behavior 
+        (scripts, fetch calls, build steps, or dynamic content), it must be rejected.
+      </p>
+    </section>
+
+    <!-- S8: References -->
+    <section class="references" aria-labelledby="references-heading">
+      <h3 id="references-heading">References</h3>
+      
+      <ul class="reference-list">
+        <li>
+          <strong>Governance decision:</strong> See trizel-core decision record (reference only)
+        </li>
+        <li>
+          <strong>Scientific Presentation Contract:</strong> 
+          <a href="../docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">View Contract</a>
+        </li>
+      </ul>
+
+      <p class="reference-note">
+        External links are provided as stable references only. No integration, no execution, no live data.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        TRIZEL Phase-E — Publications (Static Index)<br>
+        All content governed by <a href="../docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">Scientific Presentation Contract</a>
+      </p>
+      <p class="footer-status">
+        Status: Enabled (Static) | Publishing: Manual review only | JS: Disabled
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
