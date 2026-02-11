@@ -388,6 +388,7 @@ class PublicationEngine:
             provenance: Provenance metadata
             tables: Extracted tables
             derived: Derived data
+            visual_evidence: Visual evidence metadata (plots, reference images)
             
         Returns:
             Path to output directory

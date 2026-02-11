@@ -441,9 +441,12 @@ class PhaseEPageGenerator:
         # Generate the HTML
         claim_display = claim_id.replace("claim", "Claim")  # claim-001 -> Claim-001
         
-        # Determine lang attribute and dir attribute for RTL languages
+        # Determine HTML attributes for language and text direction
         lang_attr = f'lang="{lang}"'
-        dir_attr = ' dir="rtl"' if lang == "ar" else ''
+        if lang == "ar":
+            dir_attr = ' dir="rtl"'
+        else:
+            dir_attr = ''
         
         html = f"""<!DOCTYPE html>
 <html {lang_attr}{dir_attr}>
