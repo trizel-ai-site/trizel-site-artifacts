@@ -34,3 +34,6 @@ node_modules/
 
 # WCAG Contrast checking
 contrast-report.json
+
+# Publication archives
+*.tar.gz

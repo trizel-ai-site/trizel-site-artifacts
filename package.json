@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "serve": "python3 -m http.server 8000",
-    "contrast:check": "node scripts/contrast-check.js"
+    "contrast:check": "node scripts/contrast-check.js",
+    "archive:publication": "bash scripts/archive-publication.sh"
   },
   "devDependencies": {
     "axe-core": "^4.8.4",
