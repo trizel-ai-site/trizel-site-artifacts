@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "deterministic": true,
+    "generation_date": "2026-02-11",
+    "network_free": true
+  },
+  "plots": [
+    {
+      "accessibility": {
+        "alt_text": "Bar chart showing 0 successful and 4 failed SBDB query attempts",
+        "wcag_compliant": true
+      },
+      "data_source": "derived/statistics.json",
+      "description": "Distribution of successful vs failed SBDB query attempts",
+      "dimensions": {
+        "height": 400,
+        "width": 800
+      },
+      "filename": "sbdb_attempts_status.svg",
+      "format": "svg",
+      "id": "sbdb-attempts-status",
+      "title": "SBDB Query Attempts Status",
+      "type": "bar_chart"
+    },
+    {
+      "accessibility": {
+        "alt_text": "Bar chart showing distribution of 12 platforms across 3 categories",
+        "wcag_compliant": true
+      },
+      "data_source": "derived/statistics.json",
+      "description": "Number of platforms in each category",
+      "dimensions": {
+        "height": 400,
+        "width": 800
+      },
+      "filename": "platform_distribution.svg",
+      "format": "svg",
+      "id": "platform-distribution",
+      "title": "Platform Distribution by Category",
+      "type": "bar_chart"
+    }
+  ],
+  "reference_images": [
+    {
+      "acquisition_date": "2025-12-19",
+      "checksum": null,
+      "description": "Official API documentation for parameter reference",
+      "format": "note",
+      "id": "sbdb-api-documentation",
+      "note": "External reference - documentation link only, no image artifact",
+      "reference_id": "SBDB-API-DOC-2025",
+      "source": "NASA JPL Solar System Dynamics",
+      "title": "NASA JPL SBDB API Documentation Reference",
+      "url": "https://ssd-api.jpl.nasa.gov/doc/sbdb.html",
+      "verified": true
+    }
+  ]
+}

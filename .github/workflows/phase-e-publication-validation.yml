@@ -71,6 +71,11 @@ jobs:
           test -d "$OUTPUT_DIR/tables" || (echo "ERROR: tables/ directory missing" && exit 1)
           test -d "$OUTPUT_DIR/derived" || (echo "ERROR: derived/ directory missing" && exit 1)
           
+          # Check Phase-E visual evidence infrastructure
+          test -d "$OUTPUT_DIR/figures" || (echo "ERROR: figures/ directory missing" && exit 1)
+          test -d "$OUTPUT_DIR/reference-images" || (echo "ERROR: reference-images/ directory missing" && exit 1)
+          test -f "$OUTPUT_DIR/derived/visual_evidence.json" || (echo "ERROR: visual_evidence.json missing" && exit 1)
+          
           # Check CSV and JSON tables exist
           test -f "$OUTPUT_DIR/tables/platforms_registry.csv" || (echo "ERROR: platforms_registry.csv missing" && exit 1)
           test -f "$OUTPUT_DIR/tables/platforms_registry.json" || (echo "ERROR: platforms_registry.json missing" && exit 1)
@@ -233,7 +238,7 @@ jobs:
           run2_dir = Path(os.environ['OUTPUT_DIR'])
           
           # Compare JSON files (manifest should now be fully deterministic)
-          json_files = ['manifest.json', 'derived/statistics.json']
+          json_files = ['manifest.json', 'derived/statistics.json', 'derived/visual_evidence.json']
           json_files.extend(['tables/platforms_registry.json', 'tables/sbdb_attempts.json'])
           
           errors = []
@@ -277,3 +282,62 @@ jobs:
           
           print('✓ Determinism verified: outputs are identical (excluding provenance timestamps)')
           PYTHON_SCRIPT
+
+      - name: Generate Phase-E pages (multilingual)
+        run: |
+          echo "Generating Phase-E pages for all languages..."
+          python3 lab/generate_phase_e_pages.py
+          echo "✓ Page generation completed"
+
+      - name: Verify multilingual page generation
+        run: |
+          echo "Verifying multilingual Phase-E pages..."
+          
+          # Check that pages were generated for all languages
+          LANGUAGES=("en" "fr" "de" "ar" "ru" "zh")
+          for lang in "${LANGUAGES[@]}"; do
+            if [ "$lang" = "en" ]; then
+              # English has both root phase-e/ and en/phase-e/
+              test -f "phase-e/index.html" || (echo "ERROR: phase-e/index.html missing" && exit 1)
+              test -f "phase-e/claim-001.html" || (echo "ERROR: phase-e/claim-001.html missing" && exit 1)
+            fi
+            test -f "$lang/phase-e/index.html" || (echo "ERROR: $lang/phase-e/index.html missing" && exit 1)
+            test -f "$lang/phase-e/claim-001.html" || (echo "ERROR: $lang/phase-e/claim-001.html missing" && exit 1)
+            echo "  ✓ $lang pages verified"
+          done
+          
+          echo "✓ All language variants verified"
+
+      - name: Validate static HTML (no JavaScript)
+        run: |
+          echo "Checking for JavaScript in generated pages..."
+          
+          # Check phase-e pages for JavaScript
+          if grep -r '<script' phase-e/*.html en/phase-e/*.html fr/phase-e/*.html 2>/dev/null; then
+            echo "ERROR: JavaScript detected in Phase-E pages"
+            exit 1
+          fi
+          
+          echo "✓ No JavaScript detected - static HTML only"
+
+      - name: Validate visual evidence in pages
+        run: |
+          echo "Validating visual evidence sections in generated pages..."
+          
+          # Check that claim-001.html contains visual evidence sections
+          if ! grep -q "Reference Images & External Data" phase-e/claim-001.html; then
+            echo "ERROR: Reference Images section missing"
+            exit 1
+          fi
+          
+          if ! grep -q "Data Visualizations" phase-e/claim-001.html; then
+            echo "ERROR: Data Visualizations section missing"
+            exit 1
+          fi
+          
+          if ! grep -q "visual-evidence" phase-e/claim-001.html; then
+            echo "ERROR: visual-evidence CSS class missing"
+            exit 1
+          fi
+          
+          echo "✓ Visual evidence sections verified in generated pages"

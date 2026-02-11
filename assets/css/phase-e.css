@@ -709,3 +709,169 @@
     color: var(--color-accent);
   }
 }
+
+/* ===================================================================
+   PHASE-E SCIENTIFIC PUBLICATION ENHANCEMENT - VISUAL EVIDENCE
+   ================================================================ */
+
+/* Visual Evidence Section */
+.visual-evidence {
+  background: var(--color-surface-raised);
+  border-radius: 8px;
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.visual-evidence h3 {
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+/* Reference Images Container */
+.reference-images-container,
+.plots-container {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+/* Reference Item */
+.reference-item,
+.plot-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  transition: box-shadow 0.2s ease;
+}
+
+.reference-item:hover,
+.plot-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reference-item h4,
+.plot-item h4 {
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  font-size: 1.1rem;
+}
+
+/* Reference Metadata (Definition List) */
+.reference-metadata {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-4);
+  font-size: 0.9rem;
+}
+
+.reference-metadata dt {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.reference-metadata dd {
+  margin: 0;
+  color: var(--color-text-medium);
+  word-break: break-word;
+}
+
+.reference-metadata a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.reference-metadata a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* Plot Metadata */
+.plot-description {
+  color: var(--color-text-medium);
+  margin: var(--space-3) 0;
+  line-height: 1.6;
+}
+
+.plot-metadata {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: 4px;
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.plot-metadata p {
+  margin: var(--space-2) 0;
+  font-size: 0.9rem;
+}
+
+.plot-metadata code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+  background: var(--color-surface);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.plot-note {
+  color: var(--color-text-muted);
+  font-style: italic;
+  background: var(--color-notice-bg);
+  padding: var(--space-3);
+  border-radius: 4px;
+  margin-top: var(--space-3);
+}
+
+.accessibility-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: var(--color-accent-bg);
+  padding: var(--space-3);
+  border-radius: 4px;
+  margin-top: var(--space-3);
+  border-left: 3px solid var(--color-accent);
+}
+
+/* Responsive adjustments for visual evidence */
+@media (max-width: 768px) {
+  .visual-evidence {
+    padding: var(--space-4);
+  }
+  
+  .reference-metadata {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+  
+  .reference-metadata dt {
+    margin-top: var(--space-2);
+  }
+  
+  .reference-metadata dt:first-of-type {
+    margin-top: 0;
+  }
+}
+
+/* Dark mode adjustments for visual evidence */
+@media (prefers-color-scheme: dark) {
+  .visual-evidence {
+    background: var(--color-surface);
+  }
+  
+  .reference-item,
+  .plot-item {
+    background: var(--color-bg);
+    border-color: var(--color-border);
+  }
+  
+  .plot-metadata {
+    background: var(--color-surface);
+  }
+}
