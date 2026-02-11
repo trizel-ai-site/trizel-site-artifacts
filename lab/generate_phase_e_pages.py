@@ -111,12 +111,13 @@ class PhaseEPageGenerator:
         
         return publications
     
-    def generate_index_html(self, publications: List[Dict[str, Any]]) -> str:
+    def generate_index_html(self, publications: List[Dict[str, Any]], lang: str = "en") -> str:
         """
         Generate the Phase-E index.html with dynamic table rows.
         
         Args:
             publications: List of discovered publications
+            lang: Language code (en, fr, de, ar, ru, zh)
             
         Returns:
             Generated HTML content
@@ -128,6 +129,13 @@ class PhaseEPageGenerator:
         
         with open(template_path, 'r') as f:
             template = f.read()
+        
+        # Update lang attribute for non-English languages
+        if lang != "en":
+            template = template.replace('<html lang="en">', f'<html lang="{lang}">')
+            # Add dir="rtl" for Arabic
+            if lang == "ar":
+                template = template.replace(f'<html lang="{lang}">', f'<html lang="{lang}" dir="rtl">')
         
         # Generate table rows for compiler outputs
         if publications:
@@ -188,7 +196,7 @@ class PhaseEPageGenerator:
         
         return new_html
     
-    def generate_claim_page_html(self, pub: Dict[str, Any]) -> str:
+    def generate_claim_page_html(self, pub: Dict[str, Any], lang: str = "en") -> str:
         """
         Generate HTML page for a specific claim/date publication.
         
@@ -199,6 +207,7 @@ class PhaseEPageGenerator:
         
         Args:
             pub: Publication dictionary
+            lang: Language code (en, fr, de, ar, ru, zh)
             
         Returns:
             Generated HTML content
@@ -432,8 +441,12 @@ class PhaseEPageGenerator:
         # Generate the HTML
         claim_display = claim_id.replace("claim", "Claim")  # claim-001 -> Claim-001
         
+        # Determine lang attribute and dir attribute for RTL languages
+        lang_attr = f'lang="{lang}"'
+        dir_attr = ' dir="rtl"' if lang == "ar" else ''
+        
         html = f"""<!DOCTYPE html>
-<html lang="en">
+<html {lang_attr}{dir_attr}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -766,7 +779,7 @@ class PhaseEPageGenerator:
                 lang_phase_e_dir.mkdir(parents=True, exist_ok=True)
                 
                 # Generate index.html for this language
-                index_html = self.generate_index_html(publications)
+                index_html = self.generate_index_html(publications, lang)
                 index_path = lang_phase_e_dir / "index.html"
                 with open(index_path, 'w') as f:
                     f.write(index_html)
@@ -775,7 +788,7 @@ class PhaseEPageGenerator:
                 # Generate per-claim pages for this language
                 for pub in publications:
                     claim_id = pub["claim_id"]
-                    page_html = self.generate_claim_page_html(pub)
+                    page_html = self.generate_claim_page_html(pub, lang)
                     page_path = lang_phase_e_dir / f"{claim_id}.html"
                     with open(page_path, 'w') as f:
                         f.write(page_html)
