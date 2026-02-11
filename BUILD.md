@@ -67,7 +67,40 @@ python3 lab/generate_phase_e_pages.py
 - `phase-e/index.html` - Main index with all discovered publications
 - `phase-e/{claim-id}.html` - Individual pages for each claim/date
 
-### 3. Verify Build Output
+### 3. Archive Publications
+
+Publications can be archived for distribution and long-term storage:
+
+```bash
+# Archive a specific publication
+bash scripts/archive-publication.sh claim-001 2026-02-11
+
+# Or using npm
+npm run archive:publication claim-001 2026-02-11
+```
+
+This creates a compressed tar archive named `trizel-publication-{claim-id}-{date}.tar.gz` containing the complete publication directory.
+
+**Archive Contents:**
+- All publication files (manifest.json, provenance.json, sha256sum.txt)
+- All tables (JSON and CSV formats)
+- All derived data
+- Complete directory structure preserved
+
+**Verifying Archives:**
+```bash
+# List archive contents
+tar -tzf trizel-publication-claim-001-2026-02-11.tar.gz
+
+# Extract archive
+tar -xzvf trizel-publication-claim-001-2026-02-11.tar.gz
+
+# Verify checksums after extraction
+cd lab/publication/claim-001/2026-02-11
+sha256sum -c sha256sum.txt
+```
+
+### 4. Verify Build Output
 
 Check that generated pages are correct:
 
