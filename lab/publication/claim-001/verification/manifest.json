@@ -1,0 +1,78 @@
+{
+  "verification": {
+    "version": "v002",
+    "date": "2026-02-13",
+    "claim_id": "claim-001",
+    "path": "lab/publication/claim-001/verification/",
+    "description": "Formal SBDB API specification, verification sequence, and IAU designation assessment for Claim-001",
+    "gate_6_status": "CLOSED",
+    "deterministic": true,
+    "network_access_default": false
+  },
+  "artifacts": {
+    "specifications": {
+      "sbdb_api_specification.md": {
+        "sha256": "72f69a2064f22d6729091013b1994e8e4f45b6dfac20cbaaaeb4bf2a3d4850bc",
+        "size_bytes": 9991,
+        "type": "markdown",
+        "description": "NASA JPL SBDB API formal specification with query parameters, URL encoding, and canonical examples"
+      },
+      "verification_sequence.md": {
+        "sha256": "2ec487f6d5099022b1083a0f8d32467a001c5333f4da5ddc111a38fc50850a03",
+        "size_bytes": 12177,
+        "type": "markdown",
+        "description": "Three-step verification sequence: MPC, SBDB, Horizons with machine-readable log schemas"
+      },
+      "iau_designation_assessment.md": {
+        "sha256": "f4b0d11ddc7deb1a952be23ea2ec1f94c52ac218fbc0a81663f01c6eb5192925",
+        "size_bytes": 12474,
+        "type": "markdown",
+        "description": "IAU designation status assessment for 3I/ATLAS with MPC MPEC evidence"
+      }
+    },
+    "logs": {
+      "mpc_crosscheck_log.json": {
+        "sha256": "cdd38af7172ede9a93fa37d9a7d2a6180f7268496dbf0355368b9e5a03e3d1af",
+        "size_bytes": 4045,
+        "type": "json",
+        "description": "Step 1: MPC designation verification log with interstellar object registry cross-check"
+      },
+      "sbdb_query_tests.json": {
+        "sha256": "f15c1ff1364bc21e4cc703ef7bc8576ad5473cb09f81f7ef45caf1b9c78d188d",
+        "size_bytes": 7247,
+        "type": "json",
+        "description": "Step 2: SBDB API query validation tests with control tests for 1I, 2I, and 433 Eros"
+      },
+      "horizons_validation_log.json": {
+        "sha256": "a28100d966871ca151aade89b5914bb14dd307d051825e6d531e82419dd7bf34",
+        "size_bytes": 5612,
+        "type": "json",
+        "description": "Step 3: Horizons orbital cross-check log with SBDB consistency validation"
+      }
+    },
+    "scripts": {
+      "sbdb_validation_runner.py": {
+        "path": "scripts/sbdb_validation_runner.py",
+        "sha256": "d03d4c413df6ba2ec70bd06544806b92d1ee5357abdc50234f7ccd979ff436b3",
+        "size_bytes": 10051,
+        "type": "python",
+        "description": "Deterministic validation runner with network toggle (default OFF)",
+        "usage": "python3 scripts/sbdb_validation_runner.py [--network]",
+        "environment_variable": "TRIZEL_NETWORK=1 to enable network mode"
+      }
+    }
+  },
+  "integrity": {
+    "all_hashes_computed": true,
+    "hash_algorithm": "SHA-256",
+    "immutability_constraint": "All artifacts frozen as of v002 (2026-02-13)",
+    "additive_only": true,
+    "no_existing_data_modified": true
+  },
+  "references": {
+    "zenodo_doi": "10.5281/zenodo.18636150",
+    "zenodo_modification": "none",
+    "published_snapshot_status": "unchanged",
+    "mpc_mpec_reference": "MPC MPEC - Comet 3I/ATLAS (authoritative designation source)"
+  }
+}
