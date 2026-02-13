@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "TRIZEL Institutional Scientific Observatory"
+version: 1.0
+authors:
+  - name: "TRIZEL Project"
+repository-code: "https://github.com/trizel-ai-site/trizel-site-artifacts"
+url: "https://trizel-ai.org"
+abstract: "TRIZEL Layer-2 Institutional Scientific Observatory - Presentation-only interface for published governance and scientific artifacts."
+keywords:
+  - "scientific observatory"
+  - "institutional framework"
+  - "governance"
+  - "layer-2"
+  - "presentation"
+license: "UNLICENSED"
+doi: 10.5281/zenodo.18636150
