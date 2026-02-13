@@ -129,6 +129,14 @@ scientific and governance reference set** of the TRIZEL project.
 
 ---
 
+## Published DOI
+
+- **DOI URL:** https://doi.org/10.5281/zenodo.18636150  
+- **DOI String:** 10.5281/zenodo.18636150  
+- **Note:** Published record with attached files; immutable snapshot (Gate-6 CLOSED).
+
+---
+
 ## Institutional Notice
 
 This repository:
