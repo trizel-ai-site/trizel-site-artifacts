@@ -1,0 +1,70 @@
+name: Claim-001 — Verification Runner (MPC → SBDB → Horizons)
+
+on:
+  workflow_dispatch:
+    inputs:
+      claim_id:
+        description: "Claim ID directory under lab/publication (e.g., claim-001)"
+        required: true
+        default: "claim-001"
+      network:
+        description: "Enable network calls (required for live SBDB/Horizons checks)"
+        required: true
+        type: choice
+        options:
+          - "off"
+          - "on"
+        default: "on"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run verification runner (deterministic)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+
+          CLAIM_ID="${{ inputs.claim_id }}"
+          VERIF_DIR="lab/publication/${CLAIM_ID}/verification"
+
+          test -d "${VERIF_DIR}" || { echo "Missing: ${VERIF_DIR}"; exit 2; }
+
+          if [ "${{ inputs.network }}" = "on" ]; then
+            python3 scripts/sbdb_validation_runner.py --network
+          else
+            python3 scripts/sbdb_validation_runner.py
+          fi
+
+      - name: Upload verification logs (JSON)
+        uses: actions/upload-artifact@v4
+        with:
+          name: claim-001-verification-logs
+          path: |
+            lab/publication/${{ inputs.claim_id }}/verification/*.json
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload verification docs (MD)
+        uses: actions/upload-artifact@v4
+        with:
+          name: claim-001-verification-docs
+          path: |
+            lab/publication/${{ inputs.claim_id }}/verification/*.md
+          if-no-files-found: error
+          retention-days: 7
