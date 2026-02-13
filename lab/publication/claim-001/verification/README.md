@@ -61,6 +61,7 @@ TRIZEL_NETWORK=1 python3 scripts/sbdb_validation_runner.py
 - **scripts/sbdb_validation_runner.py** - Validation runner
   - Default: Network OFF (deterministic mode)
   - Network mode: Explicit `--network` flag or `TRIZEL_NETWORK=1`
+  - Network mode is informational; only fails if zero HTTP responses were obtained
 
 ### Metadata
 - **manifest.json** - Verification package manifest
