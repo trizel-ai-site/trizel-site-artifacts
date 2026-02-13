@@ -35,5 +35,8 @@ node_modules/
 # WCAG Contrast checking
 contrast-report.json
 
+# Network validation logs (temporary, regenerated on each run)
+network_execution_log.json
+
 # Publication archives
 *.tar.gz

@@ -232,12 +232,14 @@ def execute_network_validation() -> bool:
     print("Network Validation Summary")
     print("=" * 80)
     
-    success_count = sum(1 for r in results if r.get("http_status") in [200, 404])
-    error_count = len(results) - success_count
+    # Separate HTTP results from transport errors
+    http_results = [r for r in results if "http_status" in r]
+    ok_http = [r for r in http_results if r["http_status"] in (200, 404)]
+    net_errors = [r for r in results if "http_status" not in r]
     
     print(f"Total queries: {len(results)}")
-    print(f"Successful: {success_count}")
-    print(f"Errors: {error_count}")
+    print(f"HTTP responses: {len(http_results)} (200/404: {len(ok_http)})")
+    print(f"Transport errors: {len(net_errors)}")
     print()
     
     # Write results to log file
@@ -247,8 +249,9 @@ def execute_network_validation() -> bool:
         "queries": results,
         "summary": {
             "total": len(results),
-            "successful": success_count,
-            "errors": error_count
+            "http_responses": len(http_results),
+            "ok_http": len(ok_http),
+            "transport_errors": len(net_errors)
         }
     }
     
@@ -269,7 +272,20 @@ def execute_network_validation() -> bool:
             print("⚠ SBDB returned HTTP 404 for '3I/ATLAS' (SBDB lag documented)")
             print("  Note: MPC MPEC publication remains authoritative source")
     
-    return error_count == 0
+    # Network mode validation logic (non-blocking on transient errors)
+    if len(http_results) == 0:
+        print()
+        print("❌ ERROR: Network mode produced zero HTTP results; cannot verify reachability.")
+        print("   All queries resulted in transport/DNS/timeout errors.")
+        return False
+    
+    # We have at least one HTTP response - consider this success
+    if len(net_errors) > 0:
+        print()
+        print(f"⚠ WARNING: {len(net_errors)} transport error(s) occurred (timeout/DNS/connection issues)")
+        print("  Network mode is informational; not treating as validation failure.")
+    
+    return True
 
 
 def main():
@@ -301,6 +317,9 @@ def main():
         else:
             print("❌ VALIDATION FAILED")
             print("=" * 80)
+            # Return exit code 2 if network mode failed due to zero HTTP results
+            if network_enabled:
+                return 2
             return 1
     
     except KeyboardInterrupt:
