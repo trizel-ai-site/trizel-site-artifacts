@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at_utc": "2026-02-19T00:27:22Z",
+  "generated_at_utc": "2026-01-22T23:00:00Z",
   "multilingual_titles": {
     "en": "Global Observation & Production Index",
     "fr": "Index Mondial d'Observation et de Production",
@@ -53,21 +53,7 @@
       "role": "monitor"
     }
   ],
-  "observation_ledger": [
-    {
-      "observation_id": "TESS-SECTOR-1751-3I-ATLAS",
-      "mission": "TESS",
-      "sector": "1751",
-      "target": "3I/ATLAS",
-      "observation_type": "special",
-      "date_start": "2026-01-15T06:04:18Z",
-      "date_end": "2026-01-19T23:59:59Z",
-      "status": "data-available",
-      "metadata_file": "sources/tess-sector-1751-3i-atlas.json",
-      "documentation": "/docs/TESS_SECTOR_1751_MISSION_STATUS.md",
-      "last_updated_utc": "2026-02-19T00:27:22Z"
-    }
-  ],
+  "observation_ledger": [],
   "production_ledger": [],
   "snapshots_registry": []
 }

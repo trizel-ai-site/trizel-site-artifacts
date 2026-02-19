@@ -1,11 +1,12 @@
 # TESS Sector 1751 — Mission Status and Data Availability
 
-**Document Type:** Mission Status Record  
+**Claim-001 Verification Document**  
 **Observatory:** NASA Transiting Exoplanet Survey Satellite (TESS)  
 **Sector:** 1751 (Special Observation)  
 **Target:** Interstellar Comet 3I/ATLAS  
-**Last Updated:** 2026-02-19T00:27:22Z  
-**Gate Status:** Gate-6 CLOSED
+**Last Updated:** 2026-02-19T00:42:45Z  
+**Gate Status:** Gate-6 CLOSED  
+**Layer:** Claim-001 Verification (Lab Publication)
 
 ---
 
@@ -101,6 +102,18 @@ Any data retrieval associated with this verification layer **must log** the foll
 4. **Response Sizes** — Byte counts of retrieved payloads
 5. **SHA-256 Payload Hashes** — Cryptographic verification hashes
 
+### Layer Separation Compliance
+
+**IMPORTANT:** This document exists in the Claim-001 verification layer and does NOT:
+- Modify Layer-2 registries (`goi/data/` or `goi/pages/`)
+- Create Layer-1 source registrations
+- Propagate to multilingual presentation pages
+
+**Layer-2 registries remain read-only reflections of Layer-1.** TESS data becomes registrable only after a Layer-1 repository emits:
+- Schema-compliant observation metadata
+- SHA-256 integrity manifest
+- Signed provenance block
+
 ### Institutional Authority
 
 This document:
@@ -148,13 +161,16 @@ For institutional compliance, any implementation of this document must verify:
 - [ ] Gate-6 CLOSED status is maintained
 - [ ] No modifications to published Zenodo records occur
 - [ ] All data sources are properly attributed
+- [ ] No Layer-2 registry modifications made
+- [ ] Layer separation rules maintained
 
 ---
 
-**Document Status:** Reference Record  
-**Layer:** Layer-2 (Presentation Only)  
+**Document Status:** Claim-001 Verification Record  
+**Location:** lab/publication/claim-001/verification/  
+**Layer:** Laboratory Verification (NOT Layer-2 Registry)  
 **Authority:** NONE  
 **Execution:** NONE  
 
 **TRIZEL — Institutional Scientific Observatory**  
-Layer-2 · Presentation-Only · Non-Executable · Governance-Controlled
+Claim-001 Verification · Layer Separation Maintained · Non-Executable · Governance-Controlled

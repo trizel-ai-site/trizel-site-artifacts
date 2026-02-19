@@ -10,13 +10,13 @@ The Observations Registry catalogs data sources, archives, and monitoring output
 
 | Source Repo | Role | Domains | Coverage | Inventory | Official Sources |
 |-------------|------|---------|----------|-----------|------------------|
-| TESS Sector 1751 — 3I/ATLAS Observation | archive | exoplanets, cometary-science, interstellar-objects, time-domain-astronomy | 2026-01-15 to 2026-01-19 (special) | FFIs (SPOC, TICA), mTPFs, LCFs, notebooks | [TESS Mission](https://tess.mit.edu/), [MAST Archive](https://archive.stsci.edu/tess/) |
+| *No published entries yet* | — | — | — | — | — |
 
 ## Data Source
 
 This page displays data from: `/goi/data/global-index.json`
 
-**Current Status:** One observation entry has been published for TESS Sector 1751 (3I/ATLAS special observation). This registry will continue to be populated as Layer-1 repositories produce and commit their metadata files to `/goi/data/sources/`.
+**Current Status:** No observation metadata has been published yet. This registry will be populated as Layer-1 repositories produce and commit their metadata files to `/goi/data/sources/`.
 
 ## Schema
 
