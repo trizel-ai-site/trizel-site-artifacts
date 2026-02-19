@@ -26,7 +26,8 @@ https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS/actions/workfl
 https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS/blob/main/.github/workflows/gate-5-execution.yml
 
 ### Gate-5 Run URL
-<PASTE_GATE5_RUN_URL_HERE>
+https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS/actions/workflows/gate-5-execution.yml
+<!-- Note: specific run URL pending — authoritative record linked above -->
 
 ---
 

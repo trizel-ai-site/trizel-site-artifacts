@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture Layer Map — TRIZEL</title>
+  <meta name="description" content="TRIZEL Architecture Layer Map: Layer-0 Governance, Layer-1 Laboratory, Layer-2 Presentation, and Gate-0 through Gate-6 status. Gate-5 OPEN. Gate-6 CLOSED.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://trizel-ai.com/en/layer-map/">
+  <link rel="alternate" hreflang="en" href="https://trizel-ai.com/en/layer-map/">
+  <link rel="alternate" hreflang="x-default" href="https://trizel-ai.com/en/layer-map/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3b82f6">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Architecture Layer Map — TRIZEL">
+  <meta property="og:description" content="TRIZEL three-layer architecture: Governance (Layer-0), Laboratory (Layer-1), Presentation (Layer-2). Gate status: Gate-5 OPEN, Gate-6 CLOSED.">
+  <meta property="og:url" content="https://trizel-ai.com/en/layer-map/">
+  <meta property="og:image" content="https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+    .gate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gate-card {
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .gate-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .gate-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .badge--open {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge--closed {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fca5a5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge--complete {
+      background: #e0e7ff;
+      color: #3730a3;
+      border: 1px solid #a5b4fc;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .layer-section {
+      border-left: 4px solid;
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .layer-section--l0 { border-color: #0369a1; }
+    .layer-section--l1 { border-color: #7c3aed; }
+    .layer-section--l2 { border-color: #64748b; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutional Scientific Observatory</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/artifacts/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg>Artifacts</a>
+        <a href="/en/governance/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Governance</a>
+        <a href="/goi/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>GOI</a>
+        <a href="/en/overview/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Overview</a>
+        <a href="/en/layer-map/" aria-current="page"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg>Layer Map</a>
+        <a href="/en/status/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Status</a>
+        <a href="/accessibility.html">Accessibility</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <a href="/en/layer-map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator" aria-hidden="true">›</span>
+      <a href="/en/">EN</a>
+      <span class="breadcrumb-separator" aria-hidden="true">›</span>
+      <span class="breadcrumb-current" aria-current="page">Architecture Layer Map</span>
+    </nav>
+
+    <!-- Layer-2 Notice -->
+    <section class="card" style="border-left: 4px solid #0369a1; background: #f0f9ff; margin-bottom: 2rem;">
+      <p style="margin: 0; font-size: 0.9rem; color: #0369a1;">
+        <strong>Layer-2 Notice.</strong> This page documents the TRIZEL architecture for informational purposes only.
+        No gate transitions are performed here. All gate execution occurs in Layer-1 under Layer-0 governance authority.
+      </p>
+    </section>
+
+    <h2>Architecture Layer Map</h2>
+
+    <!-- Layer Overview Table -->
+    <section class="card" id="layer-overview">
+      <h3>Layer Separation Overview</h3>
+      <div style="overflow-x: auto; margin-top: 1rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #f1f5f9;">
+              <th style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #e2e8f0;">Layer</th>
+              <th style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #e2e8f0;">Name</th>
+              <th style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #e2e8f0;">Repository</th>
+              <th style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #e2e8f0;">Authority</th>
+              <th style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #e2e8f0;">Can Execute?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 12px;"><span style="background: #0369a1; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Layer-0</span></td>
+              <td style="padding: 10px 12px; font-weight: 600;">Governance &amp; Authority</td>
+              <td style="padding: 10px 12px;"><a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core</a></td>
+              <td style="padding: 10px 12px; color: #15803d; font-weight: 600;">Final / Canonical</td>
+              <td style="padding: 10px 12px;">Yes — policy &amp; governance only</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 12px;"><span style="background: #7c3aed; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Layer-1</span></td>
+              <td style="padding: 10px 12px; font-weight: 600;">Laboratory Execution</td>
+              <td style="padding: 10px 12px;"><a href="https://github.com/abdelkader-omran" target="_blank" rel="noopener">abdelkader-omran/*</a></td>
+              <td style="padding: 10px 12px; color: #7c3aed; font-weight: 600;">Scientific</td>
+              <td style="padding: 10px 12px;">Yes — under Layer-0 governance</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 12px;"><span style="background: #64748b; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Layer-2</span></td>
+              <td style="padding: 10px 12px; font-weight: 600;">Institutional Presentation</td>
+              <td style="padding: 10px 12px;"><a href="https://github.com/trizel-ai-site/trizel-site-artifacts" target="_blank" rel="noopener">trizel-site-artifacts</a></td>
+              <td style="padding: 10px 12px; color: #64748b; font-weight: 600;">None (display only)</td>
+              <td style="padding: 10px 12px;">No — static presentation only</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 12px;"><span style="background: #0369a1; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Layer-2.5</span></td>
+              <td style="padding: 10px 12px; font-weight: 600;">Epistemic Atlas</td>
+              <td style="padding: 10px 12px;"><a href="/atlas/">atlas/ (this site)</a></td>
+              <td style="padding: 10px 12px; color: #64748b; font-weight: 600;">None (display only)</td>
+              <td style="padding: 10px 12px;">No — read-only interface</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Gate Status -->
+    <section class="card" id="gate-status">
+      <h3>Gate Status (Gate-0 through Gate-6)</h3>
+      <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #64748b;">
+        Gates are execution checkpoints in the TRIZEL scientific pipeline. They are opened or closed
+        by Layer-1 under Layer-0 governance authority. This page displays status only — no gate
+        transitions occur here.
+      </p>
+
+      <div class="gate-grid">
+        <div class="gate-card">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-0</span>
+            <span class="badge--complete">COMPLETE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            System initialization and governance framework establishment.
+          </p>
+        </div>
+
+        <div class="gate-card">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-1</span>
+            <span class="badge--complete">COMPLETE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Research hypothesis definition and claim registration.
+          </p>
+        </div>
+
+        <div class="gate-card">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-2</span>
+            <span class="badge--complete">COMPLETE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Observable identification and data source validation.
+          </p>
+        </div>
+
+        <div class="gate-card">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-3</span>
+            <span class="badge--complete">COMPLETE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Method specification and algorithm documentation.
+          </p>
+        </div>
+
+        <div class="gate-card">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-4</span>
+            <span class="badge--complete">COMPLETE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Verification execution and result validation.
+          </p>
+        </div>
+
+        <div class="gate-card" style="border-color: #86efac; background: #f0fdf4;">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-5</span>
+            <span class="badge--open">OPEN</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0 0 0.5rem 0;">
+            Publication and institutional dissemination. Execution record:
+          </p>
+          <p style="font-size: 0.8rem; margin: 0;">
+            <a href="/governance-status/GATE-5-STATUS.md">Gate-5 Status Record</a> ·
+            <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS/blob/main/docs/gates/GATE-5-EXECUTION-RECORD.md" target="_blank" rel="noopener">Execution Record (Layer-1)</a>
+          </p>
+        </div>
+
+        <div class="gate-card" style="border-color: #fca5a5; background: #fff1f2;">
+          <div class="gate-card__header">
+            <span class="gate-card__title">Gate-6</span>
+            <span class="badge--closed">CLOSED</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Gate-6 is closed. No actions in this gate have been initiated.
+            Opening Gate-6 requires explicit Layer-0 governance authorization.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+        <strong>Authoritative source:</strong>
+        <a href="/governance-status/">governance-status/</a> directory in this repository.
+        For execution records, see the
+        <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS" target="_blank" rel="noopener">Layer-1 repository</a>.
+      </p>
+    </section>
+
+    <!-- Layer Descriptions -->
+    <section class="card" id="layer-descriptions">
+      <h3>Layer Descriptions</h3>
+
+      <div class="layer-section layer-section--l0">
+        <h4 style="color: #0369a1;">Layer-0 — Governance &amp; Authority</h4>
+        <p>
+          Layer-0 is the canonical governance layer. It holds final authority over all policies, standards,
+          gate transitions, publication approvals, and organizational decisions within TRIZEL.
+          No scientific result or publication is valid without Layer-0 authorization.
+        </p>
+        <p style="font-size: 0.9rem; color: #64748b;">
+          Repository: <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-ai-site/trizel-core</a>
+        </p>
+      </div>
+
+      <div class="layer-section layer-section--l1">
+        <h4 style="color: #7c3aed;">Layer-1 — Laboratory Execution Domain</h4>
+        <p>
+          Layer-1 is the private laboratory execution domain. It hosts all research algorithms,
+          data pipelines, claim verification workflows, and scientific computation.
+          Results are published to Layer-2 only after passing all gate checks and receiving
+          Layer-0 publication authorization.
+        </p>
+        <p style="font-size: 0.9rem; color: #64748b;">
+          Primary account: <a href="https://github.com/abdelkader-omran" target="_blank" rel="noopener">abdelkader-omran</a> (Layer-1 execution account)
+        </p>
+      </div>
+
+      <div class="layer-section layer-section--l2">
+        <h4 style="color: #475569;">Layer-2 — Institutional Presentation</h4>
+        <p>
+          Layer-2 is the public-facing presentation layer. It hosts this website (trizel-ai.com),
+          all static institutional pages, multilingual content, the GOI, and the Epistemic Atlas.
+          Layer-2 performs no analysis, no computation, and has no execution authority.
+          All content is pre-approved and static.
+        </p>
+        <p style="font-size: 0.9rem; color: #64748b;">
+          Repository: <a href="https://github.com/trizel-ai-site/trizel-site-artifacts" target="_blank" rel="noopener">trizel-ai-site/trizel-site-artifacts</a> (this repository)
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="card" id="navigation">
+      <h3>Related Pages</h3>
+      <ul style="line-height: 2; padding-left: 1.5rem;">
+        <li><a href="/en/overview/">Institutional Overview</a> — What is TRIZEL and how it is organized</li>
+        <li><a href="/en/governance/">Governance</a> — Governance framework documentation</li>
+        <li><a href="/en/status/">System Status</a> — Live gate and system status indicators</li>
+        <li><a href="/atlas/en/">Epistemic Atlas</a> — Visual map of repository relationships</li>
+        <li><a href="/governance-status/GATE-5-STATUS.md">Gate-5 Status Record</a> — Gate-5 execution and publication record</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <nav aria-label="Footer navigation">
+        <ul class="site-footer__links">
+          <li><a href="/" class="site-footer__link">Home</a></li>
+          <li><a href="/en/overview/" class="site-footer__link">Overview</a></li>
+          <li><a href="/en/layer-map/" class="site-footer__link">Layer Map</a></li>
+          <li><a href="/en/governance/" class="site-footer__link">Governance</a></li>
+          <li><a href="/en/status/" class="site-footer__link">Status</a></li>
+          <li><a href="/accessibility.html" class="site-footer__link">Accessibility</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__copy">© TRIZEL — Static presentation — no dynamic content — Layer-2 only</p>
+    </div>
+  </footer>
+</body>
+</html>
