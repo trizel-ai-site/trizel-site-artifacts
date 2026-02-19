@@ -62,9 +62,31 @@
         <h3 class="goi-section-title" style="font-size: 1.25rem;">Опубликованные Записи</h3>
         <div class="goi-entries">
           <div class="goi-entries-header">Таблица Реестра</div>
-          <div class="goi-entries-empty">
-            Опубликованных записей пока нет
-          </div>
+          <table class="goi-table">
+            <thead>
+              <tr>
+                <th>Исходный Репозиторий</th>
+                <th>Роль</th>
+                <th>Домены</th>
+                <th>Охват</th>
+                <th>Инвентарь</th>
+                <th>Официальные Источники</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TESS Сектор 1751 — Наблюдение 3I/ATLAS</strong></td>
+                <td>архив</td>
+                <td>экзопланеты, кометная-наука, межзвездные-объекты, астрономия-временной-области</td>
+                <td>2026-01-15 до 2026-01-19 (специальное)</td>
+                <td>FFI (SPOC, TICA), mTPF, LCF, ноутбуки</td>
+                <td>
+                  <a href="https://tess.mit.edu/" target="_blank" rel="noopener">Миссия TESS</a>, 
+                  <a href="https://archive.stsci.edu/tess/" target="_blank" rel="noopener">Архив MAST</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -74,7 +96,7 @@
           Эта страница отображает данные из: <code>/goi/data/global-index.json</code>
         </p>
         <p class="goi-section-description">
-          <strong>Текущий Статус:</strong> Метаданные наблюдений еще не опубликованы. Этот реестр будет заполнен, когда репозитории Слоя-1 создадут и зафиксируют свои файлы метаданных в <code>/goi/data/sources/</code>.
+          <strong>Текущий Статус:</strong> Одна запись наблюдений была опубликована для TESS Сектор 1751 (специальное наблюдение 3I/ATLAS). Этот реестр будет продолжать заполняться по мере того, как репозитории Слоя-1 создадут и зафиксируют свои файлы метаданных в <code>/goi/data/sources/</code>.
         </p>
       </section>
 
