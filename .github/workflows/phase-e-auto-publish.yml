@@ -13,7 +13,7 @@ name: phase-e-auto-publish
 # - Runs the publication compiler (deterministic, network-free)
 # - Runs the page generator (static HTML only)
 # - Updates publications.yml deterministically
-# - Pushes changes to a dated branch (branch-only mode, no PR creation)
+# - Opens/updates a Pull Request targeting main (PR-only mode, no direct push)
 #
 # Gate-6 remains CLOSED. This workflow performs deterministic transformation only.
 
@@ -42,7 +42,8 @@ on:
       - 'data/publish/3i-atlas/**'
 
 permissions:
-  contents: write  # Required for committing and pushing
+  contents: write       # Required for committing to PR branch
+  pull-requests: write  # Required for creating/updating the PR
 
 jobs:
   auto-publish:
@@ -144,27 +145,23 @@ jobs:
           echo "=== Files Added/Modified ==="
           git diff --name-only --cached || git diff --name-only
       
-      - name: Push auto branch only (no PR)
+      - name: Create or update Pull Request
         if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          set -euo pipefail
-          DATE="${{ steps.get_date.outputs.date }}"
-          BRANCH="auto/phase-e/${DATE}"
-          
-          # Create/switch to dated branch and commit
-          git checkout -B "${BRANCH}"
-          git add lab/publication/ phase-e/
-          
-          # If nothing staged, exit cleanly (safety check)
-          if git diff --cached --quiet; then
-            echo "⚠️  No staged changes in lab/publication/ or phase-e/ directories"
-            echo "Changes detected earlier may be in other directories"
-            exit 0
-          fi
-          
-          git commit -m "Auto-publish: Phase-E daily update ${DATE}"
-          git push --force-with-lease origin "${BRANCH}"
-          echo "✅ Successfully pushed to branch: ${BRANCH}"
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7.0.11
+        with:
+          branch: auto/phase-e/${{ steps.get_date.outputs.date }}
+          commit-message: "Auto-publish: Phase-E daily update ${{ steps.get_date.outputs.date }}"
+          title: "Auto-publish: Phase-E daily update ${{ steps.get_date.outputs.date }}"
+          body: |
+            Automated Phase-E publication update for ${{ steps.get_date.outputs.date }}.
+
+            PR-only update required by repository rules; no direct push to main.
+
+            Triggered by: `${{ github.event_name }}`
+          base: main
+          add-paths: |
+            lab/publication/
+            phase-e/
       
       - name: Summary
         if: always()
