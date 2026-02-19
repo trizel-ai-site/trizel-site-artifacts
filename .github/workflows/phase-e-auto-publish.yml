@@ -157,12 +157,14 @@ jobs:
           
           # If nothing staged, exit cleanly (safety check)
           if git diff --cached --quiet; then
-            echo "No staged changes; skipping branch push."
+            echo "⚠️  No staged changes in lab/publication/ or phase-e/ directories"
+            echo "Changes detected earlier may be in other directories"
             exit 0
           fi
           
           git commit -m "Auto-publish: Phase-E daily update ${DATE}"
           git push --force-with-lease origin "${BRANCH}"
+          echo "✅ Successfully pushed to branch: ${BRANCH}"
       
       - name: Summary
         if: always()
