@@ -62,9 +62,31 @@
         <h3 class="goi-section-title" style="font-size: 1.25rem;">已发布条目</h3>
         <div class="goi-entries">
           <div class="goi-entries-header">登记表</div>
-          <div class="goi-entries-empty">
-            尚无已发布条目
-          </div>
+          <table class="goi-table">
+            <thead>
+              <tr>
+                <th>源存储库</th>
+                <th>角色</th>
+                <th>领域</th>
+                <th>覆盖范围</th>
+                <th>清单</th>
+                <th>官方来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TESS 扇区 1751 — 3I/ATLAS 观测</strong></td>
+                <td>存档</td>
+                <td>系外行星、彗星科学、星际天体、时域天文学</td>
+                <td>2026-01-15 至 2026-01-19（特别）</td>
+                <td>FFI（SPOC、TICA）、mTPF、LCF、笔记本</td>
+                <td>
+                  <a href="https://tess.mit.edu/" target="_blank" rel="noopener">TESS 任务</a>、
+                  <a href="https://archive.stsci.edu/tess/" target="_blank" rel="noopener">MAST 存档</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -74,7 +96,7 @@
           此页面显示来自以下位置的数据：<code>/goi/data/global-index.json</code>
         </p>
         <p class="goi-section-description">
-          <strong>当前状态：</strong>尚未发布观测元数据。当第一层存储库生成并提交其元数据文件到<code>/goi/data/sources/</code>时，此登记册将被填充。
+          <strong>当前状态：</strong>已为 TESS 扇区 1751（3I/ATLAS 特别观测）发布一条观测条目。当第一层存储库继续生成并提交其元数据文件到<code>/goi/data/sources/</code>时，此登记册将继续填充。
         </p>
       </section>
 

@@ -10,13 +10,13 @@ Le Registre des Observations catalogue les sources de données, archives et sort
 
 | Référentiel Source | Rôle | Domaines | Couverture | Inventaire | Sources Officielles |
 |--------------------|------|----------|------------|------------|---------------------|
-| *Aucune entrée publiée pour le moment* | — | — | — | — | — |
+| TESS Secteur 1751 — Observation 3I/ATLAS | archive | exoplanètes, science-cométaire, objets-interstellaires, astronomie-temporelle | 2026-01-15 à 2026-01-19 (spécial) | FFIs (SPOC, TICA), mTPFs, LCFs, notebooks | [Mission TESS](https://tess.mit.edu/), [Archive MAST](https://archive.stsci.edu/tess/) |
 
 ## Source de Données
 
 Cette page affiche les données de : `/goi/data/global-index.json`
 
-**État Actuel :** Aucune métadonnée d'observation n'a été publiée pour le moment. Ce registre sera rempli lorsque les référentiels de Couche-1 produiront et valideront leurs fichiers de métadonnées dans `/goi/data/sources/`.
+**État Actuel :** Une entrée d'observation a été publiée pour TESS Secteur 1751 (observation spéciale 3I/ATLAS). Ce registre continuera d'être rempli lorsque les référentiels de Couche-1 produiront et valideront leurs fichiers de métadonnées dans `/goi/data/sources/`.
 
 ## Schéma
 
