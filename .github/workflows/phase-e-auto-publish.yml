@@ -159,7 +159,7 @@ jobs:
           
           # Create/switch to dated branch and commit
           git checkout -B "${BRANCH}"
-          git add -A
+          git add lab/publication/ phase-e/
           
           # If still nothing staged, exit cleanly
           if git diff --cached --quiet; then
