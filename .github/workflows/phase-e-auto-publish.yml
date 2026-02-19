@@ -161,14 +161,14 @@ jobs:
             Gate-6: CLOSED (no interpretation, no claims)
             Triggered by: ${{ github.event_name }}
           branch: auto/phase-e/${{ steps.get_date.outputs.date }}
-          delete-branch: false
+          delete-branch: false  # Keep branch for audit trail; same date reuses same branch
           title: 'Auto-publish: Phase-E daily update ${{ steps.get_date.outputs.date }}'
           body: |
             ## Automated Phase-E Daily Update
             
             This PR contains automatically generated Phase-E artifacts from the daily publication workflow.
             
-            **Note:** Direct push to main is forbidden by repository rules (GH013). This PR must be reviewed and merged manually.
+            **Note:** Direct push to main is forbidden by repository rules (GH013). All changes must go through the PR review process, even for automated deterministic outputs.
             
             ### Changes included:
             - Publication compiler outputs (deterministic)
