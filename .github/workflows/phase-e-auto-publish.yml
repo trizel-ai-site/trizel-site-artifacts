@@ -13,7 +13,7 @@ name: phase-e-auto-publish
 # - Runs the publication compiler (deterministic, network-free)
 # - Runs the page generator (static HTML only)
 # - Updates publications.yml deterministically
-# - Creates/updates a pull request with changes (compliant with GH013)
+# - Pushes changes to a dated branch (branch-only mode, no PR creation)
 #
 # Gate-6 remains CLOSED. This workflow performs deterministic transformation only.
 
@@ -43,7 +43,6 @@ on:
 
 permissions:
   contents: write  # Required for committing and pushing
-  pull-requests: write  # Required if opening PRs (optional)
 
 jobs:
   auto-publish:
@@ -145,44 +144,27 @@ jobs:
           echo "=== Files Added/Modified ==="
           git diff --name-only --cached || git diff --name-only
       
-      - name: Create Pull Request
+      - name: Push auto branch only (no PR)
         if: steps.check_changes.outputs.has_changes == 'true'
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: |
-            Auto-publish: Phase-E daily update ${{ steps.get_date.outputs.date }}
-            
-            Automated publication generation
-            - Publication compiler: deterministic outputs
-            - Page generator: static HTML only
-            - Publications registry: auto-updated
-            
-            Gate-6: CLOSED (no interpretation, no claims)
-            Triggered by: ${{ github.event_name }}
-          branch: auto/phase-e/${{ steps.get_date.outputs.date }}
-          delete-branch: false  # Keep branch for audit trail; same date reuses same branch
-          title: 'Auto-publish: Phase-E daily update ${{ steps.get_date.outputs.date }}'
-          body: |
-            ## Automated Phase-E Daily Update
-            
-            This PR contains automatically generated Phase-E artifacts from the daily publication workflow.
-            
-            **Note:** Direct push to main is forbidden by repository rules (GH013). All changes must go through the PR review process, even for automated deterministic outputs.
-            
-            ### Changes included:
-            - Publication compiler outputs (deterministic)
-            - Generated static HTML pages
-            - Updated publications registry
-            
-            ### Workflow trigger:
-            - Event: ${{ github.event_name }}
-            - Date: ${{ steps.get_date.outputs.date }}
-            
-            Gate-6 remains CLOSED. This PR contains only deterministic transformations with no interpretation or claims.
-          add-paths: |
-            lab/publication/
-            phase-e/
+        run: |
+          set -euo pipefail
+          DATE="${{ steps.get_date.outputs.date }}"
+          BRANCH="auto/phase-e/${DATE}"
+          
+          # Create/switch to dated branch and commit
+          git checkout -B "${BRANCH}"
+          git add lab/publication/ phase-e/
+          
+          # If nothing staged, exit cleanly (safety check)
+          if git diff --cached --quiet; then
+            echo "⚠️  No staged changes in lab/publication/ or phase-e/ directories"
+            echo "Changes detected earlier may be in other directories"
+            exit 0
+          fi
+          
+          git commit -m "Auto-publish: Phase-E daily update ${DATE}"
+          git push --force-with-lease origin "${BRANCH}"
+          echo "✅ Successfully pushed to branch: ${BRANCH}"
       
       - name: Summary
         if: always()
