@@ -2,34 +2,57 @@
 # Static single source of truth for allowlisted publication references
 # 
 # This file is the canonical registry for Phase-E publications.
-# To add a publication:
-# 1. Add candidate to allowlist in phase-e-gateway repository via PR
-# 2. Obtain human approval
-# 3. Add entry to this file via PR (see TEMPLATE_PUBLICATION_ENTRY.txt for format)
-# 4. Mirror the entry into phase-e/index.html table manually (copy/paste, no scripts)
-# 5. Obtain human merge approval
-#
+# Auto-updated by lab/update_publications_yml.py
+# 
 # SCHEMA:
 # publications:
 #   - id: "<unique-stable-identifier>"
+#     claim: "<claim-id>"
+#     date: "<YYYY-MM-DD>"
 #     type: "paper|report|dataset|doi|release"
-#     immutable_url: "<https://...>"  # MUST be immutable (DOI/Zenodo/tagged release/permalink)
-#     source: "<repository-name-or-venue>"
 #     status: "allowlisted|verified|published"
+#     source: "<repository-path>"
+#     doi: "pending|<doi>"
 #     notes: "<neutral-description-no-performance-claims>"
-#
-# FAIL-CLOSED RULES:
-# - Empty list => display "No Phase-E publications are currently listed"
-# - Non-https URL => treat as invalid, do not display
-# - Blank immutable_url => treat as invalid, do not display
-# - Never display performance/accuracy/results claims
 
 publications:
+  - id: claim-001-2026-02-19
+    claim: claim-001
+    date: 2026-02-19
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-19
+    doi: pending
+    notes: "نشر Phase-E حتمي. دون تفسير."
+  - id: claim-001-2026-02-11
+    claim: claim-001
+    date: 2026-02-11
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-11
+    doi: pending
+    notes: "نشر Phase-E حتمي. دون تفسير."
+  - id: claim-001-2026-02-08
+    claim: claim-001
+    date: 2026-02-08
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-08
+    doi: pending
+    notes: "نشر Phase-E حتمي. دون تفسير."
   - id: claim-001-2026-02-07
     claim: claim-001
     date: 2026-02-07
     type: dataset
     status: published
     source: lab/publication/claim-001/2026-02-07
+    doi: pending
+    notes: "نشر Phase-E حتمي. دون تفسير."
+  - id: claim-001-2026-02-06
+    claim: claim-001
+    date: 2026-02-06
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-06
     doi: pending
     notes: "نشر Phase-E حتمي. دون تفسير."
