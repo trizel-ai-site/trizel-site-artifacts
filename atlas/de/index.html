@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRIZEL Atlas — Epistemische Systemschnittstelle</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/lang-switcher.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>TRIZEL Atlas</h1>
+        <p class="memory-marker">AUTO DZ ACT</p>
+        <p class="memory-label">Epistemische Systemschnittstelle</p>
+      </div>
+      <div class="header-meta">
+        <span class="layer-badge" style="background: #0369a1;">Schicht-2.5</span>
+        <p class="tagline">Nur Anzeige — Keine Analyse — Keine Ausführung — Keine Inferenz</p>
+        <div class="lang-switcher">
+          <span class="lang-switcher-label">Sprache:</span>
+          <select id="lang-switcher" aria-label="Sprache auswählen" data-base-path="/atlas">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de" selected>Deutsch</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section id="layer-notice" class="card disclaimer">
+      <h2>Schicht-2.5-Hinweis</h2>
+      <p class="explicit">
+        Dies ist der <strong>Schicht-2.5 Epistemische Atlas</strong>, eine schreibgeschützte Systemschnittstelle,
+        die statische Beziehungen zwischen TRIZEL-Komponenten anzeigt. Diese Schnittstelle führt
+        <strong>keine Analyse, keine Inferenz und keine Ausführung</strong> durch. Alle Daten sind
+        vorvalidiert und stammen aus autoritativen Schicht-0- und Schicht-1-Repositories.
+        Vollständige Dokumentation: <a href="../../docs/LAYER_2_5_NOTICE.md">LAYER_2_5_NOTICE.md</a>
+      </p>
+    </section>
+
+    <section id="overview" class="card">
+      <h2>Systemübersicht</h2>
+      <p>
+        Der TRIZEL Atlas bietet eine strukturelle Kartierung der epistemischen Beziehungen innerhalb
+        des TRIZEL-Systems. Diese Kartierung zeigt, wie Repositories, Artefakte und Beweise im
+        dreilagigen Governance-Rahmen verbunden sind.
+      </p>
+      <p>
+        <strong>Nur Anzeige:</strong> Diese Schnittstelle präsentiert vorvalidierte statische Daten,
+        ohne Analyse oder Interpretation durchzuführen.
+      </p>
+    </section>
+
+    <section id="repositories" class="card">
+      <h2>Repositories</h2>
+      <p>Das TRIZEL-System arbeitet über drei Schichten, jede mit bestimmten Repositories:</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Schicht-0: Governance</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener" style="color: #0369a1;">trizel-core</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Kanonischer Governance-Rahmen und Richtlinien-Autorität</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorität: Abschließende Entscheidungsmacht</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Schicht-1: Forschung und Analyse</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-lab" target="_blank" rel="noopener" style="color: #0369a1;">trizel-lab</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Internes Forschungsdokumentations-Repository</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorität: Wissenschaftliche und technische Operationen</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Schicht-2: Präsentation</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <h4 style="font-size: 1.125rem; margin-bottom: 8px;">
+            <a href="https://github.com/trizel-ai-site/trizel-site" target="_blank" rel="noopener" style="color: #0369a1;">trizel-site</a>
+          </h4>
+          <p style="color: #64748b; margin-bottom: 8px;">Öffentliches Präsentations-Repository (diese Website)</p>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Autorität: Keine — nur Präsentation</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships" class="card">
+      <h2>Epistemische Beziehungen</h2>
+      <p>Die folgenden Beziehungen beschreiben strukturelle Verbindungen zwischen Systemkomponenten.
+        Sie sind <strong>nur beschreibend</strong> und implizieren weder Ausführung noch Kausalität.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Governance-Fluss</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ regiert →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Schicht-0-Governance legt Richtlinien für Schicht-1-Forschung fest</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #15803d; margin-bottom: 8px;">
+            <strong>trizel-core</strong> <span style="color: #64748b;">→ regiert →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Schicht-0-Governance legt Richtlinien für Schicht-2-Präsentation fest</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 16px;">Informationsfluss</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-lab</strong> <span style="color: #64748b;">→ informiert →</span> <strong>trizel-site</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Schicht-1-Forschung informiert Schicht-2-Präsentationsinhalt</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ referenziert →</span> <strong>trizel-core</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Schicht-2-Präsentation referenziert Schicht-0-Governance-Autorität</div>
+          </li>
+          <li style="padding: 12px; background: #f8fafc; border-left: 4px solid #0369a1; margin-bottom: 8px;">
+            <strong>trizel-site</strong> <span style="color: #64748b;">→ referenziert →</span> <strong>trizel-lab</strong>
+            <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;">Schicht-2-Präsentation referenziert Schicht-1-Forschungsdokumentation</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="artifacts" class="card">
+      <h2>Systemartefakte</h2>
+      <p>Wesentliche Artefakte, die von jedem Repository erzeugt werden, mit Beweisen, die ihre Existenz und Gültigkeit belegen.</p>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-core (Schicht-0)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Governance-Richtlinien</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Standards, Richtlinien und Governance-Entscheidungen</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> Schichtentrennungsmodell-Spezifikation, institutioneller Governance-Rahmen</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">AUTO DZ ACT</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Grundlegender epistemischer Gedächtnismarker</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> Dokumentation der Definition und institutionellen Bedeutung</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-lab (Schicht-1)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Forschungsdokumentation</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Interne Forschungsartefakte und Analysematerialien</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> Forschungsmethodologien, Analyseartefakte, Validierungsmaterialien</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">trizel-site (Schicht-2)</h3>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Präsentationsseiten</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Institutionelle Präsentationsschnittstelle</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> Schicht-2-Hinweis, Governance-Referenzen</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Mehrsprachige Schnittstelle</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Sechs-Sprachen-Präsentationssystem (EN, FR, DE, AR, ZH, RU)</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> i18n-Architektur-Dokumentation, Übersetzungsparität</p>
+        </div>
+        <div style="padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; margin-bottom: 8px;">Epistemischer Atlas (Schicht-2.5)</h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 8px;">Statische Systemschnittstelle und epistemische Kartierung (diese Seite)</p>
+          <p style="font-size: 0.875rem;"><strong>Beweis:</strong> Schicht-2.5-Hinweis, Schema-Dokumentation, statische Kartierung</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-sources" class="card">
+      <h2>Datenquellen</h2>
+      <p>Alle in dieser Schnittstelle angezeigten Daten stammen aus vorvalidierten statischen Dateien:</p>
+      <ul>
+        <li><code>map.json</code> — Statische epistemische Beziehungskartierung (<a href="../map.json">ansehen</a>)</li>
+        <li><code>sources.json</code> — Repository → Artefakt → Beweis-Referenzen (<a href="../sources.json">ansehen</a>)</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <strong>Schema-Dokumentation:</strong> <a href="../../docs/ATLAS_SCHEMA.md">ATLAS_SCHEMA.md</a>
+      </p>
+    </section>
+
+    <section id="navigation" class="card">
+      <h2>Navigation</h2>
+      <div style="margin-top: 16px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Zurück zur Präsentationsschicht</h3>
+        <p><a href="../../de/">← Zurück zur TRIZEL-Präsentation (Schicht-2)</a></p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 1.125rem; margin-bottom: 12px;">Dokumentation</h3>
+        <ul>
+          <li><a href="https://github.com/trizel-ai-site" target="_blank" rel="noopener">TRIZEL GitHub-Organisation</a> — Repository-Startseite</li>
+          <li><a href="../../docs/LAYER_2_5_NOTICE.md">Schicht-2.5-Hinweis</a> — Umfang und Einschränkungen</li>
+          <li><a href="../../docs/ATLAS_SCHEMA.md">Atlas-Schema</a> — Datenstruktur-Dokumentation</li>
+          <li><a href="../../docs/LAYER_BOUNDARIES.md">Schichtgrenzen</a> — Dreilagiges Trennungsmodell</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Institutioneller Hinweis</h2>
+      <p>
+        Dieser Atlas wird als <strong>reines Anzeige-Artefakt</strong> innerhalb von Schicht-2 gepflegt.
+        Er enthält keinen wissenschaftlichen Inhalt, führt keine Analyse durch und hat keine Ausführungsfähigkeiten.
+        Alle Autorität stammt von <a href="https://github.com/trizel-ai-site/trizel-core" target="_blank" rel="noopener">trizel-core (Schicht-0)</a>.
+      </p>
+      <p style="margin-top: 16px;">© TRIZEL — Schicht-2.5 Systemschnittstelle</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Statische Systemschnittstelle — kein dynamischer Inhalt — keine Analyse — keine Inferenz</p>
+    </div>
+  </footer>
+</body>
+</html>
