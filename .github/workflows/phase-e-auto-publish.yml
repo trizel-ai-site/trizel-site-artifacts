@@ -151,17 +151,11 @@ jobs:
           DATE="${{ steps.get_date.outputs.date }}"
           BRANCH="auto/phase-e/${DATE}"
           
-          # If no changes, exit cleanly
-          if git diff --quiet && git diff --cached --quiet; then
-            echo "No changes detected; skipping branch push."
-            exit 0
-          fi
-          
           # Create/switch to dated branch and commit
           git checkout -B "${BRANCH}"
           git add lab/publication/ phase-e/
           
-          # If still nothing staged, exit cleanly
+          # If nothing staged, exit cleanly (safety check)
           if git diff --cached --quiet; then
             echo "No staged changes; skipping branch push."
             exit 0
