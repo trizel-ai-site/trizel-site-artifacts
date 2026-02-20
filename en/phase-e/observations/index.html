@@ -115,38 +115,45 @@
     </section>
 
     <!-- Retrieval Reference (Non-Executed) -->
-    <section class="references" aria-labelledby="retrieval-ref-heading">
-      <h3 id="retrieval-ref-heading">Retrieval Reference (MAST — Non-Executed)</h3>
+    <section class="notice notice-reference" aria-labelledby="retrieval-ref-heading">
+      <h3 id="retrieval-ref-heading">Retrieval reference (MAST — not executed)</h3>
 
-      <div class="notice-box" role="note">
-        <p>
-          <strong>Reference only.</strong> The command sequence below is published verbatim from the
-          MAST archive for bulk retrieval of TESS Raw Full Frame Images (Sector 1751).
-          <strong>This command has not been executed within TRIZEL infrastructure.</strong>
-          No data has been downloaded, ingested, or verified at this stage.
-        </p>
-        <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.9rem;">
-          <li>
-            <strong>DOI (Raw FFIs):</strong>
-            <a href="https://doi.org/10.17909/x4aj-7547"
-               target="_blank"
-               rel="noopener noreferrer">https://doi.org/10.17909/x4aj-7547</a>
-          </li>
-          <li>
-            <strong>Bulk download page:</strong>
-            <a href="https://archive.stsci.edu/missions/tess/download_scripts/sector/"
-               target="_blank"
-               rel="noopener noreferrer">https://archive.stsci.edu/missions/tess/download_scripts/sector/</a>
-          </li>
-        </ul>
-      </div>
+      <p>
+        The following command sequence is provided <strong>for reference only</strong>,
+        as published by the MAST archive for bulk retrieval of
+        <em>TESS Raw Full Frame Images (Sector 1751)</em>.
+      </p>
 
-      <pre class="checksum-list" aria-label="Non-executed MAST retrieval reference command">curl -L -O https://archive.stsci.edu/missions/tess/download_scripts/sector/tesscurl_sector_1751_ffir.sh
+      <p>
+        This command has <strong>not</strong> been executed within TRIZEL infrastructure.
+        No data has been downloaded, ingested, or verified at this stage.
+      </p>
+
+      <p><strong>Authoritative source:</strong></p>
+      <ul>
+        <li>
+          DOI (Raw FFIs):
+          <a href="https://doi.org/10.17909/x4aj-7547" target="_blank" rel="noopener">
+            10.17909/x4aj-7547
+          </a>
+        </li>
+        <li>
+          Bulk download page:
+          <a href="https://archive.stsci.edu/missions/tess/download_scripts/sector/"
+             target="_blank" rel="noopener">
+            archive.stsci.edu — TESS sector download scripts
+          </a>
+        </li>
+      </ul>
+
+      <pre><code>curl -L -O https://archive.stsci.edu/missions/tess/download_scripts/sector/tesscurl_sector_1751_ffir.sh
 chmod +x tesscurl_sector_1751_ffir.sh
-./tesscurl_sector_1751_ffir.sh</pre>
+./tesscurl_sector_1751_ffir.sh</code></pre>
 
-      <p class="reference-note">
-        Verbatim from MAST documentation. Not executed. No data retrieved.
+      <p class="epistemic-note">
+        Epistemic note: this is a retrieval instruction, not a scientific artifact.
+        Execution and custody, if performed later, must be recorded in Layer-1 with
+        checksums and verification.
       </p>
     </section>
 
