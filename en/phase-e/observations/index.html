@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase-E — Observations Index (TESS Jan 2026) | TRIZEL</title>
+  <meta name="description" content="TRIZEL Phase-E: Observations index pointing to authoritative Layer-1 executive records. No RAW data hosted or downloadable here.">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/scientific-ui.css">
+  <link rel="stylesheet" href="../../assets/css/phase-e.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="brand">
+          <h1><a href="../../index.html" style="color: inherit; text-decoration: none;">TRIZEL</a></h1>
+          <p class="subtitle">Phase-E — Observations Index</p>
+        </div>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="../../index.html">Home</a>
+          <a href="../index.html">Phase-E Index</a>
+          <a href="../../system-map.html">System Map</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container phase-e-main" id="main" role="main">
+
+    <!-- Title -->
+    <section class="section-header" aria-labelledby="observations-title">
+      <h2 id="observations-title">Observations Index — TESS January 2026</h2>
+    </section>
+
+    <!-- Layer-separation note -->
+    <div class="notice-box" role="note">
+      <p>
+        Layer-2 displays only Layer-1 records and upstream publication pointers.
+        No RAW is hosted or downloadable here.
+      </p>
+    </div>
+
+    <!-- Observations Table -->
+    <section class="compiler-outputs" aria-labelledby="observations-table-heading">
+      <h3 id="observations-table-heading">Registered Observations</h3>
+
+      <div class="table-container">
+        <table class="publications-table">
+          <thead>
+            <tr>
+              <th scope="col">Observation ID</th>
+              <th scope="col">Window</th>
+              <th scope="col">Claim</th>
+              <th scope="col">Status</th>
+              <th scope="col">Layer-1 Record</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OBS-TESS-2026-01-15_22-CLAIM-001</td>
+              <td>2026-01-15 → 2026-01-22</td>
+              <td>Claim-001</td>
+              <td>
+                <span class="status-badge status-verified">REGISTERED_NOT_INGESTED</span>
+                <span class="status-badge status-network-free">PUBLISHED_UPSTREAM_NOT_INGESTED</span>
+              </td>
+              <td>
+                <a class="btn btn-primary"
+                   href="https://github.com/trizel-ai/trizel-lab/blob/main/claims/claim-001/observations/tess/2026-01-15_2026-01-22/OBSERVATION_REGISTRATION.md"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style="background:#166534; border-color:#166534; color:#ffffff; font-size:0.85rem; padding:6px 14px; min-height:36px; min-width:auto;">
+                  Layer-1 Executive Record
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Retrieval Reference (Non-Executed) -->
+    <section class="notice notice-reference" aria-labelledby="retrieval-ref-heading">
+      <h3 id="retrieval-ref-heading">Retrieval reference (MAST — not executed)</h3>
+
+      <p>
+        The following command sequence is provided <strong>for reference only</strong>,
+        as published by the MAST archive for bulk retrieval of
+        <em>TESS Raw Full Frame Images (Sector 1751)</em>.
+      </p>
+
+      <p>
+        This command has <strong>not</strong> been executed within TRIZEL infrastructure.
+        No data has been downloaded, ingested, or verified at this stage.
+      </p>
+
+      <p><strong>Authoritative source:</strong></p>
+      <ul>
+        <li>
+          DOI (Raw FFIs):
+          <a href="https://doi.org/10.17909/x4aj-7547" target="_blank" rel="noopener">
+            10.17909/x4aj-7547
+          </a>
+        </li>
+        <li>
+          Bulk download page:
+          <a href="https://archive.stsci.edu/missions/tess/download_scripts/sector/"
+             target="_blank" rel="noopener">
+            archive.stsci.edu — TESS sector download scripts
+          </a>
+        </li>
+      </ul>
+
+      <pre><code>
+curl -L -O https://archive.stsci.edu/missions/tess/download_scripts/sector/tesscurl_sector_1751_ffir.sh
+chmod +x tesscurl_sector_1751_ffir.sh
+./tesscurl_sector_1751_ffir.sh</code></pre>
+
+      <p class="epistemic-note">
+        Epistemic note: this is a retrieval instruction, not a scientific artifact.
+        Execution and custody, if performed later, must be recorded in Layer-1 with
+        checksums and verification.
+      </p>
+    </section>
+
+    <!-- Upstream (MAST) DOI -->
+    <section class="references" aria-labelledby="upstream-doi-heading">
+      <h3 id="upstream-doi-heading">Upstream (MAST) DOI</h3>
+
+      <ul class="reference-list">
+        <li>
+          <strong>Raw FFIs DOI:</strong>
+          <a href="https://doi.org/10.17909/x4aj-7547"
+             target="_blank"
+             rel="noopener noreferrer">https://doi.org/10.17909/x4aj-7547</a>
+        </li>
+        <li>
+          <strong>Calibrated FFIs DOI:</strong>
+          <a href="https://doi.org/10.17909/mrs3-bw92"
+             target="_blank"
+             rel="noopener noreferrer">https://doi.org/10.17909/mrs3-bw92</a>
+        </li>
+        <li>
+          <strong>Bulk download page:</strong>
+          <a href="https://archive.stsci.edu/missions/tess/download_scripts/sector/"
+             target="_blank"
+             rel="noopener noreferrer">https://archive.stsci.edu/missions/tess/download_scripts/sector/</a>
+        </li>
+      </ul>
+
+      <p class="reference-note">
+        Upstream links are provided as stable pointers to the authoritative source archives only.
+        No data is mirrored, downloaded, or hosted on this site.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        TRIZEL Phase-E — Observations Index<br>
+        All content governed by <a href="../../docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">Scientific Presentation Contract</a>
+      </p>
+      <p class="footer-status">
+        Status: Enabled (Static) | No RAW data hosted | JS: Disabled
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
