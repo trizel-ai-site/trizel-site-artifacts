@@ -1,0 +1,13 @@
+category,name,role,type
+authoritative_orbit_and_astrometry,Minor Planet Center (MPC),IAU clearinghouse for astrometry/orbits,registry
+authoritative_orbit_and_astrometry,NASA/JPL SSD SBDB,public small-body database API,api
+authoritative_orbit_and_astrometry,NASA/JPL Horizons,ephemerides / vectors / observer geometry,service
+major_space_agencies_and_missions,ESA,missions + archives,agency
+major_space_agencies_and_missions,ESO,ground-based observatory archives,observatory
+major_space_agencies_and_missions,JAXA,missions + archives,agency
+major_space_agencies_and_missions,CNSA,missions/announcements; data varies,agency
+major_space_agencies_and_missions,NASA,missions + archives,agency
+space_and_ground_archives,MAST (HST/JWST),space telescope archive,archive
+space_and_ground_archives,ESO Science Archive,ESO observational archive,archive
+space_and_ground_archives,HEASARC,high-energy mission archive gateway,archive
+space_and_ground_archives,XMM-Newton Science Archive (XSA),XMM data archive (ESA),archive
