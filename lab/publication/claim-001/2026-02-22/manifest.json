@@ -1,0 +1,33 @@
+{
+  "files": {
+    "derived/statistics.json": {
+      "sha256": "78c2d05d0af99eb0fff2cddb909fef8a1f62665527da381d5bceb19d53063486",
+      "size_bytes": 477
+    },
+    "derived/visual_evidence.json": {
+      "sha256": "b3fc2cc371d40c5330b93ca40226181798324280dc8d5da7ec3a77b2281b963b",
+      "size_bytes": 1769
+    },
+    "tables/platforms_registry.csv": {
+      "sha256": "aab8d46c103f4e483d43ea84be71c9ad16fd65b5aabaca5fe55d1af08b000835",
+      "size_bytes": 1023
+    },
+    "tables/platforms_registry.json": {
+      "sha256": "f0697e059cb4c73454c2b5853fbccca62645a2f4164072929ed9fbc3e3aca2e4",
+      "size_bytes": 1852
+    },
+    "tables/sbdb_attempts.csv": {
+      "sha256": "47c4c76b6aef3b0b411e01d7da79dad1d5a90245ddf33947716320201e6b27d0",
+      "size_bytes": 553
+    },
+    "tables/sbdb_attempts.json": {
+      "sha256": "1af3c645e325a54e114af61ad47d0d371254a495a99d2f38667d08681cfde387",
+      "size_bytes": 956
+    }
+  },
+  "publication": {
+    "claim_id": "claim-001",
+    "date": "2026-02-22",
+    "version": "v001"
+  }
+}
