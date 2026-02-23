@@ -1,0 +1,37 @@
+{
+  "constraints": {
+    "claims": false,
+    "gate_6_status": "CLOSED",
+    "governance_authority": false,
+    "interpretation": false
+  },
+  "engine": {
+    "claim_id": "claim-001",
+    "name": "TRIZEL Phase-E Publication Compiler",
+    "version": "v001"
+  },
+  "execution": {
+    "date": "2026-02-22",
+    "deterministic": true,
+    "network_access": false,
+    "timestamp_utc": "2026-02-22T03:31:58.804987+00:00Z"
+  },
+  "inputs": {
+    "checksums": {
+      "daily-status.json": "608b3f4412b782ad33fbc82e0294fbfe0234f6ba3829919e173023a6d1d0e44a",
+      "manifest.json": "db1c2ec68c5bc7b87e6e68ae286c80c6eae2b3f5598d0bc3f2965e68fff0fbac",
+      "source-snapshot.json": "b684f1fb97d9c4bcdddf27d77bde73c26e38b07fe9e2b486f6e39f91661fe1ad"
+    },
+    "files": [
+      "manifest.json",
+      "daily-status.json",
+      "source-snapshot.json"
+    ],
+    "source": "data/publish/3i-atlas"
+  },
+  "verification": {
+    "inputs_verified": false,
+    "integrity_confirmed": false,
+    "manifest_checked": true
+  }
+}
