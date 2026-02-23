@@ -22,6 +22,18 @@ publications:
     type: dataset
     status: published
     source: lab/publication/claim-001/2026-02-23
+  - id: claim-001-2026-02-22
+    claim: claim-001
+    date: 2026-02-22
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-22
+  - id: claim-001-2026-02-21
+    claim: claim-001
+    date: 2026-02-21
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-21
     doi: pending
     notes: "نشر Phase-E حتمي. دون تفسير."
   - id: claim-001-2026-02-20
