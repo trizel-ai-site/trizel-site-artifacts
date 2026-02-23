@@ -16,6 +16,12 @@
 #     notes: "<neutral-description-no-performance-claims>"
 
 publications:
+  - id: claim-001-2026-02-23
+    claim: claim-001
+    date: 2026-02-23
+    type: dataset
+    status: published
+    source: lab/publication/claim-001/2026-02-23
   - id: claim-001-2026-02-22
     claim: claim-001
     date: 2026-02-22

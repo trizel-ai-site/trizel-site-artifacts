@@ -1,0 +1,74 @@
+[
+  {
+    "category": "authoritative_orbit_and_astrometry",
+    "name": "Minor Planet Center (MPC)",
+    "role": "IAU clearinghouse for astrometry/orbits",
+    "type": "registry"
+  },
+  {
+    "category": "authoritative_orbit_and_astrometry",
+    "name": "NASA/JPL SSD SBDB",
+    "role": "public small-body database API",
+    "type": "api"
+  },
+  {
+    "category": "authoritative_orbit_and_astrometry",
+    "name": "NASA/JPL Horizons",
+    "role": "ephemerides / vectors / observer geometry",
+    "type": "service"
+  },
+  {
+    "category": "major_space_agencies_and_missions",
+    "name": "ESA",
+    "role": "missions + archives",
+    "type": "agency"
+  },
+  {
+    "category": "major_space_agencies_and_missions",
+    "name": "ESO",
+    "role": "ground-based observatory archives",
+    "type": "observatory"
+  },
+  {
+    "category": "major_space_agencies_and_missions",
+    "name": "JAXA",
+    "role": "missions + archives",
+    "type": "agency"
+  },
+  {
+    "category": "major_space_agencies_and_missions",
+    "name": "CNSA",
+    "role": "missions/announcements; data varies",
+    "type": "agency"
+  },
+  {
+    "category": "major_space_agencies_and_missions",
+    "name": "NASA",
+    "role": "missions + archives",
+    "type": "agency"
+  },
+  {
+    "category": "space_and_ground_archives",
+    "name": "MAST (HST/JWST)",
+    "role": "space telescope archive",
+    "type": "archive"
+  },
+  {
+    "category": "space_and_ground_archives",
+    "name": "ESO Science Archive",
+    "role": "ESO observational archive",
+    "type": "archive"
+  },
+  {
+    "category": "space_and_ground_archives",
+    "name": "HEASARC",
+    "role": "high-energy mission archive gateway",
+    "type": "archive"
+  },
+  {
+    "category": "space_and_ground_archives",
+    "name": "XMM-Newton Science Archive (XSA)",
+    "role": "XMM data archive (ESA)",
+    "type": "archive"
+  }
+]
