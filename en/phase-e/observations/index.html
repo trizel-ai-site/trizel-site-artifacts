@@ -65,7 +65,7 @@
               <td>2026-01-15 → 2026-01-22</td>
               <td>Claim-001</td>
               <td>
-                <span class="status-badge status-verified">REGISTERED_NOT_INGESTED</span>
+                <span class="status-badge status-deterministic">REGISTERED_NOT_INGESTED</span>
                 <span class="status-badge status-network-free">PUBLISHED_UPSTREAM_NOT_INGESTED</span>
               </td>
               <td>
@@ -84,7 +84,7 @@
     </section>
 
     <!-- Retrieval Reference (Non-Executed) -->
-    <section class="notice notice-reference" aria-labelledby="retrieval-ref-heading">
+    <section class="notice notice-reference" role="note" aria-labelledby="retrieval-ref-heading">
       <h3 id="retrieval-ref-heading">Retrieval reference (MAST — not executed)</h3>
 
       <p>
@@ -130,6 +130,12 @@ chmod +x tesscurl_sector_1751_ffir.sh
     <!-- Upstream (MAST) DOI -->
     <section class="references" aria-labelledby="upstream-doi-heading">
       <h3 id="upstream-doi-heading">Upstream (MAST) DOI</h3>
+
+      <p class="epistemic-note" role="note">
+        These are external, authoritative DOIs assigned by MAST (STScI).
+        They are independent of any TRIZEL-internal dataset DOIs, which are tracked
+        separately and assigned only when TRIZEL internal custody is established.
+      </p>
 
       <ul class="reference-list">
         <li>
