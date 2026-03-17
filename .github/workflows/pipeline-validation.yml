@@ -1,0 +1,146 @@
+name: Pipeline Validation
+
+# Two-role architecture:
+#   1. BUILD  — scripts/build_observations.py generates artifacts with state fields at
+#               generation time. This is the source of truth.
+#   2. VERIFY — scripts/validate_pipeline.py is a read-only enforcement layer that
+#               verifies generated correctness. It never writes or compensates.
+#
+# CI enforces that generated artifacts are already correct before any deployment.
+
+on:
+  push:
+    branches: [ main, develop, 'copilot/**' ]
+    paths:
+      - "data/ingestion/**"
+      - "public/observations/**"
+      - "public/summary.json"
+      - "public/latest.json"
+      - "scripts/build_observations.py"
+      - "scripts/validate_pipeline.py"
+      - ".github/workflows/pipeline-validation.yml"
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - "data/ingestion/**"
+      - "public/observations/**"
+      - "public/summary.json"
+      - "public/latest.json"
+      - "scripts/build_observations.py"
+      - "scripts/validate_pipeline.py"
+      - ".github/workflows/pipeline-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    name: Build observations and verify generation-time correctness
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+
+      # ── STEP 1: GENERATION ────────────────────────────────────────────────────
+      # The generation script is the source of truth.
+      # It reads raw ingestion manifests and writes complete artifacts with
+      # status, valid_record_count, and day_status computed at generation time.
+      - name: "[BUILD] Generate observation artifacts from ingestion manifests"
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          echo "Running generation script (source of truth)..."
+          python3 scripts/build_observations.py
+          echo "Generation complete."
+
+      # ── STEP 2: ENFORCEMENT / VERIFICATION ───────────────────────────────────
+      # The validator is read-only. It verifies that generated artifacts contain
+      # correct state fields. It never writes files or compensates for missing logic.
+      - name: "[VERIFY] Validate generation-time correctness (read-only enforcement)"
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Running enforcement validator (read-only)..."
+          python3 scripts/validate_pipeline.py
+          echo "Verification complete."
+
+      # ── STEP 3: STRUCTURAL ASSERTIONS ────────────────────────────────────────
+      # Belt-and-suspenders: assert required fields are present in generated files.
+      - name: "[ASSERT] Observation files have required state fields"
+        shell: bash
+        run: |
+          set -euo pipefail
+          failed=0
+          for f in public/observations/*.json; do
+            if ! python3 -c "
+import json, sys
+with open('$f') as fh:
+    d = json.load(fh)
+if 'valid_record_count' not in d:
+    print('MISSING valid_record_count in: $f', file=sys.stderr)
+    sys.exit(1)
+if 'day_status' not in d:
+    print('MISSING day_status in: $f', file=sys.stderr)
+    sys.exit(1)
+for obs in d.get('observations', []):
+    if 'status' not in obs:
+        print(f'MISSING status on observation {obs.get(\"source_id\")} in $f', file=sys.stderr)
+        sys.exit(1)
+    if obs['status'] not in ('ok', 'scheduled', 'not_released', 'unavailable'):
+        print(f'INVALID status \"{obs[\"status\"]}\" on {obs.get(\"source_id\")} in $f', file=sys.stderr)
+        sys.exit(1)
+print('OK: $f')
+"; then
+              failed=1
+            fi
+          done
+          test $failed -eq 0 || {
+            echo 'Structural assertions failed.'
+            echo 'Ensure scripts/build_observations.py is the source of truth for state fields.'
+            exit 1
+          }
+
+      - name: "[ASSERT] summary.json has total_valid_records and per-day day_status"
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -c "
+import json, sys
+with open('public/summary.json') as f:
+    d = json.load(f)
+if 'total_valid_records' not in d:
+    print('MISSING total_valid_records in summary.json', file=sys.stderr)
+    sys.exit(1)
+for day in d.get('days', []):
+    if 'valid_record_count' not in day:
+        print(f'MISSING valid_record_count for day {day.get(\"date\")}', file=sys.stderr)
+        sys.exit(1)
+    if 'day_status' not in day:
+        print(f'MISSING day_status for day {day.get(\"date\")}', file=sys.stderr)
+        sys.exit(1)
+print('OK: summary.json  total_valid_records=' + str(d['total_valid_records']))
+"
+
+      - name: "[ASSERT] latest.json has valid_record_count and day_status"
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -c "
+import json, sys
+with open('public/latest.json') as f:
+    d = json.load(f)
+for key in ('valid_record_count', 'day_status'):
+    if key not in d:
+        print(f'MISSING {key} in latest.json', file=sys.stderr)
+        sys.exit(1)
+print('OK: latest.json  day_status=' + d['day_status'] + '  valid_record_count=' + str(d['valid_record_count']))
+"

@@ -296,6 +296,31 @@ table.l2-table {
   font-size: 0.875rem;
 }
 
+.l2-alert-warning {
+  color: #b45309;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.l2-state-info {
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.l2-state-icon {
+  color: #b45309;
+  margin-left: 0.25rem;
+}
+
 /* ── Footer ──────────────────────────────────────────────────── */
 .l2-footer {
   background: var(--bg-card);
