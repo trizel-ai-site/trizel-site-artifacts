@@ -323,6 +323,47 @@
       </div>
     </section>
 
+    <!-- Pipeline Dashboard (Layer-2 data interface) -->
+    <section class="section" id="pipeline-dashboard" style="background: var(--color-bg, #f8fafc);">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">TRIZEL-AI — Pipeline Dashboard</h2>
+          <p class="section__description">
+            Governance-compliant presentation layer (Layer-2) · Live data from pipeline outputs
+          </p>
+        </div>
+
+        <!-- Stats row -->
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+          <div class="card">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="total_days">Total Days</p>
+            <p id="dash-total-days" style="font-size: 2rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
+          </div>
+          <div class="card">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="total_records">Total Records</p>
+            <p id="dash-total-records" style="font-size: 2rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
+          </div>
+          <div class="card">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="latest_day_label">Latest Day</p>
+            <p id="dash-latest-date" style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
+          </div>
+          <div class="card">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="last_updated_utc">Last Updated (UTC)</p>
+            <p id="dash-generated" style="font-size: 0.875rem; color: var(--color-text, #1e293b);">…</p>
+          </div>
+        </div>
+
+        <!-- Latest dataset link + quick links -->
+        <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+          <div id="dash-latest-link">…</div>
+          <a href="/observations.html" class="btn btn--outline">Observations →</a>
+          <a href="/status.html" class="btn btn--outline">Status →</a>
+          <a href="https://github.com/trizel-ai-site/trizel-site-artifacts" class="btn btn--outline" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <a href="/public/summary.json" class="btn btn--outline">Raw Data →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Governance Summary -->
     <section class="section" id="governance" style="background: var(--color-bg);">
       <div class="container">
@@ -437,29 +478,13 @@
       <p class="site-footer__text" style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8;">
         © 2026 TRIZEL-AI • Static Archive • Governance-Compliant
       </p>
+
+      <p class="site-footer__text" style="margin-top: 0.75rem; font-size: 0.75rem; color: #94a3b8;">
+        Data displayed from static pipeline artifacts. No computation is performed in this layer.
+      </p>
     </div>
   </footer>
 
-  <!-- Phase H1-C: Optional Progressive Enhancement JS -->
-  <script>
-    // Optional: Remember language preference (progressive enhancement)
-    (function() {
-      'use strict';
-      
-      // Only run if localStorage is supported
-      if (typeof Storage === 'undefined') return;
-      
-      // Save language choice when clicking a language link
-      var langLinks = document.querySelectorAll('.lang-link');
-      langLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          var lang = this.getAttribute('lang');
-          if (lang) {
-            localStorage.setItem('trizel_lang', lang);
-          }
-        });
-      });
-    })();
-  </script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>

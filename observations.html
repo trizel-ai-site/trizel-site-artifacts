@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observations — TRIZEL-AI</title>
+  <meta name="description" content="Browse all available observation datasets produced by the TRIZEL Layer-1 pipeline. Data-driven scientific interface (Layer-2).">
+  <link rel="canonical" href="https://trizel-ai.com/observations.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="l2-nav" aria-label="Main navigation">
+    <div class="l2-nav__inner">
+      <a class="l2-nav__brand" href="/index.html">TRIZEL<span>-AI</span></a>
+      <span class="l2-badge" data-i18n="nav_badge">Layer-2: Presentation Only</span>
+      <ul class="l2-nav__links">
+        <li><a href="/index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="/observations.html" aria-current="page" data-i18n="nav_observations">Observations</a></li>
+        <li><a href="/status.html" data-i18n="nav_status">Status</a></li>
+      </ul>
+      <div class="l2-lang-switcher" id="lang-switcher" aria-label="Language">
+        <button class="l2-lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="l2-lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        <button class="l2-lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button class="l2-lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="l2-main" id="main-content">
+
+    <!-- Page header -->
+    <header class="l2-hero">
+      <h1 class="l2-hero__title" data-i18n="obs_title">Observation Datasets</h1>
+      <p class="l2-hero__sub" data-i18n="obs_sub">
+        All available pipeline outputs — Governance-compliant presentation layer (Layer-2)
+      </p>
+    </header>
+
+    <!-- Latest dataset highlight -->
+    <section aria-labelledby="latest-heading">
+      <h2 id="latest-heading" class="l2-section__title" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600" data-i18n="latest_dataset">
+        Latest Dataset
+      </h2>
+      <div id="obs-latest"></div>
+    </section>
+
+    <!-- Full observation list -->
+    <section aria-labelledby="all-heading" style="margin-top:2.5rem">
+      <h2 id="all-heading" class="l2-section__title" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600" data-i18n="all_observations">
+        All Observations
+      </h2>
+      <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1rem" data-i18n="all_obs_sub">
+        Sorted by date (newest first). Each entry links directly to the raw JSON file.
+      </p>
+      <div id="obs-list"></div>
+    </section>
+
+    <!-- Raw data links -->
+    <section aria-labelledby="raw-heading" style="margin-top:2.5rem">
+      <h2 id="raw-heading" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600" data-i18n="raw_data">
+        Raw Data
+      </h2>
+      <div class="l2-links-row">
+        <a class="l2-link-btn l2-link-btn--outline" href="/public/summary.json" data-i18n="summary_json">summary.json</a>
+        <a class="l2-link-btn l2-link-btn--outline" href="/public/latest.json" data-i18n="latest_json">latest.json</a>
+        <a class="l2-link-btn l2-link-btn--outline" href="https://github.com/trizel-ai-site/trizel-site-artifacts" target="_blank" rel="noopener noreferrer" data-i18n="github_repo">GitHub Repository ↗</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="l2-footer">
+    <p data-i18n="footer_tagline">TRIZEL — Governance-first scientific infrastructure</p>
+    <p style="margin-top:0.25rem">
+      <a href="/index.html" data-i18n="nav_home">Home</a> ·
+      <a href="/observations.html" data-i18n="nav_observations">Observations</a> ·
+      <a href="/status.html" data-i18n="nav_status">Status</a>
+    </p>
+    <p style="margin-top:0.75rem;font-size:0.75rem;opacity:0.7" data-i18n="footer_note">
+      Data displayed from static pipeline artifacts. No computation is performed in this layer.
+    </p>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

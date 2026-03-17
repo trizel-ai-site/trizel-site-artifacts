@@ -1,0 +1,378 @@
+/* TRIZEL Layer-2 — Data-Driven Dashboard Styles
+   Dark theme, card-based, responsive, WCAG AA compliant */
+
+:root {
+  --bg:        #0f172a;
+  --bg-card:   #1e293b;
+  --bg-hover:  #243147;
+  --border:    #334155;
+  --text:      #f1f5f9;
+  --text-muted:#94a3b8;
+  --primary:   #60a5fa;
+  --primary-dark:#3b82f6;
+  --success:   #34d399;
+  --warning:   #fbbf24;
+  --radius:    8px;
+  --shadow:    0 4px 16px rgba(0,0,0,0.4);
+  --max-w:     1100px;
+  --nav-h:     56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navigation ─────────────────────────────────────────────── */
+.l2-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-h);
+}
+
+.l2-nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.l2-nav__brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.l2-nav__brand span {
+  color: var(--primary);
+}
+
+.l2-nav__links {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin-left: auto;
+}
+
+.l2-nav__links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: color 0.15s, background 0.15s;
+}
+
+.l2-nav__links a:hover,
+.l2-nav__links a[aria-current="page"] {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+/* Badge */
+.l2-badge {
+  display: inline-block;
+  background: rgba(96,165,250,0.15);
+  color: var(--primary);
+  border: 1px solid rgba(96,165,250,0.4);
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.l2-main {
+  flex: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  width: 100%;
+}
+
+/* ── Hero / Page header ──────────────────────────────────────── */
+.l2-hero {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.l2-hero__title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.l2-hero__sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ── Cards grid ──────────────────────────────────────────────── */
+.l2-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.l2-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.l2-card--wide {
+  grid-column: 1 / -1;
+}
+
+.l2-card__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.l2-card__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.l2-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.l2-card__desc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* ── Section heading ─────────────────────────────────────────── */
+.l2-section {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.l2-section__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Links ───────────────────────────────────────────────────── */
+a { color: var(--primary); }
+a:hover { color: var(--text); }
+
+.l2-link-btn {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.l2-link-btn:hover { background: var(--primary); color: #fff; }
+
+.l2-link-btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.l2-link-btn--outline:hover {
+  background: rgba(96,165,250,0.1);
+  color: var(--primary);
+}
+
+/* ── Quick links row ─────────────────────────────────────────── */
+.l2-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ── Table ───────────────────────────────────────────────────── */
+.l2-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+table.l2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.l2-table thead {
+  background: var(--bg-hover);
+}
+
+.l2-table th, .l2-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.l2-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.l2-table tbody tr:hover { background: var(--bg-hover); }
+.l2-table tbody tr:last-child td { border-bottom: none; }
+
+/* ── Status indicator ────────────────────────────────────────── */
+.l2-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.l2-status__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Loading / error states ─────────────────────────────────── */
+.l2-loading {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  padding: 1rem 0;
+}
+
+.l2-error {
+  color: #f87171;
+  background: rgba(248,113,113,0.1);
+  border: 1px solid rgba(248,113,113,0.3);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.l2-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.l2-footer a { color: var(--text-muted); }
+.l2-footer a:hover { color: var(--text); }
+
+/* ── Language switcher ───────────────────────────────────────── */
+.l2-lang-switcher {
+  display: flex;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.l2-lang-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.l2-lang-btn:hover,
+.l2-lang-btn.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(96, 165, 250, 0.1);
+}
+
+/* ── RTL support ─────────────────────────────────────────────── */
+[dir="rtl"] .l2-nav__links {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .l2-table th,
+[dir="rtl"] .l2-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-card__label,
+[dir="rtl"] .l2-card__value,
+[dir="rtl"] .l2-card__desc {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-hero__title,
+[dir="rtl"] .l2-hero__sub {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-links-row {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .l2-footer {
+  text-align: right;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .l2-nav__inner { gap: 0.75rem; }
+  .l2-nav__links a { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
+  .l2-hero { padding: 1.5rem 0 1.25rem; }
+  .l2-main { padding: 1.5rem 1rem 3rem; }
+  .l2-card__value { font-size: 1.5rem; }
+  .l2-lang-btn { padding: 0.15rem 0.35rem; font-size: 0.65rem; }
+}
