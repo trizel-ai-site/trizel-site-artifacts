@@ -1,25 +1,32 @@
 name: Pipeline Validation
 
-# Runs automatically on every push and pull request to ensure the ingestion
-# pipeline validation is always applied to the static observation artifacts.
-# This guarantees that valid_record_count, day_status, and observation status
-# fields are always consistent with the committed JSON data.
+# Two-role architecture:
+#   1. BUILD  — scripts/build_observations.py generates artifacts with state fields at
+#               generation time. This is the source of truth.
+#   2. VERIFY — scripts/validate_pipeline.py is a read-only enforcement layer that
+#               verifies generated correctness. It never writes or compensates.
+#
+# CI enforces that generated artifacts are already correct before any deployment.
 
 on:
   push:
     branches: [ main, develop, 'copilot/**' ]
     paths:
+      - "data/ingestion/**"
       - "public/observations/**"
       - "public/summary.json"
       - "public/latest.json"
+      - "scripts/build_observations.py"
       - "scripts/validate_pipeline.py"
       - ".github/workflows/pipeline-validation.yml"
   pull_request:
     branches: [ main, develop ]
     paths:
+      - "data/ingestion/**"
       - "public/observations/**"
       - "public/summary.json"
       - "public/latest.json"
+      - "scripts/build_observations.py"
       - "scripts/validate_pipeline.py"
       - ".github/workflows/pipeline-validation.yml"
   workflow_dispatch:
@@ -28,10 +35,10 @@ permissions:
   contents: read
 
 jobs:
-  validate-pipeline:
-    name: Validate observation pipeline artifacts
+  build-and-verify:
+    name: Build observations and verify generation-time correctness
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -42,16 +49,33 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run pipeline validator (read-only assertion)
+      # ── STEP 1: GENERATION ────────────────────────────────────────────────────
+      # The generation script is the source of truth.
+      # It reads raw ingestion manifests and writes complete artifacts with
+      # status, valid_record_count, and day_status computed at generation time.
+      - name: "[BUILD] Generate observation artifacts from ingestion manifests"
         shell: bash
         run: |
           set -euo pipefail
           python3 --version
-          # Run in dry-run mode: validates JSON integrity and state classification
-          # without mutating files (committed artifacts are already validated).
-          python3 scripts/validate_pipeline.py --dry-run
+          echo "Running generation script (source of truth)..."
+          python3 scripts/build_observations.py
+          echo "Generation complete."
 
-      - name: Assert valid_record_count is present in observation files
+      # ── STEP 2: ENFORCEMENT / VERIFICATION ───────────────────────────────────
+      # The validator is read-only. It verifies that generated artifacts contain
+      # correct state fields. It never writes files or compensates for missing logic.
+      - name: "[VERIFY] Validate generation-time correctness (read-only enforcement)"
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Running enforcement validator (read-only)..."
+          python3 scripts/validate_pipeline.py
+          echo "Verification complete."
+
+      # ── STEP 3: STRUCTURAL ASSERTIONS ────────────────────────────────────────
+      # Belt-and-suspenders: assert required fields are present in generated files.
+      - name: "[ASSERT] Observation files have required state fields"
         shell: bash
         run: |
           set -euo pipefail
@@ -79,9 +103,13 @@ print('OK: $f')
               failed=1
             fi
           done
-          test $failed -eq 0 || { echo 'Validation assertions failed. Run: python3 scripts/validate_pipeline.py'; exit 1; }
+          test $failed -eq 0 || {
+            echo 'Structural assertions failed.'
+            echo 'Ensure scripts/build_observations.py is the source of truth for state fields.'
+            exit 1
+          }
 
-      - name: Assert summary.json contains total_valid_records and per-day day_status
+      - name: "[ASSERT] summary.json has total_valid_records and per-day day_status"
         shell: bash
         run: |
           set -euo pipefail
@@ -99,10 +127,10 @@ for day in d.get('days', []):
     if 'day_status' not in day:
         print(f'MISSING day_status for day {day.get(\"date\")}', file=sys.stderr)
         sys.exit(1)
-print('OK: summary.json')
+print('OK: summary.json  total_valid_records=' + str(d['total_valid_records']))
 "
 
-      - name: Assert latest.json contains valid_record_count and day_status
+      - name: "[ASSERT] latest.json has valid_record_count and day_status"
         shell: bash
         run: |
           set -euo pipefail
@@ -114,5 +142,5 @@ for key in ('valid_record_count', 'day_status'):
     if key not in d:
         print(f'MISSING {key} in latest.json', file=sys.stderr)
         sys.exit(1)
-print('OK: latest.json')
+print('OK: latest.json  day_status=' + d['day_status'] + '  valid_record_count=' + str(d['valid_record_count']))
 "
