@@ -53,12 +53,14 @@ var TRANSLATIONS = {
     github:               'GitHub \u2197',
     total_days:           'Total Days',
     total_records:        'Total Records',
+    total_valid_records:  'Total Valid Records',
     latest_day_label:     'Latest Day',
     last_updated_utc:     'Last Updated (UTC)',
     footer_tagline:       'TRIZEL \u2014 Governance-first scientific infrastructure',
     footer_note:          'Data displayed from static pipeline artifacts. No computation is performed in this layer.',
-    records_unit:         'records',
-    sources_unit:         'sources'
+    records_unit:         'valid records',
+    sources_unit:         'sources',
+    retrieval_failed:     'Data retrieval failed for this date'
   },
   ar: {
     nav_home:             '\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629',
@@ -103,12 +105,14 @@ var TRANSLATIONS = {
     github:               'GitHub \u2197',
     total_days:           '\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0623\u064a\u0627\u0645',
     total_records:        '\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0633\u062c\u0644\u0627\u062a',
+    total_valid_records:  '\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0633\u062c\u0644\u0627\u062a \u0627\u0644\u0635\u0627\u0644\u062d\u0629',
     latest_day_label:     '\u0623\u062d\u062f\u062b \u064a\u0648\u0645',
     last_updated_utc:     '\u0622\u062e\u0631 \u062a\u062d\u062f\u064a\u062b (UTC)',
     footer_tagline:       'TRIZEL \u2014 \u0628\u0646\u064a\u0629 \u062a\u062d\u062a\u064a\u0629 \u0639\u0644\u0645\u064a\u0629 \u062a\u064f\u0639\u0637\u064a \u0627\u0644\u062d\u0648\u0643\u0645\u0629 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629',
     footer_note:          '\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0639\u0631\u0648\u0636\u0629 \u0645\u0646 \u0642\u0637\u0639 \u0623\u062b\u0631\u064a\u0629 \u0644\u062e\u0637 \u0623\u0646\u0627\u0628\u064a\u0628 \u062b\u0627\u0628\u062a. \u0644\u0627 \u064a\u064f\u0646\u0641\u0651\u064e\u0630 \u0623\u064a \u062d\u0633\u0627\u0628 \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u0637\u0628\u0642\u0629.',
-    records_unit:         '\u0633\u062c\u0644\u0627\u062a',
-    sources_unit:         '\u0645\u0635\u0627\u062f\u0631'
+    records_unit:         '\u0633\u062c\u0644\u0627\u062a \u0635\u0627\u0644\u062d\u0629',
+    sources_unit:         '\u0645\u0635\u0627\u062f\u0631',
+    retrieval_failed:     '\u0641\u0634\u0644 \u0627\u0633\u062a\u0631\u062f\u0627\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0644\u0647\u0630\u0627 \u0627\u0644\u062a\u0627\u0631\u064a\u062e'
   },
   fr: {
     nav_home:             'Accueil',
@@ -153,12 +157,14 @@ var TRANSLATIONS = {
     github:               'GitHub \u2197',
     total_days:           'Jours totaux',
     total_records:        'Enregistrements totaux',
+    total_valid_records:  'Enregistrements valides totaux',
     latest_day_label:     'Dernier jour',
     last_updated_utc:     'Derni\u00e8re mise \u00e0 jour (UTC)',
     footer_tagline:       'TRIZEL \u2014 Infrastructure scientifique ax\u00e9e sur la gouvernance',
     footer_note:          'Donn\u00e9es affich\u00e9es \u00e0 partir d\u2019artefacts de pipeline statiques. Aucun calcul n\u2019est effectu\u00e9 dans cette couche.',
-    records_unit:         'enregistrements',
-    sources_unit:         'sources'
+    records_unit:         'enregistrements valides',
+    sources_unit:         'sources',
+    retrieval_failed:     'La r\u00e9cup\u00e9ration des donn\u00e9es a \u00e9chou\u00e9 pour cette date'
   },
   zh: {
     nav_home:             '\u9996\u9875',
@@ -203,12 +209,14 @@ var TRANSLATIONS = {
     github:               'GitHub \u2197',
     total_days:           '\u603b\u5929\u6570',
     total_records:        '\u603b\u8bb0\u5f55\u6570',
+    total_valid_records:  '\u603b\u6709\u6548\u8bb0\u5f55\u6570',
     latest_day_label:     '\u6700\u65b0\u65e5\u671f',
     last_updated_utc:     '\u6700\u540e\u66f4\u65b0 (UTC)',
     footer_tagline:       'TRIZEL \u2014 \u6cbb\u7406\u4f18\u5148\u7684\u79d1\u5b66\u57fa\u7840\u8bbe\u65bd',
     footer_note:          '\u6570\u636e\u6765\u81ea\u9759\u6001\u7ba1\u9053\u5236\u54c1\u3002\u672c\u5c42\u4e0d\u6267\u884c\u4efb\u4f55\u8ba1\u7b97\u3002',
-    records_unit:         '\u6761\u8bb0\u5f55',
-    sources_unit:         '\u4e2a\u6765\u6e90'
+    records_unit:         '\u6761\u6709\u6548\u8bb0\u5f55',
+    sources_unit:         '\u4e2a\u6765\u6e90',
+    retrieval_failed:     '\u8be5\u65e5\u671f\u7684\u6570\u636e\u83b7\u53d6\u5931\u8d25'
   }
 };
 
@@ -325,7 +333,8 @@ async function initDashboard() {
   try {
     var summary = await fetchJSON('/public/summary.json');
     setText('dash-total-days', summary.total_days != null ? summary.total_days : '\u2014');
-    setText('dash-total-records', summary.total_records != null ? summary.total_records : '\u2014');
+    var validRec = summary.total_valid_records != null ? summary.total_valid_records : summary.total_records;
+    setText('dash-total-records', validRec != null ? validRec : '\u2014');
     setText('dash-generated', formatDate(summary.generated_utc));
   } catch (e) {
     console.error('[TRIZEL] Failed to load /public/summary.json', e);
@@ -359,14 +368,21 @@ async function initObservations() {
   try {
     var latest = await fetchJSON('/public/latest.json');
     if (latestSection) {
+      var latestValid = latest.valid_record_count != null ? latest.valid_record_count : (latest.record_count || 0);
+      var latestFailed = latestValid === 0;
+      var latestWarning = latestFailed
+        ? '<p role="alert" class="l2-alert-warning">' +
+          '\u26a0\ufe0f ' + t('retrieval_failed') + '</p>'
+        : '';
       latestSection.innerHTML =
         '<div class="l2-card">' +
         '<div class="l2-card__label">' + t('latest_dataset') + '</div>' +
         '<div class="l2-card__value">' + (latest.latest_day || '\u2014') + '</div>' +
         '<p class="l2-card__desc" style="margin-top:0.5rem">' +
-        (latest.record_count || 0) + ' ' + t('records_unit') + ' \u00b7 ' +
+        latestValid + ' ' + t('records_unit') + ' \u00b7 ' +
         (latest.observations ? latest.observations.length : 0) + ' ' + t('sources_unit') +
         '</p>' +
+        latestWarning +
         '<div style="margin-top:1rem">' +
         '<a class="l2-link-btn" href="/public/' + latest.redirect + '">' + t('view_json') + '</a>' +
         '</div>' +
@@ -393,9 +409,13 @@ async function initObservations() {
     });
 
     var rows = days.map(function(d) {
+      var validCount = d.valid_record_count != null ? d.valid_record_count : (d.record_count || 0);
+      var failedCell = validCount === 0
+        ? ' <span title="' + t('retrieval_failed') + '" style="color:#b45309">\u26a0\ufe0f</span>'
+        : '';
       return '<tr>' +
         '<td>' + d.date + '</td>' +
-        '<td>' + (d.record_count || 0) + '</td>' +
+        '<td>' + validCount + failedCell + '</td>' +
         '<td>' + (d.sources ? d.sources.join(', ') : '\u2014') + '</td>' +
         '<td><a href="/public/' + d.path + '" class="l2-link-btn l2-link-btn--outline" style="font-size:0.8rem">' +
         t('json_link') + '</a></td>' +
