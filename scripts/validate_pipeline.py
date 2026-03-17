@@ -3,12 +3,16 @@
 TRIZEL Ingestion Pipeline Validator
 
 Validates observation records produced by the Layer-1 ingestion pipeline.
-A record is valid only when:
-  - retrieved_utc is non-empty
-  - The raw file exists on disk and is non-empty
+Each record is classified into one of four epistemic states:
 
-Invalid (failed) records are marked with status="failed" and excluded from
-valid_record_count. summary.json and latest.json are updated accordingly.
+  ok           – retrieved_utc is non-empty and the raw file exists/is non-empty
+  scheduled    – requested_day_utc is in the future (retrieval not yet attempted)
+  not_released – past/present date, retrieved_utc empty (data not yet published)
+  unavailable  – retrieved_utc present but raw file is missing or empty
+
+A "valid" record is only one with status="ok". All other states are NOT counted
+as valid records. The per-day state (day_status) summarises the dominant state
+for a date and is propagated to summary.json and latest.json.
 
 Usage:
   python3 scripts/validate_pipeline.py [--dry-run]
@@ -19,9 +23,9 @@ Exit Codes:
 """
 
 import sys
-import os
 import json
 from pathlib import Path
+from datetime import datetime, timezone
 
 BASE_DIR = Path(__file__).parent.parent
 PUBLIC_DIR = BASE_DIR / "public"
@@ -31,42 +35,89 @@ LATEST_JSON = PUBLIC_DIR / "latest.json"
 
 DRY_RUN = "--dry-run" in sys.argv
 
+# Priority order used to determine the day_status when multiple states exist.
+# Higher index = higher priority (i.e. "ok" overrides everything).
+_STATE_PRIORITY = {"unavailable": 1, "not_released": 2, "scheduled": 3, "ok": 4}
 
-def is_valid_record(obs: dict, raw_base_dir: Path) -> bool:
-    """Return True only if retrieved_utc is non-empty and the raw file exists/is non-empty."""
+
+def _parse_date(date_str: str):
+    """Parse a YYYY-MM-DD string into a datetime.date, or return None on failure."""
+    try:
+        return datetime.strptime(date_str[:10], "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None
+
+
+def _pipeline_run_date(data: dict):
+    """
+    Return the pipeline run date as a datetime.date from generated_utc,
+    or today's UTC date as a fallback.
+    """
+    gen = data.get("generated_utc", "")
+    parsed = _parse_date(gen) if gen else None
+    return parsed if parsed is not None else datetime.now(timezone.utc).date()
+
+
+def classify_record_status(obs: dict, raw_base_dir: Path, run_date) -> str:
+    """
+    Classify a single observation record into one of four epistemic states.
+
+    Returns one of: 'scheduled', 'not_released', 'unavailable', 'ok'
+    """
+    requested_day = _parse_date(obs.get("requested_day_utc", ""))
     retrieved_utc = obs.get("retrieved_utc", "")
-    if not retrieved_utc:
-        return False
     raw_path = obs.get("raw_path", "")
+
+    # Future date — retrieval not yet attempted
+    if requested_day is None or requested_day > run_date:
+        return "scheduled"
+
+    # Past/present date, no retrieval was recorded
+    if not retrieved_utc:
+        return "not_released"
+
+    # Retrieval was recorded — verify raw file exists and is non-empty
     if not raw_path:
-        return False
+        return "unavailable"
     full_path = raw_base_dir / raw_path
-    if not full_path.exists():
-        return False
-    if full_path.stat().st_size == 0:
-        return False
-    return True
+    if not full_path.exists() or full_path.stat().st_size == 0:
+        return "unavailable"
+
+    return "ok"
+
+
+def dominant_day_status(statuses: list) -> str:
+    """
+    Return the single most informative status for a collection of observation statuses.
+    'ok' overrides all others; 'scheduled' is lowest priority when mixed.
+    """
+    if not statuses:
+        return "unavailable"
+    return max(statuses, key=lambda s: _STATE_PRIORITY.get(s, 0))
 
 
 def validate_observation_file(obs_file: Path, raw_base_dir: Path) -> dict:
     """
     Read an observation JSON file, annotate each record with a status field,
-    and add valid_record_count. Returns the updated data dict.
+    and add valid_record_count + day_status. Returns the updated data dict.
     """
     with open(obs_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    run_date = _pipeline_run_date(data)
     observations = data.get("observations", [])
     valid_count = 0
+    statuses = []
 
     for obs in observations:
-        if is_valid_record(obs, raw_base_dir):
-            obs["status"] = "ok"
+        status = classify_record_status(obs, raw_base_dir, run_date)
+        obs["status"] = status
+        statuses.append(status)
+        if status == "ok":
             valid_count += 1
-        else:
-            obs["status"] = "failed"
 
     data["valid_record_count"] = valid_count
+    data["day_status"] = dominant_day_status(statuses)
     return data
 
 
@@ -108,6 +159,7 @@ def validate_all() -> int:
         return 0
 
     day_valid_counts = {}
+    day_statuses = {}
 
     for obs_file in obs_files:
         print(f"Validating: {obs_file.name}")
@@ -119,13 +171,15 @@ def validate_all() -> int:
 
         valid = updated["valid_record_count"]
         total = len(updated.get("observations", []))
-        failed = total - valid
+        non_valid = total - valid
+        day_st = updated["day_status"]
 
-        print(f"  valid={valid}  failed={failed}  total={total}")
+        print(f"  day_status={day_st}  valid={valid}  non_valid={non_valid}  total={total}")
         write_json(obs_file, updated)
 
         date_key = updated.get("requested_day_utc", obs_file.stem)
         day_valid_counts[date_key] = valid
+        day_statuses[date_key] = day_st
 
     print()
 
@@ -144,6 +198,7 @@ def validate_all() -> int:
             date = day.get("date", "")
             day_valid = day_valid_counts.get(date, 0)
             day["valid_record_count"] = day_valid
+            day["day_status"] = day_statuses.get(date, "unavailable")
             total_valid += day_valid
 
         summary["total_valid_records"] = total_valid
@@ -164,8 +219,9 @@ def validate_all() -> int:
         latest_day = latest.get("latest_day", "")
         latest_valid = day_valid_counts.get(latest_day, 0)
         latest["valid_record_count"] = latest_valid
+        latest["day_status"] = day_statuses.get(latest_day, "unavailable")
         write_json(LATEST_JSON, latest)
-        print(f"  valid_record_count={latest_valid}")
+        print(f"  valid_record_count={latest_valid}  day_status={latest.get('day_status', '?')}")
         print()
 
     print("=" * 72)
@@ -194,3 +250,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

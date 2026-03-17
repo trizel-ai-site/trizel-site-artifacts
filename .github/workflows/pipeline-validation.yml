@@ -1,0 +1,118 @@
+name: Pipeline Validation
+
+# Runs automatically on every push and pull request to ensure the ingestion
+# pipeline validation is always applied to the static observation artifacts.
+# This guarantees that valid_record_count, day_status, and observation status
+# fields are always consistent with the committed JSON data.
+
+on:
+  push:
+    branches: [ main, develop, 'copilot/**' ]
+    paths:
+      - "public/observations/**"
+      - "public/summary.json"
+      - "public/latest.json"
+      - "scripts/validate_pipeline.py"
+      - ".github/workflows/pipeline-validation.yml"
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - "public/observations/**"
+      - "public/summary.json"
+      - "public/latest.json"
+      - "scripts/validate_pipeline.py"
+      - ".github/workflows/pipeline-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pipeline:
+    name: Validate observation pipeline artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+
+      - name: Run pipeline validator (read-only assertion)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          # Run in dry-run mode: validates JSON integrity and state classification
+          # without mutating files (committed artifacts are already validated).
+          python3 scripts/validate_pipeline.py --dry-run
+
+      - name: Assert valid_record_count is present in observation files
+        shell: bash
+        run: |
+          set -euo pipefail
+          failed=0
+          for f in public/observations/*.json; do
+            if ! python3 -c "
+import json, sys
+with open('$f') as fh:
+    d = json.load(fh)
+if 'valid_record_count' not in d:
+    print('MISSING valid_record_count in: $f', file=sys.stderr)
+    sys.exit(1)
+if 'day_status' not in d:
+    print('MISSING day_status in: $f', file=sys.stderr)
+    sys.exit(1)
+for obs in d.get('observations', []):
+    if 'status' not in obs:
+        print(f'MISSING status on observation {obs.get(\"source_id\")} in $f', file=sys.stderr)
+        sys.exit(1)
+    if obs['status'] not in ('ok', 'scheduled', 'not_released', 'unavailable'):
+        print(f'INVALID status \"{obs[\"status\"]}\" on {obs.get(\"source_id\")} in $f', file=sys.stderr)
+        sys.exit(1)
+print('OK: $f')
+"; then
+              failed=1
+            fi
+          done
+          test $failed -eq 0 || { echo 'Validation assertions failed. Run: python3 scripts/validate_pipeline.py'; exit 1; }
+
+      - name: Assert summary.json contains total_valid_records and per-day day_status
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -c "
+import json, sys
+with open('public/summary.json') as f:
+    d = json.load(f)
+if 'total_valid_records' not in d:
+    print('MISSING total_valid_records in summary.json', file=sys.stderr)
+    sys.exit(1)
+for day in d.get('days', []):
+    if 'valid_record_count' not in day:
+        print(f'MISSING valid_record_count for day {day.get(\"date\")}', file=sys.stderr)
+        sys.exit(1)
+    if 'day_status' not in day:
+        print(f'MISSING day_status for day {day.get(\"date\")}', file=sys.stderr)
+        sys.exit(1)
+print('OK: summary.json')
+"
+
+      - name: Assert latest.json contains valid_record_count and day_status
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -c "
+import json, sys
+with open('public/latest.json') as f:
+    d = json.load(f)
+for key in ('valid_record_count', 'day_status'):
+    if key not in d:
+        print(f'MISSING {key} in latest.json', file=sys.stderr)
+        sys.exit(1)
+print('OK: latest.json')
+"

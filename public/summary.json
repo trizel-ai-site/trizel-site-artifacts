@@ -16,7 +16,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-15.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "not_released"
     },
     {
       "date": "2026-03-16",
@@ -30,7 +31,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-16.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "not_released"
     },
     {
       "date": "2026-03-17",
@@ -44,7 +46,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-17.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "not_released"
     },
     {
       "date": "2026-03-18",
@@ -58,7 +61,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-18.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "scheduled"
     },
     {
       "date": "2026-03-19",
@@ -72,7 +76,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-19.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "scheduled"
     },
     {
       "date": "2026-03-20",
@@ -86,7 +91,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-20.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "scheduled"
     },
     {
       "date": "2026-03-21",
@@ -100,7 +106,8 @@
         "NASA_PDS"
       ],
       "path": "observations/2026-03-21.json",
-      "valid_record_count": 0
+      "valid_record_count": 0,
+      "day_status": "scheduled"
     }
   ],
   "total_valid_records": 0
