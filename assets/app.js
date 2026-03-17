@@ -60,17 +60,15 @@ async function initDashboard() {
     var summary = await fetchJSON('/public/summary.json');
     setText('dash-total-days', summary.total_days != null ? summary.total_days : '—');
     setText('dash-total-records', summary.total_records != null ? summary.total_records : '—');
-    setText('dash-pipeline-version', summary.pipeline_version || '—');
     setText('dash-generated', formatDate(summary.generated_utc));
   } catch (e) {
-    ['dash-total-days','dash-total-records','dash-pipeline-version','dash-generated']
+    ['dash-total-days','dash-total-records','dash-generated']
       .forEach(function(id) { setHtml(id, errorHtml('Unavailable')); });
   }
 
   try {
     var latest = await fetchJSON('/public/latest.json');
     setText('dash-latest-date', latest.latest_day || '—');
-    setText('dash-record-count', latest.record_count != null ? latest.record_count : '—');
     setHtml('dash-latest-link',
       '<a class="btn btn--outline" href="/public/' + latest.redirect + '">' +
       'Latest Dataset (' + (latest.latest_day || '') + ') →</a>');
