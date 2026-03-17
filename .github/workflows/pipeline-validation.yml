@@ -81,25 +81,27 @@ jobs:
           set -euo pipefail
           failed=0
           for f in public/observations/*.json; do
-            if ! python3 -c "
-import json, sys
-with open('$f') as fh:
-    d = json.load(fh)
-if 'valid_record_count' not in d:
-    print('MISSING valid_record_count in: $f', file=sys.stderr)
-    sys.exit(1)
-if 'day_status' not in d:
-    print('MISSING day_status in: $f', file=sys.stderr)
-    sys.exit(1)
-for obs in d.get('observations', []):
-    if 'status' not in obs:
-        print(f'MISSING status on observation {obs.get(\"source_id\")} in $f', file=sys.stderr)
-        sys.exit(1)
-    if obs['status'] not in ('ok', 'scheduled', 'not_released', 'unavailable'):
-        print(f'INVALID status \"{obs[\"status\"]}\" on {obs.get(\"source_id\")} in $f', file=sys.stderr)
-        sys.exit(1)
-print('OK: $f')
-"; then
+            if ! _f="$f" python3 - <<'PY'
+          import json, sys, os
+          _f = os.environ['_f']
+          with open(_f) as fh:
+              d = json.load(fh)
+          if 'valid_record_count' not in d:
+              print('MISSING valid_record_count in: ' + _f, file=sys.stderr)
+              sys.exit(1)
+          if 'day_status' not in d:
+              print('MISSING day_status in: ' + _f, file=sys.stderr)
+              sys.exit(1)
+          for obs in d.get('observations', []):
+              if 'status' not in obs:
+                  print(f'MISSING status on observation {obs.get("source_id")} in ' + _f, file=sys.stderr)
+                  sys.exit(1)
+              if obs['status'] not in ('ok', 'scheduled', 'not_released', 'unavailable'):
+                  print(f'INVALID status "{obs["status"]}" on {obs.get("source_id")} in ' + _f, file=sys.stderr)
+                  sys.exit(1)
+          print('OK: ' + _f)
+          PY
+            then
               failed=1
             fi
           done
@@ -113,34 +115,34 @@ print('OK: $f')
         shell: bash
         run: |
           set -euo pipefail
-          python3 -c "
-import json, sys
-with open('public/summary.json') as f:
-    d = json.load(f)
-if 'total_valid_records' not in d:
-    print('MISSING total_valid_records in summary.json', file=sys.stderr)
-    sys.exit(1)
-for day in d.get('days', []):
-    if 'valid_record_count' not in day:
-        print(f'MISSING valid_record_count for day {day.get(\"date\")}', file=sys.stderr)
-        sys.exit(1)
-    if 'day_status' not in day:
-        print(f'MISSING day_status for day {day.get(\"date\")}', file=sys.stderr)
-        sys.exit(1)
-print('OK: summary.json  total_valid_records=' + str(d['total_valid_records']))
-"
+          python3 - <<'PY'
+          import json, sys
+          with open('public/summary.json') as f:
+              d = json.load(f)
+          if 'total_valid_records' not in d:
+              print('MISSING total_valid_records in summary.json', file=sys.stderr)
+              sys.exit(1)
+          for day in d.get('days', []):
+              if 'valid_record_count' not in day:
+                  print(f'MISSING valid_record_count for day {day.get("date")}', file=sys.stderr)
+                  sys.exit(1)
+              if 'day_status' not in day:
+                  print(f'MISSING day_status for day {day.get("date")}', file=sys.stderr)
+                  sys.exit(1)
+          print('OK: summary.json  total_valid_records=' + str(d['total_valid_records']))
+          PY
 
       - name: "[ASSERT] latest.json has valid_record_count and day_status"
         shell: bash
         run: |
           set -euo pipefail
-          python3 -c "
-import json, sys
-with open('public/latest.json') as f:
-    d = json.load(f)
-for key in ('valid_record_count', 'day_status'):
-    if key not in d:
-        print(f'MISSING {key} in latest.json', file=sys.stderr)
-        sys.exit(1)
-print('OK: latest.json  day_status=' + d['day_status'] + '  valid_record_count=' + str(d['valid_record_count']))
-"
+          python3 - <<'PY'
+          import json, sys
+          with open('public/latest.json') as f:
+              d = json.load(f)
+          for key in ('valid_record_count', 'day_status'):
+              if key not in d:
+                  print(f'MISSING {key} in latest.json', file=sys.stderr)
+                  sys.exit(1)
+          print('OK: latest.json  day_status=' + d['day_status'] + '  valid_record_count=' + str(d['valid_record_count']))
+          PY
