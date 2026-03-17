@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observations — TRIZEL-AI</title>
+  <meta name="description" content="Browse all available observation datasets produced by the TRIZEL Layer-1 pipeline. Data-driven scientific interface (Layer-2).">
+  <link rel="canonical" href="https://trizel-ai.com/observations.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="l2-nav" aria-label="Main navigation">
+    <div class="l2-nav__inner">
+      <a class="l2-nav__brand" href="/index.html">TRIZEL<span>-AI</span></a>
+      <span class="l2-badge">Layer-2: Presentation Only</span>
+      <ul class="l2-nav__links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/observations.html" aria-current="page">Observations</a></li>
+        <li><a href="/status.html">Status</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="l2-main" id="main-content">
+
+    <!-- Page header -->
+    <header class="l2-hero">
+      <h1 class="l2-hero__title">Observation Datasets</h1>
+      <p class="l2-hero__sub">
+        All available pipeline outputs — Governance-compliant presentation layer (Layer-2)
+      </p>
+    </header>
+
+    <!-- Latest dataset highlight -->
+    <section aria-labelledby="latest-heading">
+      <h2 id="latest-heading" class="l2-section__title" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600">
+        Latest Dataset
+      </h2>
+      <div id="obs-latest"></div>
+    </section>
+
+    <!-- Full observation list -->
+    <section aria-labelledby="all-heading" style="margin-top:2.5rem">
+      <h2 id="all-heading" class="l2-section__title" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600">
+        All Observations
+      </h2>
+      <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1rem">
+        Sorted by date (newest first). Each entry links directly to the raw JSON file.
+      </p>
+      <div id="obs-list"></div>
+    </section>
+
+    <!-- Raw data links -->
+    <section aria-labelledby="raw-heading" style="margin-top:2.5rem">
+      <h2 id="raw-heading" style="border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem;font-size:1.1rem;font-weight:600">
+        Raw Data
+      </h2>
+      <div class="l2-links-row">
+        <a class="l2-link-btn l2-link-btn--outline" href="/public/summary.json">summary.json</a>
+        <a class="l2-link-btn l2-link-btn--outline" href="/public/latest.json">latest.json</a>
+        <a class="l2-link-btn l2-link-btn--outline" href="https://github.com/trizel-ai-site/trizel-site-artifacts" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="l2-footer">
+    <p>TRIZEL — Governance-first scientific infrastructure</p>
+    <p style="margin-top:0.25rem">
+      <a href="/index.html">Home</a> ·
+      <a href="/observations.html">Observations</a> ·
+      <a href="/status.html">Status</a>
+    </p>
+  </footer>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
