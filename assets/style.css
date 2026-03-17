@@ -309,6 +309,64 @@ table.l2-table {
 .l2-footer a { color: var(--text-muted); }
 .l2-footer a:hover { color: var(--text); }
 
+/* ── Language switcher ───────────────────────────────────────── */
+.l2-lang-switcher {
+  display: flex;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.l2-lang-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.l2-lang-btn:hover,
+.l2-lang-btn.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(96, 165, 250, 0.1);
+}
+
+/* ── RTL support ─────────────────────────────────────────────── */
+[dir="rtl"] .l2-nav__links {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .l2-table th,
+[dir="rtl"] .l2-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-card__label,
+[dir="rtl"] .l2-card__value,
+[dir="rtl"] .l2-card__desc {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-hero__title,
+[dir="rtl"] .l2-hero__sub {
+  text-align: right;
+}
+
+[dir="rtl"] .l2-links-row {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .l2-footer {
+  text-align: right;
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .l2-nav__inner { gap: 0.75rem; }
@@ -316,4 +374,5 @@ table.l2-table {
   .l2-hero { padding: 1.5rem 0 1.25rem; }
   .l2-main { padding: 1.5rem 1rem 3rem; }
   .l2-card__value { font-size: 1.5rem; }
+  .l2-lang-btn { padding: 0.15rem 0.35rem; font-size: 0.65rem; }
 }
