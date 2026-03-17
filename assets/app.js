@@ -62,6 +62,7 @@ async function initDashboard() {
     setText('dash-total-records', summary.total_records != null ? summary.total_records : '—');
     setText('dash-generated', formatDate(summary.generated_utc));
   } catch (e) {
+    console.error('[TRIZEL] Failed to load /public/summary.json', e);
     ['dash-total-days','dash-total-records','dash-generated']
       .forEach(function(id) { setHtml(id, errorHtml('Unavailable')); });
   }
@@ -73,6 +74,7 @@ async function initDashboard() {
       '<a class="btn btn--outline" href="/public/' + latest.redirect + '">' +
       'Latest Dataset (' + (latest.latest_day || '') + ') →</a>');
   } catch (e) {
+    console.error('[TRIZEL] Failed to load /public/latest.json', e);
     setHtml('dash-latest-date', errorHtml('Unavailable'));
     setHtml('dash-latest-link', errorHtml('Dataset link unavailable'));
   }
@@ -105,7 +107,8 @@ async function initObservations() {
         '</div>';
     }
   } catch (e) {
-    if (latestSection) latestSection.innerHTML = errorHtml('Could not load latest.json');
+    console.error('[TRIZEL] Failed to load /public/latest.json', e);
+    if (latestSection) latestSection.innerHTML = errorHtml('Could not load /public/latest.json');
   }
 
   // Load summary.json for the full list
@@ -141,7 +144,8 @@ async function initObservations() {
       '<tbody>' + rows + '</tbody>' +
       '</table></div>';
   } catch (e) {
-    if (listEl) listEl.innerHTML = errorHtml('Could not load summary.json — ' + e.message);
+    console.error('[TRIZEL] Failed to load /public/summary.json', e);
+    if (listEl) listEl.innerHTML = errorHtml('Could not load /public/summary.json — ' + e.message);
   }
 }
 
@@ -150,12 +154,14 @@ async function initObservations() {
 async function initStatus() {
   setHtml('status-timestamp', loadingHtml());
   setHtml('status-total-datasets', loadingHtml());
+  setHtml('status-latest-day', loadingHtml());
 
   try {
     var summary = await fetchJSON('/public/summary.json');
     setText('status-timestamp', formatDate(summary.generated_utc));
     setText('status-total-datasets', summary.total_days != null ? summary.total_days : '—');
   } catch (e) {
+    console.error('[TRIZEL] Failed to load /public/summary.json', e);
     setHtml('status-timestamp', errorHtml('Unavailable'));
     setHtml('status-total-datasets', errorHtml('Unavailable'));
   }
@@ -164,6 +170,7 @@ async function initStatus() {
     var latest = await fetchJSON('/public/latest.json');
     setText('status-latest-day', latest.latest_day || '—');
   } catch (e) {
+    console.error('[TRIZEL] Failed to load /public/latest.json', e);
     setHtml('status-latest-day', errorHtml('Unavailable'));
   }
 }
@@ -171,8 +178,6 @@ async function initStatus() {
 // ── Router: auto-detect page ───────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', function() {
-  var path = window.location.pathname;
-
   if (el('dash-total-days')) {
     initDashboard();
   } else if (el('obs-list')) {
