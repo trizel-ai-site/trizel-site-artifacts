@@ -1,9 +1,8 @@
 {
   "pipeline_version": "1.0.0",
-  "generated_utc": "2026-03-17T07:19:13Z",
+  "generated_utc": "2026-03-18T22:26:18Z",
   "total_days": 7,
   "total_records": 42,
-  "total_valid_records": 0,
   "days": [
     {
       "date": "2026-03-15",
@@ -16,9 +15,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-15.json",
-      "valid_record_count": 0,
-      "day_status": "not_released"
+      "path": "observations/2026-03-15.json"
     },
     {
       "date": "2026-03-16",
@@ -31,9 +28,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-16.json",
-      "valid_record_count": 0,
-      "day_status": "not_released"
+      "path": "observations/2026-03-16.json"
     },
     {
       "date": "2026-03-17",
@@ -46,9 +41,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-17.json",
-      "valid_record_count": 0,
-      "day_status": "not_released"
+      "path": "observations/2026-03-17.json"
     },
     {
       "date": "2026-03-18",
@@ -61,9 +54,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-18.json",
-      "valid_record_count": 0,
-      "day_status": "scheduled"
+      "path": "observations/2026-03-18.json"
     },
     {
       "date": "2026-03-19",
@@ -76,9 +67,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-19.json",
-      "valid_record_count": 0,
-      "day_status": "scheduled"
+      "path": "observations/2026-03-19.json"
     },
     {
       "date": "2026-03-20",
@@ -91,9 +80,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-20.json",
-      "valid_record_count": 0,
-      "day_status": "scheduled"
+      "path": "observations/2026-03-20.json"
     },
     {
       "date": "2026-03-21",
@@ -106,9 +93,7 @@
         "NASA_JPL_SBDB",
         "NASA_PDS"
       ],
-      "path": "observations/2026-03-21.json",
-      "valid_record_count": 0,
-      "day_status": "scheduled"
+      "path": "observations/2026-03-21.json"
     }
   ]
 }
