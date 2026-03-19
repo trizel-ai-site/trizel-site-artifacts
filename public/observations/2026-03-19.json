@@ -1,7 +1,6 @@
 {
   "pipeline_version": "1.0.0",
   "generated_utc": "2026-03-18T23:47:45Z",
-  "generated_utc": "2026-03-18T21:05:05Z",
   "requested_day_utc": "2026-03-19",
   "record_count": 6,
   "observations": [
@@ -79,5 +78,52 @@
     "temporal_consistency": "stable",
     "epistemic_state": "single_source_temporally_stable",
     "confidence": "limited"
+  },
+  "profile_completeness": {
+    "phenomenon_type": "small_body_orbit",
+    "required_fields": [
+      "e",
+      "a",
+      "i",
+      "q"
+    ],
+    "missing_required_fields": [],
+    "optional_fields": [
+      "coma",
+      "tail",
+      "jet",
+      "magnitude",
+      "light_curve",
+      "gas_species",
+      "dust_signature"
+    ],
+    "missing_optional_fields": [
+      "coma",
+      "tail",
+      "jet",
+      "magnitude",
+      "light_curve",
+      "gas_species",
+      "dust_signature"
+    ],
+    "missing_not_ingested": [
+      "gas_species",
+      "dust_signature"
+    ],
+    "missing_potentially_observable": [
+      "coma",
+      "tail",
+      "jet",
+      "magnitude",
+      "light_curve"
+    ],
+    "currently_ingested_fields": [
+      "e",
+      "a",
+      "i",
+      "q"
+    ],
+    "completeness_state": "core_complete",
+    "profile_version": "v1.2"
   }
 }
