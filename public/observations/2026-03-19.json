@@ -1,7 +1,6 @@
 {
   "pipeline_version": "1.0.0",
   "generated_utc": "2026-03-18T23:47:45Z",
-  "generated_utc": "2026-03-18T21:05:05Z",
   "requested_day_utc": "2026-03-19",
   "record_count": 6,
   "observations": [
@@ -79,5 +78,18 @@
     "temporal_consistency": "stable",
     "epistemic_state": "single_source_temporally_stable",
     "confidence": "limited"
+  },
+  "profile_completeness": {
+    "phenomenon_type": "small_body_orbit",
+    "expected_fields": [
+      "e",
+      "a",
+      "i",
+      "q"
+    ],
+    "missing_fields": [],
+    "missing_count": 0,
+    "completeness_state": "complete",
+    "profile_version": "v1.0"
   }
 }
