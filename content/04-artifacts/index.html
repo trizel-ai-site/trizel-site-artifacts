@@ -61,8 +61,11 @@
           <p style="margin: 0 0 0.75rem; line-height: 1.6;">
             Every artifact is grouped by governed origin and function. No artifact appears as a standalone output. No artifact is ranked by recency, popularity, or visual prominence.
           </p>
-          <p style="margin: 0; line-height: 1.6; font-size: 0.9375rem;">
+          <p style="margin: 0 0 0.75rem; line-height: 1.6; font-size: 0.9375rem;">
             Canonical reference: <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>
+          </p>
+          <p style="margin: 0; line-height: 1.6; font-size: 0.9375rem;">
+            Publication and citation layer: <a href="/docs/SITE_PUBLICATION_AND_CITATION_LAYER.md">docs/SITE_PUBLICATION_AND_CITATION_LAYER.md</a>
           </p>
         </div>
 
@@ -114,6 +117,14 @@
                   <th scope="row">Site representation note</th>
                   <td>Presented within kernel origin context; not standalone</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>canonical-publication</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Formally citable via DOI-backed release; must be read with origin repository role and epistemic layer</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -153,6 +164,14 @@
                 <tr>
                   <th scope="row">Site representation note</th>
                   <td>Interpretable only through origin repository and governance context</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>canonical-publication</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Formally citable via DOI-backed release; must be read with origin repository role and epistemic layer</td>
                 </tr>
               </tbody>
             </table>
@@ -201,6 +220,14 @@
                   <th scope="row">Site representation note</th>
                   <td>Presented under snapshot origin context; recency does not imply epistemic priority</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>snapshot-release</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Contextual reference only; not a canonical publication</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -240,6 +267,14 @@
                 <tr>
                   <th scope="row">Site representation note</th>
                   <td>Contextualized under snapshot source; not an analysis conclusion</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>snapshot-release</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Contextual reference only; not a canonical publication</td>
                 </tr>
               </tbody>
             </table>
@@ -288,6 +323,14 @@
                   <th scope="row">Site representation note</th>
                   <td>Presented as traceability record; not an independent output</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>snapshot-release</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Contextual reference only; not a canonical publication</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -335,6 +378,14 @@
                   <th scope="row">Site representation note</th>
                   <td>Reference anchor only; not a scientific output or analysis source</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>reference-context</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Reference anchor only; not independently citable</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -374,6 +425,14 @@
                 <tr>
                   <th scope="row">Site representation note</th>
                   <td>Site-surface citation context only; not an analysis or governance artifact</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>site-surface</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Note</th>
+                  <td>Not independently citable; site repository DOI for archival purposes only</td>
                 </tr>
               </tbody>
             </table>
