@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRIZEL — Institutional Scientific Observatory</title>
-  <meta name="description" content="TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.">
+  <meta name="description" content="TRIZEL is an epistemic standard layer between data providers and interpretation. This site (Layer-2) is a governed, read-only interface to structured scientific artifacts. It is not a dashboard, not an analysis tool, and not a data provider.">
   
   <!-- Canonical & Language Variants -->
   <link rel="canonical" href="https://trizel-ai.com/">
@@ -26,7 +26,7 @@
   <!-- OpenGraph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TRIZEL — Institutional Scientific Observatory">
-  <meta property="og:description" content="TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.">
+  <meta property="og:description" content="TRIZEL is an epistemic standard layer between data providers and interpretation. This site (Layer-2) is a governed, read-only interface to structured scientific artifacts. It is not a dashboard, not an analysis tool, and not a data provider.">
   <meta property="og:url" content="https://trizel-ai.com">
   <meta property="og:image" content="https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
   <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TRIZEL — Institutional Scientific Observatory">
-  <meta name="twitter:description" content="TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.">
+  <meta name="twitter:description" content="TRIZEL is an epistemic standard layer between data providers and interpretation. This site (Layer-2) is a governed, read-only interface to structured scientific artifacts. It is not a dashboard, not an analysis tool, and not a data provider.">
   <meta name="twitter:image" content="https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
   
   <!-- deploy-bump: 2026-01-24T09:26Z -->
@@ -72,7 +72,7 @@
           "width": 1024,
           "height": 1024
         },
-        "description": "TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.",
+        "description": "TRIZEL is an epistemic standard layer between data providers and interpretation. This site (Layer-2) is a governed, read-only interface to structured scientific artifacts. Not a dashboard. Not an analysis tool. Not a data provider.",
         "sameAs": [
           "https://doi.org/10.5281/zenodo.18354752",
           "https://orcid.org/0009-0003-9884-3697"
@@ -105,19 +105,11 @@
         "@id": "https://trizel-ai.com/#website",
         "url": "https://trizel-ai.com",
         "name": "TRIZEL Institutional Scientific Observatory",
-        "description": "TRIZEL is an Institutional Scientific Observatory. This public website (Layer-2) presents governance-approved, static scientific artifacts only. No execution, no live analysis, and no autonomous AI systems operate on this site.",
+        "description": "TRIZEL is an epistemic standard layer between data providers and interpretation. This site (Layer-2) is a governed, read-only interface to structured scientific artifacts. Not a dashboard. Not an analysis tool. Not a data provider.",
         "publisher": {
           "@id": "https://trizel-ai.com/#organization"
         },
-        "inLanguage": ["en", "fr", "de", "ru", "zh", "ar"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://trizel-ai.com/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": ["en", "fr", "de", "ru", "zh", "ar"]
       }
     ]
   }
@@ -153,6 +145,23 @@
     </div>
   </header>
 
+  <main id="main-content">
+
+  <!-- Canonical Explanatory Preface -->
+  <section style="background: var(--color-bg-secondary, #ffffff); padding: 1.5rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+    <div class="container container-narrow">
+      <div style="padding: 1.25rem 1.5rem; background: var(--color-bg, #f8fafc); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
+        <p style="margin: 0 0 0.5rem 0; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b);">About this site</p>
+        <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9375rem; line-height: 1.8; color: var(--color-text, #1e293b);">
+          <li>This site is <strong>not</strong> a dashboard.</li>
+          <li>This site is <strong>not</strong> an analysis tool.</li>
+          <li>This site is <strong>not</strong> a data provider.</li>
+          <li>This site is a <strong>governed interface</strong> to structured scientific artifacts, organised according to an explicit epistemic dependency order.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- TRIZEL-AI Logo and Identity -->
   <section style="background: var(--color-bg-secondary, #ffffff); padding: 2rem 0; text-align: center; border-bottom: 1px solid var(--color-border, #e2e8f0);">
     <div class="container">
@@ -160,15 +169,7 @@
            alt="TRIZEL-AI Logo" 
            width="1024" 
            height="1024"
-           style="max-width: 240px; width: 100%; height: auto; margin: 0 auto 1.5rem; display: block;">
-      
-      <div style="max-width: 600px; margin: 0 auto; text-align: left; padding: 1.5rem; background: var(--color-bg, #f8fafc); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
-        <h2 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 600; color: var(--color-text, #1e293b);">AUTO-DZ-ACT</h2>
-        <p style="margin: 0; font-size: 1rem; line-height: 1.5; color: var(--color-text-muted, #64748b);">
-          AUTO-DZ-ACT — a formal algorithmic and methodological framework (reference-only in Layer-2; non-executing, non-operational).
-          Automated Detection of Zero-states and Anomalous Condition Transitions.
-        </p>
-      </div>
+           style="max-width: 200px; width: 100%; height: auto; margin: 0 auto 1.5rem; display: block;">
     </div>
   </section>
 
@@ -251,17 +252,25 @@
     </div>
   </section>
 
-  <!-- DOI/ORCID Reference Block -->
+  <!-- DOI/ORCID Reference Block with Provenance Awareness -->
   <section class="section" style="background: var(--color-bg, #f8fafc); padding: 2rem 0;">
     <div class="container container-narrow">
-      <div style="padding: 1.5rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; text-align: center;">
-        <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--color-text, #1e293b);">References</p>
-        <p style="margin: 0.5rem 0; font-size: 0.9375rem;">
+      <div style="padding: 1.5rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
+        <p style="margin: 0 0 0.75rem 0; font-weight: 600; color: var(--color-text, #1e293b);">Provenance and DOI</p>
+        <p style="margin: 0.5rem 0; font-size: 0.9375rem; color: var(--color-text, #1e293b);">
           DOI (Zenodo): <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer" style="color: var(--color-link, #3b82f6); text-decoration: none;">https://doi.org/10.5281/zenodo.18354752</a>
         </p>
-        <p style="margin: 0.5rem 0 0 0; font-size: 0.9375rem;">
+        <p style="margin: 0.5rem 0 1rem 0; font-size: 0.9375rem; color: var(--color-text, #1e293b);">
           ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer" style="color: var(--color-link, #3b82f6); text-decoration: none;">0009-0003-9884-3697</a>
         </p>
+        <div style="padding-top: 0.75rem; border-top: 1px solid var(--color-border, #e2e8f0);">
+          <p style="margin: 0 0 0.25rem 0; font-size: 0.8125rem; font-weight: 600; color: var(--color-text-muted, #64748b);">Provenance notice</p>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.8; color: var(--color-text-muted, #64748b);">
+            <li>Repository roles, releases, and artifact visibility must be read together.</li>
+            <li>DOI presence does not imply equal epistemic authority across repositories.</li>
+            <li>Public artifacts are provenance-aware and governance-bound. Consult <a href="/content/03-repository-roles/" style="color: var(--color-link, #3b82f6);">Repository Roles</a> and <a href="/content/04-artifacts/" style="color: var(--color-link, #3b82f6);">Artifacts</a> for full context.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -312,59 +321,29 @@
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Layer-2 Statement -->
-    <section class="section" style="background: var(--color-bg-secondary, #ffffff); padding: 2rem 0;">
-      <div class="container container-narrow">
-        <div style="padding: 1.5rem; background: var(--color-bg, #f8fafc); border-left: 4px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-          <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
-            This site is a Layer-2 institutional presentation. It provides read-only access to approved artifacts. No execution, no authority, no live analysis.
-          </p>
-        </div>
+  <!-- AUTO-DZ-ACT Reference (secondary — kernel reference only) -->
+  <section style="background: var(--color-bg, #f8fafc); padding: 1.5rem 0; border-top: 1px solid var(--color-border, #e2e8f0);">
+    <div class="container container-narrow">
+      <div style="padding: 1.25rem 1.5rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
+        <p style="margin: 0 0 0.25rem 0; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b);">Canonical Analysis Kernel (Layer-1 reference)</p>
+        <p style="margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          <strong>AUTO-DZ-ACT</strong> — Automated Detection of Zero-states and Anomalous Condition Transitions.
+          A formal algorithmic and methodological framework. Reference-only in Layer-2; non-executing, non-operational.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Pipeline Dashboard (Layer-2 data interface) -->
-    <section class="section" id="pipeline-dashboard" style="background: var(--color-bg, #f8fafc);">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">TRIZEL-AI — Pipeline Dashboard</h2>
-          <p class="section__description">
-            Governance-compliant presentation layer (Layer-2) · Live data from pipeline outputs
-          </p>
-        </div>
-
-        <!-- Stats row -->
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
-          <div class="card">
-            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="total_days">Total Days</p>
-            <p id="dash-total-days" style="font-size: 2rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
-          </div>
-          <div class="card">
-            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="total_records">Total Records</p>
-            <p id="dash-total-records" style="font-size: 2rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
-          </div>
-          <div class="card">
-            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="latest_day_label">Latest Day</p>
-            <p id="dash-latest-date" style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary, #3b82f6);">…</p>
-          </div>
-          <div class="card">
-            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted, #64748b); margin-bottom: 0.5rem;" data-i18n="last_updated_utc">Last Updated (UTC)</p>
-            <p id="dash-generated" style="font-size: 0.875rem; color: var(--color-text, #1e293b);">…</p>
-          </div>
-        </div>
-
-        <!-- Latest dataset link + quick links -->
-        <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
-          <div id="dash-latest-link">…</div>
-          <a href="/observations.html" class="btn btn--outline">Observations →</a>
-          <a href="/status.html" class="btn btn--outline">Status →</a>
-          <a href="https://github.com/trizel-ai-site/trizel-site-artifacts" class="btn btn--outline" target="_blank" rel="noopener noreferrer">GitHub →</a>
-          <a href="/public/summary.json" class="btn btn--outline">Raw Data →</a>
-        </div>
+  <!-- Layer-2 Statement -->
+  <section class="section" style="background: var(--color-bg-secondary, #ffffff); padding: 2rem 0;">
+    <div class="container container-narrow">
+      <div style="padding: 1.5rem; background: var(--color-bg, #f8fafc); border-left: 4px solid var(--color-primary, #3b82f6); border-radius: 4px;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          This site is a Layer-2 institutional presentation. It provides read-only access to approved artifacts. No execution, no authority, no live analysis.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Governance Summary -->
     <section class="section" id="governance" style="background: var(--color-bg);">
@@ -477,10 +456,6 @@
       
       <p class="site-footer__text" style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8;">
         © 2026 TRIZEL-AI • Static Archive • Governance-Compliant
-      </p>
-
-      <p class="site-footer__text" style="margin-top: 0.75rem; font-size: 0.75rem; color: #94a3b8;">
-        Data displayed from static pipeline artifacts. No computation is performed in this layer.
       </p>
     </div>
   </footer>
