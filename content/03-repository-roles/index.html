@@ -61,8 +61,11 @@
           <p style="margin: 0 0 0.75rem; line-height: 1.6;">
             Role, layer, and governance context must be read together.
           </p>
-          <p style="margin: 0; line-height: 1.6; font-size: 0.9375rem;">
+          <p style="margin: 0 0 0.75rem; line-height: 1.6; font-size: 0.9375rem;">
             Canonical reference: <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>
+          </p>
+          <p style="margin: 0; line-height: 1.6; font-size: 0.9375rem;">
+            Publication and citation layer: <a href="/docs/SITE_PUBLICATION_AND_CITATION_LAYER.md">docs/SITE_PUBLICATION_AND_CITATION_LAYER.md</a>
           </p>
         </div>
 
@@ -109,6 +112,14 @@
                   <th scope="row">Site Representation</th>
                   <td>Governance anchor; not an artifact surface</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>governance-artifact</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Not citable as scientific output; governance reference only</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -150,6 +161,14 @@
                 <tr>
                   <th scope="row">Site Representation</th>
                   <td>Governance mapping; not scientific output</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>governance-artifact</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Not citable as scientific output; governance reference only</td>
                 </tr>
               </tbody>
             </table>
@@ -193,6 +212,14 @@
                   <th scope="row">Site Representation</th>
                   <td>Kernel + governed artifact source</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>canonical-publication</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Formally citable via DOI-backed release (see mapping rules)</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -234,6 +261,14 @@
                 <tr>
                   <th scope="row">Site Representation</th>
                   <td>Snapshot source</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>snapshot-release</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Contextual reference only; not a canonical publication</td>
                 </tr>
               </tbody>
             </table>
@@ -277,6 +312,14 @@
                   <th scope="row">Site Representation</th>
                   <td>Reference anchor</td>
                 </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>reference-context</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Reference anchor only; not independently citable</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -318,6 +361,14 @@
                 <tr>
                   <th scope="row">Site Representation</th>
                   <td>Presentation layer</td>
+                </tr>
+                <tr>
+                  <th scope="row">Publication Category</th>
+                  <td><code>site-surface</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Citation Eligibility</th>
+                  <td>Not independently citable; site repository DOI for archival purposes only</td>
                 </tr>
               </tbody>
             </table>
