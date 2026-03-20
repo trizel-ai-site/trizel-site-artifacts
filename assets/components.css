@@ -437,6 +437,109 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   REGISTRY PANELS — Canonical institutional presentation blocks
+   For repository roles and artifact surfaces (Layer-2)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Category group wrapper */
+.registry-group {
+  margin-bottom: 2.5rem;
+}
+
+/* Category section heading */
+.registry-group__heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border, #cbd5e1);
+  color: var(--color-text, #0f172a);
+}
+
+/* Descriptive paragraph after each category heading */
+.registry-group__description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #475569);
+  margin-bottom: 0.75rem;
+  max-width: none;
+}
+
+/* Origin repository note below description */
+.registry-group__origin {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #475569);
+  margin-bottom: 1.25rem;
+}
+
+/* Individual repository or artifact block */
+.registry-panel {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-left: 4px solid var(--color-border-strong, #64748b);
+  border-radius: var(--radius-sm, 4px);
+}
+
+/* Layer-specific left-border accent colors */
+.registry-panel--layer0 { border-left-color: #1e40af; }
+.registry-panel--layer1 { border-left-color: #0369a1; }
+.registry-panel--ref    { border-left-color: #6d28d9; }
+.registry-panel--site   { border-left-color: #059669; }
+
+/* Repository or artifact identifier (monospace for code names) */
+.registry-panel__title {
+  font-family: var(--font-mono, monospace);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--color-text, #0f172a);
+}
+
+/* Human-readable label titles (no monospace) */
+.registry-panel__title--label {
+  font-family: var(--font-system, sans-serif);
+}
+
+/* Preserve monospace for inline code inside label titles */
+.registry-panel__title--label code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9375rem;
+}
+
+/* Field table inside each panel */
+.registry-panel__fields {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.registry-panel__fields tr {
+  border-bottom: 1px solid var(--color-border-light, #e2e8f0);
+}
+
+.registry-panel__fields tr:last-child {
+  border-bottom: none;
+}
+
+.registry-panel__fields th {
+  text-align: left;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  width: 40%;
+  color: var(--color-text-muted, #475569);
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.registry-panel__fields td {
+  padding: 0.5rem 0;
+  color: var(--color-text, #0f172a);
+  vertical-align: top;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    INLINE STYLE OVERRIDES — WCAG AAA Compliance
    Override hardcoded inline styles that don't meet contrast requirements
    ═══════════════════════════════════════════════════════════════ */
