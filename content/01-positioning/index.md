@@ -6,6 +6,10 @@
 
 ---
 
+**Context:** **Epistemic Positioning** → [System Architecture](/content/02-architecture/) → [Repository Roles](/content/03-repository-roles/) → [Artifacts](/content/04-artifacts/)
+
+---
+
 ## What TRIZEL Is
 
 TRIZEL is an Institutional Scientific Observatory.
@@ -26,6 +30,7 @@ TRIZEL occupies the mediation layer. It does not originate data. It does not pro
 
 ## What TRIZEL Is Not
 
+- **Not a dashboard.** TRIZEL does not present live statistics, interactive views, or filterable data.
 - **Not a data provider.** TRIZEL does not generate or collect raw data.
 - **Not an inference engine.** TRIZEL performs no analysis, inference, or derived conclusions.
 - **Not an interactive analysis tool.** No dashboards, no queries, no live computation.

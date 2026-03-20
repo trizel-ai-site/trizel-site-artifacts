@@ -171,7 +171,7 @@ An artifact presented without all five binding fields is a governance violation.
 
 ## DOI / Release Interpretation
 
-- DOI presence does not imply equal artifact authority. Each DOI must be read together with the origin repository's declared role and epistemic layer.
+- DOI presence does not imply equal epistemic authority across repositories. Each DOI must be read together with the origin repository's declared role and epistemic layer.
 - Release relation must be read together with repository role. A snapshot release does not carry the same authority as a canonical kernel release.
 - Artifact visibility does not imply scientific conclusion. Presence on this surface does not constitute scientific endorsement or validation.
 - Publication state does not replace provenance. A published artifact requires full provenance context regardless of publication state.
