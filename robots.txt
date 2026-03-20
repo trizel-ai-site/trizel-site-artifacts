@@ -5,6 +5,12 @@
 User-agent: *
 Allow: /
 
+# Suppress legacy-deprecated pages from indexing
+# Classification: legacy-deprecated per docs/SITE_ENTRY_AND_DEPRECATION_POLICY.md
+Disallow: /index_phase_f.html
+Disallow: /index_layer2_selector.html
+Disallow: /index_layer4_1_home.html
+
 # Sitemap
 Sitemap: https://trizel-ai.com/sitemap.xml
 
