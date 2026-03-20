@@ -1,57 +1,126 @@
 # Repository Roles & Governance Mapping
 
 **Layer:** Layer-2 — Epistemic Surface  
-**Status:** Authoritative  
-**Dependency:** [01 — Epistemic Positioning](/content/01-positioning/) → [02 — System Architecture](/content/02-architecture/)  
-**Canonical Reference:** [REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md)
+**Status:** Canonical  
+**Compliance:** [SITE_DEPENDENCY_ORDER.md](/docs/SITE_DEPENDENCY_ORDER.md) · [REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md)
 
 ---
 
-**Context:** Positioning → Architecture → **Repository Roles** → Artifacts
+**Context:** [Epistemic Positioning](/content/01-positioning/) → [System Architecture](/content/02-architecture/) → **Repository Roles** → [Artifacts](/content/04-artifacts/)
 
 ---
 
-## Mapping Model Summary
+## Preface
 
-Repository roles within the TRIZEL system are governed by a canonical mapping chain:
+Repositories in the TRIZEL system are presented grouped by governance role and epistemic layer.
+
+This surface is not an organization inventory. It is a governed reading interface. Repositories are shown only within governance and artifact context. Repository visibility does not imply equal authority. Role, layer, and governance context must be read together.
+
+---
+
+## Canonical Mapping Chain
 
 ```
 Repository → Role → Epistemic Layer → Release / DOI Status → Artifact Responsibility → Site Surface Representation
 ```
 
-Repositories are **not presented as flat or unordered lists**. Each repository is assigned a single role, mapped to an epistemic layer, and presented only within that structure.
-
-The authoritative mapping is maintained in [docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md).
+No element in this chain may be omitted or collapsed. Each repository is describable through every step of this chain.
 
 ---
 
-## Role Categories
+## A. Constitutional / Epistemic Authority
 
-### Constitutional / Epistemic Authority (Layer-0)
-- Source of binding governance rules and epistemic identity
-- Not an artifact surface; not a scientific output source
-- Example: `trizel-epistemic-engine`
+### `trizel-epistemic-engine`
 
-### Operational Governance (Layer-0 / Governance)
-- Implements and enforces Layer-0 policies at an operational level
-- Manages approval flows for artifacts
-- Example: `trizel-core`
+| Field | Value |
+|---|---|
+| **Organization / Owner** | trizel-ai |
+| **Role** | Constitutional / epistemic authority |
+| **Epistemic Layer** | Layer-0 |
+| **Status** | canonical |
+| **DOI / Release** | DOI status not asserted in this document |
+| **Artifact Relation** | Governance anchor only |
+| **Site Representation** | Governance anchor; not an artifact surface |
 
-### Execution / Analysis (Layer-1)
-- Performs scientific analysis under Layer-0 authorization
-- Produces artifacts that flow to Layer-2 after governance approval
-- Operates at Layer-1; not public-facing
-- Examples: `AUTO-DZ-ACT-ANALYSIS-3I-ATLAS` (frozen canonical kernel), `AUTO-DZ-ACT-3I-ATLAS-DAILY` (snapshot source)
+---
 
-### Definition / Reference (Reference / Formal Definition Layer)
-- Contains canonical definitions, schemas, and reference materials
-- Governance-pinned; read-only reference
-- Example: `Auto-dz-act`
+## B. Operational Governance
 
-### Site Surface / Publication (Layer-2)
-- Presents approved artifacts to the public
-- Read-only; no execution authority; no governance authority
-- Example: `trizel-site-artifacts` (this repository)
+### `trizel-core`
+
+| Field | Value |
+|---|---|
+| **Organization / Owner** | trizel-ai |
+| **Role** | Operational governance |
+| **Epistemic Layer** | Layer-0 / Governance |
+| **Status** | canonical |
+| **DOI / Release** | DOI status not asserted in this document |
+| **Artifact Relation** | Enforces Layer-0 policies; manages artifact approval |
+| **Site Representation** | Governance mapping; not scientific output |
+
+---
+
+## C. Canonical Analysis / Execution
+
+### `AUTO-DZ-ACT-ANALYSIS-3I-ATLAS`
+
+| Field | Value |
+|---|---|
+| **Organization / Owner** | abdelkader-omran |
+| **Role** | Canonical analysis kernel |
+| **Epistemic Layer** | Layer-1 — execution / analysis |
+| **Status** | frozen |
+| **DOI / Release** | DOI-backed release present (exact identifier not asserted in this document) |
+| **Artifact Relation** | Analysis kernel producing governed artifacts |
+| **Site Representation** | Kernel + governed artifact source |
+
+---
+
+## D. Operational Snapshot / Publication Support
+
+### `AUTO-DZ-ACT-3I-ATLAS-DAILY`
+
+| Field | Value |
+|---|---|
+| **Organization / Owner** | abdelkader-omran |
+| **Role** | Daily official snapshot / observational publication |
+| **Epistemic Layer** | Layer-1 — operational snapshot / publication support |
+| **Status** | active |
+| **DOI / Release** | Snapshot release pattern present (exact identifiers not asserted in this document) |
+| **Artifact Relation** | Daily snapshot source |
+| **Site Representation** | Snapshot source |
+
+---
+
+## E. Definition / Reference Layer
+
+### `Auto-dz-act`
+
+| Field | Value |
+|---|---|
+| **Organization / Owner** | trizel-ai |
+| **Role** | Definition-only canonical reference |
+| **Epistemic Layer** | Reference / formal definition layer |
+| **Status** | reference-only |
+| **DOI / Release** | DOI status not asserted in this document |
+| **Artifact Relation** | Reference-only definition source |
+| **Site Representation** | Reference anchor |
+
+---
+
+## F. Site Surface / Public Projection
+
+### `trizel-site-artifacts`
+
+| Field | Value |
+|---|---|
+| **Organization / Owner** | trizel-ai-site |
+| **Role** | Layer-2 epistemic surface |
+| **Epistemic Layer** | Site surface |
+| **Status** | site-surface |
+| **DOI / Release** | DOI: 10.5281/zenodo.18636150 (site repository) |
+| **Artifact Relation** | Site surface only, not artifact origin |
+| **Site Representation** | Presentation layer |
 
 ---
 
@@ -59,21 +128,23 @@ The authoritative mapping is maintained in [docs/REPOSITORY_DOI_ARTIFACT_MAPPING
 
 ```
 Layer-0 (trizel-epistemic-engine / trizel-core)
-→ Operational Governance
-→ Layer-1 Execution
-→ Layer-2 Presentation
+→ Operational Governance (trizel-core)
+→ Layer-1 Execution (AUTO-DZ-ACT-ANALYSIS-3I-ATLAS / AUTO-DZ-ACT-3I-ATLAS-DAILY)
+→ Layer-2 Presentation (trizel-site-artifacts)
 ```
 
 No repository may self-authorize content for public presentation. Authority flows top-down from Layer-0.
 
 ---
 
-## DOI / Release Context
+## DOI / Release Interpretation
 
-Some repositories carry DOI-backed releases. DOI presence does not imply epistemic equivalence across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.
+DOI presence does not imply epistemic equivalence across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.
 
-See [docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md) — Section E for the full DOI / release rules.
+Release existence does not imply canonical authority. Repository role must always be read together with layer and governance context.
+
+See [docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md §E](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md) for the full DOI / release rules.
 
 ---
 
-*Layer-2 Epistemic Surface — SITE_DEPENDENCY_ORDER.md compliance — See REPOSITORY_DOI_ARTIFACT_MAPPING.md for the canonical mapping*
+*Layer-2 Epistemic Surface — SITE_DEPENDENCY_ORDER.md compliance — REPOSITORY_DOI_ARTIFACT_MAPPING.md canonical reference*
