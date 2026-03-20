@@ -139,7 +139,7 @@ No repository may self-authorize content for public presentation. Authority flow
 
 ## DOI / Release Interpretation
 
-DOI presence does not imply epistemic equivalence across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.
+DOI presence does not imply equal epistemic authority across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.
 
 Release existence does not imply canonical authority. Repository role must always be read together with layer and governance context.
 

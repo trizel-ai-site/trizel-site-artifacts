@@ -6,6 +6,10 @@
 
 ---
 
+**Context:** [Epistemic Positioning](/content/01-positioning/) → **System Architecture** → [Repository Roles](/content/03-repository-roles/) → [Artifacts](/content/04-artifacts/)
+
+---
+
 ## Epistemic Layer Structure
 
 TRIZEL operates across three distinct layers with explicit separation of concerns:
