@@ -137,13 +137,10 @@
         </a>
       </div>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="/artifacts/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg>Artifacts</a>
-        <a href="/en/governance/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Governance</a>
-        <a href="/goi/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>GOI</a>
-        <a href="/phase-e/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Phase-E</a>
-        <a href="/en/overview/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Overview</a>
-        <a href="/en/layer-map/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg>Layer Map</a>
-        <a href="/en/status/"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Status</a>
+        <a href="/content/01-positioning/">Positioning</a>
+        <a href="/content/02-architecture/">Architecture</a>
+        <a href="/content/03-repository-roles/">Repository Roles</a>
+        <a href="/content/04-artifacts/">Artifacts</a>
       </nav>
       <div class="lang-switcher" role="navigation" aria-label="Language selector">
         <a href="/en/" class="lang-link" lang="en">EN</a>
@@ -180,8 +177,16 @@
     <div class="container">
       <h2 class="hero__title">Institutional Scientific Observatory</h2>
       <p class="hero__subtitle">
-        Governed Research • Layer Separation • Progressive Enhancement
+        Data Providers → TRIZEL → Interpretation
       </p>
+      <p style="margin-top: 1rem; font-size: 1rem; color: var(--color-text-muted, #94a3b8);">
+        A standard layer. A read-only epistemic surface. Not a data provider. Not an inference engine.
+      </p>
+      <div style="margin-top: 1.5rem;">
+        <a href="/content/01-positioning/" class="btn btn--outline" style="color: #60a5fa; border-color: #60a5fa;">
+          Begin: Epistemic Positioning →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -198,23 +203,23 @@
     </div>
   </section>
 
-  <!-- Archive Mode Notice Banner -->
-  <div class="banner banner--dark" role="note" aria-label="Archive Mode Information">
+  <!-- Dependency Order Navigation Banner -->
+  <div class="banner banner--dark" role="note" aria-label="Canonical Navigation Order">
     <div class="container">
       <h2 class="banner__title">
-        <span aria-hidden="true">📦</span>
-        Archive Mode: Static & Immutable
+        Canonical Site Structure
       </h2>
       <div class="banner__content">
         <p>
-          The <strong>/artifacts/**</strong> directory contains frozen, cryptographically-verified research outputs.
-          All artifacts are static HTML with no JavaScript, no analytics, and no external dependencies.
+          This site is structured according to the <strong>epistemic dependency order</strong> defined in <code>docs/SITE_DEPENDENCY_ORDER.md</code>.
+          Navigation follows: <strong>Positioning → Architecture → Repository Roles → Artifacts</strong>.
         </p>
-        <p style="margin-top: 1rem;">
-          <a href="/artifacts/" class="btn btn--outline" style="display: inline-block; color: #60a5fa; border-color: #60a5fa;">
-            Browse Artifact Archive →
-          </a>
-        </p>
+        <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          <a href="/content/01-positioning/" class="btn btn--outline" style="color: #60a5fa; border-color: #60a5fa;">1. Positioning</a>
+          <a href="/content/02-architecture/" class="btn btn--outline" style="color: #60a5fa; border-color: #60a5fa;">2. Architecture</a>
+          <a href="/content/03-repository-roles/" class="btn btn--outline" style="color: #60a5fa; border-color: #60a5fa;">3. Repository Roles</a>
+          <a href="/content/04-artifacts/" class="btn btn--outline" style="color: #60a5fa; border-color: #60a5fa;">4. Artifacts</a>
+        </div>
       </div>
     </div>
   </div>
@@ -261,50 +266,47 @@
     </div>
   </section>
 
-  <!-- Quick Access Navigation -->
+  <!-- Epistemic Entry Point -->
   <section class="section">
     <div class="container">
       <div class="section__header">
-        <h2 class="section__title">Quick Access</h2>
+        <h2 class="section__title">Site Entry — Dependency Order</h2>
         <p class="section__description">
-          Key resources available in all languages
+          Navigate the site in canonical epistemic dependency order
         </p>
       </div>
 
       <div class="card-grid">
         <div class="card">
-          <h3 class="card__title">📦 Static Artifacts</h3>
+          <h3 class="card__title">1. Epistemic Positioning</h3>
           <p class="card__description">
-            Cryptographically verified, byte-for-byte frozen research outputs. 
-            No JavaScript in artifacts, no regeneration, no transformation.
+            What TRIZEL is, what TRIZEL is not, and its position between data providers and interpretation.
           </p>
-          <a href="/artifacts/" class="card__link">Browse Artifacts</a>
+          <a href="/content/01-positioning/" class="card__link">Read Positioning</a>
         </div>
 
         <div class="card">
-          <h3 class="card__title">🔒 Governance</h3>
+          <h3 class="card__title">2. System Architecture</h3>
           <p class="card__description">
-            All content flows from Layer-0 governance authority. No autonomous execution, 
-            no live data, no scientific claims.
+            Layer-0 / Layer-1 / Layer-2 structure, separation of concerns, and the epistemic surface role of this site.
           </p>
-          <a href="/en/governance/" class="card__link">Read Governance Framework</a>
+          <a href="/content/02-architecture/" class="card__link">Read Architecture</a>
         </div>
 
         <div class="card">
-          <h3 class="card__title">📚 Global Observation Index</h3>
+          <h3 class="card__title">3. Repository Roles</h3>
           <p class="card__description">
-            Multilingual catalog of verified scientific artifacts with provenance tracking.
+            Repository role mapping, authority flow, and governance structure. Repositories grouped by role, not listed flat.
           </p>
-          <a href="/goi/" class="card__link">Browse GOI</a>
+          <a href="/content/03-repository-roles/" class="card__link">Read Repository Roles</a>
         </div>
 
         <div class="card">
-          <h3 class="card__title">📄 Phase-E Publications</h3>
+          <h3 class="card__title">4. Artifacts / Outputs</h3>
           <p class="card__description">
-            Static index of governance-approved publication references. Compiler outputs, 
-            immutable resources, and verified data with provenance.
+            Governed artifacts with full provenance: source repository, epistemic layer, governance path, and DOI reference.
           </p>
-          <a href="/phase-e/" class="card__link">View Phase-E Publications</a>
+          <a href="/content/04-artifacts/" class="card__link">Read Artifacts</a>
         </div>
       </div>
     </div>
@@ -458,13 +460,12 @@
       </p>
       
       <ul class="site-footer__links">
-        <li><a href="/artifacts/" class="site-footer__link">Artifacts</a></li>
+        <li><a href="/content/01-positioning/" class="site-footer__link">Positioning</a></li>
+        <li><a href="/content/02-architecture/" class="site-footer__link">Architecture</a></li>
+        <li><a href="/content/03-repository-roles/" class="site-footer__link">Repository Roles</a></li>
+        <li><a href="/content/04-artifacts/" class="site-footer__link">Artifacts</a></li>
         <li><a href="/en/governance/" class="site-footer__link">Governance</a></li>
         <li><a href="/goi/" class="site-footer__link">GOI</a></li>
-        <li><a href="/phase-e/" class="site-footer__link">Phase-E</a></li>
-        <li><a href="/en/overview/" class="site-footer__link">Overview</a></li>
-        <li><a href="/en/layer-map/" class="site-footer__link">Layer Map</a></li>
-        <li><a href="/en/status/" class="site-footer__link">Status</a></li>
         <li><a href="/accessibility.html" class="site-footer__link">Accessibility</a></li>
         <li><a href="https://doi.org/10.5281/zenodo.18354752" class="site-footer__link" target="_blank" rel="noopener">DOI</a></li>
         <li><a href="https://orcid.org/0009-0003-9884-3697" class="site-footer__link" target="_blank" rel="noopener">ORCID</a></li>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Architecture — TRIZEL</title>
+  <meta name="description" content="TRIZEL epistemic layer structure: Layer-0 Governance, Layer-1 Execution, Layer-2 Site Surface. Separation of concerns and the epistemic surface role of this site.">
+  <link rel="canonical" href="https://trizel-ai.com/content/02-architecture/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Institutional Scientific Observatory</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/content/01-positioning/">Positioning</a>
+        <a href="/content/02-architecture/" aria-current="page">Architecture</a>
+        <a href="/content/03-repository-roles/">Repository Roles</a>
+        <a href="/content/04-artifacts/">Artifacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="background: var(--color-bg, #f8fafc); padding: 2rem 0; border-bottom: 1px solid var(--color-border, #e2e8f0);">
+      <div class="container container-narrow">
+        <nav aria-label="Dependency chain" style="font-size: 0.875rem; color: var(--color-text-muted, #64748b); margin-bottom: 1.5rem;">
+          <a href="/content/01-positioning/" style="color: var(--color-link, #3b82f6);">Positioning</a>
+          <span aria-hidden="true"> → </span>
+          <strong>Architecture</strong>
+          <span aria-hidden="true"> → </span>
+          <a href="/content/03-repository-roles/" style="color: var(--color-link, #3b82f6);">Repository Roles</a>
+          <span aria-hidden="true"> → </span>
+          <a href="/content/04-artifacts/" style="color: var(--color-link, #3b82f6);">Artifacts</a>
+        </nav>
+
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text, #1e293b);">System Architecture</h2>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--color-text, #1e293b);">Layer-0 — Governance / Constitutional Authority</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          Establishes institutional policies and governance rules. Approves artifacts before publication. Maintains final and binding authority. Source: <code>trizel-core</code>.
+        </p>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--color-text, #1e293b);">Layer-1 — Execution / Analysis</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          Internal research, analysis, and validation performed under Layer-0 authorization. Scientific work is private; outputs flow to Layer-2 only after governance approval.
+        </p>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--color-text, #1e293b);">Layer-2 — Site Surface (this layer)</h3>
+        <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          Public-facing, read-only presentation of approved artifacts. No authority, no execution, no live data, no inference.
+        </p>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--color-text, #1e293b);">Separation of Concerns</h3>
+        <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8; color: var(--color-text, #1e293b);">
+          <li>Layer-2 does not execute analysis (Layer-1 concern)</li>
+          <li>Layer-2 does not establish policy (Layer-0 concern)</li>
+          <li>Layer-1 does not publish directly (requires Layer-0 approval)</li>
+          <li>Layer-0 does not perform computation (Layer-1 concern)</li>
+        </ul>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--color-text, #1e293b);">Dependency Order</h3>
+        <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; margin-bottom: 1.5rem; font-family: monospace; font-size: 0.9375rem; line-height: 1.8; color: var(--color-text, #1e293b);">
+          1. Epistemic Positioning<br>
+          2. System Architecture ← this page<br>
+          3. Repository Roles &amp; Governance Mapping<br>
+          4. Artifacts / Outputs
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border, #e2e8f0); display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/content/01-positioning/" class="btn btn--outline">← Positioning</a>
+          <a href="/content/03-repository-roles/" class="btn btn--outline">Next: Repository Roles →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__content">
+      <p class="site-footer__text"><strong>TRIZEL Institutional Scientific Observatory</strong></p>
+      <p class="site-footer__text">Layer-2 Presentation • No Authority • No Execution • Governance-Controlled</p>
+      <ul class="site-footer__links">
+        <li><a href="/content/01-positioning/" class="site-footer__link">Positioning</a></li>
+        <li><a href="/content/02-architecture/" class="site-footer__link">Architecture</a></li>
+        <li><a href="/content/03-repository-roles/" class="site-footer__link">Repository Roles</a></li>
+        <li><a href="/content/04-artifacts/" class="site-footer__link">Artifacts</a></li>
+        <li><a href="/en/governance/" class="site-footer__link">Governance</a></li>
+        <li><a href="https://doi.org/10.5281/zenodo.18354752" class="site-footer__link" target="_blank" rel="noopener">DOI</a></li>
+      </ul>
+      <p class="site-footer__text" style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8;">© 2026 TRIZEL-AI • Static Archive • Governance-Compliant</p>
+    </div>
+  </footer>
+</body>
+</html>
