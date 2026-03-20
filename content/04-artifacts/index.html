@@ -51,17 +51,23 @@
 
         <div style="padding: 1.5rem; background: var(--color-bg-secondary, #ffffff); border-left: 4px solid var(--color-primary, #3b82f6); border-radius: 4px; margin-bottom: 2rem;">
           <p style="margin: 0; font-size: 1rem; line-height: 1.6; font-weight: 500; color: var(--color-text, #1e293b);">
-            Artifacts on this site are exclusively outputs that have passed through the Layer-0 governance approval process. No artifact is presented in isolation.
+            Artifact visibility is governed by repository / DOI / provenance mapping. No artifact is presented in isolation or without its full binding declaration.
           </p>
         </div>
+
+        <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          The authoritative artifact binding rules — including origin repository, release / publication state, provenance path, governance context, and DOI mapping — are defined in
+          <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>.
+        </p>
 
         <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--color-text, #1e293b);">Required Provenance Fields</h3>
         <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">Each artifact must carry:</p>
         <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8; color: var(--color-text, #1e293b);">
-          <li><strong>Source repository</strong> — the Layer-1 repository that produced it</li>
-          <li><strong>Epistemic layer</strong> — Layer-1 (produced) and Layer-2 (presented)</li>
-          <li><strong>Governance path</strong> — the Layer-0 authorization under which it was approved</li>
-          <li><strong>Provenance / DOI reference</strong> — a persistent identifier where applicable</li>
+          <li><strong>Origin repository</strong> — the specific repository that produced the artifact</li>
+          <li><strong>Release or publication state</strong> — the specific release, tag, or snapshot state</li>
+          <li><strong>Provenance path</strong> — the full chain from data input through Layer-1 execution to Layer-2 presentation</li>
+          <li><strong>Governance context</strong> — the Layer-0 authorization under which the artifact was approved</li>
+          <li><strong>DOI / release reference</strong> — a persistent identifier where applicable (see <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">REPOSITORY_DOI_ARTIFACT_MAPPING.md §E</a>)</li>
         </ul>
 
         <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--color-text, #1e293b);">No Standalone Artifact Interpretation</h3>
@@ -73,7 +79,7 @@
         <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; margin-bottom: 1.5rem; font-family: monospace; font-size: 0.9375rem; line-height: 1.8; color: var(--color-text, #1e293b);">
           1. Positioning → understand what TRIZEL is<br>
           2. Architecture → understand the layer structure<br>
-          3. Repository Roles → identify the source repository's role<br>
+          3. Repository Roles → identify the source repository's role and DOI / release status<br>
           4. Artifact ← this section
         </div>
 

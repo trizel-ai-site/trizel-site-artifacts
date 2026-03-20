@@ -49,40 +49,50 @@
 
         <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text, #1e293b);">Repository Roles &amp; Governance Mapping</h2>
 
-        <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+        <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--color-text, #1e293b);">
           Repositories within the TRIZEL system are assigned specific roles within the epistemic layer structure. They are <strong>not presented as flat or unordered lists</strong>.
         </p>
 
+        <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          The authoritative mapping — including repository classification, DOI / release status, artifact responsibility, and site representation rules — is defined in
+          <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>.
+        </p>
+
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--color-text, #1e293b);">Canonical Mapping Chain</h3>
+        <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; margin-bottom: 1.5rem; font-family: monospace; font-size: 0.9375rem; line-height: 1.8; color: var(--color-text, #1e293b);">
+          Repository → Role → Epistemic Layer → Release / DOI Status → Artifact Responsibility → Site Surface Representation
+        </div>
+
         <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
           <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Governance / Constitutional Authority</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Establishes binding rules and policy. Source of Layer-0 authority.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Constitutional / Epistemic Authority — Layer-0</h3>
+            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Source of binding governance rules and epistemic identity. Not an artifact surface. Example: <code>trizel-epistemic-engine</code></p>
           </div>
           <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Operational Governance</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Implements and enforces Layer-0 policies. Manages artifact approval flows.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Operational Governance — Layer-0 / Governance</h3>
+            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Implements and enforces Layer-0 policies. Manages artifact approval flows. Example: <code>trizel-core</code></p>
           </div>
           <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Execution / Analysis</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Performs scientific analysis under Layer-0 authorization. Operates at Layer-1; not public-facing.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Execution / Analysis — Layer-1</h3>
+            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Performs scientific analysis under Layer-0 authorization. Operates at Layer-1; not public-facing. Examples: <code>AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</code> (frozen canonical kernel), <code>AUTO-DZ-ACT-3I-ATLAS-DAILY</code> (snapshot source)</p>
           </div>
           <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Publication / Site Surface</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Presents approved artifacts to the public. Read-only; no execution authority. (<code>trizel-site-artifacts</code>)</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Definition / Reference — Formal Definition Layer</h3>
+            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Canonical definitions, schemas, and reference materials. Governance-pinned; read-only reference. Example: <code>Auto-dz-act</code></p>
           </div>
           <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Definition / Reference</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Canonical definitions, schemas, and reference materials. Governance-pinned.</p>
-          </div>
-          <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border-left: 3px solid var(--color-primary, #3b82f6); border-radius: 4px;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Archive / Snapshot</h3>
-            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Immutable records of prior system states and approved releases. Provenance-anchored.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--color-text, #1e293b);">Site Surface / Publication — Layer-2</h3>
+            <p style="font-size: 0.9375rem; line-height: 1.5; margin: 0; color: var(--color-text-muted, #64748b);">Presents approved artifacts to the public. Read-only; no execution authority; no governance authority. Example: <code>trizel-site-artifacts</code> (this repository)</p>
           </div>
         </div>
 
         <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--color-text, #1e293b);">Authority Flow</h3>
         <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; margin-bottom: 1.5rem; font-family: monospace; font-size: 0.9375rem; line-height: 1.8; color: var(--color-text, #1e293b);">
-          Layer-0 (trizel-core) → Operational Governance → Layer-1 Execution → Layer-2 Presentation
+          Layer-0 (trizel-epistemic-engine / trizel-core) → Operational Governance → Layer-1 Execution → Layer-2 Presentation
+        </div>
+
+        <div style="padding: 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px; margin-bottom: 1.5rem; font-size: 0.9375rem; line-height: 1.6; color: var(--color-text-muted, #64748b);">
+          <strong style="color: var(--color-text, #1e293b);">DOI / Release context:</strong> Some repositories carry DOI-backed releases. DOI presence does not imply epistemic equivalence. A DOI must always be interpreted together with the repository's declared role and epistemic layer. See <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">REPOSITORY_DOI_ARTIFACT_MAPPING.md §E</a> for the full DOI / release rules.
         </div>
 
         <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border, #e2e8f0); display: flex; gap: 1rem; flex-wrap: wrap;">
