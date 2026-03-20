@@ -1,8 +1,9 @@
 # Repository Roles & Governance Mapping
 
 **Layer:** Layer-2 — Epistemic Surface  
-**Status:** Canonical Scaffold  
-**Dependency:** [01 — Epistemic Positioning](/content/01-positioning/) → [02 — System Architecture](/content/02-architecture/)
+**Status:** Authoritative  
+**Dependency:** [01 — Epistemic Positioning](/content/01-positioning/) → [02 — System Architecture](/content/02-architecture/)  
+**Canonical Reference:** [REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md)
 
 ---
 
@@ -10,58 +11,69 @@
 
 ---
 
-## Repository Role Mapping
+## Mapping Model Summary
 
-Repositories within the TRIZEL system are not interchangeable. Each is assigned a specific role within the epistemic layer structure. Repositories are **not presented as flat or unordered lists**.
+Repository roles within the TRIZEL system are governed by a canonical mapping chain:
 
-### Governance / Constitutional Authority
-- Establishes binding rules and policy
-- Source of Layer-0 authority
-- Example: `trizel-core`
+```
+Repository → Role → Epistemic Layer → Release / DOI Status → Artifact Responsibility → Site Surface Representation
+```
 
-### Operational Governance
+Repositories are **not presented as flat or unordered lists**. Each repository is assigned a single role, mapped to an epistemic layer, and presented only within that structure.
+
+The authoritative mapping is maintained in [docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md).
+
+---
+
+## Role Categories
+
+### Constitutional / Epistemic Authority (Layer-0)
+- Source of binding governance rules and epistemic identity
+- Not an artifact surface; not a scientific output source
+- Example: `trizel-epistemic-engine`
+
+### Operational Governance (Layer-0 / Governance)
 - Implements and enforces Layer-0 policies at an operational level
 - Manages approval flows for artifacts
+- Example: `trizel-core`
 
-### Execution / Analysis
+### Execution / Analysis (Layer-1)
 - Performs scientific analysis under Layer-0 authorization
-- Produces artifacts that flow to Layer-2 after approval
+- Produces artifacts that flow to Layer-2 after governance approval
 - Operates at Layer-1; not public-facing
+- Examples: `AUTO-DZ-ACT-ANALYSIS-3I-ATLAS` (frozen canonical kernel), `AUTO-DZ-ACT-3I-ATLAS-DAILY` (snapshot source)
 
-### Publication / Site Surface
-- Presents approved artifacts to the public
-- Read-only; no execution authority
-- Example: `trizel-site-artifacts` (this repository)
-
-### Definition / Reference
+### Definition / Reference (Reference / Formal Definition Layer)
 - Contains canonical definitions, schemas, and reference materials
-- Governance-pinned; not subject to modification without Layer-0 approval
+- Governance-pinned; read-only reference
+- Example: `Auto-dz-act`
 
-### Archive / Snapshot
-- Immutable records of prior system states and approved releases
-- Provenance-anchored; cryptographically verifiable where applicable
+### Site Surface / Publication (Layer-2)
+- Presents approved artifacts to the public
+- Read-only; no execution authority; no governance authority
+- Example: `trizel-site-artifacts` (this repository)
 
 ---
 
 ## Authority Flow
 
 ```
-Layer-0 (trizel-core) → Operational Governance → Layer-1 Execution → Layer-2 Presentation
+Layer-0 (trizel-epistemic-engine / trizel-core)
+→ Operational Governance
+→ Layer-1 Execution
+→ Layer-2 Presentation
 ```
 
 No repository may self-authorize content for public presentation. Authority flows top-down from Layer-0.
 
 ---
 
-## Why Repositories Are Not Displayed Flat
+## DOI / Release Context
 
-A flat repository list conveys no epistemic structure. It implies all repositories are equivalent. They are not.
+Some repositories carry DOI-backed releases. DOI presence does not imply epistemic equivalence across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.
 
-Repository presentation on this site must express:
-- Role category
-- Epistemic layer
-- Governance relationship
+See [docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md](/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md) — Section E for the full DOI / release rules.
 
 ---
 
-*Canonical stub — Layer-2 Epistemic Surface — SITE_DEPENDENCY_ORDER.md compliance*
+*Layer-2 Epistemic Surface — SITE_DEPENDENCY_ORDER.md compliance — See REPOSITORY_DOI_ARTIFACT_MAPPING.md for the canonical mapping*
