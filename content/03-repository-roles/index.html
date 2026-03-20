@@ -39,27 +39,30 @@
         <!-- Dependency breadcrumb — required by SITE_DEPENDENCY_ORDER.md -->
         <nav aria-label="Dependency chain" style="font-size: 0.875rem; color: var(--color-text-muted, #64748b); margin-bottom: 1.5rem; padding: 0.75rem 1rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 4px;">
           <span style="font-weight: 600; color: var(--color-text, #1e293b);">Context:</span>
-          <a href="/content/01-positioning/" style="color: var(--color-link, #3b82f6);">Epistemic Positioning</a>
+          <a href="/content/01-positioning/">Epistemic Positioning</a>
           <span aria-hidden="true"> → </span>
-          <a href="/content/02-architecture/" style="color: var(--color-link, #3b82f6);">System Architecture</a>
+          <a href="/content/02-architecture/">System Architecture</a>
           <span aria-hidden="true"> → </span>
           <strong>Repository Roles</strong>
           <span aria-hidden="true"> → </span>
-          <a href="/content/04-artifacts/" style="color: var(--color-link, #3b82f6);">Artifacts</a>
+          <a href="/content/04-artifacts/">Artifacts</a>
         </nav>
 
         <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--color-text, #1e293b);">Repository Roles &amp; Governance Mapping</h2>
 
         <!-- Explanatory preface -->
         <div style="padding: 1.25rem 1.5rem; background: var(--color-bg-secondary, #ffffff); border-left: 4px solid var(--color-primary, #3b82f6); border-radius: 4px; margin-bottom: 2rem;">
-          <p style="margin: 0 0 0.75rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          <p style="margin: 0 0 0.75rem; line-height: 1.6;">
             Repositories are grouped by governance role and epistemic layer. This is not an organization inventory.
           </p>
-          <p style="margin: 0 0 0.75rem; line-height: 1.6; color: var(--color-text, #1e293b);">
+          <p style="margin: 0 0 0.75rem; line-height: 1.6;">
             Repositories are shown only within governance and artifact context. Repository visibility does not imply equal authority.
           </p>
-          <p style="margin: 0; line-height: 1.6; color: var(--color-text-muted, #64748b); font-size: 0.9375rem;">
-            Canonical reference: <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>
+          <p style="margin: 0 0 0.75rem; line-height: 1.6;">
+            Role, layer, and governance context must be read together.
+          </p>
+          <p style="margin: 0; line-height: 1.6; font-size: 0.9375rem;">
+            Canonical reference: <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</a>
           </p>
         </div>
 
@@ -70,237 +73,255 @@
         </div>
 
         <!-- A. Constitutional / Epistemic Authority -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">A. Constitutional / Epistemic Authority</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">A. Constitutional / Epistemic Authority</h3>
+          <p class="registry-group__description">Repositories that define and hold the constitutional authority of the TRIZEL system. These establish the foundational governance rules and epistemic constraints from which all other layers derive authority.</p>
 
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #1e40af; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">trizel-epistemic-engine</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">trizel-ai</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Constitutional / epistemic authority</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Layer-0</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>canonical</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">DOI status not asserted in this document</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Governance anchor only</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Governance anchor; not an artifact surface</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--layer0">
+            <h4 class="registry-panel__title">trizel-epistemic-engine</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>trizel-ai</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Constitutional / epistemic authority</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Layer-0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>canonical</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>DOI status not asserted in this document</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Governance anchor only</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Governance anchor; not an artifact surface</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- B. Operational Governance -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">B. Operational Governance</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">B. Operational Governance</h3>
+          <p class="registry-group__description">Repositories responsible for operational enforcement of Layer-0 governance policies. These manage artifact approval and coordinate governance across execution layers.</p>
 
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #1e40af; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">trizel-core</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">trizel-ai</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Operational governance</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Layer-0 / Governance</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>canonical</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">DOI status not asserted in this document</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Enforces Layer-0 policies; manages artifact approval</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Governance mapping; not scientific output</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--layer0">
+            <h4 class="registry-panel__title">trizel-core</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>trizel-ai</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Operational governance</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Layer-0 / Governance</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>canonical</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>DOI status not asserted in this document</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Enforces Layer-0 policies; manages artifact approval</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Governance mapping; not scientific output</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- C. Canonical Analysis / Execution -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">C. Canonical Analysis / Execution</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">C. Canonical Analysis / Execution</h3>
+          <p class="registry-group__description">The frozen canonical analysis kernel and primary Layer-1 execution source. This repository produces governed scientific artifacts and is the authoritative origin of governed epistemic outputs.</p>
 
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #0369a1; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">abdelkader-omran</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Canonical analysis kernel</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Layer-1 — execution / analysis</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>frozen</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">DOI-backed release present (exact identifier not asserted in this document)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Analysis kernel producing governed artifacts</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Kernel + governed artifact source</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--layer1">
+            <h4 class="registry-panel__title">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>abdelkader-omran</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Canonical analysis kernel</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Layer-1 — execution / analysis</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>frozen</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>DOI-backed release present (exact identifier not asserted in this document)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Analysis kernel producing governed artifacts</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Kernel + governed artifact source</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- D. Operational Snapshot / Publication Support -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">D. Operational Snapshot / Publication Support</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">D. Operational Snapshot / Publication Support</h3>
+          <p class="registry-group__description">Active Layer-1 repositories providing periodic snapshot publication flows for observational outputs under Layer-0 governance authorization.</p>
 
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #0369a1; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">AUTO-DZ-ACT-3I-ATLAS-DAILY</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">abdelkader-omran</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Daily official snapshot / observational publication</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Layer-1 — operational snapshot / publication support</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>active</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Snapshot release pattern present (exact identifiers not asserted in this document)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Daily snapshot source</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Snapshot source</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--layer1">
+            <h4 class="registry-panel__title">AUTO-DZ-ACT-3I-ATLAS-DAILY</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>abdelkader-omran</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Daily official snapshot / observational publication</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Layer-1 — operational snapshot / publication support</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>active</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>Snapshot release pattern present (exact identifiers not asserted in this document)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Daily snapshot source</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Snapshot source</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- E. Definition / Reference Layer -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">E. Definition / Reference Layer</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">E. Definition / Reference Layer</h3>
+          <p class="registry-group__description">Definition-only repositories providing formal canonical reference. These do not execute analysis or produce scientific outputs. Their role is limited to providing authoritative definitions.</p>
 
-        <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #6d28d9; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">Auto-dz-act</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">trizel-ai</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Definition-only canonical reference</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Reference / formal definition layer</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>reference-only</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">DOI status not asserted in this document</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Reference-only definition source</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Reference anchor</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--ref">
+            <h4 class="registry-panel__title">Auto-dz-act</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>trizel-ai</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Definition-only canonical reference</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Reference / formal definition layer</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>reference-only</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>DOI status not asserted in this document</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Reference-only definition source</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Reference anchor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- F. Site Surface / Public Projection -->
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border, #e2e8f0); color: var(--color-text, #1e293b);">F. Site Surface / Public Projection</h3>
+        <div class="registry-group">
+          <h3 class="registry-group__heading">F. Site Surface / Public Projection</h3>
+          <p class="registry-group__description">The current repository. Layer-2 site surface only. Holds a DOI for archival citation purposes but does not confer scientific or governance authority. Authority vs. visibility must be read together with the declared layer.</p>
 
-        <div style="margin-bottom: 2rem; padding: 1.25rem; background: var(--color-bg-secondary, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-left: 4px solid #059669; border-radius: 4px;">
-          <h4 style="font-size: 1rem; font-weight: 700; margin: 0 0 1rem; font-family: monospace; color: var(--color-text, #1e293b);">trizel-site-artifacts</h4>
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; width: 40%; color: var(--color-text-muted, #64748b); font-weight: 600; white-space: nowrap;">Organization / Owner</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">trizel-ai-site</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Role</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Layer-2 epistemic surface</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Epistemic Layer</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Site surface</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Status</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);"><code>site-surface</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">DOI / Release</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">DOI: 10.5281/zenodo.18636150 (site repository)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border, #e2e8f0);">
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Artifact Relation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Site surface only, not artifact origin</td>
-              </tr>
-              <tr>
-                <th style="text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; color: var(--color-text-muted, #64748b); font-weight: 600;">Site Representation</th>
-                <td style="padding: 0.5rem 0; color: var(--color-text, #1e293b);">Presentation layer</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="registry-panel registry-panel--site">
+            <h4 class="registry-panel__title">trizel-site-artifacts</h4>
+            <table class="registry-panel__fields">
+              <tbody>
+                <tr>
+                  <th scope="row">Organization / Owner</th>
+                  <td>trizel-ai-site</td>
+                </tr>
+                <tr>
+                  <th scope="row">Role</th>
+                  <td>Layer-2 epistemic surface</td>
+                </tr>
+                <tr>
+                  <th scope="row">Epistemic Layer</th>
+                  <td>Site surface</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><code>site-surface</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">DOI / Release</th>
+                  <td>DOI: 10.5281/zenodo.18636150 (site repository)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Artifact Relation</th>
+                  <td>Site surface only, not artifact origin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Representation</th>
+                  <td>Presentation layer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- Authority flow -->
@@ -320,7 +341,7 @@
           <p style="margin: 0 0 0.75rem; font-weight: 600; color: var(--color-text, #1e293b);">DOI / Release Interpretation</p>
           <p style="margin: 0 0 0.5rem; color: var(--color-text-muted, #64748b);">DOI presence does not imply equal epistemic authority across repositories. A DOI must always be interpreted together with the repository's declared role and epistemic layer.</p>
           <p style="margin: 0 0 0.5rem; color: var(--color-text-muted, #64748b);">Release existence does not imply canonical authority. Repository role must always be read together with layer and governance context.</p>
-          <p style="margin: 0; color: var(--color-text-muted, #64748b);">See <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md" style="color: var(--color-link, #3b82f6);">REPOSITORY_DOI_ARTIFACT_MAPPING.md §E</a> for the full DOI / release rules.</p>
+          <p style="margin: 0; color: var(--color-text-muted, #64748b);">See <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">REPOSITORY_DOI_ARTIFACT_MAPPING.md §E</a> for the full DOI / release rules.</p>
         </div>
 
         <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border, #e2e8f0); display: flex; gap: 1rem; flex-wrap: wrap;">
