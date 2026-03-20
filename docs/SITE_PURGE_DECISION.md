@@ -1,10 +1,28 @@
-# TRIZEL Site Purge Decision (Governance-Reviewed)
+# TRIZEL Site Purge Draft (Audit-Derived, Pending Governance Review)
+
+## 0. Governance Status
+
+This document is:
+
+- audit-derived
+- non-authoritative
+- pending governance review
+
+This document MUST NOT be used for:
+- file deletion
+- repository cleanup
+- structural modification
+
+No purge action is authorized based on this document.
+
+---
 
 ## 1. Decision Layer
 
-This document defines the governance-approved decision layer derived from the SITE_AUDIT_REPORT.
+This document is an audit-derived draft generated from the SITE_AUDIT_REPORT.
+It does NOT represent a governance-approved decision.
 
-It converts classification into explicit actions.
+It converts audit-derived classification into a pending decision draft.
 
 ---
 
@@ -29,9 +47,11 @@ No file may remain unclassified.
 
 ---
 
-## 4. DELETE (Approved)
+## 4. DELETE (Audit-Derived Classification)
 
-The following 31 files are classified as NON-GOVERNED or UNKNOWN and are approved for removal:
+These classifications are automatically derived from the audit report and require manual governance validation before any action.
+
+The following 31 files are classified as NON-GOVERNED or UNKNOWN in the audit report:
 
 - `CRITICAL_FIX_SUMMARY.md` — NON-GOVERNED
 - `FINAL_FREEZE_DECLARATION.md` — NON-GOVERNED
@@ -67,7 +87,9 @@ The following 31 files are classified as NON-GOVERNED or UNKNOWN and are approve
 
 ---
 
-## 5. REWRITE (Required)
+## 5. REWRITE (Audit-Derived Classification)
+
+These classifications are automatically derived from the audit report and require manual governance validation before any action.
 
 The following 127 files are classified as OUTDATED but structurally relevant and require rewrite for governance alignment:
 
@@ -201,9 +223,11 @@ The following 127 files are classified as OUTDATED but structurally relevant and
 
 ---
 
-## 6. KEEP (Canonical / Acceptable)
+## 6. KEEP (Audit-Derived Classification)
 
-The following 333 files are classified as ALLOWED and are fully governance-compliant:
+These classifications are automatically derived from the audit report and require manual governance validation before any action.
+
+The following 333 files are classified as ALLOWED in the audit report:
 
 - `.gitignore`
 - `404.html`
@@ -550,6 +574,8 @@ The following 333 files are classified as ALLOWED and are fully governance-compl
 - No duplicates
 - No missing files
 - No UNKNOWN classification remains (1 UNKNOWN file resolved to DELETE)
+- This document is not sufficient for execution
+- A separate governance-reviewed decision PR is required
 
 ---
 
@@ -557,7 +583,8 @@ The following 333 files are classified as ALLOWED and are fully governance-compl
 
 This document is:
 
-- governance-approved
+- audit-derived classification
+- pending governance review
 - non-executive
 - decision-only
 
