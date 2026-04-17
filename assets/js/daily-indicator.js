@@ -11,6 +11,8 @@
     'ERROR': '🔴',
     'PAUSED': '⚪'
   };
+  const STATUS_OK = 'OK';
+  const STATUS_ATTENTION = 'ATTENTION';
 
   function escapeHtml(value) {
     return String(value == null ? '' : value)
@@ -61,9 +63,15 @@
     if (typeof data.integrity.checksum_verified !== 'boolean') {
       throw new Error('Invalid daily status schema: missing integrity.checksum_verified');
     }
+    if (typeof data.integrity.has_analysis !== 'boolean') {
+      throw new Error('Invalid daily status schema: missing integrity.has_analysis');
+    }
+    if (typeof data.integrity.has_interpretation !== 'boolean') {
+      throw new Error('Invalid daily status schema: missing integrity.has_interpretation');
+    }
 
     return {
-      status: data.integrity.checksum_verified ? 'OK' : 'ATTENTION',
+      status: data.integrity.checksum_verified ? STATUS_OK : STATUS_ATTENTION,
       gate: data.gate,
       proofType: data.proof_type,
       eventId: data.event_id,
@@ -73,9 +81,9 @@
       sourceRepository: data.source && typeof data.source.repository === 'string' ? data.source.repository : '',
       sourcePath: data.source && typeof data.source.path === 'string' ? data.source.path : '',
       sourceCommit: data.source && typeof data.source.commit === 'string' ? data.source.commit : '',
-      hasAnalysis: data.integrity.has_analysis === true ? 'true' : 'false',
-      hasInterpretation: data.integrity.has_interpretation === true ? 'true' : 'false',
-      checksumVerified: data.integrity.checksum_verified ? 'true' : 'false'
+      hasAnalysis: data.integrity.has_analysis,
+      hasInterpretation: data.integrity.has_interpretation,
+      checksumVerified: data.integrity.checksum_verified
     };
   }
 
@@ -98,7 +106,7 @@
           <span class="indicator-status">${escapeHtml(data.status)}</span>
         </div>
         <div class="indicator-details">
-          <p class="indicator-designation"><strong>${escapeHtml(data.eventId)}</strong> (${escapeHtml(data.classification)})</p>
+          <p class="indicator-designation"><strong>${escapeHtml(data.classification)}</strong> (${escapeHtml(data.eventId)})</p>
           <p class="indicator-summary">${escapeHtml(data.statement)}</p>
           <p class="indicator-timestamp">
             <small>As of: ${escapeHtml(data.asOfUtc)}</small>
@@ -106,11 +114,11 @@
           <div class="indicator-meta">
             <span class="meta-tag">Gate: ${escapeHtml(data.gate)}</span>
             <span class="meta-tag">Type: ${escapeHtml(data.proofType)}</span>
-            <span class="meta-tag">Checksum Verified: ${escapeHtml(data.checksumVerified)}</span>
+            <span class="meta-tag">Checksum Verified: ${escapeHtml(String(data.checksumVerified))}</span>
           </div>
           <div class="indicator-meta">
-            <span class="meta-tag">Analysis: ${escapeHtml(data.hasAnalysis)}</span>
-            <span class="meta-tag">Interpretation: ${escapeHtml(data.hasInterpretation)}</span>
+            <span class="meta-tag">Analysis: ${escapeHtml(String(data.hasAnalysis))}</span>
+            <span class="meta-tag">Interpretation: ${escapeHtml(String(data.hasInterpretation))}</span>
           </div>
           <div class="indicator-meta">
             <span class="meta-tag">Source Repo: ${escapeHtml(data.sourceRepository)}</span>
