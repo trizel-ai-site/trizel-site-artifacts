@@ -12,6 +12,15 @@
     'PAUSED': '⚪'
   };
 
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   // Fetch daily status from local JSON file ONLY
   function loadDailyStatus() {
     const indicatorContainer = document.getElementById('daily-indicator');
@@ -45,22 +54,22 @@
       <div class="daily-indicator-content">
         <div class="indicator-badge">
           <span class="indicator-emoji" aria-hidden="true">${emoji}</span>
-          <span class="indicator-status">${data.status}</span>
+          <span class="indicator-status">${escapeHtml(data.status)}</span>
         </div>
         <div class="indicator-details">
-          <p class="indicator-designation"><strong>${data.designation}</strong> (${data.event_id})</p>
-          <p class="indicator-summary">${data.summary}</p>
+          <p class="indicator-designation"><strong>${escapeHtml(data.designation)}</strong> (${escapeHtml(data.event_id)})</p>
+          <p class="indicator-summary">${escapeHtml(data.summary)}</p>
           <p class="indicator-timestamp">
-            <small>As of: ${timestamp}</small>
+            <small>As of: ${escapeHtml(timestamp)}</small>
           </p>
           <div class="indicator-meta">
-            <span class="meta-tag">Gate: ${data.gate}</span>
-            <span class="meta-tag">Type: ${data.proof_type}</span>
+            <span class="meta-tag">Gate: ${escapeHtml(data.gate)}</span>
+            <span class="meta-tag">Type: ${escapeHtml(data.proof_type)}</span>
           </div>
           <div class="indicator-links">
-            <a href="${data.links.latest}" class="indicator-link">Latest Data</a>
-            <a href="${data.links.manifest}" class="indicator-link">Manifest</a>
-            <a href="${data.links.crate}" class="indicator-link">RO-Crate</a>
+            <a href="${escapeHtml(data.links.latest)}" class="indicator-link">Latest Data</a>
+            <a href="${escapeHtml(data.links.manifest)}" class="indicator-link">Manifest</a>
+            <a href="${escapeHtml(data.links.crate)}" class="indicator-link">RO-Crate</a>
           </div>
         </div>
       </div>
