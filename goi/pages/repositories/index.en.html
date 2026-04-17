@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Repositories Inventory — GOI — TRIZEL</title>
-  <meta name="description" content="Inventory of ecosystem repositories and their structural metadata from the TRIZEL ecosystem.">
+  <meta name="description" content="Governed repository-role map for the TRIZEL ecosystem, aligned to canonical layers and execution-control boundaries.">
   <link rel="stylesheet" href="/assets/goi/goi.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
@@ -53,8 +53,8 @@
       <section class="goi-section">
         <h2 class="goi-section-title">Repositories — Ecosystem Inventory</h2>
         <p class="goi-section-description">
-          The Repositories Inventory catalogs the structural components of the TRIZEL ecosystem including code repositories, documentation sites, and infrastructure components. 
-          This section provides metadata about repository organization, layer classification, maintainers, and inter-repository dependencies.
+          This page presents the governed repository-role map used for public Layer-2 orientation.
+          Repositories are grouped by epistemic role and execution-control position, not by flat organization inventory.
         </p>
       </section>
 
@@ -62,8 +62,14 @@
         <h3 class="goi-section-title" style="font-size: 1.25rem;">Published Entries</h3>
         <div class="goi-entries">
           <div class="goi-entries-header">Inventory Table</div>
-          <div class="goi-entries-empty">
-            No published entries yet
+          <div class="goi-entries-empty" style="text-align: left;">
+            <strong>Canonical map (current):</strong><br>
+            • Layer-0 governance anchor: <code>trizel-epistemic-engine</code><br>
+            • Layer-0 operational governance: <code>trizel-core</code><br>
+            • Layer-1 canonical analysis kernel (frozen): <code>AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</code><br>
+            • Layer-1 daily authoritative preservation (active): <code>AUTO-DZ-ACT-3I-ATLAS-DAILY</code><br>
+            • Reference-only definition layer (non-executing): <code>Auto-dz-act</code><br>
+            • Layer-2 site surface (presentation only): <code>trizel-site-artifacts</code>
           </div>
         </div>
       </section>
@@ -74,7 +80,8 @@
           This page displays data from: <code>/goi/data/global-index.json</code>
         </p>
         <p class="goi-section-description">
-          <strong>Current Status:</strong> No repository metadata has been published yet. This inventory will be populated as ecosystem repositories register and commit their metadata files to <code>/goi/data/sources/</code>.
+          <strong>Current Status:</strong> The canonical repository-role mapping is governance-bound and currently aligned to
+          <code>/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</code>. Layer-2 remains display-only and does not execute repository logic.
         </p>
       </section>
 
@@ -86,8 +93,8 @@
         <ol class="goi-section-description">
           <li>Git commit history in this repository</li>
           <li>JSON schema validation (schema: <code>/goi/schemas/repository.meta.schema.json</code>)</li>
-          <li>Cross-references to actual GitHub repository URLs</li>
-          <li>Layer topology validation against ecosystem architecture</li>
+          <li>Cross-check against canonical mapping in <code>/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</code></li>
+          <li>Layer and boundary consistency with <code>/docs/SITE_DEPENDENCY_ORDER.md</code></li>
         </ol>
       </section>
     </div>
