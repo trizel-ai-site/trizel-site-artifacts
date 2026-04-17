@@ -798,7 +798,4 @@ a .icon {
     font-size: var(--text-base);
   }
 
-  .l2-home .home-panel :is(p, li, dd) {
-    color: var(--color-text-medium);
-  }
 }
