@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Architecture Layer Map — TRIZEL</title>
-  <meta name="description" content="TRIZEL Architecture Layer Map: Layer-0 Governance, Layer-1 Laboratory, Layer-2 Presentation, and Gate-0 through Gate-6 status. Gate-5 OPEN. Gate-6 CLOSED.">
+  <meta name="description" content="TRIZEL Architecture Layer Map: canonical execution-control order, governance boundaries, Layer-1 ANALYSIS and DAILY roles, and Layer-2 presentation-only constraints.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://trizel-ai.com/en/layer-map/">
@@ -19,7 +19,7 @@
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Architecture Layer Map — TRIZEL">
-  <meta property="og:description" content="TRIZEL three-layer architecture: Governance (Layer-0), Laboratory (Layer-1), Presentation (Layer-2). Gate status: Gate-5 OPEN, Gate-6 CLOSED.">
+  <meta property="og:description" content="TRIZEL three-layer architecture with locked execution-control order: Layer-0 governance, Layer-1 ANALYSIS and DAILY roles, and Layer-2 presentation-only surface.">
   <meta property="og:url" content="https://trizel-ai.com/en/layer-map/">
   <meta property="og:image" content="https://trizel-ai.com/assets/branding/trizel-ai/trizel-ai-logo-dark.png">
 
@@ -133,8 +133,8 @@
     <!-- Layer-2 Notice -->
     <section class="card" style="border-left: 4px solid #0369a1; background: #f0f9ff; margin-bottom: 2rem;">
       <p style="margin: 0; font-size: 0.9rem; color: #0369a1;">
-        <strong>Layer-2 Notice.</strong> This page documents the TRIZEL architecture for informational purposes only.
-        No gate transitions are performed here. All gate execution occurs in Layer-1 under Layer-0 governance authority.
+        <strong>Layer-2 Notice.</strong> This page documents execution-control and layer boundaries for informational purposes only.
+        Layer-2 performs no execution and no gate transitions. All execution authority remains in Layer-1 under Layer-0 governance.
       </p>
     </section>
 
@@ -164,8 +164,11 @@
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 10px 12px;"><span style="background: #7c3aed; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Layer-1</span></td>
-              <td style="padding: 10px 12px; font-weight: 600;">Laboratory Execution</td>
-              <td style="padding: 10px 12px;"><a href="https://github.com/abdelkader-omran" target="_blank" rel="noopener">abdelkader-omran/*</a></td>
+              <td style="padding: 10px 12px; font-weight: 600;">Execution / Analysis &amp; Daily Preservation</td>
+              <td style="padding: 10px 12px;">
+                <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS" target="_blank" rel="noopener">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</a> +
+                <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-3I-ATLAS-DAILY" target="_blank" rel="noopener">AUTO-DZ-ACT-3I-ATLAS-DAILY</a>
+              </td>
               <td style="padding: 10px 12px; color: #7c3aed; font-weight: 600;">Scientific</td>
               <td style="padding: 10px 12px;">Yes — under Layer-0 governance</td>
             </tr>
@@ -190,95 +193,111 @@
 
     <!-- Gate Status -->
     <section class="card" id="gate-status">
-      <h3>Gate Status (Gate-0 through Gate-6)</h3>
+      <h3>Execution Control (Locked Order)</h3>
       <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #64748b;">
-        Gates are execution checkpoints in the TRIZEL scientific pipeline. They are opened or closed
-        by Layer-1 under Layer-0 governance authority. This page displays status only — no gate
-        transitions occur here.
+        The public layer follows the governed execution-control order derived from active repositories and
+        workflow behavior. This page is descriptive only; it does not execute any part of the pipeline.
       </p>
 
       <div class="gate-grid">
         <div class="gate-card">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-0</span>
+            <span class="gate-card__title">1. Governance Layer</span>
             <span class="badge--complete">COMPLETE</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            System initialization and governance framework establishment.
+            Layer-0 governance authority is held by <code>trizel-core</code> and anchored by
+            <code>trizel-epistemic-engine</code>. All downstream execution is subordinate to this layer.
           </p>
         </div>
 
         <div class="gate-card">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-1</span>
+            <span class="gate-card__title">2. ANALYSIS Role</span>
             <span class="badge--complete">COMPLETE</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            Research hypothesis definition and claim registration.
+            <code>AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</code> is the canonical Layer-1 analysis kernel
+            (frozen) and admissibility/execution source for governed analysis outputs.
           </p>
         </div>
 
         <div class="gate-card">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-2</span>
+            <span class="gate-card__title">3. DAILY Role</span>
             <span class="badge--complete">COMPLETE</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            Observable identification and data source validation.
+            <code>AUTO-DZ-ACT-3I-ATLAS-DAILY</code> is the active Layer-1 daily authoritative
+            preservation / snapshot publication source.
           </p>
         </div>
 
         <div class="gate-card">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-3</span>
+            <span class="gate-card__title">4. Pre-Lab Boundary</span>
             <span class="badge--complete">COMPLETE</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            Method specification and algorithm documentation.
+            <code>Auto-dz-act</code> remains reference-only (formal definition layer).
+            It is non-executing and outside admissibility/execution flow.
           </p>
         </div>
 
         <div class="gate-card">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-4</span>
+            <span class="gate-card__title">5. Publication Boundary</span>
             <span class="badge--complete">COMPLETE</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            Verification execution and result validation.
+            Publication transformation is bounded at Layer-2 by deterministic, static, no-interpretation rules.
+            The site remains a display surface, not an execution surface.
           </p>
         </div>
 
         <div class="gate-card" style="border-color: #86efac; background: #f0fdf4;">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-5</span>
+            <span class="gate-card__title">6. Forward Automation Path</span>
             <span class="badge--open">OPEN</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0 0 0.5rem 0;">
-            Publication and institutional dissemination. Execution record:
+            Event-driven publication path: Layer-1 trigger / data update → deterministic compiler →
+            static page generation → PR-only publication flow.
           </p>
           <p style="font-size: 0.8rem; margin: 0;">
-            <a href="/governance-status/GATE-5-STATUS.md">Gate-5 Status Record</a> ·
-            <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS/blob/main/docs/gates/GATE-5-EXECUTION-RECORD.md" target="_blank" rel="noopener">Execution Record (Layer-1)</a>
+            <a href="https://github.com/trizel-ai-site/trizel-site-artifacts/blob/main/.github/workflows/phase-e-auto-publish.yml" target="_blank" rel="noopener">phase-e-auto-publish workflow</a> ·
+            <a href="/BUILD.md">build contract</a>
           </p>
         </div>
 
         <div class="gate-card" style="border-color: #fca5a5; background: #fff1f2;">
           <div class="gate-card__header">
-            <span class="gate-card__title">Gate-6</span>
+            <span class="gate-card__title">7. Historical Backfill Path</span>
             <span class="badge--closed">CLOSED</span>
           </div>
           <p style="font-size: 0.85rem; color: #475569; margin: 0;">
-            Gate-6 is closed. No actions in this gate have been initiated.
-            Opening Gate-6 requires explicit Layer-0 governance authorization.
+            Scheduled daily runs provide governed backfill for missed events without changing
+            Layer-2 boundaries or introducing runtime behavior on the public site.
+          </p>
+        </div>
+
+        <div class="gate-card" style="border-color: #fca5a5; background: #fff1f2;">
+          <div class="gate-card__header">
+            <span class="gate-card__title">8. Human Intervention Rule</span>
+            <span class="badge--closed">EXCEPTION-ONLY</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #475569; margin: 0;">
+            Human action is exception-only (approval/review/escalation paths). Normal publishing
+            remains deterministic and governed by locked automation and repository roles.
           </p>
         </div>
       </div>
 
       <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
-        <strong>Authoritative source:</strong>
-        <a href="/governance-status/">governance-status/</a> directory in this repository.
-        For execution records, see the
-        <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS" target="_blank" rel="noopener">Layer-1 repository</a>.
+        <strong>Authoritative sources:</strong>
+        <a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">repository-role map</a>,
+        <a href="/docs/SITE_DEPENDENCY_ORDER.md">locked dependency order</a>,
+        and <a href="https://github.com/trizel-ai-site/trizel-site-artifacts/blob/main/.github/workflows/phase-e-auto-publish.yml" target="_blank" rel="noopener">active publication workflow</a>.
       </p>
     </section>
 
@@ -301,13 +320,14 @@
       <div class="layer-section layer-section--l1">
         <h4 style="color: #7c3aed;">Layer-1 — Laboratory Execution Domain</h4>
         <p>
-          Layer-1 is the private laboratory execution domain. It hosts all research algorithms,
-          data pipelines, claim verification workflows, and scientific computation.
-          Results are published to Layer-2 only after passing all gate checks and receiving
-          Layer-0 publication authorization.
+          Layer-1 execution is role-split: <code>AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</code> is the frozen
+          canonical analysis/admissibility kernel, and <code>AUTO-DZ-ACT-3I-ATLAS-DAILY</code> is
+          the active daily authoritative preservation/snapshot source. Execution remains governed by Layer-0.
         </p>
         <p style="font-size: 0.9rem; color: #64748b;">
-          Primary account: <a href="https://github.com/abdelkader-omran" target="_blank" rel="noopener">abdelkader-omran</a> (Layer-1 execution account)
+          Repositories:
+          <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-ANALYSIS-3I-ATLAS" target="_blank" rel="noopener">AUTO-DZ-ACT-ANALYSIS-3I-ATLAS</a> and
+          <a href="https://github.com/abdelkader-omran/AUTO-DZ-ACT-3I-ATLAS-DAILY" target="_blank" rel="noopener">AUTO-DZ-ACT-3I-ATLAS-DAILY</a>
         </p>
       </div>
 
@@ -331,9 +351,9 @@
       <ul style="line-height: 2; padding-left: 1.5rem;">
         <li><a href="/en/overview/">Institutional Overview</a> — What is TRIZEL and how it is organized</li>
         <li><a href="/en/governance/">Governance</a> — Governance framework documentation</li>
-        <li><a href="/en/status/">System Status</a> — Live gate and system status indicators</li>
+        <li><a href="/en/status/">System Status</a> — Public display-only status indicators</li>
         <li><a href="/atlas/en/">Epistemic Atlas</a> — Visual map of repository relationships</li>
-        <li><a href="/governance-status/GATE-5-STATUS.md">Gate-5 Status Record</a> — Gate-5 execution and publication record</li>
+        <li><a href="/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md">Repository / DOI / Artifact Mapping</a> — Canonical repository-role map</li>
       </ul>
     </section>
   </main>

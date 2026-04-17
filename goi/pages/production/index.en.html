@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Production Ledger — GOI — TRIZEL</title>
-  <meta name="description" content="Ledger of scientific production outputs and computational artifacts from the TRIZEL ecosystem.">
+  <meta name="description" content="Ledger view of governed TRIZEL outputs, with Layer-1 execution context and Layer-2 display-only boundaries.">
   <link rel="stylesheet" href="/assets/goi/goi.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
@@ -53,8 +53,8 @@
       <section class="goi-section">
         <h2 class="goi-section-title">Production — Ledger</h2>
         <p class="goi-section-description">
-          The Production Ledger catalogs scientific outputs, computational artifacts, and derived products from the TRIZEL ecosystem. 
-          This section provides metadata about research outputs including models, datasets, analyses, and publications with their provenance and dependencies.
+          The Production Ledger presents governed output visibility from Layer-1 execution roles.
+          It distinguishes canonical analysis outputs from daily preservation snapshots and does not execute any production logic.
         </p>
       </section>
 
@@ -74,7 +74,8 @@
           This page displays data from: <code>/goi/data/global-index.json</code>
         </p>
         <p class="goi-section-description">
-          <strong>Current Status:</strong> No production metadata has been published yet. This ledger will be populated as Layer-2 and Layer-3 repositories produce and commit their metadata files to <code>/goi/data/sources/</code>.
+          <strong>Current Status:</strong> This ledger surface is populated only from governed Layer-1 output flows
+          (canonical analysis and daily preservation roles). Layer-2 remains publication display only.
         </p>
       </section>
 
@@ -86,8 +87,8 @@
         <ol class="goi-section-description">
           <li>Git commit history in this repository</li>
           <li>JSON schema validation (schema: <code>/goi/schemas/production.meta.schema.json</code>)</li>
-          <li>Provenance chains linking outputs to their source data</li>
-          <li>Computational reproducibility metadata (when available)</li>
+          <li>Provenance chains linking outputs to governed Layer-1 repositories</li>
+          <li>Role validation against <code>/docs/REPOSITORY_DOI_ARTIFACT_MAPPING.md</code></li>
         </ol>
       </section>
     </div>
