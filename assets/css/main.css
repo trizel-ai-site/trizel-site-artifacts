@@ -668,7 +668,6 @@ a .icon {
 
 .l2-home .home-panel p {
   margin-bottom: var(--space-4);
-  color: var(--color-text-medium);
 }
 
 .l2-home .home-panel :is(p, li, dd) {
@@ -800,6 +799,6 @@ a .icon {
   }
 
   .l2-home .home-panel :is(p, li, dd) {
-    color: var(--color-text-medium) !important;
+    color: var(--color-text-medium);
   }
 }
