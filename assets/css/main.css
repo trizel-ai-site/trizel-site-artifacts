@@ -564,6 +564,8 @@ a .icon {
   display: grid;
   justify-items: center;
   gap: var(--space-6);
+  --text: var(--color-text);
+  --muted: var(--color-text-medium);
 }
 
 .l2-home .identity-logo {
@@ -636,6 +638,8 @@ a .icon {
   border-radius: var(--radius-lg);
   background: #fff;
   box-shadow: var(--shadow-sm);
+  --text: var(--color-text);
+  --muted: var(--color-text-medium);
 }
 
 .l2-home .institutional-statement__text {
@@ -652,6 +656,8 @@ a .icon {
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
+  --text: var(--color-text);
+  --muted: var(--color-text-medium);
 }
 
 .l2-home .home-panel h3 {
@@ -662,6 +668,10 @@ a .icon {
 
 .l2-home .home-panel p {
   margin-bottom: var(--space-4);
+  color: var(--color-text-medium);
+}
+
+.l2-home .home-panel :is(p, li, dd) {
   color: var(--color-text-medium);
 }
 
@@ -787,5 +797,9 @@ a .icon {
   .l2-home .hero__subtitle,
   .l2-home .institutional-statement__text {
     font-size: var(--text-base);
+  }
+
+  .l2-home .home-panel :is(p, li, dd) {
+    color: var(--color-text-medium) !important;
   }
 }
