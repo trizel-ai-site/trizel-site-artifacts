@@ -323,6 +323,15 @@ function setText(id, text) {
   if (node) node.textContent = text;
 }
 
+function escapeHtml(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function formatDate(iso) {
   if (!iso) return '\u2014';
   try {
@@ -336,11 +345,11 @@ function formatDate(iso) {
 }
 
 function loadingHtml(text) {
-  return '<span class="l2-loading">' + (text || t('loading')) + '</span>';
+  return '<span class="l2-loading">' + escapeHtml(text || t('loading')) + '</span>';
 }
 
 function errorHtml(msg) {
-  return '<span class="l2-error">\u26a0 ' + msg + '</span>';
+  return '<span class="l2-error">\u26a0 ' + escapeHtml(msg) + '</span>';
 }
 
 /**
@@ -368,9 +377,9 @@ function stateHtml(dayStatus, validCount) {
   if (!key) return '';
   var label = t(key);
   if (dayStatus === 'unavailable') {
-    return '<p role="alert" class="l2-alert-warning">\u26a0\ufe0f ' + label + '</p>';
+    return '<p role="alert" class="l2-alert-warning">\u26a0\ufe0f ' + escapeHtml(label) + '</p>';
   }
-  return '<p class="l2-state-info">' + label + '</p>';
+  return '<p class="l2-state-info">' + escapeHtml(label) + '</p>';
 }
 
 // ── Page: index.html ───────────────────────────────────────────
@@ -399,8 +408,8 @@ async function initDashboard() {
     var latest = await fetchJSON('/public/latest.json');
     setText('dash-latest-date', latest.latest_day || '\u2014');
     setHtml('dash-latest-link',
-      '<a class="btn btn--outline" href="/public/' + latest.redirect + '">' +
-      t('latest_dataset') + ' (' + (latest.latest_day || '') + ') \u2192</a>');
+      '<a class="btn btn--outline" href="/public/' + escapeHtml(latest.redirect) + '">' +
+      escapeHtml(t('latest_dataset')) + ' (' + escapeHtml(latest.latest_day || '') + ') \u2192</a>');
   } catch (e) {
     console.error('[TRIZEL] Failed to load /public/latest.json', e);
     setHtml('dash-latest-date', errorHtml(t('unavailable')));
@@ -426,15 +435,15 @@ async function initObservations() {
       var latestStateHtml = stateHtml(latestDayStatus, latestValid);
       latestSection.innerHTML =
         '<div class="l2-card">' +
-        '<div class="l2-card__label">' + t('latest_dataset') + '</div>' +
-        '<div class="l2-card__value">' + (latest.latest_day || '\u2014') + '</div>' +
+        '<div class="l2-card__label">' + escapeHtml(t('latest_dataset')) + '</div>' +
+        '<div class="l2-card__value">' + escapeHtml(latest.latest_day || '\u2014') + '</div>' +
         '<p class="l2-card__desc" style="margin-top:0.5rem">' +
-        latestValid + ' ' + t('records_unit') + ' \u00b7 ' +
-        (latest.observations ? latest.observations.length : 0) + ' ' + t('sources_unit') +
+        escapeHtml(latestValid) + ' ' + escapeHtml(t('records_unit')) + ' \u00b7 ' +
+        escapeHtml(latest.observations ? latest.observations.length : 0) + ' ' + escapeHtml(t('sources_unit')) +
         '</p>' +
         latestStateHtml +
         '<div style="margin-top:1rem">' +
-        '<a class="l2-link-btn" href="/public/' + latest.redirect + '">' + t('view_json') + '</a>' +
+        '<a class="l2-link-btn" href="/public/' + escapeHtml(latest.redirect) + '">' + escapeHtml(t('view_json')) + '</a>' +
         '</div>' +
         '</div>';
     }
@@ -449,7 +458,7 @@ async function initObservations() {
     if (!listEl) return;
 
     if (!summary.days || summary.days.length === 0) {
-      listEl.innerHTML = '<p class="l2-loading">' + t('no_observations') + '</p>';
+      listEl.innerHTML = '<p class="l2-loading">' + escapeHtml(t('no_observations')) + '</p>';
       return;
     }
 
@@ -463,14 +472,14 @@ async function initObservations() {
       var daySt = d.day_status || (validCount === 0 ? 'unavailable' : 'ok');
       // Show ⚠️ icon only for genuinely anomalous state (unavailable), not for scheduled/not_released
       var stateIcon = daySt === 'unavailable'
-        ? ' <span class="l2-state-icon" role="img" aria-label="' + t('state_unavailable') + '">\u26a0\ufe0f</span>'
+        ? ' <span class="l2-state-icon" role="img" aria-label="' + escapeHtml(t('state_unavailable')) + '">\u26a0\ufe0f</span>'
         : '';
       return '<tr>' +
-        '<td>' + d.date + '</td>' +
-        '<td>' + validCount + stateIcon + '</td>' +
-        '<td>' + (d.sources ? d.sources.join(', ') : '\u2014') + '</td>' +
-        '<td><a href="/public/' + d.path + '" class="l2-link-btn l2-link-btn--outline" style="font-size:0.8rem">' +
-        t('json_link') + '</a></td>' +
+        '<td>' + escapeHtml(d.date) + '</td>' +
+        '<td>' + escapeHtml(validCount) + stateIcon + '</td>' +
+        '<td>' + escapeHtml(d.sources ? d.sources.join(', ') : '\u2014') + '</td>' +
+        '<td><a href="/public/' + escapeHtml(d.path) + '" class="l2-link-btn l2-link-btn--outline" style="font-size:0.8rem">' +
+        escapeHtml(t('json_link')) + '</a></td>' +
         '</tr>';
     }).join('');
 
@@ -478,10 +487,10 @@ async function initObservations() {
       '<div class="l2-table-wrap">' +
       '<table class="l2-table">' +
       '<thead><tr>' +
-      '<th>' + t('col_date')    + '</th>' +
-      '<th>' + t('col_records') + '</th>' +
-      '<th>' + t('col_sources') + '</th>' +
-      '<th>' + t('col_data')   + '</th>' +
+      '<th>' + escapeHtml(t('col_date'))    + '</th>' +
+      '<th>' + escapeHtml(t('col_records')) + '</th>' +
+      '<th>' + escapeHtml(t('col_sources')) + '</th>' +
+      '<th>' + escapeHtml(t('col_data'))   + '</th>' +
       '</tr></thead>' +
       '<tbody>' + rows + '</tbody>' +
       '</table></div>';
