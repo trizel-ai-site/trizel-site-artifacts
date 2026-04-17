@@ -12,6 +12,7 @@
   const LANGUAGES = {
     en: { name: 'English', dir: 'ltr' },
     fr: { name: 'Français', dir: 'ltr' },
+    de: { name: 'Deutsch', dir: 'ltr' },
     ar: { name: 'العربية', dir: 'rtl' },
     zh: { name: '中文', dir: 'ltr' },
     ru: { name: 'Русский', dir: 'ltr' }
