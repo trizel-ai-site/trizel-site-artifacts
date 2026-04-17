@@ -53,7 +53,7 @@
     container.innerHTML = `
       <div class="daily-indicator-content">
         <div class="indicator-badge">
-          <span class="indicator-emoji" aria-hidden="true">${escapeHtml(emoji)}</span>
+          <span class="indicator-emoji" aria-hidden="true">${emoji}</span>
           <span class="indicator-status">${escapeHtml(data.status)}</span>
         </div>
         <div class="indicator-details">
