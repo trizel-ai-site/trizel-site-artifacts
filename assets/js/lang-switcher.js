@@ -8,7 +8,6 @@
 (function() {
   'use strict';
   
-  // Language configuration
   const LANGUAGES = {
     en: { name: 'English', dir: 'ltr' },
     fr: { name: 'Français', dir: 'ltr' },
@@ -18,56 +17,115 @@
     ru: { name: 'Русский', dir: 'ltr' }
   };
   
-  /**
-   * Initialize language switcher
-   */
-  function initLanguageSwitcher() {
-    const switcher = document.getElementById('lang-switcher');
-    if (!switcher) return;
-    
-    // Get current language from path (e.g., /en/, /fr/)
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const currentLang = pathParts[0] && LANGUAGES[pathParts[0]] ? pathParts[0] : 'en';
-    
-    // Set current selection
-    switcher.value = currentLang;
-    
-    // Handle language change
-    switcher.addEventListener('change', function(e) {
-      const newLang = e.target.value;
-      if (newLang && LANGUAGES[newLang]) {
-        switchLanguage(newLang);
-      }
-    });
+  function normalizePath(path) {
+    return ('/' + String(path || '').replace(/^\/+|\/+$/g, '')).replace(/\/+/g, '/');
   }
-  
-  /**
-   * Switch to selected language
-   */
-  function switchLanguage(lang) {
-    // Get current path parts
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    
-    // Replace first part (language code) with new language
+
+  function getCurrentLang(basePath) {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if (basePath) {
+      const baseParts = normalizePath(basePath).split('/').filter(Boolean);
+      const offset = baseParts.length;
+      const candidate = parts[offset];
+      return candidate && LANGUAGES[candidate] ? candidate : 'en';
+    }
+    return parts[0] && LANGUAGES[parts[0]] ? parts[0] : 'en';
+  }
+
+  function buildLocalizedPath(lang, basePath) {
+    if (!LANGUAGES[lang]) return window.location.pathname;
+
+    const pathname = window.location.pathname;
+    const pathParts = pathname.split('/').filter(Boolean);
+    const hasTrailingSlash = pathname.endsWith('/');
+
+    if (basePath) {
+      const base = normalizePath(basePath);
+      const baseParts = base.split('/').filter(Boolean);
+      const offset = baseParts.length;
+      const suffixParts = pathParts.slice(offset);
+      if (suffixParts[0] && LANGUAGES[suffixParts[0]]) {
+        suffixParts[0] = lang;
+      } else {
+        suffixParts.unshift(lang);
+      }
+      let next = base + '/' + suffixParts.join('/');
+      if (hasTrailingSlash || !suffixParts[suffixParts.length - 1] || suffixParts[suffixParts.length - 1] === lang) {
+        next = next.replace(/\/?$/, '/');
+      }
+      return next;
+    }
+
     if (pathParts[0] && LANGUAGES[pathParts[0]]) {
       pathParts[0] = lang;
     } else {
       pathParts.unshift(lang);
     }
-    
-    // Construct new path
-    const newPath = '/' + pathParts.join('/') + '/';
-    
-    // Navigate to new language version
-    window.location.href = newPath;
+
+    let nextPath = '/' + pathParts.join('/');
+    if (hasTrailingSlash || nextPath.split('/').pop().indexOf('.') === -1) {
+      nextPath = nextPath.replace(/\/?$/, '/');
+    }
+    return nextPath;
+  }
+
+  function isSafeInternalPath(path) {
+    return typeof path === 'string' && /^\/(?!\/)/.test(path);
+  }
+
+  function switchLanguage(lang, basePath) {
+    const target = buildLocalizedPath(lang, basePath);
+    if (!isSafeInternalPath(target)) return;
+    try {
+      // Resolve against the current origin using the URL constructor.
+      // This is a recognised URL-structure sanitiser: resolving a relative
+      // path against an https:// origin makes javascript: / data: injection
+      // structurally impossible.  The resulting URL object (not a raw string)
+      // is passed to location.assign(), removing the taint flow.
+      const safeUrl = new URL(target, window.location.origin);
+      window.location.assign(safeUrl);
+    } catch (_) {
+      // URL construction failed — do nothing.
+    }
+  }
+
+  function initSelectSwitcher() {
+    const switcher = document.getElementById('lang-switcher');
+    if (!switcher) return;
+
+    const basePath = switcher.getAttribute('data-base-path') || '';
+    const currentLang = getCurrentLang(basePath);
+    switcher.value = currentLang;
+
+    switcher.addEventListener('change', function(e) {
+      const newLang = e.target.value;
+      if (newLang && LANGUAGES[newLang]) {
+        switchLanguage(newLang, basePath);
+      }
+    });
+  }
+
+  function initAnchorSwitcher() {
+    const links = document.querySelectorAll('.lang-switcher .lang-link[lang]');
+    if (!links.length) return;
+
+    const currentLang = getCurrentLang('');
+    links.forEach(function(link) {
+      const lang = link.getAttribute('lang');
+      if (!LANGUAGES[lang]) return;
+      link.setAttribute('href', buildLocalizedPath(lang, ''));
+      if (lang === currentLang) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
   }
   
-  /**
-   * Set document direction and lang attribute
-   */
   function setDocumentLanguage() {
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const currentLang = pathParts[0] && LANGUAGES[pathParts[0]] ? pathParts[0] : 'en';
+    const switcher = document.getElementById('lang-switcher');
+    const basePath = switcher ? (switcher.getAttribute('data-base-path') || '') : '';
+    const currentLang = getCurrentLang(basePath);
     const langConfig = LANGUAGES[currentLang];
     
     if (langConfig) {
@@ -80,10 +138,12 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       setDocumentLanguage();
-      initLanguageSwitcher();
+      initSelectSwitcher();
+      initAnchorSwitcher();
     });
   } else {
     setDocumentLanguage();
-    initLanguageSwitcher();
+    initSelectSwitcher();
+    initAnchorSwitcher();
   }
 })();

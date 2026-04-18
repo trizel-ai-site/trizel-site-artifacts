@@ -793,3 +793,50 @@ a .icon {
   }
 
 }
+
+/* ==========================================================================
+   Localized return-navigation polish (Layer-2 presentation)
+   ========================================================================== */
+
+.l2-return-nav {
+  margin: 0 0 var(--space-5, 1.25rem) 0;
+  padding: 0;
+}
+
+.l2-return-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-text-medium, #334155);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--font-medium, 500);
+  text-decoration: none;
+  transition: border-color var(--transition-base, 160ms ease), box-shadow var(--transition-base, 160ms ease), color var(--transition-base, 160ms ease);
+}
+
+.l2-return-link:hover {
+  color: var(--color-accent, #084a8f);
+  border-color: rgba(8, 74, 143, 0.4);
+  box-shadow: 0 0 0 3px rgba(8, 74, 143, 0.08);
+  text-decoration: none;
+}
+
+[dir="rtl"] .l2-return-link {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .l2-return-nav {
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .l2-return-link {
+    min-height: 40px;
+    width: 100%;
+    justify-content: center;
+  }
+}
