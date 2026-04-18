@@ -69,8 +69,14 @@
     return nextPath;
   }
 
+  function isSafeInternalPath(path) {
+    return typeof path === 'string' && /^\/(?!\/)/.test(path);
+  }
+
   function switchLanguage(lang, basePath) {
-    window.location.href = buildLocalizedPath(lang, basePath);
+    const target = buildLocalizedPath(lang, basePath);
+    if (!isSafeInternalPath(target)) return;
+    window.location.assign(target);
   }
 
   function initSelectSwitcher() {
