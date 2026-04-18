@@ -756,6 +756,42 @@ a .icon {
   margin: 0;
 }
 
+/* ==========================================================================
+   Layer-2 multilingual content readability normalization
+   Ensures contrast stability for localized main-content templates on mobile
+   ========================================================================== */
+
+main#main.container {
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text, #0f172a);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  border-radius: var(--radius-lg, 8px);
+  margin-top: var(--space-6, 1.5rem);
+  padding-top: var(--space-6, 1.5rem);
+  padding-bottom: var(--space-8, 2rem);
+}
+
+main#main.container :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-text, #0f172a) !important;
+}
+
+main#main.container :is(p, li, dd, dt) {
+  color: var(--color-text-medium, #334155) !important;
+}
+
+main#main.container a {
+  color: var(--color-accent, #084a8f) !important;
+}
+
+@media (max-width: 768px) {
+  main#main.container {
+    padding-left: var(--space-4, 1rem);
+    padding-right: var(--space-4, 1rem);
+    padding-top: var(--space-5, 1.25rem);
+    padding-bottom: var(--space-6, 1.5rem);
+  }
+}
+
 @media (max-width: 1120px) {
   .l2-home .site-header .container {
     grid-template-columns: 1fr;
