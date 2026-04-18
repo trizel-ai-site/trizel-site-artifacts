@@ -8,6 +8,7 @@
   var LOCALES = ['en', 'fr', 'de', 'ru', 'zh', 'ar'];
   var LOCALE_STORAGE_KEY = 'trizel.activeLocale';
   var LOCALIZABLE_ROOT_SECTIONS = ['governance', 'status', 'projects', 'lab', 'map', 'overview', 'layer-map', 'phase-f-governance', 'goi'];
+  var CANONICAL_ONLY_PATHS = ['/artifacts', '/artifacts/', '/accessibility.html'];
   var TRANSLATIONS = {
     en: {
       skip: 'Skip to main content',
@@ -145,6 +146,41 @@
     }
   }
 
+  function safeInternalPath(pathname) {
+    var value = String(pathname || '');
+    if (!value || value[0] !== '/') return null;
+    if (value.indexOf('\\') >= 0) return null;
+    if (value.indexOf('//') === 0) return null;
+    return value;
+  }
+
+  function safeInternalHref(pathname, search, hash) {
+    var safePath = safeInternalPath(pathname);
+    if (!safePath) return null;
+    var safeSearch = typeof search === 'string' &&
+      search.startsWith('?') &&
+      search.indexOf('\\') < 0 &&
+      search.indexOf('\n') < 0 &&
+      search.indexOf('\r') < 0 ? search : '';
+    var safeHash = typeof hash === 'string' &&
+      hash.startsWith('#') &&
+      hash.indexOf('\\') < 0 &&
+      hash.indexOf('\n') < 0 &&
+      hash.indexOf('\r') < 0 ? hash : '';
+    return safePath + safeSearch + safeHash;
+  }
+
+  function setSafeHref(el, pathname, search, hash) {
+    if (!el) return;
+    var href = safeInternalHref(pathname, search, hash);
+    if (!href) return;
+    var normalized = parseInternalURL(href);
+    if (!normalized) return;
+    el.pathname = normalized.pathname;
+    el.search = normalized.search;
+    el.hash = normalized.hash;
+  }
+
   function withLocalizedPrefix(pathname, locale) {
     var hadTrailingSlash = pathname.endsWith('/');
     var parts = pathname.split('/').filter(Boolean);
@@ -186,7 +222,7 @@
   }
 
   function setLocaleAwareCanonicalLinks(locale) {
-    var returnPath = window.location.pathname + window.location.search + window.location.hash;
+    var returnPath = safeInternalHref(window.location.pathname, window.location.search, window.location.hash) || '/' + locale + '/';
 
     document.querySelectorAll('a[href="/accessibility.html"], a[href^="/accessibility.html?"]').forEach(function (link) {
       var url = new URL('/accessibility.html', window.location.origin);
@@ -208,10 +244,9 @@
       if (anchor.closest('.lang-switcher')) return;
       var url = parseInternalURL(anchor.getAttribute('href'));
       if (!url) return;
-      if (normPath(url.pathname) === '/artifacts') return;
-      if (normPath(url.pathname) === '/accessibility.html') return;
-      url.pathname = applyLocaleToInternalPath(url.pathname, locale);
-      anchor.setAttribute('href', url.pathname + url.search + url.hash);
+      if (CANONICAL_ONLY_PATHS.indexOf(normPath(url.pathname)) >= 0) return;
+      var localizedPath = applyLocaleToInternalPath(url.pathname, locale);
+      setSafeHref(anchor, localizedPath, url.search, url.hash);
     });
   }
 
@@ -235,11 +270,6 @@
 
     document.querySelectorAll('a[href^="/artifacts/"]').forEach(function (link) {
       link.textContent = locale === 'en' ? t(locale, 'artifacts') : t(locale, 'artifactsCanonicalHint');
-      if (locale !== 'en') {
-        link.setAttribute('title', t(locale, 'artifactsCanonicalHint'));
-      } else {
-        link.removeAttribute('title');
-      }
     });
 
     document.querySelectorAll('.breadcrumb').forEach(function (crumb) {
@@ -248,7 +278,7 @@
 
     var breadcrumbHome = document.querySelector('.breadcrumb a[href="/index.html"], .breadcrumb a[href="/"]');
     if (breadcrumbHome) {
-      breadcrumbHome.href = '/' + locale + '/';
+      setSafeHref(breadcrumbHome, '/' + locale + '/');
       breadcrumbHome.textContent = t(locale, 'home');
       breadcrumbHome.setAttribute('aria-label', t(locale, 'backHome'));
     }
@@ -258,11 +288,11 @@
     var localizedHome = '/' + locale + '/';
 
     document.querySelectorAll('a.brand-link[href="/"]').forEach(function (link) {
-      link.href = localizedHome;
+      setSafeHref(link, localizedHome);
     });
 
     document.querySelectorAll('a[href="/goi/"], a[href="/goi"]').forEach(function (link) {
-      link.href = localizedHome + 'goi/';
+      setSafeHref(link, localizedHome + 'goi/');
     });
 
     normalizeInternalLinks(locale);
@@ -274,7 +304,7 @@
       document.querySelectorAll('.lang-switcher a.lang-link[lang]').forEach(function (a) {
         var targetLang = a.getAttribute('lang');
         if (!isLocale(targetLang)) return;
-        a.href = '/' + targetLang + '/';
+        setSafeHref(a, '/' + targetLang + '/');
         if (targetLang === locale) {
           a.setAttribute('aria-current', 'page');
         } else {
@@ -293,7 +323,7 @@
       if (!isLocale(targetLang)) return;
       var href = '/' + targetLang + (relPath ? '/' + relPath : '/');
       if (hasTrailingSlash && !href.endsWith('/')) href += '/';
-      a.href = href;
+      setSafeHref(a, href);
       if (targetLang === locale) {
         a.setAttribute('aria-current', 'page');
       } else {
@@ -306,20 +336,38 @@
     var breadcrumbLinks = document.querySelectorAll('.breadcrumb a[href]');
     if (breadcrumbLinks.length >= 2) {
       var p = breadcrumbLinks[breadcrumbLinks.length - 1];
-      return { href: applyLocaleToInternalPath(p.getAttribute('href') || '', locale), label: t(locale, 'backParent') };
+      var parsedParent = parseInternalURL(p.getAttribute('href') || '');
+      if (parsedParent) {
+        return {
+          pathname: applyLocaleToInternalPath(parsedParent.pathname, locale),
+          search: parsedParent.search,
+          hash: parsedParent.hash,
+          label: t(locale, 'backParent')
+        };
+      }
     }
     if (breadcrumbLinks.length === 1) {
-      return { href: applyLocaleToInternalPath(breadcrumbLinks[0].getAttribute('href') || '', locale), label: t(locale, 'backHome') };
+      var parsedHome = parseInternalURL(breadcrumbLinks[0].getAttribute('href') || '');
+      if (parsedHome) {
+        return {
+          pathname: applyLocaleToInternalPath(parsedHome.pathname, locale),
+          search: parsedHome.search,
+          hash: parsedHome.hash,
+          label: t(locale, 'backHome')
+        };
+      }
     }
 
     var parts = window.location.pathname.split('/').filter(Boolean);
     if (parts.length >= 3 && isLocale(parts[0])) {
       return {
-        href: '/' + parts.slice(0, parts.length - 1).join('/') + '/',
+        pathname: '/' + parts.slice(0, parts.length - 1).join('/') + '/',
+        search: '',
+        hash: '',
         label: t(locale, 'backParent')
       };
     }
-    return { href: '/' + locale + '/', label: t(locale, 'backHome') };
+    return { pathname: '/' + locale + '/', search: '', hash: '', label: t(locale, 'backHome') };
   }
 
   function addReturnNavigation(locale) {
@@ -327,7 +375,7 @@
     if (!main || main.querySelector('.l2-return-nav')) return;
 
     var target = buildParentTarget(locale);
-    if (!target || !target.href) return;
+    if (!target || !target.pathname) return;
 
     var nav = document.createElement('nav');
     nav.className = 'l2-return-nav';
@@ -335,7 +383,7 @@
 
     var link = document.createElement('a');
     link.className = 'l2-return-link';
-    link.href = target.href;
+    setSafeHref(link, target.pathname, target.search, target.hash);
     link.textContent = '← ' + target.label;
 
     nav.appendChild(link);

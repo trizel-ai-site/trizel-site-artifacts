@@ -772,15 +772,15 @@ main#main.container {
 }
 
 main#main.container :is(h1, h2, h3, h4, h5, h6) {
-  color: var(--color-text, #0f172a) !important;
+  color: var(--color-text, #0f172a);
 }
 
 main#main.container :is(p, li, dd, dt) {
-  color: var(--color-text-medium, #334155) !important;
+  color: var(--color-text-medium, #334155);
 }
 
 main#main.container a {
-  color: var(--color-accent, #084a8f) !important;
+  color: var(--color-accent, #084a8f);
 }
 
 @media (max-width: 768px) {
