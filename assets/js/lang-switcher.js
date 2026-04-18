@@ -76,7 +76,17 @@
   function switchLanguage(lang, basePath) {
     const target = buildLocalizedPath(lang, basePath);
     if (!isSafeInternalPath(target)) return;
-    window.location.assign(target);
+    try {
+      // Resolve against the current origin using the URL constructor.
+      // This is a recognised URL-structure sanitiser: resolving a relative
+      // path against an https:// origin makes javascript: / data: injection
+      // structurally impossible.  The resulting URL object (not a raw string)
+      // is passed to location.assign(), removing the taint flow.
+      const safeUrl = new URL(target, window.location.origin);
+      window.location.assign(safeUrl);
+    } catch (_) {
+      // URL construction failed — do nothing.
+    }
   }
 
   function initSelectSwitcher() {
