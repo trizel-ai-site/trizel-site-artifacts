@@ -39,6 +39,14 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- Publications -->
+  <url>
+    <loc>https://trizel-ai.com/publications/phase3-deterministic-analytical-execution-framework</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- English Language Pages -->
   <url>
     <loc>https://trizel-ai.com/en/</loc>
